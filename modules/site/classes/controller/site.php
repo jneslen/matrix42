@@ -24,6 +24,8 @@ class Controller_Site extends Controller_Template
 
 	protected $_breadcrumb;
 
+	protected $_banner;
+
 	protected $_content;
 
 	protected $_sidebar;
@@ -107,6 +109,8 @@ class Controller_Site extends Controller_Template
 			$this->template->header->menu = Menu::factory($role);
 
 			$this->template->breadcrumb->breadcrumb_content = $this->_breadcrumb;
+
+			$this->template->banner = $this->_banner;
 
 			$this->template->header->section = $this->_section;
 

@@ -10,29 +10,17 @@
 <div id="main-nav" class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<?=$menu?>
+			<div class="row">
+				<div id="logo" class="span2<?=\Request::current()->controller() == 'index' ? ' active' : ''?>">
+					<a href="/"><img src="/assets/img/matrix42-logo.png" alt="Matrix42" /></a>
+				</div><!-- logo -->
+				<div id="twitname" class="span2">
+					<a href="http://twitter.com/matrix42man" target="_blank">@matrix42man</a>
+				</div><!-- twitname -->
+				<div class="span12">
+					<?=$menu?>
+				</div>
+			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- navbar-inner -->
-</div><!-- navbar -->
-<?php /*
-<div id="top">
-	<div id="header">
-		<div class="col-full">
-			<div id="logo" class="left">
-				<a href="/"><img src="/assets/img/matrix42-logo.png" alt="Matrix42" /></a>
-				<span class="site-title"><a href="/">Matrix42</a></span>
-				<span class="site-description">Delivering the Dynamic Workplace</span>
-			</div><!-- End logo -->
-			<?=$user_menu?>
-			<div id="main-menu">
-				<div id="menu-container">
-					<?=$menu?>
-				</div><!-- menu-container -->
-			</div><!-- main-menu -->
-			<div class="clear"></div>
-		</div><!-- col-full -->
-	</div><!-- header -->
-</div><!-- top -->
-<!-- End Header -->
- */
-?>
+</div><!-- main-nav -->

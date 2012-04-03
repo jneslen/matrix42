@@ -1,4 +1,39 @@
+#main-container {
+	.shadowbox(0.5, 60px);
+	background-color: #ffffff;
+	#main-row {
+		margin-top: @nav_height;
+	}
+}
 #main-nav {
 	height: @nav_height;
 	background-color: @nav_color;
+	#logo {
+		a {
+			.padded;
+		}
+	}
+	#logo,
+	#twitname {
+		a {
+			height: @nav_height - 25;
+			padding-top: 25px;
+			.block;
+			color: #aaaaaa;
+			font-weight: bold;
+			font-size: 10px;
+		}
+	}
+	#nav {
+		.right;
+		li.dropdown:hover ul.dropdown-menu {
+			.block;
+		}
+		a.menu:after, .dropdown-toggle:after {
+			content: none;
+		}
+	}
+	div.active {
+		background: transparent url(@{img_path}nav-active.png) no-repeat bottom center;
+	}
 }

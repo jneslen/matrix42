@@ -4,8 +4,14 @@
     <list default="true" id="4f078135-f37c-444a-b02d-c129937b252e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/acl" afterPath="$PROJECT_DIR$/modules/acl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/controller/public/index.php" afterPath="$PROJECT_DIR$/application/classes/controller/public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/less/style.less" afterPath="$PROJECT_DIR$/assets/less/style.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/less/vars.less" afterPath="$PROJECT_DIR$/assets/less/vars.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/assets/config/assets.php" afterPath="$PROJECT_DIR$/modules/assets/config/assets.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/assets/vendor/lessphp/lessc.inc.php" afterPath="$PROJECT_DIR$/modules/assets/vendor/lessphp/lessc.inc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/site/classes/controller/site.php" afterPath="$PROJECT_DIR$/modules/site/classes/controller/site.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/site/views/header.php" afterPath="$PROJECT_DIR$/modules/site/views/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/site/views/public.php" afterPath="$PROJECT_DIR$/modules/site/views/public.php" />
     </list>
     <ignored path="bane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,19 +42,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/site/views/header.php">
+      <file leaf-file-name="public.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/site/views/menu/public.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="31" selection-start="193" selection-end="193" vertical-scroll-proportion="-7.04">
+            <state line="6" column="60" selection-start="240" selection-end="240" vertical-scroll-proportion="-3.84">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="public.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/modules/site/views/menu/public.php">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/classes/controller/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="27" selection-start="146" selection-end="146" vertical-scroll-proportion="0.11469534">
+            <state line="21" column="40" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4526" column="1" selection-start="99094" selection-end="99094" vertical-scroll-proportion="0.31346843">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/site/views/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="29" selection-start="214" selection-end="214" vertical-scroll-proportion="-7.68">
               <folding />
             </state>
           </provider>
@@ -57,7 +81,7 @@
       <file leaf-file-name="public.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/site/views/public.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="11" selection-start="718" selection-end="718" vertical-scroll-proportion="-14.72">
+            <state line="34" column="12" selection-start="974" selection-end="974" vertical-scroll-proportion="-21.76">
               <folding />
             </state>
           </provider>
@@ -66,7 +90,7 @@
       <file leaf-file-name="vars.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/less/vars.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="12" selection-start="128" selection-end="135" vertical-scroll-proportion="0.0">
+            <state line="208" column="7" selection-start="3493" selection-end="3499" vertical-scroll-proportion="-15.846154">
               <folding />
             </state>
           </provider>
@@ -75,7 +99,7 @@
       <file leaf-file-name="style.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/less/style.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="1" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
+            <state line="4" column="32" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -84,25 +108,7 @@
       <file leaf-file-name="site.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/site/classes/controller/site.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="23" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layouts.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/less/bootstrap/layouts.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="3" selection-start="173" selection-end="190" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mixins.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/less/bootstrap/mixins.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="521" column="45" selection-start="17054" selection-end="17054" vertical-scroll-proportion="-12.653846">
+            <state line="108" column="34" selection-start="1896" selection-end="1896" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -123,22 +129,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/modules/assets/classes/assets/core.php" />
-        <option value="$PROJECT_DIR$/modules/site/views/header.php" />
-        <option value="$PROJECT_DIR$/modules/assets/config/assets.php" />
-        <option value="$PROJECT_DIR$/assets/less/bootstrap/variables.less" />
         <option value="$PROJECT_DIR$/modules/site/views/menu/sub.php" />
         <option value="$PROJECT_DIR$/system/classes/kohana/html.php" />
         <option value="$PROJECT_DIR$/application/config/menu/public.php" />
         <option value="$PROJECT_DIR$/modules/site/views/menu/public.php" />
         <option value="$PROJECT_DIR$/assets/js/site.js" />
         <option value="$PROJECT_DIR$/assets/js/jquery.js" />
-        <option value="$PROJECT_DIR$/assets/less/vars.less" />
-        <option value="$PROJECT_DIR$/application/classes/controller/public/index.php" />
-        <option value="$PROJECT_DIR$/assets/less/style.less" />
         <option value="$PROJECT_DIR$/assets/less/bootstrap/mixins.less" />
+        <option value="$USER_HOME$/Downloads/bootstrap(1)/css/bootstrap.css" />
+        <option value="$USER_HOME$/Downloads/bootstrap/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/assets/less/vars.less" />
+        <option value="$PROJECT_DIR$/modules/site/views/header.php" />
         <option value="$PROJECT_DIR$/modules/site/classes/controller/site.php" />
         <option value="$PROJECT_DIR$/modules/site/views/public.php" />
+        <option value="$PROJECT_DIR$/application/classes/controller/public/index.php" />
+        <option value="$PROJECT_DIR$/assets/less/style.less" />
+        <option value="$PROJECT_DIR$/assets/css/bootstrap.css" />
       </list>
     </option>
   </component>
@@ -146,7 +152,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1920" />
-    <option name="height" value="1028" />
+    <option name="height" value="1024" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -429,6 +435,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -448,28 +472,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -600,10 +602,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1028" extended-state="0" />
+    <frame x="0" y="22" width="1920" height="1024" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32893288" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33038673" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -677,51 +679,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/site/views/menu/sub.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="343" selection-end="343" vertical-scroll-proportion="-8.96">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/classes/controller/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="107" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/less/bootstrap/grid.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/less/bootstrap/tables.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="3" selection-start="2827" selection-end="2827" vertical-scroll-proportion="0.4376417">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/classes/kohana/html.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="118" column="17" selection-start="2811" selection-end="2811" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/site/views/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="31" selection-start="193" selection-end="193" vertical-scroll-proportion="-7.04">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/less/style.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="1" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/less/bootstrap/layouts.less">
@@ -738,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/less/vars.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="12" selection-start="128" selection-end="135" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/less/bootstrap/variables.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="0" selection-start="1276" selection-end="1276" vertical-scroll-proportion="0.557243">
@@ -752,28 +705,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/menu/public.php">
+    <entry file="file://$USER_HOME$/Downloads/bootstrap/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="45" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/site/classes/controller/site.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="23" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0">
+        <state line="164" column="0" selection-start="2680" selection-end="3787" vertical-scroll-proportion="0.14814815">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/site/views/public.php">
+    <entry file="file://$PROJECT_DIR$/application/config/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="11" selection-start="718" selection-end="718" vertical-scroll-proportion="-14.72">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/site/views/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="29" selection-start="214" selection-end="214" vertical-scroll-proportion="-7.68">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/site/classes/controller/site.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="34" selection-start="1896" selection-end="1896" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/site/views/menu/public.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="27" selection-start="146" selection-end="146" vertical-scroll-proportion="0.11469534">
+        <state line="6" column="60" selection-start="240" selection-end="240" vertical-scroll-proportion="-3.84">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/menu/public.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="45" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/less/vars.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="208" column="7" selection-start="3493" selection-end="3499" vertical-scroll-proportion="-15.846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/site/views/public.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="12" selection-start="974" selection-end="974" vertical-scroll-proportion="-21.76">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/classes/controller/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="40" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/less/style.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="32" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4526" column="1" selection-start="99094" selection-end="99094" vertical-scroll-proportion="0.31346843">
           <folding />
         </state>
       </provider>

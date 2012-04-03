@@ -24,11 +24,19 @@ defined('SYSPATH') OR die('No direct access allowed.');
 	</head>
 <body>
 <?=$header?>
-<div class="container">
-	<?=$breadcrumb?>
-	<?=$sidebar?>
-	<?=$content?>
+<div id="main-container" class="container">
+	<div id="main-row" class="row">
+	<?php if($breadcrumb): ?>
+		<div id="breadcrumb" class="span16"><?=$breadcrumb?></div>
+	<?php endif; ?>
+		<?=$banner?>
+		<?=$sidebar?>
+		<?=$content?>
+		test
+	</div><!-- main-row -->
+</div><!-- main-container -->
+<div id="footer" class="container">
 	<?=$footer?>
-</div><!-- container -->
+</div><!-- footer -->
 </body>
 </html>
