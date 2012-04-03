@@ -131,7 +131,9 @@ class Kohana_HTML {
 		// Add the sanitized link to the attributes
 		$attributes['href'] = $uri;
 
-		return '<a'.HTML::attributes($attributes).'>'.$title.'</a>';
+		$caret = isset($attributes['data-target']) ? '<b class="caret"></b>' : '';
+
+		return '<a'.HTML::attributes($attributes).'>'.$title.$caret.'</a>';
 	}
 
 	/**

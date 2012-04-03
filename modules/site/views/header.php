@@ -7,6 +7,14 @@
  */
 ?>
 <!-- Begin Header -->
+<div id="main-nav" class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<?=$menu?>
+		</div><!-- container -->
+	</div><!-- navbar-inner -->
+</div><!-- navbar -->
+<?php /*
 <div id="top">
 	<div id="header">
 		<div class="col-full">
@@ -26,3 +34,5 @@
 	</div><!-- header -->
 </div><!-- top -->
 <!-- End Header -->
+ */
+?>

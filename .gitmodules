@@ -1,0 +1,36 @@
+[submodule "system"]
+	path = system
+	url = git://github.com/kohana/core.git
+[submodule "modules/formo"]
+	path = modules/formo
+	url = https://github.com/bmidget/kohana-formo.git
+[submodule "modules/userguide"]
+	path = modules/userguide
+	url = https://github.com/kohana/userguide.git
+[submodule "modules/acl"]
+	path = modules/acl
+	url = https://github.com/Wouterrr/ACL.git
+[submodule "modules/cache"]
+	path = modules/cache
+	url = https://github.com/gabriel1836/cache.git
+[submodule "modules/menu"]
+	path = modules/menu
+	url = https://github.com/gabriel1836/kohana-menu.git
+[submodule "modules/bonafide"]
+	path = modules/bonafide
+	url = https://github.com/shadowhand/bonafide.git
+[submodule "modules/assets"]
+	path = modules/assets
+	url = git://github.com/gabriel1836/kohana-assets.git
+[submodule "modules/maps"]
+	path = modules/maps
+	url = https://github.com/solidsnake/Kohana-Google-Maps-Module.git
+[submodule "modules/subdomain"]
+	path = modules/subdomain
+	url = https://github.com/jeanmask/subdomain.git
+[submodule "modules/email"]
+	path = modules/email
+	url = https://github.com/shadowhand/email.git
+[submodule "modules/openid"]
+	path = modules/openid
+	url = https://github.com/shadowhand/openid.git

@@ -54,6 +54,7 @@ class Controller_Site extends Controller_Template
 			array
 			(
 				'jquery-ui',
+				'bootstrap/bootstrap-dropdown',
 				'site'
 			)
 		);
@@ -65,7 +66,7 @@ class Controller_Site extends Controller_Template
 			(
 				'vars',
 				'jquery.ui',
-				'style',
+				'style'
 			)
 		);
 
