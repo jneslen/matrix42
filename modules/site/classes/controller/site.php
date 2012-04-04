@@ -26,6 +26,8 @@ class Controller_Site extends Controller_Template
 
 	protected $_banner;
 
+	protected $_titlebar;
+
 	protected $_content;
 
 	protected $_sidebar;
@@ -56,7 +58,7 @@ class Controller_Site extends Controller_Template
 			array
 			(
 				'jquery-ui',
-				'bootstrap/bootstrap-dropdown',
+				'bootstrap.min',
 				'site'
 			)
 		);
@@ -68,7 +70,8 @@ class Controller_Site extends Controller_Template
 			(
 				'vars',
 				'jquery.ui',
-				'style'
+				'style',
+				'icons'
 			)
 		);
 
@@ -111,6 +114,8 @@ class Controller_Site extends Controller_Template
 			$this->template->breadcrumb->breadcrumb_content = $this->_breadcrumb;
 
 			$this->template->banner = $this->_banner;
+
+			$this->template->titlebar = $this->_titlebar ? $this->_titlebar : View::factory('titlebar')->set('title', $this->_title);
 
 			$this->template->header->section = $this->_section;
 

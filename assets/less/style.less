@@ -1,3 +1,21 @@
+h1 {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	.emphasis,
+	&.emphasis {
+		color: @matrix42_orange;
+	}
+}
+
+.mitsume {
+	.left;
+	width: @site_width / 3 - @padding;
+	padding-left: @padding;
+}
+
 #main-container {
 	.shadowbox(0.5, 60px);
 	background-color: #ffffff;
@@ -5,6 +23,7 @@
 		margin-top: @nav_height;
 	}
 }
+
 #main-nav {
 	height: @nav_height;
 	background-color: @nav_color;
@@ -35,5 +54,15 @@
 	}
 	div.active {
 		background: transparent url(@{img_path}nav-active.png) no-repeat bottom center;
+	}
+}
+
+#titlebar {
+	height: 50px;
+	margin-top: 0;
+	background-color: #eeeeee;
+	h1 {
+	    padding-top: 5px;
+		.padded;
 	}
 }

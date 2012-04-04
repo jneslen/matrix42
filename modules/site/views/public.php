@@ -30,6 +30,7 @@ defined('SYSPATH') OR die('No direct access allowed.');
 		<div id="breadcrumb" class="span16"><?=$breadcrumb?></div>
 	<?php endif; ?>
 		<?=$banner?>
+		<?=$titlebar?>
 		<?=$sidebar?>
 		<?=$content?>
 		test

@@ -1,5 +1,9 @@
 @img_path: '/assets/img/';
 
+//Widths
+@site_width: 1260px;
+@padding: 20px;
+
 //Heights
 @nav_height: 70px;
 @nav_active_height: 9px;
@@ -7,8 +11,12 @@
 //Colors
 @border_color: #e3e3e3;
 @nav_color: #151d25;
+@matrix42_orange: #ff4c00;
 @dormant_gradient1: #aaaaaa;
 @dormant_gradient2: #9b9b9b;
+
+//Sizes
+@icon_size: 30px;
 
 .img(@height, @width) {
 	display: block;
@@ -90,6 +98,18 @@
 	behavior: url(/assets/js/PIE.htc);
 }
 
+.space {
+	.spacer();
+}
+
+.large-space {
+	.spacer(50px);
+}
+
+.spacer(@height: 20px) {
+	height: @height;
+}
+
 .text_shadow {
 	text-shadow: 1px 1px 0 #000000;
 }
@@ -163,6 +183,10 @@
 
 .inline {
 	display: inline;
+}
+
+.inline-block {
+	display: inline-block;
 }
 
 .inv {
