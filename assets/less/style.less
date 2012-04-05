@@ -16,6 +16,28 @@ h1, h2, h3, h4, h5, h6 {
 	padding-left: @padding;
 }
 
+.well {
+	h2 {
+		line-height: 22px;
+	}
+}
+
+.dashed-left {
+	background: transparent url(@{img_path}dashed.png) repeat-y top left;
+}
+
+.dashed-right {
+	background: transparent url(@{img_path}dashed.png) repeat-y top right;
+}
+
+.quote {
+	background: transparent url(@{img_path}quotes.png) no-repeat 0 0;
+	.italics {
+	    .block;
+		margin: 10px @margin;
+	}
+}
+
 #main-container {
 	.shadowbox(0.5, 60px);
 	background-color: #ffffff;
@@ -65,4 +87,17 @@ h1, h2, h3, h4, h5, h6 {
 	    padding-top: 5px;
 		.padded;
 	}
+}
+
+.tab-content {
+	.rounded_bottom();
+	.rounded_top_right();
+	padding: 10px 0;
+	border: transparent 1px solid;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+}
+
+.rounded-top-left {
+	.rounded_top_left();
 }

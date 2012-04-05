@@ -395,14 +395,14 @@ h6 small {
 }
 h1 {
 	font-size: 30px;
-	line-height: 36px;
+	line-height: 40px;
 }
 h1 small {
 	font-size: 18px;
 }
 h2 {
 	font-size: 24px;
-	line-height: 36px;
+	line-height: 40px;
 }
 h2 small {
 	font-size: 18px;
@@ -2376,7 +2376,7 @@ input[type="submit"].btn.btn-mini {
 }
 .nav {
 	margin-left: 0;
-	margin-bottom: 18px;
+	margin-bottom: 0;
 	list-style: none;
 }
 .nav > li > a {
@@ -2458,7 +2458,7 @@ input[type="submit"].btn.btn-mini {
 	line-height: 14px;
 }
 .nav-tabs {
-	border-bottom: 1px solid #ddd;
+	/*border-bottom: 1px solid #ddd;*/
 }
 .nav-tabs > li {
 	margin-bottom: -1px;
@@ -2479,7 +2479,7 @@ input[type="submit"].btn.btn-mini {
 .nav-tabs > .active > a:hover {
 	color: #555555;
 	background-color: #ffffff;
-	border: 1px solid #ddd;
+	border: 1px solid #dddddd;
 	border-bottom-color: transparent;
 	cursor: default;
 }
@@ -3941,8 +3941,8 @@ a.thumbnail:hover {
 	min-height: 20px;
 	padding: 19px;
 	margin-bottom: 20px;
-	background-color: #f5f5f5;
-	border: 1px solid #eee;
+	background-color: #ccc;
+	border: 1px solid #aaa;
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;

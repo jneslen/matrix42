@@ -33,7 +33,6 @@ defined('SYSPATH') OR die('No direct access allowed.');
 		<?=$titlebar?>
 		<?=$sidebar?>
 		<?=$content?>
-		test
 	</div><!-- main-row -->
 </div><!-- main-container -->
 <div id="footer" class="container">

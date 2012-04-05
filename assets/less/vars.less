@@ -3,6 +3,7 @@
 //Widths
 @site_width: 1260px;
 @padding: 20px;
+@margin: 20px;
 
 //Heights
 @nav_height: 70px;
@@ -10,10 +11,12 @@
 
 //Colors
 @border_color: #e3e3e3;
+@dark_border_color: #aaaaaa;
 @nav_color: #151d25;
 @matrix42_orange: #ff4c00;
 @dormant_gradient1: #aaaaaa;
 @dormant_gradient2: #9b9b9b;
+@weight_color: #cccccc;
 
 //Sizes
 @icon_size: 30px;
@@ -24,6 +27,18 @@
 	width: 0;
 	overflow: hidden;
 	padding: @height @width 0 0;
+}
+
+.margin-right {
+	margin-right: @margin;
+}
+
+.margin-clear {
+	margin: @margin 0;
+}
+
+.indent {
+	margin-left: 0;
 }
 
 .margins(@vertical, @horizontal) {

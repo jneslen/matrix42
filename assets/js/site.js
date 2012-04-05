@@ -15,4 +15,16 @@ $(document).ready(function() {
 		}
 	});
 
+	$('#latest').tab();
+
+	//The following adds a rounded top left border to the tab-content container if any tab is clicked and removes that if the first is clicked.
+	$('a[data-toggle]').click(function() {
+		var parent = $(this).parent().parent().attr('id');
+		var tabcontainer = $(this).parent().parent().parent().attr('id');
+		if($(this).is('#'+parent+' li:first-child a')) {
+			$('#'+tabcontainer+' .tab-content').removeClass('rounded-top-left');
+		} else {
+			$('#'+tabcontainer+' .tab-content').addClass('rounded-top-left');
+		}
+	});
 });
