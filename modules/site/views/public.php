@@ -26,9 +26,7 @@ defined('SYSPATH') OR die('No direct access allowed.');
 <?=$header?>
 <div id="main-container" class="container">
 	<div id="main-row" class="row">
-	<?php if($breadcrumb): ?>
-		<div id="breadcrumb" class="span16"><?=$breadcrumb?></div>
-	<?php endif; ?>
+		<?=$breadcrumb?>
 		<?=$banner?>
 		<?=$titlebar?>
 		<?=$sidebar?>

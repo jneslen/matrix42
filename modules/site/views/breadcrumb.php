@@ -7,10 +7,9 @@
  */
 ?>
 <?php if($breadcrumb_content): ?>
-<div id="breadcrumb">
-	<div class="col-full">
-		<div class="clear"></div>
+<div id="breadcrumb" class="row">
+	<div class="span16">
 		<?=$breadcrumb_content?>
-	</div><!-- col-full -->
+	</div><!-- span16 -->
 </div><!-- breadcrumb -->
 <?php endif; ?>

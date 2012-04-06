@@ -8,6 +8,8 @@ class Controller_Public_Index extends Controller_Public {
 
 		$this->_title = "IT Service &amp; Mobile Device Management | Matrix42";
 
+		$this->_breadcrumb = false;
+
 		$this->_titlebar = View::factory('home_middle');
 
 		$this->_banner = View::factory('home_banner');
