@@ -39,8 +39,34 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="blog">
 						<ul class="listed">
-							<li>one</li>
-							<li>two</li>
+							<li>
+								<a href="#" class="thumbnail left"><img src="http://placehold.it/50x50" alt="placeholder"></a>
+								<h4><a href="#">Test Title</a></h4>
+								<p>This is a test description...</p>
+								<div class="clear"></div>
+								<span class="italics">April 6, 2012</span>
+							</li>
+							<li>
+								<a href="#" class="thumbnail left"><img src="http://placehold.it/50x50" alt="placeholder"></a>
+								<h4><a href="#">Test Title</a></h4>
+								<p>This is a test description...</p>
+								<div class="clear"></div>
+								<span class="italics">April 6, 2012</span>
+							</li>
+							<li>
+								<a href="#" class="thumbnail left"><img src="http://placehold.it/50x50" alt="placeholder"></a>
+								<h4><a href="#">Test Title</a></h4>
+								<p>This is a test description...</p>
+								<div class="clear"></div>
+								<span class="italics">April 6, 2012</span>
+							</li>
+							<li>
+								<a href="#" class="thumbnail left"><img src="http://placehold.it/50x50" alt="placeholder"></a>
+								<h4><a href="#">Test Title</a></h4>
+								<p>This is a test description...</p>
+								<div class="clear"></div>
+								<span class="italics">April 6, 2012</span>
+							</li>
 						</ul>
 					</div><!-- blog -->
 					<div class="tab-pane" id="events">

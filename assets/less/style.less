@@ -101,3 +101,93 @@ h1, h2, h3, h4, h5, h6 {
 .rounded-top-left {
 	.rounded_top_left();
 }
+
+ul.listed {
+	.border;
+	.rounded_corners();
+	list-style: none;
+	margin: 0 10px;
+	li {
+		.border-top;
+		.rounded_corners();
+		margin-top: -1px;
+		padding: 10px;
+		.thumbnail {
+			margin: 0 5px 5px 0;
+		}
+		h4 {
+			margin-bottom: 0;
+		}
+		p {
+			font-size: 12px;
+		}
+	}
+}
+
+#footer {
+	color: #aaaaaa;
+	a {
+		color: #aaaaaa;
+	}
+	a:hover {
+		color: #666666;
+	}
+	#footer-top {
+		margin-top: 15px;
+		#social-links {
+			.right;
+			list-style: none;
+			li {
+				.left;
+				margin-left: 10px;
+				a {
+					.block;
+					width: 31px;
+					height: 31px;
+					overflow: hidden;
+					text-indent: -1000px;
+					background-color: transparent;
+					background-repeat: no-repeat;
+					background-position: center center;
+					&#blog {
+						background-image: url(@{img_path}icons/blog-quiet.png);
+					}
+					&#blog:hover {
+						background-image: url(@{img_path}icons/blog-loud.png);
+					}
+					&#facebook {
+						background-image: url(@{img_path}icons/facebook-quiet.png);
+					}
+					&#facebook:hover {
+						background-image: url(@{img_path}icons/facebook-loud.png);
+					}
+					&#twitter {
+						background-image: url(@{img_path}icons/twitter-quiet.png);
+					}
+					&#twitter:hover {
+						background: url(@{img_path}icons/twitter-loud.png);
+					}
+					&#linkedin {
+						background-image: url(@{img_path}icons/linkedin-quiet.png);
+					}
+					&#linkedin:hover {
+						background: url(@{img_path}icons/linkedin-loud.png);
+					}
+				}
+			}
+		}
+	}
+	#footer-links {
+		ul {
+			list-style: none;
+		}
+	}
+}
+
+ul.link-list {
+	margin: 10px 0;
+	li {
+		padding: 0;
+		margin: 0 0 2px 0;
+	}
+}
