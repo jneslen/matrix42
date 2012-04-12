@@ -36,7 +36,7 @@
       <file leaf-file-name="site.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/site/classes/controller/site.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="60" selection-start="1179" selection-end="1179" vertical-scroll-proportion="0.07061503">
+            <state line="94" column="0" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.3621868">
               <folding />
             </state>
           </provider>
@@ -465,7 +465,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/site/classes/controller/site.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="60" selection-start="1179" selection-end="1179" vertical-scroll-proportion="0.07061503">
+        <state line="94" column="0" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.3621868">
           <folding />
         </state>
       </provider>
