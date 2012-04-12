@@ -87,6 +87,8 @@ class Controller_Site extends Controller_Template
 			$this->_page_title = $this->_title;
 		}
 
+		$this->set_breadcrumb();
+
 		$this->template->header = View::factory('header');
 		$this->template->breadcrumb = View::factory('breadcrumb');
 		$this->template->footer = View::factory('footer');
@@ -127,5 +129,34 @@ class Controller_Site extends Controller_Template
 		}
 
 		parent::after();
+	}
+
+	public function set_breadcrumb($trail = null)
+	{
+		if($trail === null)
+		{
+			$path_array = array();
+
+			$home_link = $this->request->directory() == 'public' ? '/' : $this->request->directory();
+
+			//Set Home path
+			$path_array['Home'] = $home_link;
+
+			//Set Controller path
+			$controller_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->controller()));
+			$controller_link = '/'.$this->request->controller();
+			$path_array[$controller_name] = $controller_link;
+
+			//Set Method path
+			$method_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->method()));
+			$method_link = $controller_link.'/'.$this->request->method();
+			if($this->request->method() != 'index' AND $this->request->method() != 'GET')
+			{
+				$path_array[$method_name] = $method_link;
+			}
+
+			$this->_breadcrumb = \Breadcrumb::factory($path_array, $this->_page_title)->render();
+			//exit(\Debug::vars($this->_breadcrumb));
+		}
 	}
 }
