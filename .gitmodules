@@ -1,6 +1,3 @@
-[submodule "system"]
-	path = system
-	url = git://github.com/kohana/core.git
 [submodule "modules/formo"]
 	path = modules/formo
 	url = https://github.com/bmidget/kohana-formo.git
@@ -28,3 +25,6 @@
 [submodule "modules/openid"]
 	path = modules/openid
 	url = https://github.com/shadowhand/openid.git
+[submodule "system"]
+	path = system
+	url = https://github.com/kohana/core.git
