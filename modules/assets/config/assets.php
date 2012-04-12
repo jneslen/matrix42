@@ -5,15 +5,15 @@ return array
 	'css' => array
 	(
 		'extension' => 'less',
-		'compile_path' => 'assets/css',
-		'template_path' => 'assets/less',
+		'compile_path' => 'assets/css/',
+		'template_path' => 'assets/less/',
 		'lock' => false,
 		'minify' => false
 	),
 
 	'js' => array
 	(
-		'compile_path' => 'assets/js/compiled',
+		'compile_path' => 'assets/js/compiled/',
 		'template_path' => 'assets/js/',
 		'lock' => false,
 		'compile' => false,

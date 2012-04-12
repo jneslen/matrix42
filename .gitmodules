@@ -19,9 +19,6 @@
 [submodule "modules/bonafide"]
 	path = modules/bonafide
 	url = https://github.com/shadowhand/bonafide.git
-[submodule "modules/assets"]
-	path = modules/assets
-	url = git://github.com/gabriel1836/kohana-assets.git
 [submodule "modules/maps"]
 	path = modules/maps
 	url = https://github.com/solidsnake/Kohana-Google-Maps-Module.git
