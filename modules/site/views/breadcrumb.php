@@ -5,6 +5,7 @@
  * @brief
  *
  */
+/*
 ?>
 <?php if($breadcrumb_content): ?>
 <div id="breadcrumb" class="row">
@@ -13,3 +14,5 @@
 	</div><!-- span16 -->
 </div><!-- breadcrumb -->
 <?php endif; ?>
+*/
+?>
