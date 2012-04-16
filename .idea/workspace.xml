@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f078135-f37c-444a-b02d-c129937b252e" name="Default" comment="Breadcrumb progress">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/sidebar/classes/sidebar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/sidebar/classes/sidebar/core.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/site/views/sidebar/sidebar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/site/views/sidebar/support.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/public_1ee725cc1cd817c5ac1ac34d13d906274ea23bd2.css" afterPath="" />
+    <list default="true" id="4f078135-f37c-444a-b02d-c129937b252e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/banners/sub-banner-integration.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/banners/sub-banner-virtualization.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/banners/sub-banner-woman.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/acl" afterPath="$PROJECT_DIR$/modules/acl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/bootstrap.php" afterPath="$PROJECT_DIR$/application/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/controller/public/index.php" afterPath="$PROJECT_DIR$/application/classes/controller/public/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/controller/public/solutions.php" afterPath="$PROJECT_DIR$/application/classes/controller/public/solutions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/banner.php" afterPath="$PROJECT_DIR$/application/views/banner.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/bootstrap.css" afterPath="$PROJECT_DIR$/assets/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/less/style.less" afterPath="$PROJECT_DIR$/assets/less/style.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/less/vars.less" afterPath="$PROJECT_DIR$/assets/less/vars.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/site/classes/controller/site.php" afterPath="$PROJECT_DIR$/modules/site/classes/controller/site.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/site/views/public.php" afterPath="$PROJECT_DIR$/modules/site/views/public.php" />
     </list>
     <ignored path="bane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,7 +40,7 @@
       <file leaf-file-name="support.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/site/views/sidebar/support.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="22" selection-start="433" selection-end="433" vertical-scroll-proportion="0.18757327">
+            <state line="9" column="36" selection-start="410" selection-end="410" vertical-scroll-proportion="0.16881594">
               <folding />
             </state>
           </provider>
@@ -580,6 +569,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="banners" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -840,7 +869,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="First version of breadcrumb working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sidebar support along with active menu setup and content area" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -863,6 +892,7 @@
     <MESSAGE value="Breadcrumb progress" />
     <MESSAGE value="got rid of breadcrumb until I can fix it." />
     <MESSAGE value="First version of breadcrumb working" />
+    <MESSAGE value="Sidebar support along with active menu setup and content area" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -975,7 +1005,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/site/views/sidebar/support.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="433" selection-end="433" vertical-scroll-proportion="0.18757327">
+        <state line="9" column="36" selection-start="410" selection-end="410" vertical-scroll-proportion="0.16881594">
           <folding />
         </state>
       </provider>
