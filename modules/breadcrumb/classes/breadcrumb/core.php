@@ -47,7 +47,7 @@ class Breadcrumb_Core {
 	 */
 	public function render()
 	{
-		$view = View::factory('breadcrumb')
+		$view = View::factory('breadcrumb/trail')
 			->set('i', 0)
 			->bind('links', $this->_trail)
 			->bind('page_title', $this->_page_title);

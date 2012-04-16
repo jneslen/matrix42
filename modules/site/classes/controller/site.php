@@ -90,7 +90,7 @@ class Controller_Site extends Controller_Template
 		$this->set_breadcrumb();
 
 		$this->template->header = View::factory('header');
-		$this->template->breadcrumb = View::factory('breadcrumb');
+		$this->template->breadcrumb = View::factory('breadcrumb/breadcrumb');
 		$this->template->footer = View::factory('footer');
 
 		if ($this->request->is_ajax())
@@ -156,7 +156,6 @@ class Controller_Site extends Controller_Template
 			}
 
 			$this->_breadcrumb = \Breadcrumb::factory($path_array, $this->_page_title)->render();
-			//exit(\Debug::vars($this->_breadcrumb));
 		}
 	}
 }
