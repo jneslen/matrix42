@@ -8,6 +8,10 @@ class Controller_Public_Solutions extends Controller_Public {
 
 		$this->_banner = View::factory('banner');
 
+		$this->_banner->image = 'sub-banner-woman.jpg';
+		$this->_banner->title = 'holistic workplace';
+		$this->_banner->subtitle = "The solution that solves your IT needs.";
+
 		parent::before();
 	}
 

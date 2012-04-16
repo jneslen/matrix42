@@ -123,6 +123,7 @@ Kohana::modules(array
 		'database' => MODPATH.'database',
 		'orm' => MODPATH.'orm',
 		'menu' => MODPATH.'menu',
+		'sidebar' => MODPATH.'sidebar',
 	)
 );
 

@@ -34,6 +34,8 @@ class Controller_Site extends Controller_Template
 
 	protected $_section;
 
+	//protected $_chat; //TODO: Add a chat client system dynamically
+
 	public function before()
 	{
 		parent::before();
@@ -89,6 +91,11 @@ class Controller_Site extends Controller_Template
 
 		$this->set_breadcrumb();
 
+		if(!isset($this->_sidebar))
+		{
+			$this->_sidebar = \Sidebar::factory()->render();
+		}
+
 		$this->template->header = View::factory('header');
 		$this->template->breadcrumb = View::factory('breadcrumb/breadcrumb');
 		$this->template->footer = View::factory('footer');
@@ -111,7 +118,7 @@ class Controller_Site extends Controller_Template
 
 			$this->template->header->user_menu = View::factory('/menu/user');
 
-			$this->template->header->menu = Menu::factory($role);
+			$this->template->header->menu = Menu::factory($role)->set_current('/'.$this->request->controller());
 
 			$this->template->breadcrumb->breadcrumb_content = $this->_breadcrumb;
 
@@ -133,29 +140,36 @@ class Controller_Site extends Controller_Template
 
 	public function set_breadcrumb($trail = null)
 	{
-		if($trail === null)
+		if(!isset($this->_breadcrumb))
 		{
-			$path_array = array();
-
-			$home_link = $this->request->directory() == 'public' ? '/' : $this->request->directory();
-
-			//Set Home path
-			$path_array['Home'] = $home_link;
-
-			//Set Controller path
-			$controller_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->controller()));
-			$controller_link = '/'.$this->request->controller();
-			$path_array[$controller_name] = $controller_link;
-
-			//Set Method path
-			$method_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->method()));
-			$method_link = $controller_link.'/'.$this->request->method();
-			if($this->request->method() != 'index' AND $this->request->method() != 'GET')
+			if($trail === null)
 			{
-				$path_array[$method_name] = $method_link;
-			}
+				$path_array = array();
 
-			$this->_breadcrumb = \Breadcrumb::factory($path_array, $this->_page_title)->render();
+				$home_link = $this->request->directory() == 'public' ? '/' : $this->request->directory();
+
+				//Set Home path
+				$path_array['Home'] = $home_link;
+
+				//Set Controller path
+				$controller_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->controller()));
+				$controller_link = '/'.$this->request->controller();
+				$path_array[$controller_name] = $controller_link;
+
+				//Set Method path
+				$method_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->method()));
+				$method_link = $controller_link.'/'.$this->request->method();
+				if($this->request->method() != 'index' AND $this->request->method() != 'GET')
+				{
+					$path_array[$method_name] = $method_link;
+				}
+
+				$this->_breadcrumb = \Breadcrumb::factory($path_array, $this->_page_title)->render();
+			}
+			else
+			{
+				$this->_breadcrumb = \Breadcrumb::factory($trail, $this->_page_title)->render();
+			}
 		}
 	}
 }

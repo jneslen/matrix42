@@ -10,6 +10,8 @@ class Controller_Public_Index extends Controller_Public {
 
 		$this->_breadcrumb = false;
 
+		$this->_sidebar = false;
+
 		$this->_titlebar = View::factory('home_middle');
 
 		$this->_banner = View::factory('home_banner');
@@ -21,5 +23,4 @@ class Controller_Public_Index extends Controller_Public {
 	{
 		$this->_content = View::factory('home_page');
 	}
-
 }

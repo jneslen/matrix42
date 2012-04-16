@@ -29,8 +29,27 @@ defined('SYSPATH') OR die('No direct access allowed.');
 		<?=$breadcrumb?>
 		<?=$banner?>
 		<?=$titlebar?>
-		<?=$sidebar?>
+	<?php if($sidebar): ?>
+		<div class="span16 medium-space"></div>
+		<?php if($sidebar_loc == "left"): ?>
+		<div class="span4">
+			<?=$sidebar?>
+		</div>
+		<div class="span12">
+			<?=$content?>
+		</div>
+		<?php else: ?>
+			<div class="span12">
+				<?=$content?>
+			</div>
+			<div class="span4">
+				<?=$sidebar?>
+			</div>
+		<?php endif; ?>
+		<div class="span16 medium-space"></div>
+	<?php else: ?>
 		<?=$content?>
+	<?php endif; ?>
 	</div><!-- main-row -->
 </div><!-- main-container -->
 <div id="footer" class="container">

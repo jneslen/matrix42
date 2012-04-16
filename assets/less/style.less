@@ -4,6 +4,7 @@ h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 10px 0;
 	.emphasis,
 	&.emphasis {
 		color: @matrix42_orange;
@@ -73,9 +74,18 @@ h1, h2, h3, h4, h5, h6 {
 		a.menu:after, .dropdown-toggle:after {
 			content: none;
 		}
-	}
-	div.active {
-		background: transparent url(@{img_path}nav-active.png) no-repeat bottom center;
+		li {
+			a {
+				.block;
+				padding-top: 23px;
+				height: @nav_height - 25;
+			}
+		}
+		li.active {
+			a {
+				background: transparent url(@{img_path}nav-active.png) no-repeat bottom center;
+			}
+		}
 	}
 }
 
@@ -99,10 +109,51 @@ h1, h2, h3, h4, h5, h6 {
 
 #banner {
 	.rel;
-	img {
+	height: 201px;
+	.bg {
 		.abs;
 		top: 0;
 		left: 0;
+	}
+	.bg,
+	bg2 {
+		.abs;
+		top: 0;
+		left: 0;
+	}
+	.bg {
+		z-index: 0;
+	}
+	.tag-content {
+		.abs;
+		z-index: 2;
+		h1, h2, h3, h4 {
+			margin: 0;
+		}
+		h1, h4 {
+			font-family: 'Helvetica Neue', 'Helvetica', 'Arial';
+			font-weight: bold;
+		}
+		h1 {
+			font-size: 64px;
+			line-height: 69px;
+			letter-spacing: -5px;
+		}
+		h2 {
+			font-size: 24px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		h3 {
+			.left;
+			font-size: 18px;
+			letter-spacing: -1px;
+		}
+		h4 {
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
 	}
 }
 
@@ -217,4 +268,10 @@ ul.link-list {
 		padding: 0;
 		margin: 0 0 2px 0;
 	}
+}
+
+.well-container {
+	.rounded_corners();
+	padding: 20px 0;
+	background-color: @content_bg_color;
 }
