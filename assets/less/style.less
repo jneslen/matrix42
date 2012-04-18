@@ -11,6 +11,20 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+p {
+	margin: 0 0 20px 0;
+}
+
+ul.list {
+	margin: 20px;
+	list-style: none;
+	li {
+		margin-bottom: 20px;
+		background: @bullet_bg;
+		padding-left: 30px;
+	}
+}
+
 .mitsume {
 	.left;
 	width: @site_width / 3 - @padding;
@@ -21,6 +35,10 @@ h1, h2, h3, h4, h5, h6 {
 	h2 {
 		line-height: 22px;
 	}
+}
+
+.no-margin {
+	margin: 0;
 }
 
 .dashed-left {
@@ -86,6 +104,9 @@ h1, h2, h3, h4, h5, h6 {
 				background: transparent url(@{img_path}nav-active.png) no-repeat bottom center;
 			}
 		}
+	}
+	div.active {
+		background: transparent url(@{img_path}nav-active.png) no-repeat bottom center;
 	}
 }
 

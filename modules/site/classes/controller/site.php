@@ -93,7 +93,8 @@ class Controller_Site extends Controller_Template
 
 		if(!isset($this->_sidebar))
 		{
-			$this->_sidebar = \Sidebar::factory()->render();
+			$default_sidebar = array(\View::factory('sidebar/success_stories'));
+			$this->_sidebar = \Sidebar::factory($default_sidebar)->render();
 		}
 
 		$this->template->header = View::factory('header');

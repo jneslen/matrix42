@@ -5,8 +5,8 @@
 <div class="span10">
 		<div class="well margin-right">
 			<div class="left">
-				<h2>Find the perfect solution for all your IT needs</h2>
-				<h4>Get started with the perfect IT solution now.</h4>
+				<h2 class="no-margin">Find the perfect solution for all your IT needs</h2>
+				<h4 class="no-margin">Get started with the perfect IT solution now.</h4>
 			</div>
 			<a href="/" class="btn btn-info btn-large right margin-right">Find Your Solution</a>
 			<div class="clearfix"></div>

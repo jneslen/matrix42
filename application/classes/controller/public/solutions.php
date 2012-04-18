@@ -17,7 +17,7 @@ class Controller_Public_Solutions extends Controller_Public {
 
 	public function action_index()
 	{
-		$this->_content = 'test';
+		$this->_content = \View::factory('temporary');
 	}
 
 }
