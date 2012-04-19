@@ -120,10 +120,11 @@ Kohana::modules(array
 		'assets'	=> MODPATH.'assets',  // Benchmarking tool
 		'breadcrumb' => MODPATH.'breadcrumb',
 		'site' => MODPATH.'site',
-		'database' => MODPATH.'database',
-		'orm' => MODPATH.'orm',
+		//'database' => MODPATH.'database',
+		//'orm' => MODPATH.'orm',
 		'menu' => MODPATH.'menu',
 		'sidebar' => MODPATH.'sidebar',
+		'kacela' => MODPATH.'kacela',
 	)
 );
 

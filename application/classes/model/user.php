@@ -1,6 +1,7 @@
 <?php
+namespace Darth\Model;
 
-class Model_User extends ORM
+class User extends Model
 {
 
 }

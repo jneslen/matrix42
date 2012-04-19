@@ -1,23 +1,10 @@
 <?php
+namespace Darth\Model;
 
-class Model_Menu extends ORM
+class Menu extends Model
 {
-	protected  $_belongs_to = array
-	(
-		'parent' => array
-		(
-			'model' => 'menu',
-			'foreign_key' => 'id',
-		)
-	);
-
-	protected $has_many = array
-	(
-		'subcategories' => array
-		(
-			'model' => 'menu',
-			'foreign_key' => 'parent_id',
-		)
-	);
-
+	protected function _get_sub_menu()
+	{
+		return \Kacela::find_all('menu', \Kacela::criteria()->equals('parent_id',$this->id)->sort('order'));
+	}
 }

@@ -21,8 +21,9 @@ class Kohana_Menu
 		$this->view = View::factory($this->config['view']);
 
                 if ($this->config['driver'] == 'database') {
-                    $menu = ORM::factory('menu');
+                    $menu = ORM::factory('menu_item');
                     $items = $menu->where('parent_id', '=', null)->find_all();
+
                     $this->menu['items'] = $this->get_from_database_orm($items);
                 }
                 else if ($this->config['driver'] == 'file')
@@ -56,7 +57,6 @@ class Kohana_Menu
             $temp = array();
             
             foreach ($items as $key => $item) {
-				exit(\Debug::vars($item->subcategories));
                 $temp[$key]['url'] = $item->url;
                 $temp[$key]['title'] = $item->title;
                 if ($item->classes) {

@@ -2,7 +2,7 @@
 
 return array
 (
-	'driver' => 'file', // you can use 'database' or 'file', database uses ORM driver
+	'driver' => 'database', // you can use 'database' or 'file', database uses ORM driver
 	'view' => 'menu/public', // the view file
 	'current_class' => 'active', // the set_current() method uses this setting to mark the current menu item
 

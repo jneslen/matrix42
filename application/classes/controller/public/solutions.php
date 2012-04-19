@@ -17,6 +17,13 @@ class Controller_Public_Solutions extends Controller_Public {
 
 	public function action_index()
 	{
+		$menu = \Kacela::find_active('menu', \Kacela::criteria()->isNull('parent_id')->sort('order'));
+		//exit(\Debug::vars($menu));
+		foreach($menu as $m)
+		{
+			//echo \Debug::vars($m->sub_menu);
+		}
+		//exit(\Debug::vars($menu));
 		$this->_content = \View::factory('temporary');
 	}
 
