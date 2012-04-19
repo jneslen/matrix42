@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f078135-f37c-444a-b02d-c129937b252e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/kacela" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/classes/kacela.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/classes/kohana/menu.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/classes/mapper/mapper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/classes/mapper/menu.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/classes/mapper/user.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/classes/model/model.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/config/kacela.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/acl" afterPath="$PROJECT_DIR$/modules/acl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitmodules" afterPath="$PROJECT_DIR$/.gitmodules" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/bootstrap.php" afterPath="$PROJECT_DIR$/application/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/controller/public/solutions.php" afterPath="$PROJECT_DIR$/application/classes/controller/public/solutions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/model/menu.php" afterPath="$PROJECT_DIR$/application/classes/model/menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/model/user.php" afterPath="$PROJECT_DIR$/application/classes/model/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/local.php" afterPath="$PROJECT_DIR$/application/config/local.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/menu/public.php" afterPath="$PROJECT_DIR$/application/config/menu/public.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/menu/classes/kohana/menu.php" afterPath="$PROJECT_DIR$/modules/menu/classes/kohana/menu.php" />
     </list>
     <ignored path="bane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,7 +81,7 @@
       <file leaf-file-name="menu.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/classes/kohana/menu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="58" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.12698413">
+            <state line="62" column="48" selection-start="1628" selection-end="1628" vertical-scroll-proportion="-1.9569161">
               <folding />
             </state>
           </provider>
@@ -735,13 +718,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1028" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.25367647" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="1921" y="1" width="272" height="808" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.25367647" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="1921" y="1" width="272" height="808" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -751,7 +735,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="1921" y="782" width="1632" height="298" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -791,7 +774,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="getting menu model db setup." />
+    <option name="LAST_COMMIT_MESSAGE" value="Kohana Menu module now using Kacela DB to retrieve menu." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -818,6 +801,7 @@
     <MESSAGE value="Subpage banners added" />
     <MESSAGE value="Setting up sub page for content and styles" />
     <MESSAGE value="getting menu model db setup." />
+    <MESSAGE value="Kohana Menu module now using Kacela DB to retrieve menu." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -930,7 +914,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/classes/kohana/menu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="58" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.12698413">
+        <state line="62" column="48" selection-start="1628" selection-end="1628" vertical-scroll-proportion="-1.9569161">
           <folding />
         </state>
       </provider>
