@@ -286,3 +286,58 @@
 #8 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request.php(1138): Kohana_Request_Client->execute(Object(Request))
 #9 /Volumes/Files/Sites/darth/bane/index.php(103): Kohana_Request->execute()
 #10 {main}
+2012-04-19 13:42:54 --- ERROR: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1126 ]
+2012-04-19 13:42:54 --- STRACE: HTTP_Exception_404 [ 404 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 1126 ]
+--
+#0 /Volumes/Files/Sites/darth/bane/index.php(103): Kohana_Request->execute()
+#1 {main}
+2012-04-19 17:02:14 --- ERROR: Exception [ 0 ]: Specified key (contents) does not exist! ~ MODPATH/kacela/classes/kacela/model/model.php [ 38 ]
+2012-04-19 17:02:14 --- STRACE: Exception [ 0 ]: Specified key (contents) does not exist! ~ MODPATH/kacela/classes/kacela/model/model.php [ 38 ]
+--
+#0 /Volumes/Files/Sites/darth/bane/application/classes/controller/public/solutions.php(22): Kacela\Model\Model->__get('contents')
+#1 [internal function]: Controller_Public_Solutions->action_index()
+#2 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Public_Solutions))
+#3 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 /Volumes/Files/Sites/darth/bane/index.php(103): Kohana_Request->execute()
+#6 {main}
+2012-04-19 17:02:47 --- ERROR: Exception [ 0 ]: Specified key (content) does not exist! ~ MODPATH/kacela/classes/kacela/model/model.php [ 38 ]
+2012-04-19 17:02:47 --- STRACE: Exception [ 0 ]: Specified key (content) does not exist! ~ MODPATH/kacela/classes/kacela/model/model.php [ 38 ]
+--
+#0 /Volumes/Files/Sites/darth/bane/application/classes/controller/public/solutions.php(21): Kacela\Model\Model->__get('content')
+#1 [internal function]: Controller_Public_Solutions->action_index()
+#2 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Public_Solutions))
+#3 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 /Volumes/Files/Sites/darth/bane/index.php(103): Kohana_Request->execute()
+#6 {main}
+2012-04-19 17:02:53 --- ERROR: Exception [ 0 ]: Specified key (contents) does not exist! ~ MODPATH/kacela/classes/kacela/model/model.php [ 38 ]
+2012-04-19 17:02:53 --- STRACE: Exception [ 0 ]: Specified key (contents) does not exist! ~ MODPATH/kacela/classes/kacela/model/model.php [ 38 ]
+--
+#0 /Volumes/Files/Sites/darth/bane/application/classes/controller/public/solutions.php(21): Kacela\Model\Model->__get('contents')
+#1 [internal function]: Controller_Public_Solutions->action_index()
+#2 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Public_Solutions))
+#3 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 /Volumes/Files/Sites/darth/bane/index.php(103): Kohana_Request->execute()
+#6 {main}
+2012-04-19 17:03:25 --- ERROR: Exception [ 0 ]: Specified key (contents) does not exist! ~ MODPATH/kacela/classes/kacela/model/model.php [ 38 ]
+2012-04-19 17:03:25 --- STRACE: Exception [ 0 ]: Specified key (contents) does not exist! ~ MODPATH/kacela/classes/kacela/model/model.php [ 38 ]
+--
+#0 /Volumes/Files/Sites/darth/bane/application/classes/controller/public/solutions.php(27): Kacela\Model\Model->__get('contents')
+#1 [internal function]: Controller_Public_Solutions->action_index()
+#2 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Public_Solutions))
+#3 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 /Volumes/Files/Sites/darth/bane/index.php(103): Kohana_Request->execute()
+#6 {main}
+2012-04-19 17:03:42 --- ERROR: Exception [ 0 ]: Specified key (contents) does not exist! ~ MODPATH/kacela/classes/kacela/model/model.php [ 38 ]
+2012-04-19 17:03:42 --- STRACE: Exception [ 0 ]: Specified key (contents) does not exist! ~ MODPATH/kacela/classes/kacela/model/model.php [ 38 ]
+--
+#0 /Volumes/Files/Sites/darth/bane/application/classes/controller/public/solutions.php(27): Kacela\Model\Model->__get('contents')
+#1 [internal function]: Controller_Public_Solutions->action_index()
+#2 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request/client/internal.php(118): ReflectionMethod->invoke(Object(Controller_Public_Solutions))
+#3 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request/client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 /Volumes/Files/Sites/darth/bane/system/classes/kohana/request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 /Volumes/Files/Sites/darth/bane/index.php(103): Kohana_Request->execute()
+#6 {main}

@@ -104,6 +104,26 @@ ul.list {
 				background: transparent url(@{img_path}nav-active.png) no-repeat bottom center;
 			}
 		}
+		.dropdown-menu {
+			margin-top: -20px;
+			li {
+				a {
+					.block;
+					padding: 3px 10px 2px 10px;
+					height: 15px;
+					background: none;
+				}
+				a:hover {
+					color: @matrix42_orange;
+				}
+				&.minor {
+					font-size: 12px;
+					a {
+						padding: 1px 10px 1px 15px;
+					}
+				}
+			}
+		}
 	}
 	div.active {
 		background: transparent url(@{img_path}nav-active.png) no-repeat bottom center;

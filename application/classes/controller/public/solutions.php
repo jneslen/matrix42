@@ -17,14 +17,12 @@ class Controller_Public_Solutions extends Controller_Public {
 
 	public function action_index()
 	{
-		$menu = \Kacela::find_active('menu', \Kacela::criteria()->isNull('parent_id')->sort('order'));
-		//exit(\Debug::vars($menu));
-		foreach($menu as $m)
-		{
-			//echo \Debug::vars($m->sub_menu);
-		}
-		//exit(\Debug::vars($menu));
-		$this->_content = \View::factory('temporary');
+		$criteria = \Kacela::criteria()->equals('section', $this->_section)->equals('controller', $this->_controller)->equals('method', $this->_method);
+		//exit(\Debug::vars($criteria));
+		$menu = \Kacela::find_one('menu', $criteria);
+
+		$this->_content = \View::factory('content')
+			->bind('page_contents', $menu->contents);
 	}
 
 }
