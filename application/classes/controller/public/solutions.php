@@ -15,14 +15,11 @@ class Controller_Public_Solutions extends Controller_Public {
 		parent::before();
 	}
 
-	public function action_index()
-	{
-		$criteria = \Kacela::criteria()->equals('section', $this->_section)->equals('controller', $this->_controller)->equals('method', $this->_method);
-		//exit(\Debug::vars($criteria));
-		$menu = \Kacela::find_one('menu', $criteria);
 
-		$this->_content = \View::factory('content')
-			->bind('page_contents', $menu->contents);
+
+	public function action_testing()
+	{
+		exit('tested and working');
 	}
 
 }

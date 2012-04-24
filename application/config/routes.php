@@ -5,7 +5,7 @@ Route::set
 	'<directory>(/<controller>(/<action>(/<id>)))',
 	array
 	(
-		'directory' => '(client|admin|api|crons)'
+		'directory' => '(client|admin|api|crons)',
 	)
 )
 	->defaults
@@ -14,35 +14,19 @@ Route::set
 	(
 		'controller' => 'index',
 		'action'     => 'index',
-	)
-);
-
-Route::set
-(
-	'signup',
-	'sign_up'
-)
-->defaults
-(
-	array
-	(
-		'action' => 'index',
-		'directory' => 'public',
-		'controller' => 'start',
 	)
 );
 
 Route::set
 (
 	'default',
-	'(<controller>(/<action>(/<id>)))'
+	'(<mycontroller>(/<method>(/<id>)))'
 )
 	->defaults
 (
 	array
 	(
-		'controller' => 'index',
+		'controller' => 'public',
 		'action'     => 'index',
-		'directory'  => 'public',
 	)
 );
