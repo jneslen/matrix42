@@ -114,7 +114,7 @@ class Controller_Site extends Controller_Template
 		}
 		else
 		{
-			$role = explode('_', get_class($this));
+			$role = explode('_', get_parent_class($this));
 			$role = strtolower(end($role));
 			//exit(\Debug::vars($role));
 

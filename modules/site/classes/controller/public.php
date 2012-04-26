@@ -18,12 +18,14 @@ class Controller_Public extends Controller_Site {
 		$this->_banner->title = 'holistic workplace';
 		$this->_banner->subtitle = "The solution that solves your IT needs.";
 
-		$this->_controller = $this->request->param('mycontroller');
-		$this->_method = $this->request->param('method');
 		/*
-		$this->_controller = $this->request->controller();
-		$this->_method = $this->request->method() != 'GET' ? $this->request->method : '';
+		$this->_controller = $this->request->param('mycontroller') == null ? 'index' : $this->request->param('mycontroller');
+		$this->_method = $this->request->param('method') == null ? 'index' : $this->request->param('method');
 		*/
+
+		$this->_controller = $this->request->controller();
+		$this->_method = $this->request->param('method') == null ? 'index' : $this->request->param('method');
+
 		parent::before();
 	}
 
@@ -45,7 +47,9 @@ class Controller_Public extends Controller_Site {
 			//if no db results for this menu item we need to route the request to the requested controller and method
 			$method = 'action_'.$this->_method;
 			$mycontroller = 'Controller_Public_'.ucfirst($this->_controller);
+			//exit(\Debug::vars($mycontroller));
 			$controller = new $mycontroller($this->request, $this->response);
+			//exit(\Debug::vars($controller));
 			if(!method_exists($controller, $method))
 			{
 				throw new HTTP_Exception_404('The requested URL :uri was not found on this server.',
@@ -53,7 +57,7 @@ class Controller_Public extends Controller_Site {
 			}
 
 			$controller->{$method}();
-
+			return;
 		}
 
 		$this->_title = $menu->pagetitle != null ? $menu->pagetitle : $this->_title;

@@ -16,7 +16,7 @@ Route::set
 		'action'     => 'index',
 	)
 );
-
+/*
 Route::set
 (
 	'default',
@@ -30,3 +30,20 @@ Route::set
 		'action'     => 'index',
 	)
 );
+*/
+
+Route::set
+(
+	'default',
+	'(<controller>(/<method>(/<id>)))'
+)
+	->defaults
+(
+	array
+	(
+		'controller' => 'index',
+		'action'     => 'index',
+		'directory'  => 'public',
+	)
+);
+

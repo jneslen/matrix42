@@ -1,0 +1,10 @@
+.idea/*
+application/config/local.php
+/optimus.komodoproject
+/fork.komodoproject
+*.komoodo*
+/nbproject/private/
+/nbproject
+.project
+/.komodotools/
+.settings/*
