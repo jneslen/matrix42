@@ -2,7 +2,7 @@
 
 namespace Darth\Mapper;
 
-class User extends Mapper
+class Address extends Mapper
 {
 
 }
