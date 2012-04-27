@@ -76,4 +76,9 @@ class Controller_Public extends Controller_Site {
 		$this->_content = \View::factory('content')
 			->bind('page_contents', $menu->contents);
 	}
+
+	public function lead_form()
+	{
+		echo 'hello';
+	}
 }
