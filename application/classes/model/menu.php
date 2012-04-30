@@ -5,18 +5,14 @@ class Menu extends Model
 {
 	protected $_contents = array();
 
-	protected function _get_sub_menu()
-	{
-		return \Kacela::find_all('menu', \Kacela::criteria()->equals('parent_id',$this->id)->sort('order'));
-	}
-
 	public function get_content($type = 'main')
 	{
+
 		foreach($this->contents as $content)
 		{
 			if($type == $content->type)
 			{
-				return $content;
+				return \Komponent::factory()->replace($content);
 			}
 		}
 
@@ -31,5 +27,20 @@ class Menu extends Model
 		$this->_contents[$type]->type = $type;
 
 		return $this->_contents[$type];
+	}
+
+	public function replace_contents()
+	{
+		foreach($this->contents as $content)
+		{
+			$this->_contents[] = \Komponent::factory()->replace($content);
+		}
+
+		return $this->_contents;
+	}
+
+	protected function _get_sub_menu()
+	{
+		return \Kacela::find_all('menu', \Kacela::criteria()->equals('parent_id',$this->id)->sort('order'));
 	}
 }

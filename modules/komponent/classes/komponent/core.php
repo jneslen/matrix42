@@ -3,6 +3,8 @@
 
 class Komponent_Core {
 
+	protected $_components;
+
 	/**
 	 * @param	string	$config	 see factory()
 	 */
@@ -13,11 +15,11 @@ class Komponent_Core {
 		if ($this->config['driver'] == 'database')
 		{
 			//$this->components = new \Darth\Model\Component();
-			$components = \Kacela::find_active('component');
+			$this->_components = \Kacela::find_active('component');
 		}
 		elseif($this->config['driver'] == 'file')
 		{
-			$this->components = array('components' => &$this->config['components']);
+			$this->_components = array('components' => &$this->config['components']);
 		}
 
 	}
@@ -29,6 +31,34 @@ class Komponent_Core {
 	public static function factory($config = 'component')
 	{
 		return new Komponent('komponent/'.$config);
+	}
+
+	public function replace(\Darth\Model\Content $content)
+	{
+
+		foreach($this->_components as $component)
+		{
+			switch($component->type)
+			{
+				case 'model':
+
+					break;
+				case 'method':
+					$mycontroller = 'Controller_'.$component->controller;
+					$controller = new $mycontroller(\Request::current(), \Response::factory());
+					$replacement = $controller->{$component->method}();
+					$content->content = str_replace($component->name, $replacement, $content->content);
+					break;
+				case 'view':
+
+					break;
+				case 'content':
+
+					break;
+			}
+		}
+
+		return $content;
 	}
 
 	/**
@@ -50,3 +80,4 @@ class Komponent_Core {
 		}
 
 	}
+}

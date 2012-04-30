@@ -61,9 +61,10 @@ class Controller_Public extends Controller_Site {
 		}
 
 		$this->_title = $menu->pagetitle != null ? $menu->pagetitle : $this->_title;
-		if($menu->get_content('banner')->content != null)
+		$banner = $menu->get_content('banner');
+		if($banner->content != null)
 		{
-			$this->_banner = $menu->get_content('banner')->content;
+			$this->_banner = $banner->content;
 		}
 		else
 		{
@@ -72,13 +73,13 @@ class Controller_Public extends Controller_Site {
 			$this->_banner->subtitle = $menu->banner_subtitle != null ? $menu->banner_subtitle : $this->_banner->subtitle;
 		}
 
-
+		$main_content = $menu->replace_contents();
 		$this->_content = \View::factory('content')
-			->bind('page_contents', $menu->contents);
+			->bind('page_contents', $main_content);
 	}
 
 	public function lead_form()
 	{
-		echo 'hello';
+		return 'hello';
 	}
 }
