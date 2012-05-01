@@ -53,7 +53,7 @@ class Komponent_Core {
 
 					break;
 				case 'content':
-
+					$content->content = str_replace($component->name, $component->content, $content->content);
 					break;
 			}
 		}

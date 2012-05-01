@@ -73,7 +73,8 @@ class Controller_Site extends Controller_Template
 				'vars',
 				'jquery.ui',
 				'style',
-				'icons'
+				'icons',
+				'forms'
 			)
 		);
 

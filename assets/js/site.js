@@ -27,4 +27,9 @@ $(document).ready(function() {
 			$('#'+tabcontainer+' .tab-content').addClass('rounded-top-left');
 		}
 	});
+
+	$(".scroll").click(function(event){
+		event.preventDefault();
+		$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+	});
 });

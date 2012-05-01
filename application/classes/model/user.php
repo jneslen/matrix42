@@ -234,7 +234,7 @@ class User extends Model {
 			return $this->_phones[$type];
 		}
 
-		$this->_phones[$type] = new \Optimus\Model\Phone;
+		$this->_phones[$type] = new \Darth\Model\Phone;
 
 		$this->_phones[$type] ->user_id = $this->id;
 		$this->_phones[$type] ->type = $type;

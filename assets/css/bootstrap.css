@@ -955,8 +955,8 @@ textarea,
 select,
 .uneditable-input {
 	display: inline-block;
-	width: 210px;
-	height: 18px;
+	width: 268px;
+	height: 24px;
 	padding: 4px;
 	margin-bottom: 9px;
 	font-size: 14px;
@@ -1042,7 +1042,7 @@ input[type="image"] {
 	box-shadow: none;
 }
 textarea {
-	height: auto;
+	height: 94px;
 }
 input[type="hidden"] {
 	display: none;

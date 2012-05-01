@@ -18,6 +18,7 @@
 @dormant_gradient2: #9b9b9b;
 @weight_color: #cccccc;
 @content_bg_color: #ffffff;
+@titlebar_bg_color: #eeeeee;
 
 //Sizes
 @icon_size: 30px;
@@ -155,6 +156,10 @@
 	text-align: right;
 }
 
+.align-top {
+	vertical-align: top;
+}
+
 .center
 {
 	text-align: center;
@@ -241,6 +246,10 @@
 	background: transparent url(@{img_path}solid-aaa.png) no-repeat top right;
 }
 
+.full-border-right {
+	background: transparent url(@{img_path}solid-e3e3e3.png) repeat-y top right;
+}
+
 .dotted {
 	border: 1px dotted @border_color;
 }
@@ -251,6 +260,10 @@
 
 .padded-content {
 	margin: 0 20px;
+}
+
+.padded-top {
+	margin-top: 20px;
 }
 
 .gradient(@start: @dormant_gradient1, @stop: @dormant_gradient2) {

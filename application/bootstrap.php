@@ -126,6 +126,7 @@ Kohana::modules(array
 		'sidebar' => MODPATH.'sidebar',
 		'kacela' => MODPATH.'kacela',
 		'komponent' => MODPATH.'komponent',
+		'formo' => MODPATH.'formo',
 	)
 );
 

@@ -80,6 +80,17 @@ class Controller_Public extends Controller_Site {
 
 	public function lead_form()
 	{
-		return 'hello';
+		$user = new \Darth\Model\Lead;
+		$form = $user->get_lead_form()
+			->add('submit', 'submit', array('text' => 'Send Inquiry!'));
+
+		if ($form->load()->validate())
+		{
+			//$this->_set_user();
+			//$this->_redirect_after_login();
+		}
+
+		return View::factory('lead_form')
+			->bind('form', $form);
 	}
 }

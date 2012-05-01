@@ -35,10 +35,11 @@ class Lead extends User
 		$personal_phone = $this->get_phone('personal');
 		$personal_phone_form = $personal_phone->get_form();
 
-		$form = \Formo::form('signup')
-			->add('name')
-			->add('email', array('type' => 'email'))
+		$form = \Formo::form('lead')
+			->add('name', array('label' => 'Full Name'))
+			->add('email', array('type' => 'email', 'label' => 'Email'))
 			->add('phone', 'group', $personal_phone_form)
+			->add('message', 'textarea', array('label' => 'Message'))
 			->rules('name', array(
 			array('not_empty'),
 			array('\Valid::full_name'),

@@ -10,8 +10,8 @@ class Phone extends Model
 
 		$form->remove(array('disabled'));
 
-		$form->number->set('label', 'Phone #');
-		$form->lead_id->set('driver', 'hidden');
+		$form->number->set('label', 'Phone number');
+		$form->user_id->set('driver', 'hidden');
 		$form->type->set('driver', 'hidden');
 
 		return $form;
