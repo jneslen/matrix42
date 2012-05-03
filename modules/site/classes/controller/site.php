@@ -149,6 +149,14 @@ class Controller_Site extends Controller_Template
 			{
 				$path_array = array();
 
+				//Methods to exclude in the breadcrumb trail
+				$exclude_array = array
+				(
+					'index',
+					'GET',
+					'POST'
+				);
+
 				$home_link = $this->request->directory() == 'public' ? '/' : $this->request->directory();
 
 				//Set Home path
@@ -162,7 +170,7 @@ class Controller_Site extends Controller_Template
 				//Set Method path
 				$method_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->method()));
 				$method_link = $controller_link.'/'.$this->request->method();
-				if($this->request->method() != 'index' AND $this->request->method() != 'GET')
+				if(!in_array($this->request->method(), $exclude_array))
 				{
 					$path_array[$method_name] = $method_link;
 				}

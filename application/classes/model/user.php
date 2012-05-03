@@ -54,6 +54,7 @@ class User extends Model {
 
 	public function create_new_lead($form)
 	{
+		exit(\Debug::vars($form));
 		// Get a new user model
 		$lead = new \Darth\Model\Lead;
 
@@ -108,6 +109,52 @@ class User extends Model {
 		}
 	}
 
+	public function get_lead_form()
+	{
+		$form = \Formo::form('lead')
+			->add('name', array('label' => 'Full Name'))
+			->add('email', array('type' => 'email', 'label' => 'Email'))
+			->add('number', array('label' => 'Phone Number'))
+			->add('message', 'textarea', array('label' => 'Message'))
+			->rules('name', array(
+			array('not_empty'),
+			array('\Valid::full_name'),
+		))
+			->rules('email', array(
+			array('not_empty'),
+			array('email'),
+			array('\Valid::unique_email', array(':value'))
+		))
+			->rules('number', array(
+			array('not_empty'),
+			array('phone', array(':value', array(10))),
+		))
+			->callbacks(array(
+			'fail' => array
+			(
+				'email' => array
+				(
+					array(function($field){
+						$error = $field->error();
+						if (strpos($error, 'already'))
+						{
+							$field->parent()->set('fail_unique_email', true);
+						}
+					}, array(':field')),
+				)
+			),
+			'pass' => array
+			(
+				':self' => array
+				(
+					array(array($this, 'create_new_lead'), array(':field')),
+				),
+			),
+		));
+
+		return $form;
+	}
+
 	public function get_login_form()
 	{
 		$form = \Formo::form('log_in')
@@ -144,7 +191,7 @@ class User extends Model {
 			return $this->_addresses[$type];
 		}
 
-		$this->_addresses[$type] = new \Optimus\Model\Address;
+		$this->_addresses[$type] = new \Darth\Model\Address;
 
 		$this->_addresses[$type] ->user_id = $this->id;
 		$this->_addresses[$type] ->type = $type;

@@ -13,6 +13,7 @@ class Phone extends Model
 		$form->number->set('label', 'Phone number');
 		$form->user_id->set('driver', 'hidden');
 		$form->type->set('driver', 'hidden');
+		$form->add('type', 'hidden', array('value' =>$this->type));
 
 		return $form;
 	}

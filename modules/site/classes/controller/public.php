@@ -86,9 +86,11 @@ class Controller_Public extends Controller_Site {
 
 		if ($form->load()->validate())
 		{
+			echo 'worked';
 			//$this->_set_user();
 			//$this->_redirect_after_login();
 		}
+		echo \Debug::vars($form->errors());
 
 		return View::factory('lead_form')
 			->bind('form', $form);

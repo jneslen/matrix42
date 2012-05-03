@@ -30,7 +30,7 @@
 				<div class="padded-content">
 					<?=$form->name->render()?>
 					<?=$form->email->render()?>
-					<?=$form->phone->render()?>
+					<?=$form->number->render()?>
 				</div>
 			</div>
 			<div class="span4">
