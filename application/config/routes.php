@@ -34,6 +34,25 @@ Route::set
 
 Route::set
 (
+	'auth',
+	'<action>',
+	array
+	(
+		'action' => '(login|logout|reset_password)'
+	)
+)
+	->defaults
+(
+	array
+	(
+		'action'     => 'login',
+		'directory'  => 'public',
+		'controller' => 'auth'
+	)
+);
+
+Route::set
+(
 	'default',
 	'(<controller>(/<method>(/<id>)))'
 )

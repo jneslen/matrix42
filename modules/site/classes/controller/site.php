@@ -36,11 +36,19 @@ class Controller_Site extends Controller_Template
 
 	//protected $_chat; //TODO: Add a chat client system dynamically
 
+	protected function _authenticate()
+	{
+		return true;
+	}
+
 	public function before()
 	{
 		parent::before();
 
 		$this->_session = Session::instance();
+
+		$this->_set_user();
+		$this->_kick_out();
 
 		if ($this->request->is_initial() === false) {
 			// Subrequests are marked internal
@@ -141,6 +149,22 @@ class Controller_Site extends Controller_Template
 		parent::after();
 	}
 
+	protected function _kick_out()
+	{
+		// By default, do nothing
+		return;
+	}
+
+	protected function _redirect_after_login()
+	{
+		if ($this->_user instanceof \Darth\Model\Employee)
+		{
+			$this->request->redirect('admin/leads');
+		}
+
+		$this->request->redirect('login');
+	}
+
 	public function set_breadcrumb($trail = null)
 	{
 		if(!isset($this->_breadcrumb))
@@ -149,12 +173,17 @@ class Controller_Site extends Controller_Template
 			{
 				$path_array = array();
 
+				//Controllers to exclude in the breadcrumb trail
+				$exclude_controller_array = array
+				(
+					'auth'
+				);
 				//Methods to exclude in the breadcrumb trail
-				$exclude_array = array
+				$exclude_method_array = array
 				(
 					'index',
 					'GET',
-					'POST'
+					'POST',
 				);
 
 				$home_link = $this->request->directory() == 'public' ? '/' : $this->request->directory();
@@ -165,12 +194,15 @@ class Controller_Site extends Controller_Template
 				//Set Controller path
 				$controller_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->controller()));
 				$controller_link = '/'.$this->request->controller();
-				$path_array[$controller_name] = $controller_link;
+				if(!in_array($this->request->controller(), $exclude_controller_array))
+				{
+					$path_array[$controller_name] = $controller_link;
+				}
 
 				//Set Method path
 				$method_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->method()));
 				$method_link = $controller_link.'/'.$this->request->method();
-				if(!in_array($this->request->method(), $exclude_array))
+				if(!in_array($this->request->method(), $exclude_method_array))
 				{
 					$path_array[$method_name] = $method_link;
 				}
@@ -182,5 +214,14 @@ class Controller_Site extends Controller_Template
 				$this->_breadcrumb = \Breadcrumb::factory($trail, $this->_page_title)->render();
 			}
 		}
+	}
+
+	protected function _set_user()
+	{
+		$user_id = $this->_session->get('user_id');
+
+		$this->_user = $user_id
+			? \Kacela::find('user', $user_id)
+			: new \Darth\Model\User;
 	}
 }

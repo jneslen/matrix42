@@ -80,19 +80,18 @@ class Controller_Public extends Controller_Site {
 
 	public function lead_form()
 	{
+		$complete = false;
 		$user = new \Darth\Model\Lead;
 		$form = $user->get_lead_form()
 			->add('submit', 'submit', array('text' => 'Send Inquiry!'));
 
 		if ($form->load()->validate())
 		{
-			echo 'worked';
-			//$this->_set_user();
-			//$this->_redirect_after_login();
+			$complete = true;
 		}
-		echo \Debug::vars($form->errors());
 
 		return View::factory('lead_form')
-			->bind('form', $form);
+			->bind('form', $form)
+			->set('complete', $complete);
 	}
 }

@@ -25,6 +25,12 @@
 	</div><!-- contact-well -->
 	<div class="span8 contact-form">
 		<div class="row padded-top">
+		<?php if($complete): ?>
+			<div class="span8">
+				<h2 class="padded-content">Your inquiry has been submitted</h2>
+				<p class="padded-content">You will be contacted shortly in regards to your request.</p>
+			</div>
+		<?php else: ?>
 			<?=$form->view()->open()?>
 			<div class="span4">
 				<div class="padded-content">
@@ -38,6 +44,7 @@
 				<?=$form->submit->render()?>
 			</div>
 			<?=$form->view()->close()?>
+		<?php endif; ?>
 		</div>
 	</div>
 </div>
