@@ -69,7 +69,8 @@ class Controller_Site extends Controller_Template
 			(
 				'jquery-ui',
 				'bootstrap.min',
-				'site'
+				'site',
+				'plugins/datatables',
 			)
 		);
 
@@ -129,7 +130,7 @@ class Controller_Site extends Controller_Template
 
 			$this->template->header->user_menu = View::factory('/menu/user');
 
-			$this->template->header->menu = Menu::factory($role)->set_current('/'.$this->request->controller());
+			$this->template->header->menu = Menu::factory($role)->set_current($this->_get_current());
 
 			$this->template->breadcrumb->breadcrumb_content = $this->_breadcrumb;
 
@@ -147,6 +148,20 @@ class Controller_Site extends Controller_Template
 		}
 
 		parent::after();
+	}
+
+	protected function _get_current()
+	{
+		$string = '';
+
+		if($this->request->directory() != 'public')
+		{
+			$string .= '/'.$this->request->directory();
+		}
+
+		$string .= '/'.$this->request->controller();
+
+		return $string;
 	}
 
 	protected function _kick_out()

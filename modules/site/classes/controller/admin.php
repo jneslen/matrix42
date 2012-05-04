@@ -12,6 +12,8 @@ class Controller_Admin extends Controller_Site {
 
 		$this->_sidebar = false;
 
+		$this->request->style('datatables');
+
 		parent::before();
 	}
 

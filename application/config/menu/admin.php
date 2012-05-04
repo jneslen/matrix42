@@ -10,24 +10,25 @@ return array
 	(
 		array
 		(
-			'url'		=> '/cms',
+			'url'		=> '/admin/cms',
 			'title'		=> __('CMS'),
 		),
 		array
 		(
-			'url'		=> '/events',
+			'url'		=> '/admin/events',
 			'title'		=> __('Events')
 		),
 		array
 		(
-			'url'		=> '/press',
+			'url'		=> '/admin/press',
 			'title'		=> __('Press')
 		),
 		array
 		(
-			'url'		=> '#menu4',
+			//'url'		=> '#menu4', //if a dropdown is present set the url to the id of this number menu
+			'url'		=> '/admin/leads',
 			'title'		=> __('Leads'),
-			'classes'	=> array('dropdown'),
+			/*'classes'	=> array('dropdown'), //set as a dropdown menu
 			'items'		=> array
 			(
 				array
@@ -35,7 +36,12 @@ return array
 					'url'		=> '/test',
 					'title'		=> __('Testing')
 				)
-			)
+			)*/
+		),
+		array
+		(
+			'url'		=> '/logout',
+			'title'		=> __('Logout'),
 		),
 	),
 

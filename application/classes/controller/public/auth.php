@@ -36,12 +36,12 @@ class Controller_Public_Auth extends Controller_Public {
 		$this->_user->logout();
 		$this->_set_user();
 
-		if ($this->_user->id)
+		if($this->_user->id)
 		{
 			$this->_redirect_after_login();
 		}
 
-		$this->_content = View::factory('public/auth/logout');
+		$this->request->redirect('login');
 	}
 
 	public function action_reset_password()
