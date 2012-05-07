@@ -20,6 +20,16 @@ class Controller_Admin_Leads extends Controller_Admin {
 			(
 				array
 				(
+					'header' => '',
+					'value' => function($o)
+					{
+						return $o->downloaded == 0
+							? '<img src="/assets/img/icons/new.png" class="left new-lead" alt="New" />'
+							: '';
+					}
+				),
+				array
+				(
 					'header' => 'Full Name',
 					'value' => function($o) { return $o->full_name; }
 				),

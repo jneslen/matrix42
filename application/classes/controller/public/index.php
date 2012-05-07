@@ -21,6 +21,8 @@ class Controller_Public_Index extends Controller_Public {
 
 	public function action_index()
 	{
-		$this->_content = View::factory('home_page');
+		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->limit(0,5)->sort('release_date', 'ASC'));
+		$this->_content = View::factory('home_page')
+			->set('press_releases', $press_releases);
 	}
 }

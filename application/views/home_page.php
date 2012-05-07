@@ -73,7 +73,17 @@
 
 					</div><!-- events -->
 					<div class="tab-pane" id="press">
-
+						<ul class="listed">
+						<?php foreach($press_releases as $release): ?>
+							<li>
+								<a href="#" class="thumbnail left"><img src="/assets/img/thumbnails/press/<?=$release->thumbnail ? $release->thumbnail : 'press-release.png'?>" alt="Press Thumbnail" /></a>
+								<h4><a href="#"><?=$release->title?></a></h4>
+								<p><?=substr(strip_tags($release->content), 0, 50)?>...</p>
+								<div class="clear"></div>
+								<span class="italics"><?=\Format::date($release->release_date, 'readable')?></span>
+							</li>
+						<?php endforeach; ?>
+						</ul>
 					</div><!-- press -->
 				</div><!-- tab-content -->
 			</div><!-- well -->

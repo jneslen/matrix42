@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	$('.datepicker').datepicker();
+
 	$('.dropdown-toggle').dropdown();
 
 	$('#home-banner').carousel();

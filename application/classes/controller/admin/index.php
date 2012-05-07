@@ -13,4 +13,8 @@ class Controller_Admin_Index extends Controller_Admin {
 
 	}
 
+	public function disable()
+	{
+		exit(\Debug::vars($this->request->param('id'));
+	}
 }
