@@ -53,6 +53,21 @@ Route::set
 
 Route::set
 (
+	'press',
+	'(<controller>(/<action>(/<id>)))'
+)
+	->defaults
+(
+	array
+	(
+		'controller' => 'press',
+		'action' => 'index',
+		'directory' => 'public',
+	)
+);
+
+Route::set
+(
 	'default',
 	'(<controller>(/<method>(/<id>)))'
 )

@@ -76,8 +76,8 @@
 						<ul class="listed">
 						<?php foreach($press_releases as $release): ?>
 							<li>
-								<a href="#" class="thumbnail left"><img src="/assets/img/thumbnails/press/<?=$release->thumbnail ? $release->thumbnail : 'press-release.png'?>" alt="Press Thumbnail" /></a>
-								<h4><a href="#"><?=$release->title?></a></h4>
+								<a href="/press/<?=$release->id?>" class="thumbnail left"><img src="/assets/img/thumbnails/press/<?=$release->thumbnail ? $release->thumbnail : 'press-release.png'?>" alt="Press Thumbnail" /></a>
+								<h4><a href="/press/<?=$release->id?>"><?=$release->title?></a></h4>
 								<p><?=substr(strip_tags($release->content), 0, 50)?>...</p>
 								<div class="clear"></div>
 								<span class="italics"><?=\Format::date($release->release_date, 'readable')?></span>

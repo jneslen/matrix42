@@ -47,16 +47,15 @@ class Controller_Public extends Controller_Site {
 			//if no db results for this menu item we need to route the request to the requested controller and method
 			$method = 'action_'.$this->_method;
 			$mycontroller = 'Controller_Public_'.ucfirst($this->_controller);
-			//exit(\Debug::vars($mycontroller));
-			$controller = new $mycontroller($this->request, $this->response);
-			//exit(\Debug::vars($controller));
-			if(!method_exists($controller, $method))
+
+			if(!method_exists($mycontroller, $method))
 			{
 				throw new HTTP_Exception_404('The requested URL :uri was not found on this server.',
 					array(':uri' => $this->request->uri()));
 			}
+			exit(\Debug::vars($method));
 
-			$controller->{$method}();
+			$this->{$method}();
 			return;
 		}
 

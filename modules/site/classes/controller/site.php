@@ -145,6 +145,7 @@ class Controller_Site extends Controller_Template
 			$this->template->sidebar_loc = $this->sidebar_loc;
 
 			$this->template->content = $this->_content;
+
 		}
 
 		parent::after();
