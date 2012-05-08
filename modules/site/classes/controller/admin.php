@@ -12,9 +12,14 @@ class Controller_Admin extends Controller_Site {
 
 		$this->_sidebar = false;
 
-		$this->request->style('datatables');
-
 		parent::before();
+
+		$this->request->scripts(array
+		(
+			'plugins/jquery-ui-timepicker',
+			'admin'
+		));
+		$this->request->style('datatables');
 	}
 
 	protected function _kick_out()

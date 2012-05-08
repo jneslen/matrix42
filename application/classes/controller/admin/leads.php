@@ -71,7 +71,7 @@ class Controller_Admin_Leads extends Controller_Admin {
 			)
 		);
 
-		$this->_content = View::factory('admin/leads/index')
+		$this->_content = View::factory('admin/index')
 			->set('table', $table);
 	}
 
