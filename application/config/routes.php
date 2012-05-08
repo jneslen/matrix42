@@ -16,21 +16,6 @@ Route::set
 		'action'     => 'index',
 	)
 );
-/*
-Route::set
-(
-	'default',
-	'(<mycontroller>(/<method>(/<id>)))'
-)
-	->defaults
-(
-	array
-	(
-		'controller' => 'public',
-		'action'     => 'index',
-	)
-);
-*/
 
 Route::set
 (
@@ -53,22 +38,25 @@ Route::set
 
 Route::set
 (
-	'press',
-	'(<controller>(/<action>(/<id>)))'
+	'control',
+	'(<controller>(/<action>(/<id>)))',
+	array
+	(
+		'controller' => '(press|events|support)',
+	)
 )
 	->defaults
 (
 	array
 	(
-		'controller' => 'press',
-		'action' => 'index',
-		'directory' => 'public',
+		'action'     => 'index',
+		'directory'  => 'public',
 	)
 );
 
 Route::set
 (
-	'default',
+	'content',
 	'(<controller>(/<method>(/<id>)))'
 )
 	->defaults

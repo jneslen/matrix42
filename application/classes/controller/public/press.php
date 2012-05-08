@@ -26,7 +26,8 @@ class Controller_Public_Press extends Controller_Public {
 		$this->_title = $release->title;
 
 		$this->_content = View::factory('press/press_release')
-			->set('release', $release);
+			->set('release', $release)
+			->set('lead_form', parent::lead_form());
 
 	}
 
