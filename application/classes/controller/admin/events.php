@@ -83,8 +83,6 @@ class Controller_Admin_Events extends Controller_Admin {
 		$this->_content = View::factory('admin/form')
 			->set('form', $form);
 
-		echo \Debug::vars($form);
-		echo \Debug::vars($form->type->val());
 		if(!$form->load()->validate()) {
 			return;
 		}

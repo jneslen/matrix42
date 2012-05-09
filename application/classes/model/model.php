@@ -35,20 +35,30 @@ class Model extends M\Model
 
 		$form = \Formo::form($name);
 
-		$this->_formo_add_fields($form);
-		$this->_formo_add_rules($form);
-
-		return $form;
-	}
-
-	public function load_array(array $array)
-	{
-		foreach($array as $key => $val)
+		foreach ($this->_fields as $field => $data)
 		{
-			$this->$key = $val;
+			if($data->primary === true && $data->sequenced === true)
+			{
+				continue;
+			}
+
+			$form->append($this->_formo_field($field, $data, $this->$field));
 		}
 
-		return $this;
+		foreach ($form->as_array() as $alias => $val)
+		{
+			if ($field = \Arr::get($this->_fields, $alias))
+			{
+				$rules = $this->_formo_rules($field);
+
+				if(!empty($rules))
+				{
+					$form->rules($alias, $rules);
+				}
+			}
+		}
+
+		return $form;
 	}
 
 	public function save($data = null)
@@ -140,6 +150,74 @@ class Model extends M\Model
 			$form->$field->set('label', join(' ', $label));
 		}
 
+	}
+
+	protected function _formo_field($field, $data, $value)
+	{
+		$array = array('alias' => $field, 'value' => $value, 'driver' => 'input');
+
+		switch ($data->type)
+		{
+			case 'enum':
+				$keys = $data->values;
+				array_walk($keys, function(&$k) { $k = ucfirst($k); });
+
+				$array['driver'] = 'select';
+				$array['options'] = array_combine($data->values, $keys);
+				break;
+			case 'bool':
+				$array['driver'] = 'bool';
+				break;
+			case 'date':
+				$array['value'] = \Format::date($this->$field);
+				$array['attr']['class'] = 'datepicker';
+				break;
+			default:
+				if($data->length <= 10) {
+					$class = 'small';
+				} elseif ($data->length <= 20) {
+					$class = 'med';
+				} else {
+					$class = 'big';
+				}
+
+				$array['attr']['class'] = $class;
+				break;
+		}
+
+		$label = explode('_', $field);
+		array_walk($label, function(&$word) { $word = ucfirst($word); });
+		$array['label'] = join(' ', $label);
+
+		return \Formo::field($array);
+	}
+
+	protected function _formo_rules($field)
+	{
+		$rules = array();
+
+		if ($field->null === FALSE AND $field->type != 'bool') {
+			// Add not_empty rule if it doesn't allow NULL
+			$rules[] = array('not_empty');
+		}
+
+		if ($field->type == 'int') {
+			$rules[] = array('digit');
+		}
+
+		if ($field->length) {
+			$rules[] = array('max_length', array(':value', $field->length));
+		}
+
+		if ($field->type == 'enum') {
+			$rules[] = array('in_array', array(':value', $field->values));
+		}
+
+		if ($field->type == 'date') {
+			$rules[] = array('date');
+		}
+
+		return $rules;
 	}
 
 	protected function _set($key, $val)
