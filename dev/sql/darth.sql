@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth
-# Generation Time: 2012-05-08 18:24:34 +0000
+# Generation Time: 2012-05-09 17:44:40 +0000
 # ************************************************************
 
 
@@ -394,6 +394,38 @@ VALUES
 UNLOCK TABLES;
 
 
+# Dump of table events
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `events`;
+
+CREATE TABLE `events` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type` enum('webinar','conference','partner_event') NOT NULL DEFAULT 'webinar',
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `subtitle` varchar(255) DEFAULT NULL,
+  `description` text,
+  `location` varchar(255) DEFAULT NULL,
+  `link` text,
+  `thumbnail` varchar(255) DEFAULT NULL,
+  `start_date` datetime NOT NULL,
+  `end_date` datetime DEFAULT NULL,
+  `use_time` tinyint(1) NOT NULL DEFAULT '0',
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `events` WRITE;
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+
+INSERT INTO `events` (`id`, `type`, `title`, `subtitle`, `description`, `location`, `link`, `thumbnail`, `start_date`, `end_date`, `use_time`, `disabled`)
+VALUES
+	(1,'conference','AirWatch Connect 2012','','<p>We understand the world of enterprise mobility is evolving quickly.  Join us at AirWatch Connect 2012 to gain insight, strategies, tools and  relationships to make the right business and technology decisions today  and in the future.</p>\n\n<p>AirWatch Connect 2012 provides an environment where you can connect  with AirWatch specialists, industry experts, strategic partners and IT  executives. Learn best practices, understand emerging technologies,  share success stories, and find answers to enterprise mobility  challenges.</p>\n\n<p><a href=\"http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g\" external=\"1\">www.air-watch.com</a></p>','Atlanta, GA','http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g','','2012-05-09 08:00:00','2012-05-09 20:00:00',1,0);
+
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
 # Dump of table leads
 # ------------------------------------------------------------
 
@@ -465,7 +497,8 @@ VALUES
 	(5,1,'public','IT Service Management','/solutions/it_service_management',NULL,'public','solutions','it_service_management','IT Service Management',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,1),
 	(6,1,'public','IT Asset Management','/solutions/it_asset_management',NULL,'public','solutions','it_asset_management','IT Asset Management',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,3),
 	(7,1,'public','Mobile IT Service','/solutions/it_service_management/mobile_it_service','minor','public','solutions','mobile_it_service','Mobile IT Service',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,2),
-	(8,4,'public','Press','/press',NULL,'public','press','index','Press Releases',NULL,NULL,NULL,NULL,NULL,NULL);
+	(8,4,'public','Press','/press',NULL,'public','press','index','Press Releases',NULL,NULL,NULL,NULL,NULL,NULL),
+	(9,4,'public','Events','/events',NULL,'public','events','index','Events',NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -520,7 +553,7 @@ LOCK TABLES `press_releases` WRITE;
 
 INSERT INTO `press_releases` (`id`, `title`, `subtitle`, `content`, `link`, `thumbnail`, `release_date`, `disabled`)
 VALUES
-	(1,'My Test Release','This is the subtitle for this release it will show in italics on the page','<p><strong>Press Release LEHI UT - Matrix42</strong></p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor scelerisque fringilla. Cras elementum scelerisque semper. Sed placerat urna non massa ornare lobortis. Aliquam sem lacus, rutrum vitae faucibus vitae, pharetra eget nisi. Vestibulum augue nisl, pulvinar sed tincidunt eget, imperdiet et erat. Integer posuere, ante in pretium congue, lectus est pharetra sapien, sit amet molestie nisl nibh vitae purus. Maecenas lorem tellus, tempor a pharetra in, dapibus vitae arcu. Nam sodales iaculis lobortis. Integer nibh elit, congue sit amet consequat in, accumsan at augue. Suspendisse odio justo, dictum at tincidunt ac, dapibus ut mauris. Nullam id ligula sit amet arcu iaculis euismod et sed quam. Sed vel lacus arcu, vel cursus nisl. Aliquam feugiat ullamcorper metus eu adipiscing. Suspendisse porta, sem eu tempor consequat, nisl nunc tincidunt diam, id euismod quam ligula vel urna. Vestibulum sollicitudin viverra nisi. Nulla facilisis, nisi sed lacinia varius, ligula velit porta mi, eget eleifend felis eros condimentum risus.</p>','','','2012-05-03',0);
+	(1,'My Test Release','This is the subtitle for this release it will show in italics on the page I am sure','<p><strong>Press Release LEHI UT - Matrix42</strong></p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor scelerisque fringilla. Cras elementum scelerisque semper. Sed placerat urna non massa ornare lobortis. Aliquam sem lacus, rutrum vitae faucibus vitae, pharetra eget nisi. Vestibulum augue nisl, pulvinar sed tincidunt eget, imperdiet et erat. Integer posuere, ante in pretium congue, lectus est pharetra sapien, sit amet molestie nisl nibh vitae purus. Maecenas lorem tellus, tempor a pharetra in, dapibus vitae arcu. Nam sodales iaculis lobortis. Integer nibh elit, congue sit amet consequat in, accumsan at augue. Suspendisse odio justo, dictum at tincidunt ac, dapibus ut mauris. Nullam id ligula sit amet arcu iaculis euismod et sed quam. Sed vel lacus arcu, vel cursus nisl. Aliquam feugiat ullamcorper metus eu adipiscing. Suspendisse porta, sem eu tempor consequat, nisl nunc tincidunt diam, id euismod quam ligula vel urna. Vestibulum sollicitudin viverra nisi. Nulla facilisis, nisi sed lacinia varius, ligula velit porta mi, eget eleifend felis eros condimentum risus.</p>','','','2012-05-03',0);
 
 /*!40000 ALTER TABLE `press_releases` ENABLE KEYS */;
 UNLOCK TABLES;
