@@ -21,8 +21,12 @@ class Controller_Public_Index extends Controller_Public {
 
 	public function action_index()
 	{
+		$events = \Kacela::find_active('event', \Kacela::criteria()->limit(0,5)->sort('start_date', 'DESC'));
 		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->limit(0,5)->sort('release_date', 'ASC'));
 		$this->_content = View::factory('home_page')
-			->set('press_releases', $press_releases);
+			->set('events', $events)
+			->set('press_releases', $press_releases)
+			->set('lead_form', parent::lead_form(true))
+			->set('support', \View::factory('sidebar/support'));
 	}
 }

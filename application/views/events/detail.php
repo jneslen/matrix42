@@ -1,0 +1,32 @@
+<?php $date_format = $event->use_time ? 'human' : 'readable'; ?>
+<div class="padded-content">
+	<div class="squeezed-title">
+		<h1 class="emphasis"><?=$event->title?></h1>
+	<?php if($event->location): ?>
+		<h3><?=$event->location?></h3>
+	<?php endif; ?>
+		<h4 class="italics"><?=\Format::date($event->start_date, $date_format)?><?=$event->end_date ? '&nbsp;-&nbsp;'.\Format::date($event->end_date, $date_format) : ''?></h4>
+	<?php if($event->link): ?>
+		<h4>More info at: <a href="<?=$event->link?>" target="_blank"><?=$event->link?></a></h4>
+	<?php endif; ?>
+	</div>
+<?php if($event->subtitle): ?>
+	<p class="italics"><?=$event->subtitle?></p>
+<?php endif; ?>
+<?php if($event->thumbnail): ?>
+	<div class="thumbnail left"><img src="/assets/img/thumbnails/events/<?=$event->thumbnail?>" alt="<?=$event->title?>" /></div>
+<?php endif; ?>
+	<?=$event->description?>
+<?php if($event->link): ?>
+	<a href="<?=$event->link?>" class="btn btn-large btn-primary" target="_blank">More info / Register</a>
+<?php endif; ?>
+	<div class="space"></div>
+</div><!-- padded-content -->
+<div class="well padded">
+	<div class="left">
+		<h3 class="no-margin">Let Matrix42 empower you to be in control of your IT needs.</h3>
+		<h4 class="no-margin">Get started with the perfect IT solution by inquiring below:</h4>
+	</div>
+	<div class="clearfix"></div>
+</div><!-- well -->
+<?=$lead_form?>

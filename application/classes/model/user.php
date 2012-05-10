@@ -175,7 +175,7 @@ class User extends Model {
 
 	public function get_phone($type = 'primary')
 	{
-		foreach($this->_phones as $phone)
+		foreach($this->phones as $phone)
 		{
 			if($type == $phone->type)
 			{

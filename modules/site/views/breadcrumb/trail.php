@@ -3,7 +3,13 @@
 	<?php if ($i > 1): ?>
 		<span class="carrot left">&gt;</span>
 		<?php endif; ?>
-	<h4><a href="<?=$href?>"><?=$title?></a></h4>
+	<h4>
+	<?php if($href === null): ?>
+		<?=$title?>
+	<?php else: ?>
+		<a href="<?=$href?>"><?=$title?></a>
+	<?php endif; ?>
+	</h4>
 	<?php endforeach; ?>
 	<?php if($page_title): ?>
 	<span class="carrot left">&gt;</span>

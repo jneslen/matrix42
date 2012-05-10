@@ -136,7 +136,7 @@ class Controller_Site extends Controller_Template
 
 			$this->template->banner = $this->_banner;
 
-			$this->template->titlebar = $this->_titlebar ? $this->_titlebar : View::factory('titlebar')->set('title', $this->_title);
+			$this->template->titlebar = $this->_titlebar !== null ? $this->_titlebar : View::factory('titlebar')->set('title', $this->_title);
 
 			$this->template->header->section = $this->_section;
 
@@ -201,6 +201,11 @@ class Controller_Site extends Controller_Template
 					'GET',
 					'POST',
 				);
+				//exclude links
+				$exclude_links_array = array
+				(
+					'solutions',
+				);
 
 				$home_link = $this->request->directory() == 'public' ? '/' : $this->request->directory();
 
@@ -212,7 +217,7 @@ class Controller_Site extends Controller_Template
 				$controller_link = '/'.$this->request->controller();
 				if(!in_array($this->request->controller(), $exclude_controller_array))
 				{
-					$path_array[$controller_name] = $controller_link;
+					$path_array[$controller_name] = in_array($this->request->controller(), $exclude_links_array) ? null : $controller_link;
 				}
 
 				//Set Method path

@@ -1,5 +1,7 @@
 <?php $form->html(); ?>
+<?php $form->view()->attr('action', \Request::$current->url().'#lead-form-anchor'); ?>
 <div id="lead-form" class="row">
+	<div id="lead-form-anchor"></div>
 	<div class="span4 contact-well">
 		<div class="padded-content padded-top">
 			<h3>Inquire online today</h3>
@@ -23,7 +25,7 @@
 			</table>
 		</div>
 	</div><!-- contact-well -->
-	<div class="span8 contact-form">
+	<div class="<?=$full ? 'span12' : 'span8'?> contact-form">
 		<div class="row padded-top">
 		<?php if($complete): ?>
 			<div class="span8">

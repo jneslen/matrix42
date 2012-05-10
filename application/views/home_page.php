@@ -8,7 +8,7 @@
 				<h2 class="no-margin">Find the perfect solution for all your IT needs</h2>
 				<h4 class="no-margin">Get started with the perfect IT solution now.</h4>
 			</div>
-			<a href="/" class="btn btn-info btn-large right margin-right">Find Your Solution</a>
+			<a href="#lead-form-anchor" class="btn btn-info btn-large right margin-right scroll">Find Your Solution</a>
 			<div class="clearfix"></div>
 		</div><!-- well -->
 		<div class="span6 dashed-right margin-clear test1">
@@ -70,17 +70,28 @@
 						</ul>
 					</div><!-- blog -->
 					<div class="tab-pane" id="events">
-
+						<ul class="listed">
+							<?php foreach($events as $event): ?>
+							<li>
+								<a href="/events/detail/<?=$event->id?>" class="thumbnail left"><img src="/assets/img/thumbnails/events/<?=$event->thumbnail ? $event->thumbnail : $event->type.'-event.png'?>" alt="<?=ucfirst($event->type)?> Event Thumbnail" /></a>
+								<h4><a href="/events/detail/<?=$event->id?>"><?=$event->title?></a></h4>
+							<?php $date_format = $event->use_time ? 'human' : 'readable'; ?>
+								<h5><?=$event->location ? $event->location : ''?></h5>
+								<div class="clear"></div>
+								<h5 class="italics"><?=\Format::date($event->start_date, $date_format)?><?=$event->end_date ? '&nbsp;-&nbsp;'.\Format::date($event->end_date, $date_format) : ''?></h5>
+							</li>
+							<?php endforeach; ?>
+						</ul>
 					</div><!-- events -->
 					<div class="tab-pane" id="press">
 						<ul class="listed">
 						<?php foreach($press_releases as $release): ?>
 							<li>
-								<a href="/press/<?=$release->id?>" class="thumbnail left"><img src="/assets/img/thumbnails/press/<?=$release->thumbnail ? $release->thumbnail : 'press-release.png'?>" alt="Press Thumbnail" /></a>
-								<h4><a href="/press/<?=$release->id?>"><?=$release->title?></a></h4>
-								<p><?=substr(strip_tags($release->content), 0, 50)?>...</p>
+								<a href="/press/release/<?=$release->id?>" class="thumbnail left"><img src="/assets/img/thumbnails/press/<?=$release->thumbnail ? $release->thumbnail : 'press-release.png'?>" alt="Press Thumbnail" /></a>
+								<h4><a href="/press/release/<?=$release->id?>"><?=$release->title?></a></h4>
+								<h5 class="italics"><?=\Format::date($release->release_date, 'readable')?></h5>
+								<p><?=substr(strip_tags($release->content), 0, 40)?>...</p>
 								<div class="clear"></div>
-								<span class="italics"><?=\Format::date($release->release_date, 'readable')?></span>
 							</li>
 						<?php endforeach; ?>
 						</ul>
@@ -89,4 +100,6 @@
 			</div><!-- well -->
 		</div><!-- span4 -->
 </div><!-- span10 -->
-<div class="span16 large-space"></div>
+<div class="span16">
+	<?=$lead_form?>
+</div><!-- span12 -->

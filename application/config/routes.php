@@ -49,6 +49,7 @@ Route::set
 (
 	array
 	(
+		'controller' => 'index',
 		'action'     => 'index',
 		'directory'  => 'public',
 	)
@@ -56,7 +57,7 @@ Route::set
 
 Route::set
 (
-	'content',
+	'default',
 	'(<controller>(/<method>(/<id>)))'
 )
 	->defaults

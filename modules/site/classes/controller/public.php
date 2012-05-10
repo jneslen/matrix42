@@ -77,7 +77,7 @@ class Controller_Public extends Controller_Site {
 			->bind('page_contents', $main_content);
 	}
 
-	public function lead_form()
+	public function lead_form($full = false)
 	{
 		$complete = false;
 		$user = new \Darth\Model\Lead;
@@ -91,6 +91,7 @@ class Controller_Public extends Controller_Site {
 
 		return View::factory('lead_form')
 			->bind('form', $form)
-			->set('complete', $complete);
+			->set('complete', $complete)
+			->set('full', $full);
 	}
 }

@@ -6,27 +6,44 @@ class Lead extends User
 {
 	public function create_new_lead($form)
 	{
-		// Generate the temp password
-		$temp_password = \Text::random();
-		$hash_password = \Bonafide::instance()->hash($temp_password);
+		//if this is an existing email then just update that leads info else create a new lead
+		if(!\Valid::unique_email($form->email->val()))
+		{
+			$lead = \Kacela::find('user', $form->email->val());
+		}
+		else
+		{
+			$lead = $this;
+			// Generate the temp password
+			$temp_password = \Text::random();
+			$hash_password = \Bonafide::instance()->hash($temp_password);
+			$lead->password = $hash_password;
+			$lead->inquiry_ip = \Request::$client_ip;
+		}
 
 		// Set the user variables
-		$this->full_name = $form->name->val();
-		$this->email = $form->email->val();
-		$this->role = 'lead';
-		$this->password = $hash_password;
-		$this->inquiry_date = time();
-		$this->last_activity_date = time();
-		$this->message = $form->message->val();
-		$this->last_ip = \Request::$client_ip;
-		$this->inquiry_ip = \Request::$client_ip;
+		$lead->full_name = $form->name->val();
+		$lead->email = $form->email->val();
+		$lead->role = 'lead';
+		$lead->inquiry_date = time();
+		$lead->last_activity_date = time();
+		$lead->last_ip = \Request::$client_ip;
 
 		// Insert the user and client records
-		$this->save();
+		$lead->save();
 
-		$personal_phone = $this->get_phone('primary');
+		//insert or update primary phone
+		$personal_phone = $lead->get_phone('primary');
 		$personal_phone->number = \Format::clean_number($form->number->val());
 		$personal_phone->save();
+
+		//insert note
+		$note = new \Darth\Model\Note;
+		$note->user_id = $lead->id;
+		$note->author_id = $lead->id;
+		$note->type = 'inquiry';
+		$note->note = $form->message->val();
+		$note->save();
 
 		// Start building the email
 		/*TODO: need to set up email system
@@ -90,7 +107,6 @@ class Lead extends User
 			->rules('email', array(
 			array('not_empty'),
 			array('email'),
-			array('\Valid::unique_email', array(':value'))
 		))
 			->rules('number', array(
 			array('not_empty'),
