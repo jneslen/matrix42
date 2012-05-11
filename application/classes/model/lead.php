@@ -72,12 +72,22 @@ class Lead extends User
 	{
 		$form = parent::get_form($name);
 
+		$phone = $this->get_phone();
+		$form->add('phone', 'group', $phone->get_form());
+
+		//$address = $this->get_address();
+		//$form->add('address', 'group', $address->get_form());
+
 		$form->remove
 		(
 			array
 			(
 				'campaign_id',
 				'ip',
+				'inquiry_ip',
+				'inquiry_date',
+				'contact_date',
+				'downloaded',
 			)
 		);
 

@@ -72,7 +72,8 @@ class Controller_Admin_Press extends Controller_Admin {
 		$this->_content = View::factory('admin/form')
 			->set('form', $form);
 
-		if(!$form->load()->validate()) {
+		if(!$form->load()->validate())
+		{
 			return;
 		}
 		$release->save($form);

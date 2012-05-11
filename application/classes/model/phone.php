@@ -10,10 +10,35 @@ class Phone extends Model
 
 		$form->remove(array('disabled'));
 
+		$form->set('label', ucfirst($this->type).' Phone');
 		$form->number->set('label', 'Phone number');
+		$form->number->set('value', $this->formatted_phone);
 		$form->user_id->set('driver', 'hidden');
 		$form->type->set('driver', 'hidden');
 		$form->add('type', 'hidden', array('value' =>$this->type));
+		$form->rules('number', array
+		(
+			array('not_empty'),
+			array
+			(
+				'\Valid::phone',
+				array
+				(
+					':value',
+					array(10, 18)
+				)
+			)
+		));
+
+		$form->callbacks(array(
+			'pass' => array
+			(
+				':self' => array
+				(
+					array(array($this, 'save'), array(':value')),
+				),
+			),
+		));
 
 		return $form;
 	}

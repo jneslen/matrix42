@@ -55,15 +55,12 @@ class Controller_Admin_Leads extends Controller_Admin {
 				),
 				array
 				(
-					'header' => 'Message',
-					'value' => function($o) { return $o->message; }
-				),
-				array
-				(
 					'value' => function($o) {
-						$str = '<a href="/admin/index/hijack/'.$o->id.'">Hijack</a>'
+						$str = '<a href="/admin/leads/detail/'.$o->id.'">View</a>'
 							. ' | '
-							. '<a href="/admin/clients/edit/'.$o->id.'">Edit</a>';
+							.'<a href="/admin/index/hijack/'.$o->id.'">Hijack</a>'
+							. ' | '
+							. '<a href="/admin/leads/form/'.$o->id.'">Edit</a>';
 
 						return $str;
 					}
@@ -75,4 +72,32 @@ class Controller_Admin_Leads extends Controller_Admin {
 			->set('table', $table);
 	}
 
+	public function action_form()
+	{
+		$lead = kacela::find('lead', $this->request->param('id'));
+
+		$form = $lead->get_form()
+			->add('save', 'submit');
+
+		$this->_content = View::factory('admin/form')
+			->set('form', $form);
+
+		if(!$form->load()->validate())
+		{
+			return;
+		}
+
+		$lead->save($form);
+
+		$this->request->redirect('/admin/leads/detail/'.$lead->id);
+
+	}
+
+	public function action_detail()
+	{
+		$lead = kacela::find('lead', $this->request->param('id'));
+
+		$this->_content = View::factory('admin/leads/detail')
+			->set('lead', $lead);
+	}
 }
