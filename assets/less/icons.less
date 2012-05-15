@@ -1,9 +1,9 @@
 .icon {
-	display: inline-block;
+	display: inline-block !important;
 	.left;
 	.pointer;
-	width: @icon_size;
-	height: @icon_size;
+	width: @icon_size !important;
+	height: @icon_size !important;
 	background: transparent url(@{img_path}icons/icon_set.png) no-repeat;
 	&.right {
 		.right;
@@ -38,7 +38,14 @@
 	&.play {
 		background-position: -123px -603px;
 	}
-	&.close {
+	&.add {
+		background-position: -123px -693px;
+	}
+	&.edit {
+		background-position: -63px -63px;
+	}
+	&.close,
+	&.delete {
 		background-position: -213px -693px;
 	}
 	&.checkmark {

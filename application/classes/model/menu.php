@@ -29,7 +29,14 @@ class Menu extends Model
 		return $this->_contents[$type];
 	}
 
-	public function replace_contents()
+	public function get_form($name = null)
+	{
+		$form = parent::get_form($name);
+
+		return $form;
+	}
+
+		public function replace_contents()
 	{
 		foreach($this->contents as $content)
 		{

@@ -20,4 +20,12 @@ $(document).ready(function() {
 			$('.datepicker').datepicker('enable');
 		}
 	}
+
+	$("#menu-tree").jstree({
+		'themes' : {
+			'theme' : 'apple',
+			'dots' : false,
+			'icons' : false
+		}
+	});
 });

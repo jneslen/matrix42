@@ -17,9 +17,16 @@ class Controller_Admin extends Controller_Site {
 		$this->request->scripts(array
 		(
 			'plugins/jquery-ui-timepicker',
+			'plugins/jquery.jstree',
+			'plugins/jquery.form',
+			'plugins/datatables',
 			'admin'
 		));
-		$this->request->style('datatables');
+		$this->request->styles(array
+		(
+			'datatables',
+			'jstree'
+		));
 	}
 
 	protected function _kick_out()

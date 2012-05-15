@@ -70,7 +70,6 @@ class Controller_Site extends Controller_Template
 				'jquery-ui',
 				'bootstrap.min',
 				'site',
-				'plugins/datatables',
 			)
 		);
 
@@ -113,6 +112,7 @@ class Controller_Site extends Controller_Template
 
 		if ($this->request->is_ajax())
 		{
+			/*
 			$response = array
 			(
 				'content' => $this->_content,
@@ -121,6 +121,8 @@ class Controller_Site extends Controller_Template
 			);
 
 			exit(json_encode($response));
+			*/
+			$this->template = $this->_content;
 		}
 		else
 		{

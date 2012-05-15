@@ -5,6 +5,32 @@ $(document).ready(function() {
 
 	$('#home-banner').carousel();
 
+	$('a[data-toggle=modal]').click(function(event) {
+		$('#modal-body').load($(this).attr('href'), function() {
+			$('#modal').modal({
+				backdrop: true,
+				show: true
+			});
+		});
+		event.preventDefault();
+	});
+
+	$('#modal .submit-button').click(function() {
+		$('#modal form').submit();
+	});
+
+	$('#modal form').live('submit', function() {
+		$(this).ajaxSubmit({
+			target: '#modal-body',
+			type: 'post',
+			success: function(){
+				$('#modal').modal('hide');
+				location.reload();
+			}
+		});
+		return false;
+	});
+
 	$('#home-banner').bind('slid', function() {
 		if($('#banner7').hasClass('active')) {
 			$('#home-banner').carousel('pause');
