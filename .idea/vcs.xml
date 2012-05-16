@@ -2,6 +2,13 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/acl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/bonafide" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/formo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/kable" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/kacela" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/modules/userguide" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/system" vcs="Git" />
   </component>
 </project>
 
