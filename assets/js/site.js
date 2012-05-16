@@ -7,6 +7,10 @@ $(document).ready(function() {
 
 	$('.hint').popover();
 
+	$('.tree-link').click(function(){
+		window.location = $(this).attr('href');
+	});
+
 	$('a[data-toggle=modal]').click(function(event) {
 		$('#modal-title').html($(this).attr('data-title'));
 		$('#modal-body').load($(this).attr('href'), function() {

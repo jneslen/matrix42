@@ -59,4 +59,12 @@ class Controller_Admin_Cms extends Controller_Admin {
 
 		exit(json_encode(array('success' => true)));
 	}
+
+	public function action_detail()
+	{
+		$menu = $menu = \Kacela::find('menu', $this->request->param('id'));
+
+		$this->_content = \View::factory('admin/cms/detail')
+			->set('menu', $menu);
+	}
 }
