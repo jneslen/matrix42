@@ -81,16 +81,16 @@ class Controller_Public extends Controller_Site {
 	{
 		$complete = false;
 		$user = new \Darth\Model\Lead;
-		$form = $user->get_lead_form()
+		$lead_form = $user->get_lead_form()
 			->add('submit', 'submit', array('text' => 'Send Inquiry!'));
 
-		if ($form->load()->validate())
+		if ($lead_form->load()->validate())
 		{
 			$complete = true;
 		}
 
 		return View::factory('lead_form')
-			->bind('form', $form)
+			->bind('form', $lead_form)
 			->set('complete', $complete)
 			->set('full', $full);
 	}

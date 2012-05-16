@@ -34,6 +34,12 @@ class Controller_Site extends Controller_Template
 
 	protected $_section;
 
+	protected $_modal;
+	protected $_modal_type = 'form';
+	protected $_modal_title = null;
+	protected $_modal_content = null;
+	protected $_modal_view;
+
 	//protected $_chat; //TODO: Add a chat client system dynamically
 
 	protected function _authenticate()
@@ -106,6 +112,14 @@ class Controller_Site extends Controller_Template
 			$this->_sidebar = \Sidebar::factory($default_sidebar)->render();
 		}
 
+		if($this->_modal)
+		{
+			$this->_modal_view = \View::factory('modal')
+				->set('title', $this->_modal_title)
+				->set('content', $this->_modal_content)
+				->set('type', $this->_modal_type);
+		}
+
 		$this->template->header = View::factory('header');
 		$this->template->breadcrumb = View::factory('breadcrumb/breadcrumb');
 		$this->template->footer = View::factory('footer');
@@ -147,6 +161,8 @@ class Controller_Site extends Controller_Template
 			$this->template->sidebar_loc = $this->sidebar_loc;
 
 			$this->template->content = $this->_content;
+
+			$this->template->modal = $this->_modal_view;
 
 		}
 

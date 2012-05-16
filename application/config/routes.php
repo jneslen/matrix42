@@ -2,7 +2,7 @@
 Route::set
 (
 	'sections',
-	'<directory>(/<controller>(/<action>(/<id>)))',
+	'<directory>(/<controller>(/<action>(/<id>(/<parentid>))))',
 	array
 	(
 		'directory' => '(client|admin|api|crons)',

@@ -55,15 +55,8 @@ defined('SYSPATH') OR die('No direct access allowed.');
 <div id="footer" class="container">
 	<?=$footer?>
 </div><!-- footer -->
-<div id="modal" class="modal fade">
-	<div class="modal-header">
-		<button class="close" data-dismiss="modal">x</button>
-		<h3 id="modal-title">Modal Header</h3>
-	</div><!-- modal-header -->
-	<div class="modal-body" id="modal-body">none</div>
-	<div class="modal-footer">
-		<a href="#" class="btn submit-button">save</a>
-	</div>
-</div><!-- modal -->
+<?php if($modal): ?>
+<?=$modal?>
+<?php endif; ?>
 </body>
 </html>
