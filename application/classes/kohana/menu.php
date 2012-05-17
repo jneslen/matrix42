@@ -23,7 +23,7 @@ class Kohana_Menu
 		if ($this->config['driver'] == 'database') {
 			$menu = new \Darth\Model\Menu;
 			//$items = $menu->where('parent_id', '=', null)->find_all();
-			$items = \Kacela::find_active('menu', \Kacela::criteria()->isNull('parent_id')->sort('order'));
+			$items = \Kacela::find_active('menu', \Kacela::criteria()->isNull('parent_id')->equals('type', 'main')->sort('order'));
 			//exit(\Debug::vars($items));
 
 			$this->menu['items'] = $this->get_from_database($items);

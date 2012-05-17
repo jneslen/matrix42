@@ -53,6 +53,7 @@ class Menu extends Model
 		else
 		{
 			$form->parent_id->set('driver', 'hidden');
+			$form->type->set('driver', 'hidden')->set('value', 'submenu');
 		}
 
 		$form->url->set('label', 'URL <h7>(relative path i.e. &#047;controller&#047;method)</h7>');
