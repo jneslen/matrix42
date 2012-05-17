@@ -39,39 +39,20 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="blog">
 						<ul class="listed">
+						<?php foreach($blogs as $blog): ?>
 							<li>
-								<a href="#" class="thumbnail left"><img src="http://placehold.it/50x50" alt="placeholder"></a>
-								<h4><a href="#">Test Title</a></h4>
-								<p>This is a test description...</p>
+								<a href="<?=$blog->link?>" class="thumbnail left"><img src="/assets/img/thumbnails/blog/blog.png" alt="<?=$blog->title?>" /></a>
+								<h4><a href="<?=$blog->link?>"><?=$blog->title?></a></h4>
+								<p><?=substr(strip_tags($blog->description), 0, 40)?>...</p>
 								<div class="clear"></div>
-								<span class="italics">April 6, 2012</span>
+								<span class="italics"><?=\Format::date($blog->pubDate, 'human')?></span>
 							</li>
-							<li>
-								<a href="#" class="thumbnail left"><img src="http://placehold.it/50x50" alt="placeholder"></a>
-								<h4><a href="#">Test Title</a></h4>
-								<p>This is a test description...</p>
-								<div class="clear"></div>
-								<span class="italics">April 6, 2012</span>
-							</li>
-							<li>
-								<a href="#" class="thumbnail left"><img src="http://placehold.it/50x50" alt="placeholder"></a>
-								<h4><a href="#">Test Title</a></h4>
-								<p>This is a test description...</p>
-								<div class="clear"></div>
-								<span class="italics">April 6, 2012</span>
-							</li>
-							<li>
-								<a href="#" class="thumbnail left"><img src="http://placehold.it/50x50" alt="placeholder"></a>
-								<h4><a href="#">Test Title</a></h4>
-								<p>This is a test description...</p>
-								<div class="clear"></div>
-								<span class="italics">April 6, 2012</span>
-							</li>
+						<?php endforeach; ?>
 						</ul>
 					</div><!-- blog -->
 					<div class="tab-pane" id="events">
 						<ul class="listed">
-							<?php foreach($events as $event): ?>
+						<?php foreach($events as $event): ?>
 							<li>
 								<a href="/events/detail/<?=$event->id?>" class="thumbnail left"><img src="/assets/img/thumbnails/events/<?=$event->thumbnail ? $event->thumbnail : $event->type.'-event.png'?>" alt="<?=ucfirst($event->type)?> Event Thumbnail" /></a>
 								<h4><a href="/events/detail/<?=$event->id?>"><?=$event->title?></a></h4>
@@ -80,7 +61,7 @@
 								<div class="clear"></div>
 								<h5 class="italics"><?=\Format::date($event->start_date, $date_format)?><?=$event->end_date ? '&nbsp;-&nbsp;'.\Format::date($event->end_date, $date_format) : ''?></h5>
 							</li>
-							<?php endforeach; ?>
+						<?php endforeach; ?>
 						</ul>
 					</div><!-- events -->
 					<div class="tab-pane" id="press">

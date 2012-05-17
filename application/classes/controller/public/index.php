@@ -21,9 +21,11 @@ class Controller_Public_Index extends Controller_Public {
 
 	public function action_index()
 	{
+		$blogs = \Helper::array_to_object(\Feed::parse('http://blog.matrix42.com/feed', 4)); //TODO:need to setup the RSS feed to include some kind of thumbnail (either author thumbnail or a post thumb)
 		$events = \Kacela::find_active('event', \Kacela::criteria()->limit(0,5)->sort('start_date', 'DESC'));
 		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->limit(0,5)->sort('release_date', 'ASC'));
 		$this->_content = View::factory('home_page')
+			->set('blogs', $blogs)
 			->set('events', $events)
 			->set('press_releases', $press_releases)
 			->set('lead_form', parent::lead_form(true))
