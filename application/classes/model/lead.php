@@ -38,7 +38,7 @@ class Lead extends User
 		$personal_phone->save();
 
 		//insert note
-		$note = new \Darth\Model\Note;
+		$note = $this->get_note();
 		$note->user_id = $lead->id;
 		$note->author_id = $lead->id;
 		$note->type = 'inquiry';

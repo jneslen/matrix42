@@ -14,10 +14,20 @@ class Controller_Admin_Leads extends Controller_Admin {
 
 		$table = \Kable::factory()
 			->setDataSource($leads, 'dom')
+			->attr('class', 'table table-bordered table-striped')
 			->add
 		(
 			array
 			(
+				array
+				(
+					'header' => '<input type="checkbox" id="select-all" />',
+					'attr' => array('class' => 'checkbox-cell'),
+					'value' => function($o)
+					{
+						return '<input class="leads" type="checkbox" name="leads[]" value="'.$o->id.'" id="lead_'.$o->id.'" />';
+					}
+				),
 				array
 				(
 					'header' => '',
@@ -56,11 +66,9 @@ class Controller_Admin_Leads extends Controller_Admin {
 				array
 				(
 					'value' => function($o) {
-						$str = '<a href="/admin/leads/detail/'.$o->id.'">View</a>'
-							. ' | '
-							.'<a href="/admin/index/hijack/'.$o->id.'">Hijack</a>'
-							. ' | '
-							. '<a href="/admin/leads/form/'.$o->id.'">Edit</a>';
+						$str = '<a href="/admin/leads/detail/'.$o->id.'" class="icon folder"></a>'
+							.'<a href="/admin/leads/form/'.$o->id.'" data-toggle="modal" data-title="Edit '.$o->full_name.'" class="icon editdoc"></a>'
+							.'<a href="/admin/cms/disable/lead/'.$o->id.'" class="icon trash" rel="disable"></a>';
 
 						return $str;
 					}
@@ -72,24 +80,33 @@ class Controller_Admin_Leads extends Controller_Admin {
 			->set('table', $table);
 	}
 
+	public function action_contact()
+	{
+		$lead = kacela::find('lead', $this->request->param('id'));
+		$lead->contact_date = time();
+		$lead->save();
+
+		return exit(json_encode(array('success' => true, 'contact_date' => \Format::date($lead->contact_date, 'human'))));
+	}
+
 	public function action_form()
 	{
 		$lead = kacela::find('lead', $this->request->param('id'));
 
-		$form = $lead->get_form()
-			->add('save', 'submit');
+		$form = $lead->get_form();
 
-		$this->_content = View::factory('admin/form')
+		$form->view()->attr('action', \Request::$current->url()); //needed for ajax submit
+
+		$this->_content = \View::factory('admin/modal_form')
 			->set('form', $form);
 
 		if(!$form->load()->validate())
 		{
 			return;
 		}
-
 		$lead->save($form);
 
-		$this->request->redirect('/admin/leads/detail/'.$lead->id);
+		exit(json_encode(array('success' => true)));
 
 	}
 

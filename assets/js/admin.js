@@ -28,4 +28,26 @@ $(document).ready(function() {
 			'icons' : false
 		}
 	});
+
+	$('#select-all').live('click', function(e){
+		if ($(this).is(':checked')) {
+			$('.checkbox-cell input:visible').attr('checked', true);
+		} else {
+			$('.checkbox-cell input:visible').attr('checked', false);
+		}
+	});
+
+	$('a[rel=contact-date]').click(function(event) {
+		event.preventDefault();
+		$.ajax({
+			url: $(this).attr('href'),
+			success: function(r){
+				obj = $.parseJSON(r);
+				if(obj.success == true)
+				{
+					$('#contact-date').text(obj.contact_date);
+				}
+			}
+		});
+	});
 });

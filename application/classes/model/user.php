@@ -8,6 +8,8 @@ class User extends Model {
 
 	protected $_addresses = array();
 
+	protected $_notes = array();
+
 	protected $_phones = array();
 
 	public function authenticate($values)
@@ -20,14 +22,14 @@ class User extends Model {
 		// First try to retrieve a user with this email
 		$user = \Kacela::find('user', $email);
 
-		if ( ! $user->id)
+		if(!$user->id)
 		{
 			// No user exists with this email
 			return false;
 		}
 
 		// Check if a temp password is set and not expired
-		if ($user->temp_password AND $user->temp_password_date >= time() AND $password == $user->temp_password)
+		if($user->temp_password AND $user->temp_password_date >= time() AND $password == $user->temp_password)
 		{
 			// Set up to reset password
 			$session = \Session::instance();
@@ -38,7 +40,7 @@ class User extends Model {
 			? null
 			: 'legacy';
 
-		if ($bonafide->check($password, $prefix.$user->password))
+		if($bonafide->check($password, $prefix.$user->password))
 		{
 			// Set up the email and password
 			$this->id = $user->id;
@@ -54,7 +56,7 @@ class User extends Model {
 
 	public function end_hijack()
 	{
-		if ($user_id = $this->is_hijacked(true))
+		if($user_id = $this->is_hijacked(true))
 		{
 			$session = \Session::instance();
 			$session->set('user_id', $user_id);
@@ -171,6 +173,29 @@ class User extends Model {
 		}
 
 		return $form;
+	}
+
+	public function get_note($type = 'inquiry')
+	{
+		foreach($this->notes as $note)
+		{
+			if($type == $note->type)
+			{
+				return $note;
+			}
+		}
+
+		if(isset($this->_notes[$type]))
+		{
+			return $this->_notes[$type];
+		}
+
+		$this->_notes[$type] = new \Darth\Model\Note;
+
+		$this->_notes[$type] ->user_id = $this->id;
+		$this->_notes[$type] ->type = $type;
+
+		return $this->_notes[$type];
 	}
 
 	public function get_phone($type = 'primary')

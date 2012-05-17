@@ -74,7 +74,22 @@ class Address extends Model
 
 	protected function _get_formatted_address()
 	{
-		return $this->address1.' '.$this->address2.'<br />'
-			.$this->city.', '.$this->state_id.' '.$this->postal;
+		$address = $this->care_of ? '<span class="italics">Care of: '.$this->care_of.'</span><br />' : '';
+
+		$address .= $this->address1.' '.$this->address2.'<br />';
+
+		if($this->country_id != 'US')
+		{
+			$address .= $this->city.', '.$this->province.' '.$this->postal;
+
+		}
+		else
+		{
+			$address .= $this->city.', '.$this->state_id.' '.$this->postal;
+		}
+
+		$address .= '<br /><h6 class="emphasis">'.$this->country->name.'</h6>';
+
+		return $address;
 	}
 }
