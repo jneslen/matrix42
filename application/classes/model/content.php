@@ -10,7 +10,8 @@ class Content extends Model
 		$form->remove(array('elements'));
 		$form->menu_id->set('driver', 'hidden');
 		$form->content->set('driver', 'textarea')
-			->set('label', 'Content <h7>(html)</h7>');
+			->set('attr', array('class' => 'content-text'))
+			->set('label', 'Content <span class="italics">(html)</span>');
 
 		return $form;
 	}

@@ -1,9 +1,51 @@
-<?=$form->render()?>
+<?php if(isset($components)): ?>
+<div class="container">
+	<div class="row">
+		<div class="span8 left">
+<?php endif; ?>
+			<?=$form->render()?>
+<?php if(isset($components)): ?>
+		</div><!-- span10 -->
+		<div class="span8 left">
+			<div class="margin-right">
+				<h3>Components</h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+					<tr>
+						<th></th>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+					</thead>
+					<tbody>
+				<?php foreach($components as $component): ?>
+					<tr>
+						<td>
+							<a href="#" data-content="<?=$component->name?>" class="icon arrow-left add-component"></a>
+						</td>
+						<td><?=$component->name?></td>
+						<td><?=$component->type?></td>
+						<td><?=$component->description?></td>
+					</tr>
+				<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div><!-- margin-right -->
+		</div><!-- span4 -->
+	</div><!-- row -->
+</div><!-- container -->
+<?php endif; ?>
 <script>
 	$(document).ready(function() {
 		if(!$('#Menu-parent_id').val()){
 			$("#Menu-type option[value='submenu']").remove();
 		}
+	<?php if(isset($components)): ?>
+		$('.add-component').click(function(){
+			$('.content-text').val($('.content-text').val()+$(this).attr('data-content'));
+		});
+	<?php endif; ?>
 	});
 
 	$('#Menu-parent_id').change(function(){

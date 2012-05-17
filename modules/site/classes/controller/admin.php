@@ -31,6 +31,15 @@ class Controller_Admin extends Controller_Site {
 		));
 	}
 
+	public function disable()
+	{
+		$obj = \Kacela::find($this->request->param('id'), $this->request->param('parentid'));
+		$obj->disabled = 1;
+		$obj->save();
+
+		exit(json_encode(array('success' => true)));
+	}
+
 	protected function _kick_out()
 	{
 		if ( ! $this->_user instanceof \Darth\Model\Employee)

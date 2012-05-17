@@ -9,24 +9,47 @@ class Controller_Admin_Cms extends Controller_Admin {
 		parent::before();
 	}
 
-	public function action_index()
+	public function action_content()
 	{
-		$main_menus = \Kacela::find_active('menu', \Kacela::criteria()->isnull('parent_id')->equals('type', 'main'));
-		$main_tree = \View::factory('admin/tree')
-			->set('menus', $main_menus);
+		$content_id = ($this->request->param('id') == null OR $this->request->param('id') == 0) ? null : $this->request->param('id');
+		$content = \Kacela::find('content', $content_id);
 
-		$footer_menus = \Kacela::find_active('menu', \Kacela::criteria()->isnull('parent_id')->equals('type', 'footer'));
-		$footer_tree = \View::factory('admin/tree')
-			->set('menus', $footer_menus);
+		$components = \Kacela::find_active('component');
 
-		$hidden_menus = \Kacela::find_active('menu', \Kacela::criteria()->isnull('parent_id')->equals('type', 'hidden'));
-		$hidden_tree = \View::factory('admin/tree')
-			->set('menus', $hidden_menus);
+		$form = $content->get_form();
+		$form->view()->attr('action', \Request::$current->url()); //needed for ajax submit
 
-		$this->_content = \View::factory('admin/cms/cms')
-			->set('main_tree', $main_tree)
-			->set('footer_tree', $footer_tree)
-			->set('hidden_tree', $hidden_tree);
+		if($content_id == null)
+		{
+			$form->menu_id->set('value', $this->request->param('parentid'));
+		}
+
+		$this->_content = \View::factory('admin/modal_form')
+			->set('components', $components)
+			->set('form', $form);
+
+		if(!$form->load()->validate())
+		{
+			return;
+		}
+		$content->save($form);
+
+		exit(json_encode(array('success' => true)));
+	}
+
+	public function action_disable()
+	{
+		parent::disable();
+	}
+
+	public function action_detail()
+	{
+		$menu = $menu = \Kacela::find('menu', $this->request->param('id'));
+
+		$this->_title = 'Menu: '.$menu->title;
+
+		$this->_content = \View::factory('admin/cms/detail')
+			->set('menu', $menu);
 	}
 
 	public function action_form()
@@ -65,22 +88,23 @@ class Controller_Admin_Cms extends Controller_Admin {
 
 	}
 
-	public function action_disable()
+	public function action_index()
 	{
-		$menu = \Kacela::find('menu', $this->request->param('id'));
-		$menu->disabled = 1;
-		$menu->save();
+		$main_menus = \Kacela::find_active('menu', \Kacela::criteria()->isnull('parent_id')->equals('type', 'main'));
+		$main_tree = \View::factory('admin/tree')
+			->set('menus', $main_menus);
 
-		exit(json_encode(array('success' => true)));
-	}
+		$footer_menus = \Kacela::find_active('menu', \Kacela::criteria()->isnull('parent_id')->equals('type', 'footer'));
+		$footer_tree = \View::factory('admin/tree')
+			->set('menus', $footer_menus);
 
-	public function action_detail()
-	{
-		$menu = $menu = \Kacela::find('menu', $this->request->param('id'));
+		$hidden_menus = \Kacela::find_active('menu', \Kacela::criteria()->isnull('parent_id')->equals('type', 'hidden'));
+		$hidden_tree = \View::factory('admin/tree')
+			->set('menus', $hidden_menus);
 
-		$this->_title = 'Menu: '.$menu->title;
-
-		$this->_content = \View::factory('admin/cms/detail')
-			->set('menu', $menu);
+		$this->_content = \View::factory('admin/cms/cms')
+			->set('main_tree', $main_tree)
+			->set('footer_tree', $footer_tree)
+			->set('hidden_tree', $hidden_tree);
 	}
 }
