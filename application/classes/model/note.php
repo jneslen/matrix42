@@ -21,4 +21,14 @@ class Note extends Model
 
 		return $form;
 	}
+
+	protected function _get_author()
+	{
+		return \Kacela::find('user', $this->author_id); //Gacela is having a difficult time getting the author for some reason, so this is a temp fix
+	}
+
+	protected function _get_sub_notes()
+	{
+		return \Kacela::find_active('note', \Kacela::criteria()->equals('parent_id',$this->id)->sort('note_date', 'Desc'));
+	}
 }

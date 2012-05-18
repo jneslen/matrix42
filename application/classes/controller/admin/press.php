@@ -14,6 +14,7 @@ class Controller_Admin_Press extends Controller_Admin {
 
 		$table = \Kable::factory()
 			->setDataSource($press, 'dom')
+			->attr('class', 'table table-bordered table-striped')
 			->add
 		(
 			array
@@ -48,9 +49,8 @@ class Controller_Admin_Press extends Controller_Admin {
 				array
 				(
 					'value' => function($o) {
-						$str = '<a href="/admin/press/form/'.$o->id.'">Edit</a>'
-							. ' | '
-							. '<a href="/admin/press/disable/'.$o->id.'">Disable</a>';
+						$str = '<a href="/admin/press/form/'.$o->id.'" data-toggle="modal" data-title="Edit '.$o->title.'" class="icon editdoc"></a>'
+							.'<a href="/admin/cms/disable/press/'.$o->id.'" class="icon trash" rel="disable"></a>';
 
 						return $str;
 					}
@@ -62,14 +62,21 @@ class Controller_Admin_Press extends Controller_Admin {
 			->set('table', $table);
 	}
 
+	public function action_disable()
+	{
+		parent::disable();
+	}
+
 	public function action_form()
 	{
 		$release = kacela::find('press_release', $this->request->param('id'));
 
-		$form = $release->get_form()
-			->add('save', 'submit');
+		$form = $release->get_form();
 
-		$this->_content = View::factory('admin/form')
+		$form->view()->attr('action', \Request::$current->url()); //needed for ajax submit
+
+		$this->_content = \View::factory('admin/modal_form')
+			->set('scripts', array('admin'))
 			->set('form', $form);
 
 		if(!$form->load()->validate())
@@ -78,16 +85,7 @@ class Controller_Admin_Press extends Controller_Admin {
 		}
 		$release->save($form);
 
-		$this->request->redirect('/admin/press/');
+		exit(json_encode(array('success' => true)));
 
-	}
-
-	public function action_disable()
-	{
-		$release = kacela::find('press_release', $this->request->param('id'));
-		$release->disabled = 1;
-		$release->save();
-
-		$this->request->redirect('/admin/press/');
 	}
 }

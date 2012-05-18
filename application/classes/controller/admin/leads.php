@@ -89,9 +89,14 @@ class Controller_Admin_Leads extends Controller_Admin {
 		return exit(json_encode(array('success' => true, 'contact_date' => \Format::date($lead->contact_date, 'human'))));
 	}
 
+	public function action_disable()
+	{
+		parent::disable();
+	}
+
 	public function action_form()
 	{
-		$lead = kacela::find('lead', $this->request->param('id'));
+		$lead = \Kacela::find('lead', $this->request->param('id'));
 
 		$form = $lead->get_form();
 
@@ -112,9 +117,50 @@ class Controller_Admin_Leads extends Controller_Admin {
 
 	public function action_detail()
 	{
-		$lead = kacela::find('lead', $this->request->param('id'));
+		$lead = \Kacela::find('lead', $this->request->param('id'));
 
 		$this->_content = View::factory('admin/leads/detail')
+			->set('user', $this->_user)
 			->set('lead', $lead);
+	}
+
+	public function action_note()
+	{
+		$type = $this->request->param('id');
+
+		switch($type)
+		{
+			case 'add':
+				$note = \Kacela::find('note');
+				$note->user_id = $this->request->param('parentid');
+				break;
+			case 'edit':
+				$note = \Kacela::find('note', $this->request->param('parentid'));
+				break;
+			default:
+				$note = \Kacela::find('note');
+				$note->user_id = $this->request->param('id');
+				$note->parent_id = $this->request->param('parentid');
+				$note->type = 'response';
+				$note->type->set('driver', 'hidden');
+				break;
+		}
+
+		$note->author_id = $this->_user->id;
+
+		$form = $note->get_form();
+
+		$form->view()->attr('action', \Request::$current->url()); //needed for ajax submit
+
+		$this->_content = \View::factory('admin/modal_form')
+			->set('form', $form);
+
+		if(!$form->load()->validate())
+		{
+			return;
+		}
+		$note->save($form);
+
+		exit(json_encode(array('success' => true)));
 	}
 }

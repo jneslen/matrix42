@@ -45,7 +45,61 @@
 			</tr>
 			</tbody>
 		</table>
-		<h3 class="left">Notes</h3><a href="/admin/leads/note/<?=$lead->id?>" class="icon add"></a>
-		<?php //TODO:Add notes section ?>
 	</div><!-- padded -->
 </div><!-- span8 -->
+<div class="span16">
+	<div class="padded margin-right">
+		<h3 class="left">Notes</h3><a href="/admin/leads/note/add/<?=$lead->id?>" data-toggle="modal" data-title="Add Note" class="icon add"></a>
+		<div class="clear"></div>
+		<table class="table table-bordered table-striped">
+			<thead>
+			<tr>
+				<th>Info</th>
+				<th>Note</th>
+			</tr>
+			</thead>
+			<tbody>
+		<?php foreach($lead->get_parent_notes() as $note): ?>
+			<tr>
+				<td>
+					<h4>Author: <span class="emphasis"><?=$note->author->full_name?></span></h4>
+					<h6><?=\Format::date($note->note_date, 'human')?></h6>
+					<h6><?=ucfirst($note->type)?></h6>
+					<a href="/admin/leads/note/<?=$lead->id?>/<?=$note->id?>" data-toggle="modal" data-title="Reply" class="icon reply"></a>
+					<?php if($user->id == $note->author_id): ?>
+					<a href="/admin/leads/note/edit/<?=$note->id?>" data-toggle="modal" data-title="Edit Note" class="icon editdoc"></a>
+					<a href="/admin/cms/disable/note/<?=$note->id?>" class="icon trash" rel="disable"></a>
+					<?php endif; ?>
+				</td>
+				<td>
+					<div class="clear"></div>
+					<div class="well">
+						<p><?=$note->note?></p>
+					</div>
+				<?php if($note->sub_notes): ?>
+					<table class="table table-striped table-condensed">
+						<tbody>
+					<?php foreach($note->sub_notes as $sub_note): ?>
+						<tr>
+							<td>
+								<h4>Reply by: <span class="emphasis"><?=$sub_note->author->full_name?></span></h4>
+								<h6><?=\Format::date($sub_note->note_date, 'human')?></h6>
+								<?php if($user->id == $sub_note->author_id): ?>
+								<a href="/admin/leads/note/edit/<?=$sub_note->id?>" data-toggle="modal" data-title="Edit Note" class="icon editdoc"></a>
+								<a href="/admin/cms/disable/note/<?=$sub_note->id?>" class="icon trash" rel="disable"></a>
+								<?php endif; ?>
+							</td>
+							<td><?=$sub_note->note?></td>
+						</tr>
+					<?php endforeach; ?>
+						</tbody>
+					</table>
+
+				<?php endif; ?>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div><!-- padded -->
+</div><!-- span16 -->

@@ -339,4 +339,9 @@ class User extends Model {
 
 		$this->last = end($names);
 	}
+
+	public function get_parent_notes()
+	{
+		return \Kacela::find_active('note', \Kacela::criteria()->isnull('parent_id')->equals('user_id', $this->id)->sort('note_date', 'DESC'));
+	}
 }

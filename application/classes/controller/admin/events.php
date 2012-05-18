@@ -14,6 +14,7 @@ class Controller_Admin_Events extends Controller_Admin {
 
 		$table = \Kable::factory()
 			->setDataSource($events, 'dom')
+			->attr('class', 'table table-bordered table-striped')
 			->add
 		(
 			array
@@ -59,9 +60,8 @@ class Controller_Admin_Events extends Controller_Admin {
 				array
 				(
 					'value' => function($o) {
-						$str = '<a href="/admin/events/form/'.$o->id.'">Edit</a>'
-							. ' | '
-							. '<a href="/admin/events/disable/'.$o->id.'">Disable</a>';
+						$str = '<a href="/admin/events/form/'.$o->id.'" data-toggle="modal" data-title="Edit '.$o->title.'" class="icon editdoc"></a>'
+							.'<a href="/admin/cms/disable/event/'.$o->id.'" class="icon trash" rel="disable"></a>';
 
 						return $str;
 					}
@@ -73,31 +73,30 @@ class Controller_Admin_Events extends Controller_Admin {
 			->set('table', $table);
 	}
 
+	public function action_disable()
+	{
+		parent::disable();
+	}
+
 	public function action_form()
 	{
 		$event = kacela::find('event', $this->request->param('id'));
 
-		$form = $event->get_form()
-			->add('save', 'submit');
+		$form = $event->get_form();
 
-		$this->_content = View::factory('admin/form')
+		$form->view()->attr('action', \Request::$current->url()); //needed for ajax submit
+
+		$this->_content = \View::factory('admin/modal_form')
+			->set('scripts', array('admin'))
 			->set('form', $form);
 
-		if(!$form->load()->validate()) {
+		if(!$form->load()->validate())
+		{
 			return;
 		}
 		$event->save($form);
 
-		$this->request->redirect('/admin/events/');
+		exit(json_encode(array('success' => true)));
 
-	}
-
-	public function action_disable()
-	{
-		$release = kacela::find('event', $this->request->param('id'));
-		$release->disabled = 1;
-		$release->save();
-
-		$this->request->redirect('/admin/events/');
 	}
 }
