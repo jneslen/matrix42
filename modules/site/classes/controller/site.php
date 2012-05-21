@@ -144,6 +144,10 @@ class Controller_Site extends Controller_Template
 			$role = strtolower(end($role));
 			//exit(\Debug::vars($role));
 
+			$this->template->head_analytics = \Analytics::factory('head');
+
+			$this->template->foot_analytics = \Analytics::factory('foot');
+
 			$this->template->header->user_menu = View::factory('/menu/user');
 
 			$this->template->header->menu = Menu::factory($role)->set_current($this->_get_current());

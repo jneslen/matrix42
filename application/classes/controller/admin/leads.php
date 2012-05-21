@@ -76,7 +76,10 @@ class Controller_Admin_Leads extends Controller_Admin {
 			)
 		);
 
+		$form = \Formo::form('leads');
+
 		$this->_content = View::factory('admin/index')
+			->set('form', $form)
 			->set('table', $table);
 	}
 
@@ -122,6 +125,29 @@ class Controller_Admin_Leads extends Controller_Admin {
 		$this->_content = View::factory('admin/leads/detail')
 			->set('user', $this->_user)
 			->set('lead', $lead);
+	}
+
+	public function action_download()
+	{
+		if($this->request->param('id'))
+		{
+			$ids = array($this->request->param('id'));
+		}
+		else
+		{
+			$ids = $_POST['leads'];
+		}
+
+		if(count($ids) == 0)
+		{
+			throw new Kohana_Exception('No lead ID supplied for purchase');
+		}
+
+		$leads = \Kacela::load('lead')->get_leads($ids);
+
+		$file = $this->_user->get_leads_file($leads);
+
+		exit($file->output());
 	}
 
 	public function action_note()

@@ -145,6 +145,32 @@ class User extends Model {
 		return $form;
 	}
 
+	public function get_leads_file($leads, $format = 'xls')
+	{
+		$filename = date('m_d_Y') . '_' . count($leads);
+
+		if ($format == 'xls')
+		{
+			$data = $this->_build_leads($leads);
+
+			$marks = array();
+			foreach($leads as $lead)
+			{
+				$marks[] = '?';
+			}
+
+
+			return new \Xls($filename, array_shift($data), $data);
+		}
+
+		return false;
+	}
+
+	public function get_parent_notes()
+	{
+		return \Kacela::find_active('note', \Kacela::criteria()->isnull('parent_id')->equals('user_id', $this->id)->sort('note_date', 'DESC'));
+	}
+
 	public function get_password_form($change = false)
 	{
 		$form = \Formo::form('password')
@@ -324,9 +350,96 @@ class User extends Model {
 		$this->save();
 	}
 
+	private function _build_leads($leads)
+	{
+		$schema = \View::factory('admin/leads/lead_schema')->render();
+		$xml = \Xml::to_array($schema);
+
+		$csv = array();
+		$csv[0] = array();
+
+		foreach ($xml['columns']['columns'] as $column)
+		{
+			$csv[0][] = $column['column']['header'];
+		}
+
+		$i = 0;
+		foreach ($leads as $lead)
+		{
+			$i++;
+			$row = array();
+
+			foreach ($xml['columns']['columns'] as $column)
+			{
+				if (isset($column['column']['field']))
+				{
+					$row[] = $this->_process_field($column['column']['field'], $lead);
+				}
+				elseif (isset($column['column']['alias']))
+				{
+					$row[] = null;
+				}
+			}
+
+			$csv[] = $row;
+			unset($row);
+		}
+
+		return $csv;
+	}
+
 	protected function _get_full_name()
 	{
 		return $this->first.' '.$this->last;
+	}
+
+	private function _process_field($field, $lead)
+	{
+		switch ($field)
+		{
+			case 'business_name':
+				return $lead->business_name;
+				break;
+			case 'fname':
+				return $lead->first;
+				break;
+			case 'lname':
+				return $lead->last;
+				break;
+			case 'address':
+				return $lead->address1;
+				break;
+			case 'city':
+				return $lead->city;
+				break;
+			case 'state':
+				return $lead->state_id;
+				break;
+			case 'province':
+				return $lead->province;
+				break;
+			case 'postal':
+				return $lead->postal;
+				break;
+			case 'country':
+				return $lead->country_id;
+				break;
+			case 'phone':
+				return $lead->number;
+				break;
+			case 'email':
+				return $lead->email;
+				break;
+			case 'inquiry_date':
+				return $lead->inquiry_date;
+				break;
+			case 'contact_date':
+				return $lead->contact_date;
+				break;
+			case 'note':
+				return $lead->note;
+				break;
+		}
 	}
 
 	protected function _set_full_name($val)
@@ -338,10 +451,5 @@ class User extends Model {
 		$this->first = current($names);
 
 		$this->last = end($names);
-	}
-
-	public function get_parent_notes()
-	{
-		return \Kacela::find_active('note', \Kacela::criteria()->isnull('parent_id')->equals('user_id', $this->id)->sort('note_date', 'DESC'));
 	}
 }

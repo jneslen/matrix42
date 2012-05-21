@@ -2,6 +2,8 @@
 
 return array
 (
+	// LIVE, RC, DEV
+	'environment' => 'DEV',
 	'kacela' => array
 	(
 		'password' => 'kamisasanuki',

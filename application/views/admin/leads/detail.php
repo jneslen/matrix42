@@ -3,9 +3,12 @@
 	<div class="padded">
 		<h1 class="emphasis left"><?=$lead->full_name?></h1>
 		<a href="/admin/leads/form/<?=$lead->id?>" data-toggle="modal" data-title="Edit <?=$lead->full_name?>" class="icon editdoc"></a>
+		<a href="/admin/leads/download/<?=$lead->id?>" class="icon download"></a>
 		<div class="clear"></div>
 		<h6 class="left">inquired: <span class="emphasis"><?=\Format::date($lead->inquiry_date, 'human')?></span></h6>
+		<?php if($lead->contact_date == null): ?>
 		<a href="/admin/leads/contact/<?=$lead->id?>" class="icon checkmark right" rel="contact-date"></a>
+		<?php endif; ?>
 		<h6 class="right">contacted: <span id="contact-date" class="emphasis"><?=$lead->contact_date ? \Format::date($lead->inquiry_date, 'human') : 'not contacted'?></span></h6>
 		<div class="clear"></div>
 		<table class="table table-bordered table-striped">

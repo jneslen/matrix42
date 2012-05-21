@@ -21,6 +21,7 @@ defined('SYSPATH') OR die('No direct access allowed.');
 		<?=Request::$current->scripts()?>
 		<link href="/assets/css/bootstrap.css" rel="stylesheet">
 		<?=Request::$current->styles()?>
+		<?=$head_analytics->render()?>
 	</head>
 <body>
 <?=$header?>
@@ -58,5 +59,6 @@ defined('SYSPATH') OR die('No direct access allowed.');
 <?php if($modal): ?>
 <?=$modal?>
 <?php endif; ?>
+<?=$foot_analytics->render()?>
 </body>
 </html>

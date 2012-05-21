@@ -46,8 +46,22 @@ $(document).ready(function() {
 				if(obj.success == true)
 				{
 					$('#contact-date').text(obj.contact_date);
+					$(this).remove();
 				}
 			}
 		});
+	});
+
+	$('.download-selected-btn').live('click', function(event){
+		event.preventDefault();
+		var checkedInputs = $('#table .checkbox-cell input:checked');
+
+		if(!checkedInputs.length) {
+			alert('You need to select leads to download');
+			return;
+		}
+
+		$('#download-form').submit();
+
 	});
 });
