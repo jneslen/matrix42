@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth
-# Generation Time: 2012-05-09 17:44:40 +0000
+# Generation Time: 2012-05-22 22:43:37 +0000
 # ************************************************************
 
 
@@ -27,14 +27,15 @@ DROP TABLE IF EXISTS `addresses`;
 
 CREATE TABLE `addresses` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `type` enum('home','billing','business','previous') NOT NULL,
-  `user_id` int(10) unsigned DEFAULT NULL,
+  `type` enum('home','billing','business','previous') NOT NULL DEFAULT 'business',
+  `user_id` int(10) unsigned NOT NULL,
   `care_of` varchar(34) DEFAULT NULL,
   `address1` varchar(85) DEFAULT NULL,
   `address2` varchar(85) DEFAULT NULL,
   `city` varchar(85) DEFAULT NULL,
   `county_id` int(10) unsigned NOT NULL,
-  `state_id` char(2) NOT NULL,
+  `state_id` char(2) DEFAULT '',
+  `province` text,
   `postal` varchar(10) DEFAULT NULL,
   `country_id` char(2) NOT NULL DEFAULT 'US',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
@@ -47,6 +48,15 @@ CREATE TABLE `addresses` (
   CONSTRAINT `fk-user-addresses` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `addresses` WRITE;
+/*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
+
+INSERT INTO `addresses` (`id`, `type`, `user_id`, `care_of`, `address1`, `address2`, `city`, `county_id`, `state_id`, `province`, `postal`, `country_id`, `disabled`)
+VALUES
+	(1,'business',2,'Johnny Boy','123 Test Ave','Suite 3','Sandy',0,'UT',NULL,'84092','US',0);
+
+/*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table campaigns
@@ -56,11 +66,24 @@ DROP TABLE IF EXISTS `campaigns`;
 
 CREATE TABLE `campaigns` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `campaign_code` int(10) NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `descripton` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `campaigns` WRITE;
+/*!40000 ALTER TABLE `campaigns` DISABLE KEYS */;
+
+INSERT INTO `campaigns` (`id`, `campaign_code`, `name`, `descripton`)
+VALUES
+	(1,100,'general','General Site Visit'),
+	(2,200,'servicenow','ServiceNow'),
+	(3,300,'microsoft','Microsoft SCCM Enterprise Manager'),
+	(4,400,'citrix','VDI-Desktop Virtualization, Citrix Management &amp; p2v by Matrix42');
+
+/*!40000 ALTER TABLE `campaigns` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table components
@@ -91,7 +114,7 @@ LOCK TABLES `components` WRITE;
 INSERT INTO `components` (`id`, `type`, `name`, `description`, `content`, `model`, `directory`, `controller`, `method`, `view`, `vars`, `disabled`)
 VALUES
 	(1,'method','%%leadform%%','Lead capture body form',NULL,NULL,NULL,'public','lead_form',NULL,NULL,0),
-	(2,'content','%%getstartedpage%%','A Get Started well that scrolls to the leadform on the same page','<div class=\"well margin-right\">\n	<div class=\"left\">\n		<h3 class=\"no-margin\">Let Matrix42 empower you to be in control of your IT needs.</h3>\n		<h4 class=\"no-margin\">Get started with the perfect IT solution now.</h4>\n	</div>\n	<a href=\"#lead-form\" class=\"btn btn-info btn-large right margin-right scroll\">Get Started Today!</a>\n	<div class=\"clearfix\"></div>\n</div><!-- well -->',NULL,NULL,NULL,NULL,NULL,NULL,0);
+	(2,'content','%%getstartedpage%%','A Get Started well that scrolls to the leadform on the same page','<div class=\"well margin-right\">\n	<div class=\"left\">\n		<h3 class=\"no-margin\">Let Matrix42 empower you to be in control of your IT needs.</h3>\n		<h4 class=\"no-margin\">Get started with the perfect IT solution now.</h4>\n	</div>\n	<a href=\"#lead-form-anchor\" class=\"btn btn-info btn-large right margin-right scroll\">Get Started Today!</a>\n	<div class=\"clearfix\"></div>\n</div><!-- well -->',NULL,NULL,NULL,NULL,NULL,NULL,0);
 
 /*!40000 ALTER TABLE `components` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -118,8 +141,9 @@ LOCK TABLES `contents` WRITE;
 
 INSERT INTO `contents` (`id`, `menu_id`, `type`, `content`, `elements`)
 VALUES
-	(1,1,'main','<div class=\"padded\">\n	<h3 class=\"emphasis\">Manage every phase of the physical device lifecycle</h3>\n	<p>If your organization contains a large number of desktops and notebooks, you may find it challenging to maintain control over all of your systems while giving your end users the tools they need to be productive. The larger and more diverse your fleet, the harder it is to ensure that every system complies with license agreements, corporate policies and industry or federal regulations.</p>\n	<p>However, desktop management doesn&#39;t need to be complicated. Matrix42 makes it easy to manage every phase in the client lifecycle - from provisioning to retirement. With Matrix42, you can:</p>\n	<ul class=\"list\">\n		<li><span class=\"bold\">Meet your Service Level Agreements (SLAs).</span> Matrix42 automates many of your time-consuming tasks such as software deployments and common help desk services. This allows you to provide end users with faster service and decrease your chance of receiving financial penalties from breached SLAs.</li>\n		<li><span class=\"bold\">Make your IT department more efficient</span> With Matrix42 client lifecycle management, you can reduce your IT department&#39;s workload while managing a greater number of laptops and desktops. This can lower your operating costs</li>\n	</ul>\n	<p>Matrix42 supports all of your physical devices across a variety of platforms including Windows, Mac, Linux and Sun Solaris.</p>\n	%%getstartedpage%%\n	<div id=\"product-tab-container\" class=\"well margin-right\">\n		<ul id=\"product-tab\" class=\"nav nav-tabs\" data-tabs=\"product-tab\">\n			<li class=\"active\"><a href=\"#features\" data-toggle=\"tab\">Features &amp; Benefits</a></li>\n			<li><a href=\"#why\" data-toggle=\"tab\">Why Matrix42</a></li>\n		</ul><!-- product-tab -->\n		<div class=\"tab-container\">\n			<div class=\"tab-content\">\n				<div class=\"tab-pane active padded-content\" id=\"features\">\n					<h3 class=\"emphasis\">Easily Manage the Entire Client Lifecycle - from OS Deployment to Retirement</h3>\n					<p>Unlike other desktop management solutions, Matrix42 can manage the entire client lifecycle - from provisioning to retirement. Matrix42 simplifies every phase in this process by helping you:</p>\n					<h4 class=\"emphasis\">Increase the Speed of Your OS Deployments While Dramatically Reducing Errors</h4>\n					<p>Matrix42 makes it easy for you to provision a bare-metal system - even if you&#39;re working remotely. You won&#39;t need to search for and install the right drivers for each system - a time-intensive task that could involve hundreds to thousands of configurations. During the OS deployment, Matrix42 will automatically find the correct drivers for each system. This eliminates guesswork, mistakes and downtime.</p>\n					<h4 class=\"emphasis\">Automate Your Software Discovery, Management and Reporting</h4>\n					<p>Matrix42 automatically finds all of your IT assets - without installing a software agent that would change a system&#39;s desired state. You can pre-schedule inventory scans or run them on demand to gain insight into your hardware and software. These scans will show you exactly what programs are installed, who is using them and the frequency of their use. This helps with your license management, as you can uninstall software that is not being used and reduce your licensee expenses.</p>\n					<p>Plus, you can deploy software updates and patches while keeping your systems in their desired states. Simply set your test and approval preferences once and then forget about them - Matrix42&#39;s software management tools will ensure they occur as planned and that your systems remain in compliance with corporate policies.</p>\n					<h4 class=\"emphasis\">Keep Your Data Secure Throughout the Entire Client Life Cycle</h4>\n					<p>With Matrix42, your end users won&#39;t lose their data during OS deployments and software updates. You can back up and restore all their data and settings with the push of a button - either from within the Matrix42 console or directly from the end user&#39;s system.</p>\n					<p>Matrix42 also ensures your systems are configured properly - which prevents security breaches, compliance issues and downtime.</p>\n					<p>Finally, Matrix42 can completely wipe your retired systems. This ensures that your data doesn&#39;t fall into the wrong hands if your hardware is sold, reassigned or junked.</p>\n				</div><!-- features -->\n				<div class=\"tab-pane padded-content\" id=\"why\">\n					<h3 class=\"emphasis\">Streamline Your Desktop Management</h3>\n					<p>Matrix42 Empirum Workplace Automation provides you with everything you need to automate your time-consuming desktop management tasks - for both physical and virtual desktops. It also integrates all of the processes in your client lifecycle management, from installation through secure data wiping, into one user-friendly platform.</p>\n					<p>Here&#39;s how the Empirum Workplace Automation modules can streamline your IT management:</p>\n					<p><span class=\"bold\">Inventory Management</span> gives you detailed data for every device connected to your corporate network, such as desktops, laptops, software, printers, routers, mobile devices and more. This allows you to learn what is in use, so you can remove unused applications, cancel unneeded licenses and reduce your IT costs.</p>\n					<p><span class=\"bold\">Software Management</span> automates all of your software deployments and updates - no matter how complex. It shows you exactly what is installed on each machine, so you can gain control of your software distributions and ensure your rollouts go smoothly. Thanks to Software Management&#39;s user-friendly features, some of Matrix42&#39;s customers have reduced their rollout failure rates from 10% to 0.002%.</p>\n					<p><span class=\"bold\">OS Deployment</span> automates your operating system deployments and migrations, which will reduce your errors, help desk calls and the amount of time you spend creating configurations for hardware. You can update your systems either on site or remotely with just one click.</p>\n					<p><span class=\"bold\">Personal Backup</span> restores all user data and settings with the push of a button - either remotely or directly from the end user&#39;s system. This module can also restore all application, data and operating system settings during an OS migration.</p>\n					<p><span class=\"bold\">Easy Recovery</span> provides complete disaster recovery after a virus infection, hardware failure or fatal system error.</p>\n					<p><span class=\"bold\">Remote Control</span> lets you gain remote access to a user&#39;s system in under 7 seconds - even if it&#39;s protected by firewalls. This allows you to provide your end users with instant support upon request while saving the costs and hassles of travel.</p>\n					<p>Matrix42 won IT-Administrator&#39;s &quot;Migration to Windows 7&quot; benchmark test in 2010</p>\n				</div><!-- why -->\n			</div><!-- tab-content -->\n		</div><!-- tab-content -->\n	</div><!-- product-tab-container -->\n</div><!-- padded -->\n%%leadform%%',NULL),
-	(2,5,'main','%%leadform%%',NULL);
+	(1,1,'main','<div class=\"padded\">\n	<h3 class=\"emphasis\">Manage every phase of the physical device lifecycle</h3>\n	<p>If your organization contains a large number of desktops and notebooks, you may find it challenging to maintain control over all of your systems while giving your end users the tools they need to be productive. The larger and more diverse your fleet, the harder it is to ensure that every system complies with license agreements, corporate policies and industry or federal regulations.</p>\n	<p>However, desktop management doesn\'t need to be complicated. Matrix42 makes it easy to manage every phase in the client lifecycle - from provisioning to retirement. With Matrix42, you can:</p>\n	<ul class=\"list\">\n		<li><span class=\"bold\">Meet your Service Level Agreements (SLAs).</span> Matrix42 automates many of your time-consuming tasks such as software deployments and common help desk services. This allows you to provide end users with faster service and decrease your chance of receiving financial penalties from breached SLAs.</li>\n		<li><span class=\"bold\">Make your IT department more efficient</span> With Matrix42 client lifecycle management, you can reduce your IT department\'s workload while managing a greater number of laptops and desktops. This can lower your operating costs</li>\n	</ul>\n	<p>Matrix42 supports all of your physical devices across a variety of platforms including Windows, Mac, Linux and Sun Solaris.</p>\n	%%getstartedpage%%\n	<div id=\"product-tab-container\" class=\"well margin-right\">\n		<ul id=\"product-tab\" class=\"nav nav-tabs\" data-tabs=\"product-tab\">\n			<li class=\"active\"><a href=\"#features\" data-toggle=\"tab\">Features & Benefits</a></li>\n			<li><a href=\"#why\" data-toggle=\"tab\">Why Matrix42</a></li>\n		</ul><!-- product-tab -->\n		<div class=\"tab-container\">\n			<div class=\"tab-content\">\n				<div class=\"tab-pane active padded-content\" id=\"features\">\n					<h3 class=\"emphasis\">Easily Manage the Entire Client Lifecycle - from OS Deployment to Retirement</h3>\n					<p>Unlike other desktop management solutions, Matrix42 can manage the entire client lifecycle - from provisioning to retirement. Matrix42 simplifies every phase in this process by helping you:</p>\n					<h4 class=\"emphasis\">Increase the Speed of Your OS Deployments While Dramatically Reducing Errors</h4>\n					<p>Matrix42 makes it easy for you to provision a bare-metal system - even if you\'re working remotely. You won\'t need to search for and install the right drivers for each system - a time-intensive task that could involve hundreds to thousands of configurations. During the OS deployment, Matrix42 will automatically find the correct drivers for each system. This eliminates guesswork, mistakes and downtime.</p>\n					<h4 class=\"emphasis\">Automate Your Software Discovery, Management and Reporting</h4>\n					<p>Matrix42 automatically finds all of your IT assets - without installing a software agent that would change a system\'s desired state. You can pre-schedule inventory scans or run them on demand to gain insight into your hardware and software. These scans will show you exactly what programs are installed, who is using them and the frequency of their use. This helps with your license management, as you can uninstall software that is not being used and reduce your licensee expenses.</p>\n					<p>Plus, you can deploy software updates and patches while keeping your systems in their desired states. Simply set your test and approval preferences once and then forget about them - Matrix42\'s software management tools will ensure they occur as planned and that your systems remain in compliance with corporate policies.</p>\n					<h4 class=\"emphasis\">Keep Your Data Secure Throughout the Entire Client Life Cycle</h4>\n					<p>With Matrix42, your end users won\'t lose their data during OS deployments and software updates. You can back up and restore all their data and settings with the push of a button - either from within the Matrix42 console or directly from the end user\'s system.</p>\n					<p>Matrix42 also ensures your systems are configured properly - which prevents security breaches, compliance issues and downtime.</p>\n					<p>Finally, Matrix42 can completely wipe your retired systems. This ensures that your data doesn\'t fall into the wrong hands if your hardware is sold, reassigned or junked.</p>\n				</div><!-- features -->\n				<div class=\"tab-pane padded-content\" id=\"why\">\n					<h3 class=\"emphasis\">Streamline Your Desktop Management</h3>\n					<p>Matrix42 Empirum Workplace Automation provides you with everything you need to automate your time-consuming desktop management tasks - for both physical and virtual desktops. It also integrates all of the processes in your client lifecycle management, from installation through secure data wiping, into one user-friendly platform.</p>\n					<p>Here\'s how the Empirum Workplace Automation modules can streamline your IT management:</p>\n					<p><span class=\"bold\">Inventory Management</span> gives you detailed data for every device connected to your corporate network, such as desktops, laptops, software, printers, routers, mobile devices and more. This allows you to learn what is in use, so you can remove unused applications, cancel unneeded licenses and reduce your IT costs.</p>\n					<p><span class=\"bold\">Software Management</span> automates all of your software deployments and updates - no matter how complex. It shows you exactly what is installed on each machine, so you can gain control of your software distributions and ensure your rollouts go smoothly. Thanks to Software Management\'s user-friendly features, some of Matrix42\'s customers have reduced their rollout failure rates from 10% to 0.002%.</p>\n					<p><span class=\"bold\">OS Deployment</span> automates your operating system deployments and migrations, which will reduce your errors, help desk calls and the amount of time you spend creating configurations for hardware. You can update your systems either on site or remotely with just one click.</p>\n					<p><span class=\"bold\">Personal Backup</span> restores all user data and settings with the push of a button - either remotely or directly from the end user\'s system. This module can also restore all application, data and operating system settings during an OS migration.</p>\n					<p><span class=\"bold\">Easy Recovery</span> provides complete disaster recovery after a virus infection, hardware failure or fatal system error.</p>\n					<p><span class=\"bold\">Remote Control</span> lets you gain remote access to a user\'s system in under 7 seconds - even if it\'s protected by firewalls. This allows you to provide your end users with instant support upon request while saving the costs and hassles of travel.</p>\n					<p>Matrix42 won IT-Administrator\'s \"Migration to Windows 7\" benchmark test in 2010</p>\n				</div><!-- why -->\n			</div><!-- tab-content -->\n		</div><!-- tab-content -->\n	</div><!-- product-tab-container -->\n</div><!-- padded -->\n%%leadform%%',NULL),
+	(2,5,'main','%%leadform%%',NULL),
+	(3,1,'sidebar','%%support%%',NULL);
 
 /*!40000 ALTER TABLE `contents` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -401,7 +425,7 @@ DROP TABLE IF EXISTS `events`;
 
 CREATE TABLE `events` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `type` enum('webinar','conference','partner_event') NOT NULL DEFAULT 'webinar',
+  `type` enum('webinar','conference','partner_event','training') NOT NULL DEFAULT 'webinar',
   `title` varchar(255) NOT NULL DEFAULT '',
   `subtitle` varchar(255) DEFAULT NULL,
   `description` text,
@@ -411,6 +435,7 @@ CREATE TABLE `events` (
   `start_date` datetime NOT NULL,
   `end_date` datetime DEFAULT NULL,
   `use_time` tinyint(1) NOT NULL DEFAULT '0',
+  `seats` int(10) unsigned DEFAULT NULL,
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -418,9 +443,10 @@ CREATE TABLE `events` (
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
 
-INSERT INTO `events` (`id`, `type`, `title`, `subtitle`, `description`, `location`, `link`, `thumbnail`, `start_date`, `end_date`, `use_time`, `disabled`)
+INSERT INTO `events` (`id`, `type`, `title`, `subtitle`, `description`, `location`, `link`, `thumbnail`, `start_date`, `end_date`, `use_time`, `seats`, `disabled`)
 VALUES
-	(1,'conference','AirWatch Connect 2012','','<p>We understand the world of enterprise mobility is evolving quickly.  Join us at AirWatch Connect 2012 to gain insight, strategies, tools and  relationships to make the right business and technology decisions today  and in the future.</p>\n\n<p>AirWatch Connect 2012 provides an environment where you can connect  with AirWatch specialists, industry experts, strategic partners and IT  executives. Learn best practices, understand emerging technologies,  share success stories, and find answers to enterprise mobility  challenges.</p>\n\n<p><a href=\"http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g\" external=\"1\">www.air-watch.com</a></p>','Atlanta, GA','http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g','','2012-05-09 08:00:00','2012-05-09 20:00:00',1,0);
+	(1,'conference','AirWatch Connect 2012','','<p>We understand the world of enterprise mobility is evolving quickly.  Join us at AirWatch Connect 2012 to gain insight, strategies, tools and  relationships to make the right business and technology decisions today  and in the future.</p>\n\n<p>AirWatch Connect 2012 provides an environment where you can connect  with AirWatch specialists, industry experts, strategic partners and IT  executives. Learn best practices, understand emerging technologies,  share success stories, and find answers to enterprise mobility  challenges.</p>\n\n<p><a href=\"http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g\" external=\"1\">www.air-watch.com</a></p>','Atlanta, GA','http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g','','2012-05-14 08:00:00','2012-05-16 20:00:00',0,NULL,0),
+	(2,'conference','Test Conference','subtitle','<p>This is a description</p>','San Francisco','','','2012-05-19 10:00:00','2012-05-20 20:00:00',1,NULL,0);
 
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -436,7 +462,6 @@ CREATE TABLE `leads` (
   `business_name` varchar(255) DEFAULT NULL,
   `campaign_id` int(10) unsigned DEFAULT NULL,
   `newsletter` tinyint(1) NOT NULL DEFAULT '0',
-  `message` text,
   `inquiry_ip` varchar(20) DEFAULT NULL,
   `inquiry_date` datetime NOT NULL,
   `contact_date` datetime DEFAULT NULL,
@@ -450,9 +475,11 @@ CREATE TABLE `leads` (
 LOCK TABLES `leads` WRITE;
 /*!40000 ALTER TABLE `leads` DISABLE KEYS */;
 
-INSERT INTO `leads` (`id`, `business_name`, `campaign_id`, `newsletter`, `message`, `inquiry_ip`, `inquiry_date`, `contact_date`, `downloaded`)
+INSERT INTO `leads` (`id`, `business_name`, `campaign_id`, `newsletter`, `inquiry_ip`, `inquiry_date`, `contact_date`, `downloaded`)
 VALUES
-	(2,NULL,NULL,0,'Faceoff I think','127.0.0.1','2012-05-04 16:43:02',NULL,0);
+	(2,'',NULL,0,'127.0.0.1','2012-05-04 16:43:02','2012-05-17 17:14:23',0),
+	(3,NULL,NULL,0,'127.0.0.1','2012-05-09 16:05:52',NULL,0),
+	(4,NULL,NULL,0,'127.0.0.1','2012-05-10 12:49:43',NULL,0);
 
 /*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -467,6 +494,7 @@ CREATE TABLE `menus` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned DEFAULT NULL,
   `role` enum('public','admin','member') NOT NULL DEFAULT 'public',
+  `type` enum('main','submenu','footer','hidden') NOT NULL DEFAULT 'main',
   `title` varchar(55) NOT NULL,
   `url` text NOT NULL,
   `classes` varchar(255) DEFAULT NULL,
@@ -480,6 +508,7 @@ CREATE TABLE `menus` (
   `banner_title` varchar(255) DEFAULT NULL,
   `banner_subtitle` varchar(255) DEFAULT NULL,
   `order` int(2) DEFAULT NULL,
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk-parent-menus` (`parent_id`),
   CONSTRAINT `fk-menu-menus` FOREIGN KEY (`parent_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE
@@ -488,19 +517,60 @@ CREATE TABLE `menus` (
 LOCK TABLES `menus` WRITE;
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 
-INSERT INTO `menus` (`id`, `parent_id`, `role`, `title`, `url`, `classes`, `section`, `controller`, `method`, `pagetitle`, `subtitle`, `keywords`, `banner`, `banner_title`, `banner_subtitle`, `order`)
+INSERT INTO `menus` (`id`, `parent_id`, `role`, `type`, `title`, `url`, `classes`, `section`, `controller`, `method`, `pagetitle`, `subtitle`, `keywords`, `banner`, `banner_title`, `banner_subtitle`, `order`, `disabled`)
 VALUES
-	(1,NULL,'public','Solutions','/solutions','dropdown','public','solutions','index',NULL,NULL,NULL,'sub-banner-woman.jpg','holistic workplace','The Solution That Solves your IT needs.',1),
-	(2,NULL,'public','Products','/products',NULL,'public','products','index',NULL,NULL,NULL,NULL,NULL,NULL,2),
-	(3,NULL,'public','Support','/support',NULL,'public','support','index',NULL,NULL,NULL,NULL,NULL,NULL,3),
-	(4,NULL,'public','About','/about','dropdown','public','about','index',NULL,NULL,NULL,NULL,NULL,NULL,4),
-	(5,1,'public','IT Service Management','/solutions/it_service_management',NULL,'public','solutions','it_service_management','IT Service Management',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,1),
-	(6,1,'public','IT Asset Management','/solutions/it_asset_management',NULL,'public','solutions','it_asset_management','IT Asset Management',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,3),
-	(7,1,'public','Mobile IT Service','/solutions/it_service_management/mobile_it_service','minor','public','solutions','mobile_it_service','Mobile IT Service',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,2),
-	(8,4,'public','Press','/press',NULL,'public','press','index','Press Releases',NULL,NULL,NULL,NULL,NULL,NULL),
-	(9,4,'public','Events','/events',NULL,'public','events','index','Events',NULL,NULL,NULL,NULL,NULL,NULL);
+	(1,NULL,'public','main','Solutions','/solutions','dropdown','public','solutions','index','','','','sub-banner-woman.jpg','holistic workplace','The Solution That Solves your IT needs.',1,0),
+	(2,NULL,'public','main','Products','/products',NULL,'public','products','index',NULL,NULL,NULL,NULL,NULL,NULL,2,0),
+	(3,NULL,'public','main','Support','/support',NULL,'public','support','index',NULL,NULL,NULL,NULL,NULL,NULL,3,0),
+	(4,NULL,'public','main','About','/about','dropdown','public','about','index',NULL,NULL,NULL,NULL,NULL,NULL,4,0),
+	(5,1,'public','main','IT Service Management','/solutions/it_service_management',NULL,'public','solutions','it_service_management','IT Service Management',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,1,0),
+	(6,1,'public','main','IT Asset Management','/solutions/it_asset_management',NULL,'public','solutions','it_asset_management','IT Asset Management',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,3,0),
+	(7,1,'public','main','Mobile IT Service','/solutions/it_service_management/mobile_it_service','minor','public','solutions','mobile_it_service','Mobile IT Service',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,2,0),
+	(8,4,'public','main','Press','/press',NULL,'public','press','index','Press Releases',NULL,NULL,NULL,NULL,NULL,NULL,0),
+	(9,4,'public','main','Events','/events',NULL,'public','events','index','Events',NULL,NULL,NULL,NULL,NULL,NULL,0),
+	(10,1,'public','main','Window 7 Migration','/solutions/windows_7_migration','','public','solutions','windows_7_migration','Windows 7 Migration','','','','','',NULL,0),
+	(11,1,'public','main','Workplace Mobility','/solutions/workplace_mobility','','public','solutions','workplace_mobility','Workplace Mobility','Matrix42 Workplace Mobility blah','byod, mobile workplace','','','',NULL,0);
 
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table notes
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `notes`;
+
+CREATE TABLE `notes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `author_id` int(10) unsigned NOT NULL,
+  `parent_id` int(10) unsigned DEFAULT NULL COMMENT 'Parent note_id',
+  `type` enum('general','sales','response','inquiry') NOT NULL DEFAULT 'general',
+  `note` text NOT NULL,
+  `note_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk-user-notes` (`user_id`),
+  KEY `fk-author-notes` (`author_id`),
+  KEY `fk-parent-notes` (`parent_id`),
+  CONSTRAINT `fk-author-notes` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk-parent-notes` FOREIGN KEY (`parent_id`) REFERENCES `notes` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk-user-notes` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `notes` WRITE;
+/*!40000 ALTER TABLE `notes` DISABLE KEYS */;
+
+INSERT INTO `notes` (`id`, `user_id`, `author_id`, `parent_id`, `type`, `note`, `note_date`, `disabled`)
+VALUES
+	(1,2,2,NULL,'inquiry','Will it close?','2012-05-10 12:47:47',0),
+	(2,4,4,NULL,'inquiry','Oh I have another question for you.','2012-05-10 12:49:43',0),
+	(3,2,1,1,'general','This is a subnote followup etc.','2012-05-18 11:20:34',0),
+	(6,2,1,1,'general','This is a reply','2012-05-18 14:45:09',0),
+	(7,2,1,NULL,'sales','I really like this guy, but maybe just a little too much','2012-05-18 14:56:47',0),
+	(8,2,1,NULL,'general','This is a new note','2012-05-21 23:36:01',0);
+
+/*!40000 ALTER TABLE `notes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -513,7 +583,7 @@ CREATE TABLE `phones` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `type` enum('primary','alternate','mobile') DEFAULT NULL,
   `user_id` int(10) unsigned DEFAULT NULL,
-  `number` varchar(14) NOT NULL,
+  `number` varchar(18) NOT NULL DEFAULT '',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk-user-phones` (`user_id`),
@@ -525,7 +595,9 @@ LOCK TABLES `phones` WRITE;
 
 INSERT INTO `phones` (`id`, `type`, `user_id`, `number`, `disabled`)
 VALUES
-	(1,'primary',2,'2837438234',0);
+	(1,'primary',2,'2837438123',0),
+	(2,'primary',3,'2348753234',0),
+	(3,'primary',4,'3479572642',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -669,7 +741,9 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` (`id`, `email`, `first`, `initial`, `last`, `password`, `temp_password`, `temp_password_date`, `role`, `logins`, `last_login`, `registration_date`, `last_activity_date`, `user_notes`, `token`, `email_confirmed`, `last_ip`, `disabled`)
 VALUES
 	(1,'jeff.neslen@matrix42.com','Jeff',NULL,'Neslen','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'jedi',0,NULL,'2012-05-04 15:55:36',NULL,NULL,NULL,1,NULL,0),
-	(2,'jon@greaser.com','John',NULL,'Travolta','bcrypt$2a$12$rzwWbf5vfuaaN9yNRgnivOHD8zn8947SZ5xolrxSh41Jmt81Nzs/e',NULL,NULL,'lead',0,NULL,'2012-05-04 16:43:02','2012-05-04 16:43:02',NULL,NULL,0,'127.0.0.1',0);
+	(2,'jon@greaser.com','John',NULL,'Travolta','bcrypt$2a$12$rzwWbf5vfuaaN9yNRgnivOHD8zn8947SZ5xolrxSh41Jmt81Nzs/e',NULL,NULL,'lead',0,NULL,'2012-05-04 16:43:02','2012-05-04 16:43:02',NULL,NULL,0,'127.0.0.1',0),
+	(3,'joe@smo.com','Joe',NULL,'Smo','bcrypt$2a$12$4rXUpQ7KMjcoqZL6VEB2DuMsHJnJe7za/wuc8M/33iAOp6Bpjn35a',NULL,NULL,'lead',0,NULL,'2012-05-09 16:05:52','2012-05-09 16:05:52',NULL,NULL,0,'127.0.0.1',0),
+	(4,'charlie@manson.com','Charles',NULL,'Manson','bcrypt$2a$12$OvroMdgvIJznkfJo1MjD6e24NKR3sgL9Az2c79T9qhFg8OQifxjB.',NULL,NULL,'lead',0,NULL,'2012-05-10 12:01:29','2012-05-10 12:49:43',NULL,NULL,0,'127.0.0.1',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -42862,6 +42936,44 @@ VALUES
 UNLOCK TABLES;
 
 
+
+--
+-- Dumping routines (PROCEDURE) for database 'darth'
+--
+DELIMITER ;;
+
+# Dump of PROCEDURE sp_belongs_to
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+		FROM INFORMATION_SCHEMA.key_column_usage
+		WHERE TABLE_SCHEMA = schemaName
+		AND TABLE_NAME = tableName
+		AND REFERENCED_TABLE_NAME IS NOT NULL
+		GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+# Dump of PROCEDURE sp_has_many
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+	  FROM INFORMATION_SCHEMA.key_column_usage
+	  WHERE TABLE_SCHEMA = schemaName
+	  AND REFERENCED_TABLE_NAME = tableName
+	  GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

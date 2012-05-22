@@ -34,6 +34,8 @@ class Controller_Site extends Controller_Template
 
 	protected $_section;
 
+	protected $_campaign;
+
 	protected $_modal;
 	protected $_modal_type = 'form';
 	protected $_modal_title = null;
@@ -95,6 +97,8 @@ class Controller_Site extends Controller_Template
 		View::bind_global('title', $this->_title);
 		View::bind_global('page_title', $this->_page_title);
 		View::bind_global('user', $this->_user);
+
+		$this->_campaign = \Cookie::get('campaign_code', '100');
 	}
 
 	public function after()
