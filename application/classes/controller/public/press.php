@@ -11,7 +11,7 @@ class Controller_Public_Press extends Controller_Public {
 
 	public function action_index()
 	{
-		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->sort('release_date', 'ASC'));
+		$press_releases = \Kacela::find_active('press', \Kacela::criteria()->sort('release_date', 'ASC'));
 
 		$this->_content = View::factory('press/press')
 			->set('press_releases', $press_releases);
@@ -21,7 +21,7 @@ class Controller_Public_Press extends Controller_Public {
 	{
 		$release_id = $this->request->param('id');
 
-		$release = \Kacela::find_one('press_release', \Kacela::criteria()->equals('id', $release_id));
+		$release = \Kacela::find_one('press', \Kacela::criteria()->equals('id', $release_id));
 
 		$this->_title = $release->title;
 

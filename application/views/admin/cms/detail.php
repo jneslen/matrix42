@@ -1,7 +1,7 @@
 <div class="clear space"></div>
 <div class="span16">
 	<div class="padded">
-		<h2 class="no-margin left">URL: <span class="emphasis"><?=$menu->url?></span></h2><a href="/admin/cms/form/<?=$menu->id?>" data-toggle="modal" data-title="Edit <?=$menu->title?> Menu" class="icon editdoc left"></a>
+		<h2 class="no-margin left">URL: <span class="emphasis"><a href="<?=$menu->url?>" target="preview"><?=$menu->url?></a></span></h2><a href="/admin/cms/form/<?=$menu->id?>" data-toggle="modal" data-title="Edit <?=$menu->title?> Menu" class="icon editdoc left"></a>
 		<h6 class="clear"><?=$menu->role?> &gt; <?=$menu->type?></h6>
 		<div class="clear space"></div>
 		<h3 class="no-margin">Page Title: <?=$menu->pagetitle?></h3>

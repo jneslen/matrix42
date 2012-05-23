@@ -131,6 +131,7 @@ Kohana::modules(array
 		'formo' => MODPATH.'formo',
 		'bonafide' => MODPATH.'bonafide',
 		'xls' => MODPATH.'xls',
+		'cache' => MODPATH.'cache',
 	)
 );
 

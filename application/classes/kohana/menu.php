@@ -64,7 +64,7 @@ class Kohana_Menu
 			if ($item->classes) {
 				$temp[$key]['classes'] = array($item->classes);
 			}
-			$subcategories = $item->sub_menu;
+			$subcategories = $item->sub_menus;
 			if (count($subcategories) > 0)
 				$temp[$key]['items'] = $this->get_from_database($subcategories);
 		}

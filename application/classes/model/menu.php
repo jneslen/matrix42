@@ -7,7 +7,6 @@ class Menu extends Model
 
 	public function get_content($type = 'main', $raw = false)
 	{
-
 		foreach($this->contents as $content)
 		{
 			if($type == $content->type)
@@ -25,7 +24,7 @@ class Menu extends Model
 			return $this->_contents[$type];
 		}
 
-		$this->_contents[$type] = new \Darth\Model\Content;
+		$this->_contents[$type] = new \Darth\Model\Content();
 
 		$this->_contents[$type]->menu_id = $this->id;
 		$this->_contents[$type]->type = $type;
@@ -49,6 +48,11 @@ class Menu extends Model
 			$form->parent_id->set('driver', 'select')
 				->set('label', 'Parent Menu')
 				->set('options', $this->get_parent_menus());
+		}
+		elseif($this->id != null && $this->parent_id == null)
+		{
+			$form->parent_id->set('driver', 'hidden');
+			$form->type->set('driver', 'hidden')->set('value', 'main');
 		}
 		else
 		{
@@ -93,7 +97,7 @@ class Menu extends Model
 		return $this->_contents;
 	}
 
-	protected function _get_sub_menu()
+	protected function _get_sub_menus()
 	{
 		return \Kacela::find_all('menu', \Kacela::criteria()->equals('parent_id',$this->id)->sort('order'));
 	}
