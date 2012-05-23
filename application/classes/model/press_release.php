@@ -1,7 +1,7 @@
 <?php
 namespace Darth\Model;
 
-class Press extends Model
+class Press_release extends Model
 {
 	public function get_form($name = null)
 	{

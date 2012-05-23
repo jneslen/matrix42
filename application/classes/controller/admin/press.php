@@ -10,7 +10,7 @@ class Controller_Admin_Press extends Controller_Admin {
 
 	public function action_index()
 	{
-		$press = Kacela::find_active('press');
+		$press = Kacela::find_active('press_release');
 
 		$table = \Kable::factory()
 			->setDataSource($press, 'dom')
@@ -69,7 +69,7 @@ class Controller_Admin_Press extends Controller_Admin {
 
 	public function action_form()
 	{
-		$release = kacela::find('press', $this->request->param('id'));
+		$release = kacela::find('press_release', $this->request->param('id'));
 
 		$form = $release->get_form();
 
