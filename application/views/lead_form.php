@@ -34,6 +34,7 @@
 			</div>
 		<?php else: ?>
 			<?=$form->view()->open()?>
+			<?=$form->campaign_id->render()?>
 			<div class="span4">
 				<div class="padded-content">
 					<?=$form->name->render()?>

@@ -24,6 +24,7 @@ class Lead extends User
 		// Set the user variables
 		$lead->full_name = $form->name->val();
 		$lead->email = $form->email->val();
+		$lead->campaign_id = $form->campaign_id->val();
 		$lead->role = 'lead';
 		$lead->inquiry_date = time();
 		$lead->last_activity_date = time();
@@ -106,6 +107,7 @@ class Lead extends User
 	public function get_lead_form()
 	{
 		$form = \Formo::form('lead')
+			->add('campaign_id', 'hidden')
 			->add('name', array('label' => 'Full Name'))
 			->add('email', array('type' => 'email', 'label' => 'Email'))
 			->add('number', array('label' => 'Phone Number'))

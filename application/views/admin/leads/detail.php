@@ -37,6 +37,10 @@
 			</tr>
 			<?php endforeach; ?>
 			<tr>
+				<td>Campaign Association:</td>
+				<td><?=$lead->campaign_id ? '['.$lead->campaign->campaign_code.'] '.ucfirst($lead->campaign->name) : '[100] General'?></td>
+			</tr>
+			<tr>
 				<td>Inquiry IP:</td>
 				<td><?=$lead->inquiry_ip?></td>
 			</tr>

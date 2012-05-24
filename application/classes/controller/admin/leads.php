@@ -45,6 +45,14 @@ class Controller_Admin_Leads extends Controller_Admin {
 				),
 				array
 				(
+					'header' => 'Campaign',
+					'value' => function($o) {
+						$campaign = $o->campaign_id ? '['.$o->campaign->campaign_code.'] '.ucfirst($o->campaign->name) : '[100] General';
+						return $campaign;
+					}
+				),
+				array
+				(
 					'header' => 'Business Name',
 					'value' => function($o) { return $o->business_name; }
 				),
@@ -168,13 +176,17 @@ class Controller_Admin_Leads extends Controller_Admin {
 				$note->user_id = $this->request->param('id');
 				$note->parent_id = $this->request->param('parentid');
 				$note->type = 'response';
-				$note->type->set('driver', 'hidden');
 				break;
 		}
 
 		$note->author_id = $this->_user->id;
 
 		$form = $note->get_form();
+
+		if($note->type = 'response')
+		{
+			$form->type->set('driver', 'hidden');
+		}
 
 		$form->view()->attr('action', \Request::$current->url()); //needed for ajax submit
 

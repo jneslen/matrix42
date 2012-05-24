@@ -53,10 +53,18 @@ class Controller_Public extends Controller_Site {
 				throw new HTTP_Exception_404('The requested URL :uri was not found on this server.',
 					array(':uri' => $this->request->uri()));
 			}
-			exit(\Debug::vars($method));
 
 			$this->{$method}();
 			return;
+		}
+
+		//if this menu item has a campaign associated to it and no campaign cookie is present set the cookie
+		if($menu->campaign_id)
+		{
+			if(!\Cookie::get('campaign_id'))
+			{
+				\Cookie::set('campaign_id', $menu->campaign_id);
+			}
 		}
 
 		$this->_title = $menu->pagetitle != null ? $menu->pagetitle : $this->_title;
@@ -79,10 +87,13 @@ class Controller_Public extends Controller_Site {
 
 	public function lead_form($full = false)
 	{
+		echo \Debug::vars($this->_campaign);
 		$complete = false;
 		$user = new \Darth\Model\Lead;
 		$lead_form = $user->get_lead_form()
 			->add('submit', 'submit', array('text' => 'Send Inquiry!'));
+
+		$lead_form->campaign_id->set('value', $this->_campaign);
 
 		if ($lead_form->load()->validate())
 		{

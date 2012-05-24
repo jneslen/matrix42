@@ -98,7 +98,7 @@ class Controller_Site extends Controller_Template
 		View::bind_global('page_title', $this->_page_title);
 		View::bind_global('user', $this->_user);
 
-		$this->_campaign = \Cookie::get('campaign_code', '100');
+		$this->_campaign = \Cookie::get('campaign_id', '1');
 	}
 
 	public function after()
