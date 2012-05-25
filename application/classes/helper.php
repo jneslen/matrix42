@@ -2,6 +2,41 @@
 
 class Helper
 {
+	static public function directory_list($directory, $self_value = true)
+	{
+		$directory = DOCROOT.$directory;
+		// create an array to hold directory list
+		$results = array();
+
+		// create a handler for the directory
+		$handler = opendir($directory);
+
+		// open directory and walk through the filenames
+		while($file = readdir($handler))
+		{
+			// if file isn't this directory or its parent, add it to the results
+			if($file != "." AND $file != "..")
+			{
+				//set key value pair to self otherwise leave as standard array key value
+				if($self_value)
+				{
+					$results[$file] = $file;
+				}
+				else
+				{
+					$results[] = $file;
+				}
+			}
+
+		}
+
+		// tidy up: close the handler
+		closedir($handler);
+
+		// done!
+		return $results;
+	}
+
 	static public function array_to_object(array $array)
 	{
 		foreach($array as $key => $value)

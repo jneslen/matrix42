@@ -36,6 +36,8 @@ class Menu extends Model
 	{
 		$form = parent::get_form($name);
 
+		$banner_list = \Helper::directory_list('/assets/img/banners');
+
 		$form->remove(array
 		(
 			'role',
@@ -66,6 +68,7 @@ class Menu extends Model
 		$form->controller->set('label', 'Controller <h7>(should reflect url controller)</h7>');
 		$form->method->set('label', 'Method <h7>(should reflect url method)</h7>');
 		$form->keywords->set('label', 'Keywords <h7>(comma seperated, words)</h7>');
+		$form->banner->set('driver', 'select')->set('options', $banner_list);
 		$form->add('content', 'textarea', array('value' => $this->get_content('main', true)->content));
 
 		//TODO: readdir get all banner files available in the system to use in a select list for banner

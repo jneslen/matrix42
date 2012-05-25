@@ -87,7 +87,6 @@ class Controller_Public extends Controller_Site {
 
 	public function lead_form($full = false)
 	{
-		echo \Debug::vars($this->_campaign);
 		$complete = false;
 		$user = new \Darth\Model\Lead;
 		$lead_form = $user->get_lead_form()
