@@ -49,6 +49,41 @@ class Helper
 		return (object)$array;
 	}
 
+	//This will return the language that needs to be displayed for the site.
+	static public function language()
+	{
+		if(\Kohana::$environment === 'LIVE')
+		{
+			$base_url = \URL::base(true);
+		}
+		elseif(\Kohana::$environment === 'DEV-DE')
+		{
+			$base_url = 'http://www.matrix42.de';
+		}
+		else
+		{
+			$base_url = 'http://www.matrix42.com';
+		}
+
+		preg_match("/.([a-z]{2,3})\/?$/", $base_url, $country_code);
+
+		switch(strtolower($country_code[1]))
+		{
+			case 'de':
+				$language = 'de';
+				break;
+			case 'uk':
+				$language = 'en-uk';
+				break;
+			case 'com':
+			default:
+				$language = 'en-us';
+				break;
+		}
+
+		return $language;
+	}
+
 	static public function object_to_array($object)
 	{
 		$array = array();

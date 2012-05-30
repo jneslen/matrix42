@@ -51,11 +51,6 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
 // -- Configuration and initialization -----------------------------------------
 
 /**
- * Set the default language
- */
-I18n::lang('en-us');
-
-/**
  * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
  *
  * Note: If you supply an invalid environment name, a PHP warning will be thrown
@@ -75,6 +70,12 @@ else
 		? $local_config['environment']
 		: 'DEV';
 }
+
+/**
+ * Set the language
+ */
+\I18n::lang(\Helper::language());
+
 
 /**
  * Initialize Kohana, setting the default options.

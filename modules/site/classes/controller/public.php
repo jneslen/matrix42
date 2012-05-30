@@ -90,7 +90,7 @@ class Controller_Public extends Controller_Site {
 		$complete = false;
 		$user = new \Darth\Model\Lead;
 		$lead_form = $user->get_lead_form()
-			->add('submit', 'submit', array('text' => 'Send Inquiry!'));
+			->add('submit', 'submit', array('text' => __('Send Inquiry!')));
 
 		$lead_form->campaign_id->set('value', $this->_campaign);
 
@@ -99,7 +99,7 @@ class Controller_Public extends Controller_Site {
 			$complete = true;
 		}
 
-		return View::factory('lead_form')
+		return View::factory('lead_form', array('language' => true))
 			->bind('form', $lead_form)
 			->set('complete', $complete)
 			->set('full', $full);

@@ -1,9 +1,8 @@
 <?php
-
 return array
 (
-	// LIVE, RC, DEV
-	'environment' => 'DEV',
+	// LIVE, RC, DEV, DEV-DE
+	'environment' => 'DEV-DE',
 	'kacela' => array
 	(
 		'password' => 'kamisasanuki',
