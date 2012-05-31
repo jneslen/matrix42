@@ -63,14 +63,13 @@ if (isset($_SERVER['KOHANA_ENV']))
 else
 {
 	// Fetch the local.php config file as an array
-	$local_config = include(APPPATH.'config/local.php');
+	$environment_config = include(APPPATH.'config/environment.php');
 
 	// Use the 'environment' key to define the environment
-	Kohana::$environment = (isset($local_config['environment']))
-		? $local_config['environment']
+	Kohana::$environment = (isset($environment_config['environment']))
+		? $environment_config['environment']
 		: 'DEV';
 }
-
 /**
  * Set the language
  */

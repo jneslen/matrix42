@@ -1,4 +1,5 @@
 .idea/*
+application/config/environment.php
 application/config/local.php
 /optimus.komodoproject
 /fork.komodoproject

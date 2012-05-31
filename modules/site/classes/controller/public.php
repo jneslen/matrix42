@@ -38,6 +38,7 @@ class Controller_Public extends Controller_Site {
 	 */
 	public function action_index()
 	{
+
 		$criteria = \Kacela::criteria()->equals('section', $this->_section)->equals('controller', $this->_controller)->equals('method', $this->_method);
 
 		$menu = \Kacela::find_one('menu', $criteria);
