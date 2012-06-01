@@ -17,7 +17,7 @@ class Controller_Public_Solutions extends Controller_Public {
 
 	public function action_testing()
 	{
-		exit('tested and working');
+		exit(phpinfo());
 	}
 
 }
