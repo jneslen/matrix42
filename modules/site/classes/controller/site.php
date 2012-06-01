@@ -231,6 +231,8 @@ class Controller_Site extends Controller_Template
 				$exclude_links_array = array
 				(
 					'solutions',
+					'about',
+					'purchase',
 				);
 
 				$home_link = $this->request->directory() == 'public' ? '/' : $this->request->directory();
@@ -239,11 +241,11 @@ class Controller_Site extends Controller_Template
 				$path_array['Home'] = $home_link;
 
 				//Set Controller path
-				$controller_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->controller()));
-				$controller_link = '/'.$this->request->controller();
+				$controller_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->param('mycontroller')));
+				$controller_link = '/'.$this->request->param('mycontroller');
 				if(!in_array($this->request->controller(), $exclude_controller_array))
 				{
-					$path_array[$controller_name] = in_array($this->request->controller(), $exclude_links_array) ? null : $controller_link;
+					$path_array[$controller_name] = in_array($this->request->param('mycontroller'), $exclude_links_array) ? null : $controller_link;
 				}
 
 				//Set Method path
