@@ -8,7 +8,7 @@
 defined('SYSPATH') OR die('No direct access allowed.');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?=\Helper::language()?>">
 	<head>
 		<meta charset="utf-8">
 		<title><?=$title?></title>

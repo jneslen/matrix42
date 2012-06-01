@@ -23,7 +23,8 @@ class Controller_Public extends Controller_Site {
 		$this->_method = $this->request->param('method') == null ? 'index' : $this->request->param('method');
 		*/
 
-		$this->_controller = $this->request->controller();
+		//$this->_controller = $this->request->controller();
+		$this->_controller = $this->request->param('mycontroller') == null ? 'index' : $this->request->param('mycontroller');
 		$this->_method = $this->request->param('method') == null ? 'index' : $this->request->param('method');
 
 		parent::before();
@@ -38,7 +39,6 @@ class Controller_Public extends Controller_Site {
 	 */
 	public function action_index()
 	{
-
 		$criteria = \Kacela::criteria()->equals('section', $this->_section)->equals('controller', $this->_controller)->equals('method', $this->_method);
 
 		$menu = \Kacela::find_one('menu', $criteria);
@@ -47,15 +47,17 @@ class Controller_Public extends Controller_Site {
 		{
 			//if no db results for this menu item we need to route the request to the requested controller and method
 			$method = 'action_'.$this->_method;
-			$mycontroller = 'Controller_Public_'.ucfirst($this->_controller);
+			$mycontroller_name = 'Controller_Public_'.ucfirst($this->_controller);
 
-			if(!method_exists($mycontroller, $method))
+			if(!method_exists($mycontroller_name, $method))
 			{
 				throw new HTTP_Exception_404('The requested URL :uri was not found on this server.',
 					array(':uri' => $this->request->uri()));
 			}
 
-			$this->{$method}();
+			$mycontroller = new $mycontroller_name($this->request, $this->response);
+
+			$mycontroller->{$method}();
 			return;
 		}
 

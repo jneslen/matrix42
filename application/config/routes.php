@@ -58,7 +58,7 @@ Route::set
 Route::set
 (
 	'default',
-	'(<controller>(/<method>(/<id>)))'
+	'(<mycontroller>(/<method>(/<id>)))'
 )
 	->defaults
 (

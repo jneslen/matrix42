@@ -15,8 +15,6 @@ class Controller_Public_Solutions extends Controller_Public {
 		parent::before();
 	}
 
-
-
 	public function action_testing()
 	{
 		exit('tested and working');

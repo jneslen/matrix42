@@ -2,9 +2,13 @@
 
 class Controller_Public_Index extends Controller_Public {
 
-	public function before()
+	public function action_index()
 	{
-		parent::before();
+		if($this->request->param('mycontroller'))
+		{
+			parent::action_index();
+			return;
+		}
 
 		$this->request->styles(array('home'));
 
@@ -17,10 +21,7 @@ class Controller_Public_Index extends Controller_Public {
 		$this->_titlebar = View::factory('home_middle');
 
 		$this->_banner = View::factory('home_banner');
-	}
 
-	public function action_index()
-	{
 		$blogs = \Helper::array_to_object(\Feed::parse('http://blog.matrix42.com/feed', 4)); //TODO:need to setup the RSS feed to include some kind of thumbnail (either author thumbnail or a post thumb)
 		$events = \Kacela::find_active('event', \Kacela::criteria()->limit(0,5)->sort('start_date', 'DESC'));
 		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->limit(0,5)->sort('release_date', 'ASC'));
