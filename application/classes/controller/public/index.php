@@ -23,12 +23,22 @@ class Controller_Public_Index extends Controller_Public {
 		$this->_banner = View::factory('home_banner');
 
 		$blogs = \Helper::array_to_object(\Feed::parse('http://blog.matrix42.com/feed', 4)); //TODO:need to setup the RSS feed to include some kind of thumbnail (either author thumbnail or a post thumb)
-		$events = \Kacela::find_active('event', \Kacela::criteria()->limit(0,5)->sort('start_date', 'DESC'));
-		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->limit(0,5)->sort('release_date', 'ASC'));
+		$events = \Kacela::find_active('event', \Kacela::criteria()->limit(0,4)->sort('start_date', 'DESC'));
+		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->limit(0,4)->sort('release_date', 'ASC'));
+
+		$feature = \Kacela::find_one('press_release', \Kacela::criteria()->equals('featured', '1')->sort('release_date', 'ASC')); //TODO: make this take the latest feature including events and possibly blog posts
+
+		$customers = \Kacela::find_active('case_study', \Kacela::criteria()->equals('featured', '1')->limit(0,4));
+
+		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4));
+
 		$this->_content = View::factory('home_page')
 			->set('blogs', $blogs)
 			->set('events', $events)
 			->set('press_releases', $press_releases)
+			->set('customers', $customers)
+			->set('feature', $feature)
+			->set('partners', $partners)
 			->set('lead_form', parent::lead_form(true))
 			->set('support', \View::factory('sidebar/support'));
 	}

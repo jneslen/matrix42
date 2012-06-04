@@ -224,6 +224,7 @@ class Controller_Site extends Controller_Template
 				$exclude_method_array = array
 				(
 					'index',
+					'Index',
 					'GET',
 					'POST',
 				);
@@ -241,11 +242,12 @@ class Controller_Site extends Controller_Template
 				$path_array['Home'] = $home_link;
 
 				//Set Controller path
-				$controller_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->param('mycontroller')));
-				$controller_link = '/'.$this->request->param('mycontroller');
-				if(!in_array($this->request->controller(), $exclude_controller_array))
+				$controller = $this->request->controller() ? $this->request->controller() : $this->request->param('mycontroller');
+				$controller_name = ucwords(preg_replace('/[_-]/', ' ', $controller));
+				$controller_link = '/'.$controller;
+				if(!in_array($controller, $exclude_controller_array))
 				{
-					$path_array[$controller_name] = in_array($this->request->param('mycontroller'), $exclude_links_array) ? null : $controller_link;
+					$path_array[$controller_name] = in_array($controller, $exclude_links_array) ? null : $controller_link;
 				}
 
 				//Set Method path

@@ -5,28 +5,38 @@
 <div class="span10">
 		<div class="well margin-right">
 			<div class="left">
-				<h2 class="no-margin">Find the perfect solution for all your IT needs</h2>
-				<h4 class="no-margin">Get started with the perfect IT solution now.</h4>
+				<h2 class="no-margin">Latest Matrix42 News: <?=$feature->title?></h2>
+				<h4 class="no-margin"><?=substr($feature->subtitle, 0, 100)?>... <a href="/press/release/<?=$feature->id?>">more &gt;&gt;</a></h4>
 			</div>
-			<a href="#lead-form-anchor" class="btn btn-info btn-large right margin-right scroll">Find Your Solution</a>
 			<div class="clearfix"></div>
 		</div><!-- well -->
-		<div class="span6 dashed-right margin-clear test1">
-			<h2>The IT Dilema</h2>
-			<p>Etiam ullamcorper imperdiet urna, non gravida felis auctor gravida. Phasellus condimentum consectetur tincidunt. Etiam ut facilisis sapien. Aenean euismod commodo cursus. Cras nec turpis ac nisi porta imperdiet volutpat sit amet felis. Sed sit amet ante non diam lacinia suscipit ac nec nibh. In porttitor venenatis quam vitae aliquam.</p>
-			<div class="margin-clear">
-				<h2>The Workplace IT Solution</h2>
-				<p>Etiam ullamcorper imperdiet urna, non gravida felis auctor gravida. Phasellus condimentum consectetur tincidunt. Etiam ut facilisis sapien. Aenean euismod commodo cursus.</p>
-			</div><!-- margin-clear -->
-			<div class="margin-clear">
+		<div class="span6 dashed-right margin-clear">
+			<div id="our-customers">
+				<h2>Our Customers</h2>
+				<p>This is a write up about how we help our customers. Phasellus condimentum consectetur tincidunt. Etiam ut facilisis sapien. Aenean euismod commodo cursus.</p>
+				<div class="logo-container">
+					<img class="customer-one" src="/assets/img/customers/<?=$customers[0]->logo?>" alt="<?=$customers[0]->company?>" />
+					<img class="customer-two" src="/assets/img/customers/<?=$customers[1]->logo?>" alt="<?=$customers[1]->company?>" />
+					<img class="customer-three" src="/assets/img/customers/<?=$customers[2]->logo?>" alt="<?=$customers[2]->company?>" />
+					<img class="customer-four" src="/assets/img/customers/<?=$customers[3]->logo?>" alt="<?=$customers[3]->company?>" />
+				</div><!-- logo-container -->
+			</div><!-- our-customers -->
+			<div id="making-waves">
 				<h2>Making Waves</h2>
-				<img src="/assets/img/partners/partner-home-logos.png" alt="Citrix | Microsoft | BMC | Gartner" />
-			</div><!-- margin-clear -->
-			<div class="margin-clear">
+				<p>Our Service partners allow Matrix42 to provide our customers with the upmost hasellus condimentum consectetur tincidunt. Etiam ut facilisis sapien. Aenean euismod commodo cursus.</p>
+				<div class="logo-container">
+					<img class="partner-one" src="/assets/img/partners/<?=$partners[0]->company->logo?>" alt="<?=$partners[0]->company->name?>" />
+					<img class="partner-two" src="/assets/img/partners/<?=$partners[1]->company->logo?>" alt="<?=$partners[1]->company->name?>" />
+					<img class="partner-three" src="/assets/img/partners/<?=$partners[2]->company->logo?>" alt="<?=$partners[2]->company->name?>" />
+					<img class="partner-four" src="/assets/img/partners/<?=$partners[3]->company->logo?>" alt="<?=$partners[3]->company->name?>" />
+				</div><!-- logo-container -->
+			</div><!-- making-waves -->
+			<div id="success-stories">
 				<h2>Success Stories</h2>
 				<p class="quote"><span class="italics">&quot;Matrix42 gave me the tools I needed to manage my Technology department and make my job easy&quot;</span></p>
 				<p class="right margin-right"><span class="bold">John Doe</span> IT Director, Company One</p>
-			</div><!-- margin-clear -->
+				<div class="clear"></div>
+			</div><!-- success-stories-->
 		</div><!-- span6 -->
 		<div class="span4 margin-clear margin-right padded">
 			<h2>Latest Matrix42</h2>
@@ -55,7 +65,7 @@
 						<?php foreach($events as $event): ?>
 							<li>
 								<a href="/events/detail/<?=$event->id?>" class="thumbnail left"><img src="/assets/img/thumbnails/events/<?=$event->thumbnail ? $event->thumbnail : $event->type.'-event.png'?>" alt="<?=ucfirst($event->type)?> Event Thumbnail" /></a>
-								<h4><a href="/events/detail/<?=$event->id?>"><?=$event->title?></a></h4>
+								<h4><a href="/events/detail/<?=$event->id?>"><?=substr($event->title, 0, 40)?></a></h4>
 							<?php $date_format = $event->use_time ? 'human' : 'readable'; ?>
 								<h5><?=$event->location ? $event->location : ''?></h5>
 								<div class="clear"></div>
@@ -69,7 +79,7 @@
 						<?php foreach($press_releases as $release): ?>
 							<li>
 								<a href="/press/release/<?=$release->id?>" class="thumbnail left"><img src="/assets/img/thumbnails/press/<?=$release->thumbnail ? $release->thumbnail : 'press-release.png'?>" alt="Press Thumbnail" /></a>
-								<h4><a href="/press/release/<?=$release->id?>"><?=$release->title?></a></h4>
+								<h4><a href="/press/release/<?=$release->id?>"><?=substr($release->title, 0, 40)?></a></h4>
 								<h5 class="italics"><?=\Format::date($release->release_date, 'readable')?></h5>
 								<p><?=substr(strip_tags($release->content), 0, 40)?>...</p>
 								<div class="clear"></div>
