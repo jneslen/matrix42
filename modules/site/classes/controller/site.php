@@ -15,6 +15,8 @@ class Controller_Site extends Controller_Template
 
 	protected $_title = '';
 	protected $_page_title = '';
+	protected $_description = '';
+	protected $_keywords = '';
 
 	protected $_session;
 
@@ -148,6 +150,10 @@ class Controller_Site extends Controller_Template
 			$role = strtolower(end($role));
 			//exit(\Debug::vars($role));
 
+			$this->template->description = $this->_description;
+
+			$this->template->keywords = $this->_keywords;
+
 			$this->template->head_analytics = \Analytics::factory('head');
 
 			$this->template->foot_analytics = \Analytics::factory('foot');
@@ -224,7 +230,6 @@ class Controller_Site extends Controller_Template
 				$exclude_method_array = array
 				(
 					'index',
-					'Index',
 					'GET',
 					'POST',
 				);
@@ -241,22 +246,27 @@ class Controller_Site extends Controller_Template
 				//Set Home path
 				$path_array['Home'] = $home_link;
 
+				//need method first to check if it is in excluded methods
+				$method = $this->request->param('method') ? $this->request->param('method') : $this->request->method();
+
 				//Set Controller path
-				$controller = $this->request->controller() ? $this->request->controller() : $this->request->param('mycontroller');
+				$controller = $this->request->param('mycontroller') ? $this->request->param('mycontroller') : $this->request->controller();
 				$controller_name = ucwords(preg_replace('/[_-]/', ' ', $controller));
 				$controller_link = '/'.$controller;
-				if(!in_array($controller, $exclude_controller_array))
+				if(!in_array($controller, $exclude_controller_array) AND !in_array($method, $exclude_method_array))
 				{
 					$path_array[$controller_name] = in_array($controller, $exclude_links_array) ? null : $controller_link;
 				}
 
+				/* This may not be necessary since the page title tag identifies the page we are on.
 				//Set Method path
-				$method_name = ucwords(preg_replace('/[_-]/', ' ', $this->request->method()));
-				$method_link = $controller_link.'/'.$this->request->method();
-				if(!in_array($this->request->method(), $exclude_method_array))
+				$method_name = ucwords(preg_replace('/[_-]/', ' ', $method));
+				$method_link = $controller_link.'/'.$method;
+				if(!in_array($method, $exclude_method_array))
 				{
 					$path_array[$method_name] = $method_link;
 				}
+				*/
 
 				$this->_breadcrumb = \Breadcrumb::factory($path_array, $this->_page_title)->render();
 			}

@@ -17,6 +17,10 @@ class Controller_Public extends Controller_Site {
 		$this->_banner->image = 'sub-banner-woman.jpg';
 		$this->_banner->title = 'holistic workplace';
 		$this->_banner->subtitle = "The solution that solves your IT needs.";
+		$this->_banner->top = 20;
+		$this->_banner->left = 700;
+		$this->_banner->title_width = 500;
+		$this->_banner->title_color = '#333333';
 
 		/*
 		$this->_controller = $this->request->param('mycontroller') == null ? 'index' : $this->request->param('mycontroller');
@@ -81,7 +85,14 @@ class Controller_Public extends Controller_Site {
 			$this->_banner->image = $menu->banner != null ? $menu->banner : $this->_banner->image;
 			$this->_banner->title = $menu->banner_title != null ? $menu->banner_title : $this->_banner->title;
 			$this->_banner->subtitle = $menu->banner_subtitle != null ? $menu->banner_subtitle : $this->_banner->subtitle;
+			$this->_banner->top = $menu->banner_y != null ? $menu->banner_y : $this->_banner->top;
+			$this->_banner->left = $menu->banner_x != null ? $menu->banner_x : $this->_banner->left;
+			$this->_banner->title_width = $menu->title_width != null ? $menu->title_width : $this->_banner->title_width;
+			$this->_banner->title_color = $menu->title_color != null ? $menu->title_color : $this->_banner->title_color;
 		}
+
+		$this->_description = $menu->subtitle != null ? $menu->subtitle : $this->_description;
+		$this->_keywords = $menu->keywords != null ? $menu->keywords : $this->_keywords;
 
 		$main_content = $menu->replace_contents();
 		$this->_content = \View::factory('content')

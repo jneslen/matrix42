@@ -2,9 +2,9 @@
 <?php if(isset($banner_content)): ?>
 	<?=$banner_content?>
 <?php else: ?>
-	<div class="tag-content" style="top: <?=isset($top) ? $top : '20'?>px; left: <?=isset($left) ? $left : '700'?>px; width: <?=isset($width) ? $width : '500'?>px;">
+	<div class="tag-content" style="top: <?=$top?>px; left: <?=$left?>px; width: <?=$title_width?>px;">
 	<?php if(isset($title)): ?>
-		<h1><?=strtolower($title)?></h1>
+		<h1 style="color: <?=$title_color?>;"><?=strtolower($title)?></h1>
 	<?php endif; ?>
 	<?php if(isset($subtitle)): ?>
 		<h4 class="emphasis"><?=$subtitle?></h4>

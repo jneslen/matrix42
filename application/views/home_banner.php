@@ -22,6 +22,17 @@
 				<img class="bg" src="/assets/img/banners/home-banner-003.jpg" alt="Transparent" />
 			</div>
 		</div><!-- banner3 -->
+		<div id="banner4" class="item">
+			<div class="item-container">
+				<div class="tag-content">
+					<h1 class="no-margin">compliance</h1>
+					<h3 class="no-margin">Full Control of all IT-Assets, Licenses and Contracts</h3><a href="/compliance"><span class="icon play"></span></a>
+					<div class="clear"></div>
+					<a href="/compliance" class="btn btn-primary btn-large">Get Started Today!</a>
+				</div>
+				<img class="bg" src="/assets/img/banners/home-banner-004.jpg" alt="Transparent" />
+			</div>
+		</div><!-- banner4 -->
 		<div id="banner8" class="item">
 			<div class="item-container">
 				<div class="tag-content">
