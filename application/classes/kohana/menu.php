@@ -61,6 +61,7 @@ class Kohana_Menu
 		foreach ($items as $key => $item) {
 			$temp[$key]['url'] = $item->url;
 			$temp[$key]['title'] = $item->title;
+			$temp[$key]['type'] = $item->type;
 			if ($item->classes) {
 				$temp[$key]['classes'] = array($item->classes);
 			}

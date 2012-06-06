@@ -12,29 +12,34 @@ return array
 		(
 			'url'		=> '/admin/cms',
 			'title'		=> __('CMS'),
+			'type'		=> 'main',
 		),
 		array
 		(
 			'url'		=> '/admin/events',
-			'title'		=> __('Events')
+			'title'		=> __('Events'),
+			'type'		=> 'main',
 		),
 		array
 		(
 			'url'		=> '/admin/press',
-			'title'		=> __('Press')
+			'title'		=> __('Press'),
+			'type'		=> 'main',
 		),
 		array
 		(
 			//'url'		=> '#menu4', //if a dropdown is present set the url to the id of this number menu
 			'url'		=> '/admin/leads',
 			'title'		=> __('Leads'),
+			'type'		=> 'main',
 			/*'classes'	=> array('dropdown'), //set as a dropdown menu
 			'items'		=> array
 			(
 				array
 				(
 					'url'		=> '/test',
-					'title'		=> __('Testing')
+					'title'		=> __('Testing'),
+					'type'		=> 'submenu',
 				)
 			)*/
 		),
@@ -42,6 +47,7 @@ return array
 		(
 			'url'		=> '/logout',
 			'title'		=> __('Logout'),
+			'type'		=> 'main',
 		),
 	),
 

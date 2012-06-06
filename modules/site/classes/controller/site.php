@@ -166,7 +166,7 @@ class Controller_Site extends Controller_Template
 
 			$this->template->banner = $this->_banner;
 
-			$this->template->titlebar = $this->_titlebar !== null ? $this->_titlebar : View::factory('titlebar')->set('title', $this->_title);
+			$this->template->titlebar = $this->_titlebar !== null ? $this->_titlebar : View::factory('titlebar')->set('title', $this->_page_title);
 
 			$this->template->header->section = $this->_section;
 
@@ -268,11 +268,11 @@ class Controller_Site extends Controller_Template
 				}
 				*/
 
-				$this->_breadcrumb = \Breadcrumb::factory($path_array, $this->_page_title)->render();
+				$this->_breadcrumb = \Breadcrumb::factory($path_array, $this->_title)->render();
 			}
 			else
 			{
-				$this->_breadcrumb = \Breadcrumb::factory($trail, $this->_page_title)->render();
+				$this->_breadcrumb = \Breadcrumb::factory($trail, $this->_title)->render();
 			}
 		}
 	}

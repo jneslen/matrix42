@@ -74,7 +74,8 @@ class Controller_Public extends Controller_Site {
 			}
 		}
 
-		$this->_title = $menu->pagetitle != null ? $menu->pagetitle : $this->_title;
+		$this->_title = $menu->title != null ? $menu->title : $this->_title;
+		$this->_page_title = $menu->pagetitle != null ? $menu->pagetitle : $this->_page_title;
 		$banner = $menu->get_content('banner');
 		if($banner->content != null)
 		{

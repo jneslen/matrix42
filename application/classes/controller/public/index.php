@@ -18,7 +18,13 @@ class Controller_Public_Index extends Controller_Public {
 
 		$this->_sidebar = false;
 
-		$this->_titlebar = View::factory('home_middle');
+		$customers = \Kacela::find_active('case_study', \Kacela::criteria()->equals('featured', '1')->limit(0,4));
+
+		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4));
+
+		$this->_titlebar = View::factory('home_middle')
+			->set('partners', $partners)
+			->set('customers', $customers);
 
 		$this->_banner = View::factory('home_banner');
 
@@ -28,17 +34,11 @@ class Controller_Public_Index extends Controller_Public {
 
 		$feature = \Kacela::find_one('press_release', \Kacela::criteria()->equals('featured', '1')->sort('release_date', 'ASC')); //TODO: make this take the latest feature including events and possibly blog posts
 
-		$customers = \Kacela::find_active('case_study', \Kacela::criteria()->equals('featured', '1')->limit(0,4));
-
-		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4));
-
 		$this->_content = View::factory('home_page')
 			->set('blogs', $blogs)
 			->set('events', $events)
 			->set('press_releases', $press_releases)
-			->set('customers', $customers)
 			->set('feature', $feature)
-			->set('partners', $partners)
 			->set('lead_form', parent::lead_form(true))
 			->set('support', \View::factory('sidebar/support'));
 	}

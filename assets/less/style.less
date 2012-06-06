@@ -35,6 +35,12 @@ ul.list {
 	padding-left: @padding;
 }
 
+.hanbun {
+	.left;
+	width: @site_width / 2 - @padding;
+	padding-left: @padding;
+}
+
 .well {
 	h2 {
 		line-height: 22px;
@@ -119,6 +125,13 @@ ul.list {
 				}
 				a:hover {
 					color: @matrix42_orange;
+				}
+				&.subheader {
+					.bold;
+					.border-bottom;
+					font-size: 15px;
+					color: @nav_color;
+					padding: 1px 10px 1px 5px;
 				}
 				&.minor {
 					font-size: 12px;

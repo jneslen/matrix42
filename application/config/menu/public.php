@@ -12,21 +12,25 @@ return array
 		(
 			'url'		=> '/solutions',
 			'title'		=> __('Solutions'),
+			'type'		=> 'main',
 		),
 		array
 		(
 			'url'		=> '/products',
-			'title'		=> __('Products')
+			'title'		=> __('Products'),
+			'type'		=> 'main',
 		),
 		array
 		(
 			'url'		=> '/support',
-			'title'		=> __('Support')
+			'title'		=> __('Support'),
+			'type'		=> 'main',
 		),
 		array
 		(
 			'url'		=> '#menu4',
 			'title'		=> __('About'),
+			'type'		=> 'main',
 			'classes'	=> array('dropdown'),
 			'items'		=> array
 			(

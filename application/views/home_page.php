@@ -11,32 +11,13 @@
 			<div class="clearfix"></div>
 		</div><!-- well -->
 		<div class="span6 dashed-right margin-clear">
-			<div id="our-customers">
-				<h2>Our Customers</h2>
-				<p>This is a write up about how we help our customers. Phasellus condimentum consectetur tincidunt. Etiam ut facilisis sapien. Aenean euismod commodo cursus.</p>
-				<div class="logo-container">
-					<img class="customer-one" src="/assets/img/customers/<?=$customers[0]->logo?>" alt="<?=$customers[0]->company?>" />
-					<img class="customer-two" src="/assets/img/customers/<?=$customers[1]->logo?>" alt="<?=$customers[1]->company?>" />
-					<img class="customer-three" src="/assets/img/customers/<?=$customers[2]->logo?>" alt="<?=$customers[2]->company?>" />
-					<img class="customer-four" src="/assets/img/customers/<?=$customers[3]->logo?>" alt="<?=$customers[3]->company?>" />
-				</div><!-- logo-container -->
-			</div><!-- our-customers -->
-			<div id="making-waves">
-				<h2>Making Waves</h2>
-				<p>Our Service partners allow Matrix42 to provide our customers with the upmost hasellus condimentum consectetur tincidunt. Etiam ut facilisis sapien. Aenean euismod commodo cursus.</p>
-				<div class="logo-container">
-					<img class="partner-one" src="/assets/img/partners/<?=$partners[0]->company->logo?>" alt="<?=$partners[0]->company->name?>" />
-					<img class="partner-two" src="/assets/img/partners/<?=$partners[1]->company->logo?>" alt="<?=$partners[1]->company->name?>" />
-					<img class="partner-three" src="/assets/img/partners/<?=$partners[2]->company->logo?>" alt="<?=$partners[2]->company->name?>" />
-					<img class="partner-four" src="/assets/img/partners/<?=$partners[3]->company->logo?>" alt="<?=$partners[3]->company->name?>" />
-				</div><!-- logo-container -->
-			</div><!-- making-waves -->
-			<div id="success-stories">
-				<h2>Success Stories</h2>
-				<p class="quote"><span class="italics">&quot;Matrix42 gave me the tools I needed to manage my Technology department and make my job easy&quot;</span></p>
-				<p class="right margin-right"><span class="bold">John Doe</span> IT Director, Company One</p>
-				<div class="clear"></div>
-			</div><!-- success-stories-->
+			<h2>Who we are</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
+			<h2>What we do</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
+			<h2>Why Matrix42?</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
 		</div><!-- span6 -->
 		<div class="span4 margin-clear margin-right padded">
 			<h2>Latest Matrix42</h2>
@@ -75,6 +56,7 @@
 						</ul>
 					</div><!-- events -->
 					<div class="tab-pane" id="press">
+						<div class="padded"><a href="/press">view all &gt;&gt;</a></div>
 						<ul class="listed">
 						<?php foreach($press_releases as $release): ?>
 							<li>
