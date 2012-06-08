@@ -83,18 +83,6 @@ ul.list {
 		font-weight: bold;
 		font-size: 10px;
 	}
-	/* Removed because ipad won't be able to see navigation on the right side.
-	.nav-collapse {
-		#nav {
-			.right;
-		}
-		&.in {
-			#nav {
-				.left;
-			}
-		}
-	}
-	*/
 	#nav {
 		li.dropdown:hover ul.dropdown-menu {
 			.block;
@@ -430,5 +418,10 @@ ul.link-list {
 			text-transform: uppercase;
 			letter-spacing: -1px;
 		}
+	}
+}
+@media (min-width: 1200px) {
+	#nav {
+		.right;
 	}
 }
