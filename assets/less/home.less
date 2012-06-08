@@ -1,17 +1,11 @@
 #home-banner {
-	height: 396px;
-	width: 1260px;
 	margin-bottom: 0;
 	.item {
-		height: 396px;
-		width: 1260px;
 		.item-container {
 			.rel;
 			.bg,
 			bg2 {
-				.abs;
-				top: 0;
-				left: 0;
+				display: inline-block;
 			}
 			.bg {
 				z-index: 0;
@@ -26,92 +20,6 @@
 					font-family: 'Helvetica Neue', 'Helvetica', 'Arial';
 					font-weight: bold;
 				}
-				h1 {
-					font-size: 84px;
-					line-height: 89px;
-					letter-spacing: -5px;
-				}
-				h2 {
-					font-size: 24px;
-					text-transform: uppercase;
-					letter-spacing: -1px;
-				}
-				h3 {
-					.left;
-					font-size: 18px;
-					letter-spacing: -1px;
-				}
-				h4 {
-					font-size: 16px;
-					text-transform: uppercase;
-					letter-spacing: -1px;
-				}
-			}
-		}
-		&#banner1 {
-			.tag-content {
-				top: 70px;
-				left: 650px;
-				width: 500px;
-				h1 {
-					margin-bottom: 20px;
-					line-height: 60px;
-					color: #000000;
-				}
-			}
-		}
-		&#banner2 {
-			.tag-content {
-				.center;
-				top: 130px;
-				left: 400px;
-				width: 450px;
-				h1, h2, h3, h4 {
-					.center;
-					color: #ffffff;
-				}
-			}
-		}
-		&#banner3 {
-			.tag-content {
-				top: 80px;
-				left: 80px;
-				width: 600px;
-				h1, h3 {
-					color: #000000;
-				}
-				h1 {
-					font-size: 80px;
-					line-height: 70px;
-				}
-			}
-		}
-		&#banner4, &#banner5 {
-			.tag-content {
-				top: 80px;
-				left: 80px;
-				width: 650px;
-				h1, h3 {
-					color: #ffffff;
-				}
-				h1 {
-					font-size: 80px;
-					line-height: 70px;
-				}
-			}
-		}
-		&#banner6 {
-			.tag-content {
-				top: 100px;
-				left: 120px;
-				width: 650px;
-				h1, h3 {
-					color: #ffffff;
-				}
-				h1 {
-					font-size: 48px;
-					line-height: 48px;
-				}
 			}
 		}
 		&#banner8 {
@@ -119,15 +27,8 @@
 				.rounded_corners();
 				padding: 20px;
 				background: transparent url(@{img_path}transparent-bg-dark.png) repeat 0 0;
-				top: 80px;
-				left: 80px;
-				width: 560px;
 				h1, h3 {
 					color: #ffffff;
-				}
-				h1 {
-					font-size: 60px;
-					line-height: 50px;
 				}
 			}
 		}
@@ -135,12 +36,12 @@
 	.carousel-control {
 		.abs;
 		z-index: 100;
+		line-height: 40px;
 	}
 }
 
 #home-middle {
 	background-color: #eeeeee;
-	height: 170px;
 	.middle-container {
 		width: 300px;
 		margin: 30px 40px 0 60px;
@@ -167,15 +68,15 @@
 		}
 		.customer-two {
 			top: 5px;
-			left: 120px;
+			left: 35%;
 		}
 		.customer-three {
 			top: 45px;
-			left: 120px;
+			left: 35%;
 		}
 		.customer-four {
 			top: 10px;
-			left: 280px;
+			right: 0;
 		}
 	}
 }
@@ -185,7 +86,7 @@
 	}
 	.logo-container {
 		.rel;
-		height: 80px;
+		height: 90px;
 		img {
 			.abs;
 		}
@@ -195,15 +96,388 @@
 		}
 		.partner-two {
 			top: 0;
-			left: 145px;
+			left: 37%;
 		}
 		.partner-three {
 			top: 45px;
-			left: 145px;
+			left: 37%;
 		}
 		.partner-four {
 			top: 30px;
-			left: 275px;
+			right: 10px;
+		}
+	}
+}
+
+/*responsive*/
+@media (max-width: 480px) {
+/* Need to adjust the size of the headers in banners */
+	#home-banner {
+		h1 {
+			font-size: 20px;
+			line-height: 18px;
+			letter-spacing: -1px;
+		}
+		h2 {
+			font-size: 16px;
+			line-height: 15px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		h3 {
+			.left;
+			font-size: 14px;
+			line-height: 13px;
+			letter-spacing: -1px;
+		}
+		h4 {
+			font-size: 11px;
+			line-height: 10px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		.item {
+			&#banner1 {
+				.tag-content {
+					top: 5px;
+					left: 165px;
+					width: 150px;
+					h1 {
+						color: #000000;
+					}
+				}
+			}
+			&#banner2 {
+				.tag-content {
+					.center;
+					top: 10px;
+					left: 20px;
+					width: 125px;
+					h1, h2, h3, h4 {
+						.center;
+						color: #ffffff;
+					}
+				}
+			}
+			&#banner3 {
+				.tag-content {
+					top: 7px;
+					left: 40px;
+					width: 150px;
+					h1, h3 {
+						color: #000000;
+					}
+				}
+			}
+			&#banner4, &#banner5 {
+				.tag-content {
+					top: 7px;
+					left: 65px;
+					width: 125px;
+					h1, h3 {
+						color: #ffffff;
+					}
+				}
+			}
+			&#banner6 {
+				.tag-content {
+					top: 8px;
+					left: 65px;
+					width: 125px;
+					h1, h3 {
+						color: #ffffff;
+					}
+				}
+			}
+			&#banner8 {
+				.tag-content {
+					top: 7px;
+					left: 65px;
+					width: 100px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 481px) and (max-width: 767px) {
+	#home-banner {
+		h1 {
+			font-size: 24px;
+			line-height: 22px;
+			letter-spacing: -2px;
+		}
+		h2 {
+			font-size: 18px;
+			line-height: 16px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		h3 {
+			.left;
+			font-size: 15px;
+			line-height: 14px;
+			letter-spacing: -1px;
+		}
+		h4 {
+			font-size: 12px;
+			line-height: 11px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		.item {
+			&#banner1 {
+				.tag-content {
+					top: 5px;
+					left: 200px;
+					width: 200px;
+					h1 {
+						color: #000000;
+					}
+				}
+			}
+			&#banner2 {
+				.tag-content {
+					.center;
+					top: 10px;
+					left: 20px;
+					width: 17px;
+					h1, h2, h3, h4 {
+						.center;
+						color: #ffffff;
+					}
+				}
+			}
+			&#banner3 {
+				.tag-content {
+					top: 7px;
+					left: 65px;
+					width: 220px;
+					h1, h3 {
+						color: #000000;
+					}
+				}
+			}
+			&#banner4, &#banner5 {
+				.tag-content {
+					top: 7px;
+					left: 65px;
+					width: 200px;
+					h1, h3 {
+						color: #ffffff;
+					}
+				}
+			}
+			&#banner6 {
+				.tag-content {
+					top: 8px;
+					left: 65px;
+					width: 200px;
+					h1, h3 {
+						color: #ffffff;
+					}
+				}
+			}
+			&#banner8 {
+				.tag-content {
+					top: 7px;
+					left: 65px;
+					width: 250px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 979px) {
+	#home-banner {
+		h1 {
+			font-size: 50px;
+			line-height: 48px;
+			letter-spacing: -4px;
+		}
+		h2 {
+			font-size: 24px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		h3 {
+			.left;
+			font-size: 18px;
+			letter-spacing: -1px;
+		}
+		h4 {
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		.item {
+			&#banner1 {
+				.tag-content {
+					top: 40px;
+					left: 400px;
+					width: 510px;
+					h1 {
+						color: #000000;
+					}
+				}
+			}
+			&#banner2 {
+				.tag-content {
+					.center;
+					top: 10px;
+					left: 60px;
+					width: 250px;
+					h1, h2, h3, h4 {
+						.center;
+						color: #ffffff;
+					}
+				}
+			}
+			&#banner3 {
+				.tag-content {
+					top: 25px;
+					left: 65px;
+					width: 500px;
+					h1, h3 {
+						color: #000000;
+					}
+				}
+			}
+			&#banner4, &#banner5 {
+				.tag-content {
+					top: 25px;
+					left: 65px;
+					width: 500px;
+					h1, h3 {
+						color: #ffffff;
+					}
+				}
+			}
+			&#banner6 {
+				.tag-content {
+					top: 30px;
+					left: 65px;
+					width: 500px;
+					h1, h3 {
+						color: #ffffff;
+					}
+				}
+			}
+			&#banner8 {
+				.tag-content {
+					top: 25px;
+					left: 65px;
+					width: 500px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 980px) {
+	#home-banner {
+		h1 {
+			font-size: 84px;
+			line-height: 89px;
+			letter-spacing: -5px;
+		}
+		h2 {
+			font-size: 24px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		h3 {
+			.left;
+			font-size: 18px;
+			letter-spacing: -1px;
+		}
+		h4 {
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		.item {
+			&#banner1 {
+				.tag-content {
+					top: 70px;
+					left: 650px;
+					width: 500px;
+					h1 {
+						margin-bottom: 20px;
+						line-height: 60px;
+						color: #000000;
+					}
+				}
+			}
+			&#banner2 {
+				.tag-content {
+					.center;
+					top: 130px;
+					left: 400px;
+					width: 450px;
+					h1, h2, h3, h4 {
+						.center;
+						color: #ffffff;
+					}
+				}
+			}
+			&#banner3 {
+				.tag-content {
+					top: 80px;
+					left: 80px;
+					width: 600px;
+					h1, h3 {
+						color: #000000;
+					}
+					h1 {
+						font-size: 80px;
+						line-height: 70px;
+					}
+				}
+			}
+			&#banner4, &#banner5 {
+				.tag-content {
+					top: 80px;
+					left: 80px;
+					width: 650px;
+					h1, h3 {
+						color: #ffffff;
+					}
+					h1 {
+						font-size: 80px;
+						line-height: 70px;
+					}
+				}
+			}
+			&#banner6 {
+				.tag-content {
+					top: 100px;
+					left: 120px;
+					width: 650px;
+					h1, h3 {
+						color: #ffffff;
+					}
+					h1 {
+						font-size: 48px;
+						line-height: 48px;
+					}
+				}
+			}
+			&#banner8 {
+				.tag-content {
+					.rounded_corners();
+					padding: 20px;
+					background: transparent url(@{img_path}transparent-bg-dark.png) repeat 0 0;
+					top: 80px;
+					left: 80px;
+					width: 560px;
+					h1, h3 {
+						color: #ffffff;
+					}
+					h1 {
+						font-size: 60px;
+						line-height: 50px;
+					}
+				}
+			}
 		}
 	}
 }

@@ -79,6 +79,7 @@ class Controller_Site extends Controller_Template
 			(
 				'jquery-ui',
 				'bootstrap.min',
+				'plugins/datatables',
 				'site',
 			)
 		);
@@ -92,7 +93,8 @@ class Controller_Site extends Controller_Template
 				'jquery.ui',
 				'style',
 				'icons',
-				'forms'
+				'forms',
+				'datatables',
 			)
 		);
 

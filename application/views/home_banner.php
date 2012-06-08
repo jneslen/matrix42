@@ -3,10 +3,9 @@
 		<div id="banner1" class="active item">
 			<div class="item-container">
 				<div class="tag-content">
-					<h1 class="no-margin">workplace<br />management</h1>
+					<h1 class="no-margin">workplace management</h1>
 					<h4 class="no-margin">Empowering the <span class="emphasis">Dynamic Workplace</span></h4>
-					<h3 class="no-margin">User-Friendly and transparent provisioning</h3>
-					<h3 class="no-margin">of any service to any device</h3><a href="/"><span class="icon play"></span></a>
+					<h3 class="no-margin">User-Friendly and transparent provisioning of any service to any device</h3><a href="/"><span class="icon play"></span></a>
 				</div>
 				<img class="bg" src="/assets/img/banners/home-banner-001.jpg" alt="Dynamic" />
 			</div>

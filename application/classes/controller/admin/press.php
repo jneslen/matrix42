@@ -4,7 +4,7 @@ class Controller_Admin_Press extends Controller_Admin {
 
 	public function before()
 	{
-		$this->_title = 'Press';
+		$this->_title = 'Press / Awards';
 		parent::before();
 	}
 
@@ -22,9 +22,16 @@ class Controller_Admin_Press extends Controller_Admin {
 				array
 				(
 					'header' => '',
-					'value' => function($o) { $thumbnail = $o->thumbnail ? $o->thumbnail : 'press-release.png';
-						return '<img src="/assets/img/thumbnails/press/'.$thumbnail.'" style="width:15px;height:15px;" />';
+					'value' => function($o) {
+						$default_thumb = $o->type == 'release' ? 'press-release.png' : 'award.png';
+						$thumbnail = $o->thumbnail ? $o->thumbnail : $default_thumb;
+						return '<span class="hidden">'.$o->id.'</span><img src="/assets/img/thumbnails/press/'.$thumbnail.'" style="width:15px;height:15px;" />';
 					}
+				),
+				array
+				(
+					'header' => 'Type',
+					'value' => function($o) { return ucfirst($o->type); }
 				),
 				array
 				(

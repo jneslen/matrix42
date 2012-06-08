@@ -70,32 +70,20 @@ ul.list {
 #main-container {
 	.shadowbox(0.5, 60px);
 	background-color: #ffffff;
-	#main-row {
-		margin-top: @nav_height;
-	}
 }
 
 #main-nav {
-	height: @nav_height;
 	background-color: @nav_color;
-	#logo {
-		a {
-			.padded;
-		}
-	}
 	#logo,
 	#twitname {
-		a {
-			height: @nav_height - 25;
-			padding-top: 25px;
-			.block;
-			color: #aaaaaa;
-			font-weight: bold;
-			font-size: 10px;
-		}
+		height: @nav_height - 25;
+		padding: 25px 20px 0 20px;
+		.block;
+		color: #aaaaaa;
+		font-weight: bold;
+		font-size: 10px;
 	}
 	#nav {
-		.right;
 		li.dropdown:hover ul.dropdown-menu {
 			.block;
 		}
@@ -142,17 +130,14 @@ ul.list {
 			}
 		}
 	}
-	div.active {
-		background: transparent url(@{img_path}nav-active.png) no-repeat bottom center;
-	}
 }
 
 #breadcrumb {
-	height: 45px;
+	height: 33px;
+	padding-top: 12px;
 	background-color: #608da0;
 	.breadcrumb-level {
 		.padded;
-		margin-top: 12px;
 		a {
 			color: #fff;
 		}
@@ -167,17 +152,9 @@ ul.list {
 
 #banner {
 	.rel;
-	height: 201px;
-	.bg {
-		.abs;
-		top: 0;
-		left: 0;
-	}
 	.bg,
 	bg2 {
-		.abs;
-		top: 0;
-		left: 0;
+		display: inline-block;
 	}
 	.bg {
 		z-index: 0;
@@ -191,26 +168,6 @@ ul.list {
 		h1, h4 {
 			font-family: 'Helvetica Neue', 'Helvetica', 'Arial';
 			font-weight: bold;
-		}
-		h1 {
-			font-size: 64px;
-			line-height: 69px;
-			letter-spacing: -5px;
-		}
-		h2 {
-			font-size: 24px;
-			text-transform: uppercase;
-			letter-spacing: -1px;
-		}
-		h3 {
-			.left;
-			font-size: 18px;
-			letter-spacing: -1px;
-		}
-		h4 {
-			font-size: 16px;
-			text-transform: uppercase;
-			letter-spacing: -1px;
 		}
 	}
 }
@@ -334,29 +291,132 @@ ul.link-list {
 	background-color: @content_bg_color;
 }
 
-.contact-well {
-	.full-border-right;
-	.border-top;
-	.border-bottom;
-	background-color: @titlebar_bg_color;
-	height: 250px;
-	font-size: 12px;
-}
-
-.contact-form {
+#lead-form {
 	.full-border-right;
 	.border-top;
 	.border-bottom;
 	background-color: #f7f7f7;
-	margin: 0;
-	padding-right: 20px;
-	margin-left: 0;
-	height: 250px;
+	.contact-well {
+		margin: 0;
+		.full-border-right;
+		background-color: @titlebar_bg_color;
+		min-height: 250px;
+		font-size: 12px;
+	}
+	.contact-form {
+		margin: 0;
+		padding: 0 20px 20px 0;
+	}
 }
 
 .squeezed-title {
 	h1, h3 {
 		line-height: 18px;
 		margin-bottom: 0;
+	}
+}
+
+/*responsive*/
+@media (max-width: 480px) {
+/* Need to adjust the size of the headers in banners */
+	#banner {
+		h1 {
+			font-size: 20px;
+			line-height: 18px;
+			letter-spacing: -1px;
+		}
+		h2 {
+			font-size: 16px;
+			line-height: 15px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		h3 {
+			.left;
+			font-size: 14px;
+			line-height: 13px;
+			letter-spacing: -1px;
+		}
+		h4 {
+			font-size: 11px;
+			line-height: 10px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+	}
+}
+@media (min-width: 481px) and (max-width: 767px) {
+	#banner {
+		h1 {
+			font-size: 24px;
+			line-height: 22px;
+			letter-spacing: -2px;
+		}
+		h2 {
+			font-size: 18px;
+			line-height: 16px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		h3 {
+			.left;
+			font-size: 15px;
+			line-height: 14px;
+			letter-spacing: -1px;
+		}
+		h4 {
+			font-size: 12px;
+			line-height: 11px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 979px) {
+	#banner {
+		h1 {
+			font-size: 50px;
+			line-height: 48px;
+			letter-spacing: -4px;
+		}
+		h2 {
+			font-size: 24px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		h3 {
+			.left;
+			font-size: 18px;
+			letter-spacing: -1px;
+		}
+		h4 {
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+	}
+}
+@media (min-width: 980px) {
+	#banner {
+		h1 {
+			font-size: 64px;
+			line-height: 69px;
+			letter-spacing: -5px;
+		}
+		h2 {
+			font-size: 24px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		h3 {
+			.left;
+			font-size: 18px;
+			letter-spacing: -1px;
+		}
+		h4 {
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
 	}
 }

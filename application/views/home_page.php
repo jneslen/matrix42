@@ -10,21 +10,31 @@
 			</div>
 			<div class="clearfix"></div>
 		</div><!-- well -->
-		<div class="span6 dashed-right margin-clear">
-			<h2>Who we are</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
-			<h2>What we do</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
+	<div class="row">
+		<div class="span6 dashed-right">
 			<h2>Why Matrix42?</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
+			<div id="making-waves" class="padded-top-half">
+				<h2>Making Waves</h2>
+				<div class="logo-container">
+					<img class="partner-one" src="/assets/img/partners/<?=$partners[0]->company->logo?>" alt="<?=$partners[0]->company->name?>" />
+					<img class="partner-two" src="/assets/img/partners/<?=$partners[1]->company->logo?>" alt="<?=$partners[1]->company->name?>" />
+					<img class="partner-three" src="/assets/img/partners/<?=$partners[2]->company->logo?>" alt="<?=$partners[2]->company->name?>" />
+					<img class="partner-four" src="/assets/img/partners/<?=$partners[3]->company->logo?>" alt="<?=$partners[3]->company->name?>" />
+				</div><!-- logo-container -->
+			</div><!-- making-waves -->
+			<h2>A little more about us</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
 		</div><!-- span6 -->
-		<div class="span4 margin-clear margin-right padded">
+		<div class="span4 padded">
 			<h2>Latest Matrix42</h2>
 			<div id="latest-container" class="well margin-right">
 				<ul id="latest" class="nav nav-tabs" data-tabs="latest">
 					<li class="active"><a href="#blog" data-toggle="tab">Blog</a></li>
+				<?php if($events->count() > 0): ?>
 					<li><a href="#events" data-toggle="tab">Events</a></li>
+				<?php endif; ?>
 					<li><a href="#press" data-toggle="tab">Press</a></li>
 				</ul><!-- nav-tabs -->
 				<div class="tab-content">
@@ -41,7 +51,9 @@
 						<?php endforeach; ?>
 						</ul>
 					</div><!-- blog -->
+			<?php if($events->count() > 0): ?>
 					<div class="tab-pane" id="events">
+						<div class="padded"><a href="/events">view all &gt;&gt;</a></div>
 						<ul class="listed">
 						<?php foreach($events as $event): ?>
 							<li>
@@ -55,6 +67,7 @@
 						<?php endforeach; ?>
 						</ul>
 					</div><!-- events -->
+			<?php endif; ?>
 					<div class="tab-pane" id="press">
 						<div class="padded"><a href="/press">view all &gt;&gt;</a></div>
 						<ul class="listed">
@@ -72,6 +85,7 @@
 				</div><!-- tab-content -->
 			</div><!-- well -->
 		</div><!-- span4 -->
+	</div><!-- row -->
 </div><!-- span10 -->
 <div class="span16">
 	<?=$lead_form?>

@@ -23,7 +23,7 @@ return array
 		array
 		(
 			'url'		=> '/admin/press',
-			'title'		=> __('Press'),
+			'title'		=> __('Press/Awards'),
 			'type'		=> 'main',
 		),
 		array

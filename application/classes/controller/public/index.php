@@ -23,7 +23,6 @@ class Controller_Public_Index extends Controller_Public {
 		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4));
 
 		$this->_titlebar = View::factory('home_middle')
-			->set('partners', $partners)
 			->set('customers', $customers);
 
 		$this->_banner = View::factory('home_banner');
@@ -37,6 +36,7 @@ class Controller_Public_Index extends Controller_Public {
 		$this->_content = View::factory('home_page')
 			->set('blogs', $blogs)
 			->set('events', $events)
+			->set('partners', $partners)
 			->set('press_releases', $press_releases)
 			->set('feature', $feature)
 			->set('lead_form', parent::lead_form(true))

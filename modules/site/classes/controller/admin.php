@@ -21,12 +21,10 @@ class Controller_Admin extends Controller_Site {
 			'plugins/jquery-ui-timepicker',
 			'plugins/jquery.jstree',
 			'plugins/jquery.form',
-			'plugins/datatables',
 			'admin'
 		));
 		$this->request->styles(array
 		(
-			'datatables',
 			'jstree'
 		));
 	}

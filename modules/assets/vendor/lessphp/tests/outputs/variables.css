@@ -1,3 +1,5 @@
+color:44px;
+color:44px;
 .variables {
   width:14cm;
   height:24px;
@@ -7,19 +9,12 @@
   background:#6c94be;
   font-family:"Trebuchet MS", Verdana, sans-serif;
   margin:3px;
-  font-size:10px/12px;
-  font-size:120%/120%;
+  font:10px / 12px serif;
+  font:120% / 120% serif;
 }
 .external {
   color:#888888;
-  border:1px solid rgb(20%,15%,80%);
+  border:1px solid #3326cc;
   background:rgba(23,68,149,0.5);
   padding:4px;
 }
-division:5px;
-division:5px;
-subtract:10 "hello";
-subtract:2 -2;
-addition:10;
-addition:10;
-math:20;
