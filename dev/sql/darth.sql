@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth
-# Generation Time: 2012-05-22 22:43:37 +0000
+# Generation Time: 2012-06-08 22:29:14 +0000
 # ************************************************************
 
 
@@ -80,9 +80,76 @@ VALUES
 	(1,100,'general','General Site Visit'),
 	(2,200,'servicenow','ServiceNow'),
 	(3,300,'microsoft','Microsoft SCCM Enterprise Manager'),
-	(4,400,'citrix','VDI-Desktop Virtualization, Citrix Management &amp; p2v by Matrix42');
+	(4,400,'citrix','VDI-Desktop Virtualization, Citrix Management &amp; p2v by Matrix42'),
+	(5,500,'compliance','Compliance with Matrix42');
 
 /*!40000 ALTER TABLE `campaigns` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table case_studies
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `case_studies`;
+
+CREATE TABLE `case_studies` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `company` varchar(255) NOT NULL DEFAULT '',
+  `description` text,
+  `logo` varchar(255) DEFAULT NULL,
+  `pdf` varchar(255) DEFAULT NULL,
+  `video` varchar(255) DEFAULT NULL,
+  `study_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `featured` tinyint(1) NOT NULL DEFAULT '0',
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `case_studies` WRITE;
+/*!40000 ALTER TABLE `case_studies` DISABLE KEYS */;
+
+INSERT INTO `case_studies` (`id`, `company`, `description`, `logo`, `pdf`, `video`, `study_date`, `featured`, `disabled`)
+VALUES
+	(1,'BMW Group Switzerland',NULL,'bmw-logo.png',NULL,NULL,'2012-06-04 13:27:37',1,0),
+	(2,'Magna International Inc.',NULL,'magna-logo.png',NULL,NULL,'2012-06-04 13:28:54',1,0),
+	(3,'Vinci',NULL,'vinci-logo.png',NULL,NULL,'2012-06-04 13:29:55',1,0),
+	(4,'IBC Solar AG',NULL,'ibc-solar-logo.png',NULL,NULL,'2012-06-04 13:30:55',1,0);
+
+/*!40000 ALTER TABLE `case_studies` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table companies
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `companies`;
+
+CREATE TABLE `companies` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `address_id` int(10) unsigned DEFAULT NULL,
+  `phone_id` int(10) unsigned DEFAULT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `description` text,
+  `logo` varchar(255) DEFAULT NULL,
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk-address-company` (`address_id`),
+  KEY `fk-phone-company` (`phone_id`),
+  CONSTRAINT `fk-address-company` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk-phone-company` FOREIGN KEY (`phone_id`) REFERENCES `phones` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `companies` WRITE;
+/*!40000 ALTER TABLE `companies` DISABLE KEYS */;
+
+INSERT INTO `companies` (`id`, `address_id`, `phone_id`, `name`, `description`, `logo`, `disabled`)
+VALUES
+	(1,NULL,NULL,'Microsoft',NULL,'microsoft-logo.png',0),
+	(2,NULL,NULL,'Citrix',NULL,'citrix-logo.png',0),
+	(3,NULL,NULL,'Gartner',NULL,'gartner-magicq-logo.png',0),
+	(4,NULL,NULL,'ServiceNow',NULL,'servicenow-logo.png',0);
+
+/*!40000 ALTER TABLE `companies` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -141,9 +208,13 @@ LOCK TABLES `contents` WRITE;
 
 INSERT INTO `contents` (`id`, `menu_id`, `type`, `content`, `elements`)
 VALUES
-	(1,1,'main','<div class=\"padded\">\n	<h3 class=\"emphasis\">Manage every phase of the physical device lifecycle</h3>\n	<p>If your organization contains a large number of desktops and notebooks, you may find it challenging to maintain control over all of your systems while giving your end users the tools they need to be productive. The larger and more diverse your fleet, the harder it is to ensure that every system complies with license agreements, corporate policies and industry or federal regulations.</p>\n	<p>However, desktop management doesn\'t need to be complicated. Matrix42 makes it easy to manage every phase in the client lifecycle - from provisioning to retirement. With Matrix42, you can:</p>\n	<ul class=\"list\">\n		<li><span class=\"bold\">Meet your Service Level Agreements (SLAs).</span> Matrix42 automates many of your time-consuming tasks such as software deployments and common help desk services. This allows you to provide end users with faster service and decrease your chance of receiving financial penalties from breached SLAs.</li>\n		<li><span class=\"bold\">Make your IT department more efficient</span> With Matrix42 client lifecycle management, you can reduce your IT department\'s workload while managing a greater number of laptops and desktops. This can lower your operating costs</li>\n	</ul>\n	<p>Matrix42 supports all of your physical devices across a variety of platforms including Windows, Mac, Linux and Sun Solaris.</p>\n	%%getstartedpage%%\n	<div id=\"product-tab-container\" class=\"well margin-right\">\n		<ul id=\"product-tab\" class=\"nav nav-tabs\" data-tabs=\"product-tab\">\n			<li class=\"active\"><a href=\"#features\" data-toggle=\"tab\">Features & Benefits</a></li>\n			<li><a href=\"#why\" data-toggle=\"tab\">Why Matrix42</a></li>\n		</ul><!-- product-tab -->\n		<div class=\"tab-container\">\n			<div class=\"tab-content\">\n				<div class=\"tab-pane active padded-content\" id=\"features\">\n					<h3 class=\"emphasis\">Easily Manage the Entire Client Lifecycle - from OS Deployment to Retirement</h3>\n					<p>Unlike other desktop management solutions, Matrix42 can manage the entire client lifecycle - from provisioning to retirement. Matrix42 simplifies every phase in this process by helping you:</p>\n					<h4 class=\"emphasis\">Increase the Speed of Your OS Deployments While Dramatically Reducing Errors</h4>\n					<p>Matrix42 makes it easy for you to provision a bare-metal system - even if you\'re working remotely. You won\'t need to search for and install the right drivers for each system - a time-intensive task that could involve hundreds to thousands of configurations. During the OS deployment, Matrix42 will automatically find the correct drivers for each system. This eliminates guesswork, mistakes and downtime.</p>\n					<h4 class=\"emphasis\">Automate Your Software Discovery, Management and Reporting</h4>\n					<p>Matrix42 automatically finds all of your IT assets - without installing a software agent that would change a system\'s desired state. You can pre-schedule inventory scans or run them on demand to gain insight into your hardware and software. These scans will show you exactly what programs are installed, who is using them and the frequency of their use. This helps with your license management, as you can uninstall software that is not being used and reduce your licensee expenses.</p>\n					<p>Plus, you can deploy software updates and patches while keeping your systems in their desired states. Simply set your test and approval preferences once and then forget about them - Matrix42\'s software management tools will ensure they occur as planned and that your systems remain in compliance with corporate policies.</p>\n					<h4 class=\"emphasis\">Keep Your Data Secure Throughout the Entire Client Life Cycle</h4>\n					<p>With Matrix42, your end users won\'t lose their data during OS deployments and software updates. You can back up and restore all their data and settings with the push of a button - either from within the Matrix42 console or directly from the end user\'s system.</p>\n					<p>Matrix42 also ensures your systems are configured properly - which prevents security breaches, compliance issues and downtime.</p>\n					<p>Finally, Matrix42 can completely wipe your retired systems. This ensures that your data doesn\'t fall into the wrong hands if your hardware is sold, reassigned or junked.</p>\n				</div><!-- features -->\n				<div class=\"tab-pane padded-content\" id=\"why\">\n					<h3 class=\"emphasis\">Streamline Your Desktop Management</h3>\n					<p>Matrix42 Empirum Workplace Automation provides you with everything you need to automate your time-consuming desktop management tasks - for both physical and virtual desktops. It also integrates all of the processes in your client lifecycle management, from installation through secure data wiping, into one user-friendly platform.</p>\n					<p>Here\'s how the Empirum Workplace Automation modules can streamline your IT management:</p>\n					<p><span class=\"bold\">Inventory Management</span> gives you detailed data for every device connected to your corporate network, such as desktops, laptops, software, printers, routers, mobile devices and more. This allows you to learn what is in use, so you can remove unused applications, cancel unneeded licenses and reduce your IT costs.</p>\n					<p><span class=\"bold\">Software Management</span> automates all of your software deployments and updates - no matter how complex. It shows you exactly what is installed on each machine, so you can gain control of your software distributions and ensure your rollouts go smoothly. Thanks to Software Management\'s user-friendly features, some of Matrix42\'s customers have reduced their rollout failure rates from 10% to 0.002%.</p>\n					<p><span class=\"bold\">OS Deployment</span> automates your operating system deployments and migrations, which will reduce your errors, help desk calls and the amount of time you spend creating configurations for hardware. You can update your systems either on site or remotely with just one click.</p>\n					<p><span class=\"bold\">Personal Backup</span> restores all user data and settings with the push of a button - either remotely or directly from the end user\'s system. This module can also restore all application, data and operating system settings during an OS migration.</p>\n					<p><span class=\"bold\">Easy Recovery</span> provides complete disaster recovery after a virus infection, hardware failure or fatal system error.</p>\n					<p><span class=\"bold\">Remote Control</span> lets you gain remote access to a user\'s system in under 7 seconds - even if it\'s protected by firewalls. This allows you to provide your end users with instant support upon request while saving the costs and hassles of travel.</p>\n					<p>Matrix42 won IT-Administrator\'s \"Migration to Windows 7\" benchmark test in 2010</p>\n				</div><!-- why -->\n			</div><!-- tab-content -->\n		</div><!-- tab-content -->\n	</div><!-- product-tab-container -->\n</div><!-- padded -->\n%%leadform%%',NULL),
-	(2,5,'main','%%leadform%%',NULL),
-	(3,1,'sidebar','%%support%%',NULL);
+	(1,2,'main','<div class=\"padded\">\n	about\n</div><!-- padded -->\n%%leadform%%',NULL),
+	(2,3,'main','<div class=\"padded\">\n	How to Buy\n</div><!-- padded -->\n%%leadform%%',NULL),
+	(3,4,'main','<div class=\"padded\">\n	byod\n</div><!-- padded -->\n%%leadform%%',NULL),
+	(4,5,'main','<div class=\"padded\">\n<h3 class=\"emphasis\">Matrix42 for Desktop Virtualization</h3>\n<h4 class=\"emphasis\">The Essential Solution for Desktop Transformation</h4>\n<p>Virtual desktops are quickly gaining traction in enterprises, with 80 percent of large companies and 76 percent of medium-sized companies either considering or in the process of adopting the technology, according to a recent survey. However, businesses find they still face the same challenges of managing the operating system, applications and user settings. What’s more, the introduction of virtual desktops adds further diversity with IT having to manage a hybrid physical/virtual environment for the foreseeable future.</p>\n<p>Matrix42\'s solution fully supports all three phases of the Citrix Desktop Transformation Model, allowing companies to assess virtual desktop readiness, automate the migration process and ensure smooth operation of the virtual environment.</p>\n<img src=\"/assets/img/virtual-infrastructure_automation.jpg\" alt=\"Virtual Infrastructure Automation\" />\n<p>Seamless management of physical and virtual environments</p>\n%%getstartedpage%%\n<div id=\"product-tab-container\" class=\"well margin-right\">\n		<ul id=\"product-tab\" class=\"nav nav-tabs\" data-tabs=\"product-tab\">\n			<li class=\"active\"><a href=\"#why\" data-toggle=\"tab\">Why Matrix42?</a></li>\n			<li><a href=\"#features\" data-toggle=\"tab\">Features & Benefits</a></li>\n		</ul><!-- product-tab -->\n		<div class=\"tab-container\">\n			<div class=\"tab-content\">\n				<div class=\"tab-pane active padded-content\" id=\"why\">\n					<h3 class=\"emphasis\">Why Matrix42?</h3>\n					<p>With nearly twenty years of experience in desktop management, Matrix42 is uniquely positioned to support organizations as they move to virtual desktops. Matrix42 is the only vendor to fully support all three phases of the Citrix Desktop Transformation Model.</p>\n					<p><img src=\"/assets/img/phase1-assessment.jpg\" alt=\"Phase 1: Assessment\" class=\"left\" /><img src=\"/assets/img/phase-arrow.jpg\" alt=\"Phase Arrow\" class=\"left\" /><img src=\"/assets/img/phase2-migration.jpg\" alt=\"Phase 2: Migration\" class=\"left\" /><img src=\"/assets/img/phase-arrow.jpg\" alt=\"Phase Arrow\" class=\"left\" /><img src=\"/assets/img/phase3-operation.jpg\" alt=\"Phase 3: Operation\" class=\"left\" /><div class=\"clear\"></div></p>\n					<h4 class=\"emphasis\">Benefits of the Matrix42 solution include:</h4>\n					<div class=\"border padded padded-bottom\">\n						<div class=\"padded\">\n							<h3 class=\"emphasis\">ASSESSMENT</h3>\n							<ul class=\"list\">\n								<li>Full transparency into existing software repository including usage data </li>\n								<li>Time and cost savings, because repackaging and transformation efforts can be focused on the most important business applications</li>\n								<li>Out of the box report and virtualization readiness check for apps</li>\n								<li>Time and cost savings because only compatible apps will be attempted to virtualize</li>\n								<li>Full transparency which hardware needs to be replaced and which of the existing hardware can be used for XenClient</li>\n							</ul>\n						</div><!-- padded -->\n					</div><!-- border -->\n					<div class=\"border padded padded-bottom\">\n						<div class=\"padded\">\n							<h3 class=\"emphasis\">MIGRATION</h3>\n							<ul class=\"list\">\n								<li>Seamless and automated migration of XenApp Farms</li>\n								<li>Reduced user downtime during migration projects</li>\n								<li>Fully automated introduction of Citrix XenClient without user interaction</li>\n								<li>More reliable and faster creation of master images compared to use of existing tools</li>\n								<li>Seamless and automated migration of the complete virtual infrastructure including master images</li>\n								<li>Freedom of choice which master image technology to use (PVS or MCS)</li>\n								<li>Save time and costs in repackaging applications for virtualization</li>\n								<li>Fully automated extension of virtual desktop infrastructure on-demand</li>\n								<li>Significant reduction of manual steps in the datacenter to provide virtual desktops</li>\n							</ul>\n						</div><!-- padded -->\n					</div><!-- border -->\n					<div class=\"border padded padded-bottom\">\n						<div class=\"padded\">\n							<h3 class=\"emphasis\">OPERATION</h3>\n							<ul class=\"list\">\n								<li>Fully automated packaging and bare metal deployment of XenApp farms</li>\n								<li>Easy extension and modification of XenApp farms</li>\n								<li>No productivity loss or end-user downtime due to maintenance work on XenApp farm</li>\n								<li>Reduced packaging effort - package only once for XenApp and fat clients</li>\n								<li>Reduce training efforts by provisioning software for virtual and physical deployment through the same process and tools</li>\n								<li>Reduced user downtime by running configuration changes in pilot before they go into production</li>\n								<li>Simplified, fast provisioning and access to virtual desktops on demand independent of device</li>\n								<li>Full transparency of virtual desktops and servers needed from a business and asset management perspective</li>\n								<li>Optimized usage of assets can avoid purchase of unneeded server hardware</li>\n								<li>Improved license compliance and license efficiency </li>\n							</ul>\n						</div><!-- padded -->\n					</div><!-- border -->\n	\n				</div><!-- why -->\n				<div class=\"tab-pane padded-content\" id=\"features\">\n	\n				</div><!-- features -->\n			</div><!-- tab-content -->\n		</div><!-- tab-content -->\n	</div><!-- product-tab-container -->\n</div><!-- padded -->\n%%leadform%%',NULL),
+	(5,6,'main','<div class=\"padded\">\n	<h3 class=\"emphasis\">Manage every phase of the physical device lifecycle</h3>\n	<p>If your organization contains a large number of desktops and notebooks, you may find it challenging to maintain control over all of your systems while giving your end users the tools they need to be productive. The larger and more diverse your fleet, the harder it is to ensure that every system complies with license agreements, corporate policies and industry or federal regulations.</p>\n	<p>However, desktop management doesn\'t need to be complicated. Matrix42 makes it easy to manage every phase in the client lifecycle - from provisioning to retirement. With Matrix42, you can:</p>\n	<ul class=\"list\">\n		<li><span class=\"bold\">Meet your Service Level Agreements (SLAs).</span> Matrix42 automates many of your time-consuming tasks such as software deployments and common help desk services. This allows you to provide end users with faster service and decrease your chance of receiving financial penalties from breached SLAs.</li>\n		<li><span class=\"bold\">Make your IT department more efficient</span> With Matrix42 client lifecycle management, you can reduce your IT department\'s workload while managing a greater number of laptops and desktops. This can lower your operating costs</li>\n	</ul>\n	<p>Matrix42 supports all of your physical devices across a variety of platforms including Windows, Mac, Linux and Sun Solaris.</p>\n	%%getstartedpage%%\n	<div id=\"product-tab-container\" class=\"well margin-right\">\n		<ul id=\"product-tab\" class=\"nav nav-tabs\" data-tabs=\"product-tab\">\n			<li class=\"active\"><a href=\"#features\" data-toggle=\"tab\">Features & Benefits</a></li>\n			<li><a href=\"#why\" data-toggle=\"tab\">Why Matrix42</a></li>\n		</ul><!-- product-tab -->\n		<div class=\"tab-container\">\n			<div class=\"tab-content\">\n				<div class=\"tab-pane active padded-content\" id=\"features\">\n					<h3 class=\"emphasis\">Easily Manage the Entire Client Lifecycle - from OS Deployment to Retirement</h3>\n					<p>Unlike other desktop management solutions, Matrix42 can manage the entire client lifecycle - from provisioning to retirement. Matrix42 simplifies every phase in this process by helping you:</p>\n					<h4 class=\"emphasis\">Increase the Speed of Your OS Deployments While Dramatically Reducing Errors</h4>\n					<p>Matrix42 makes it easy for you to provision a bare-metal system - even if you\'re working remotely. You won\'t need to search for and install the right drivers for each system - a time-intensive task that could involve hundreds to thousands of configurations. During the OS deployment, Matrix42 will automatically find the correct drivers for each system. This eliminates guesswork, mistakes and downtime.</p>\n					<h4 class=\"emphasis\">Automate Your Software Discovery, Management and Reporting</h4>\n					<p>Matrix42 automatically finds all of your IT assets - without installing a software agent that would change a system\'s desired state. You can pre-schedule inventory scans or run them on demand to gain insight into your hardware and software. These scans will show you exactly what programs are installed, who is using them and the frequency of their use. This helps with your license management, as you can uninstall software that is not being used and reduce your licensee expenses.</p>\n					<p>Plus, you can deploy software updates and patches while keeping your systems in their desired states. Simply set your test and approval preferences once and then forget about them - Matrix42\'s software management tools will ensure they occur as planned and that your systems remain in compliance with corporate policies.</p>\n					<h4 class=\"emphasis\">Keep Your Data Secure Throughout the Entire Client Life Cycle</h4>\n					<p>With Matrix42, your end users won\'t lose their data during OS deployments and software updates. You can back up and restore all their data and settings with the push of a button - either from within the Matrix42 console or directly from the end user\'s system.</p>\n					<p>Matrix42 also ensures your systems are configured properly - which prevents security breaches, compliance issues and downtime.</p>\n					<p>Finally, Matrix42 can completely wipe your retired systems. This ensures that your data doesn\'t fall into the wrong hands if your hardware is sold, reassigned or junked.</p>\n				</div><!-- features -->\n				<div class=\"tab-pane padded-content\" id=\"why\">\n					<h3 class=\"emphasis\">Streamline Your Desktop Management</h3>\n					<p>Matrix42 Empirum Workplace Automation provides you with everything you need to automate your time-consuming desktop management tasks - for both physical and virtual desktops. It also integrates all of the processes in your client lifecycle management, from installation through secure data wiping, into one user-friendly platform.</p>\n					<p>Here\'s how the Empirum Workplace Automation modules can streamline your IT management:</p>\n					<p><span class=\"bold\">Inventory Management</span> gives you detailed data for every device connected to your corporate network, such as desktops, laptops, software, printers, routers, mobile devices and more. This allows you to learn what is in use, so you can remove unused applications, cancel unneeded licenses and reduce your IT costs.</p>\n					<p><span class=\"bold\">Software Management</span> automates all of your software deployments and updates - no matter how complex. It shows you exactly what is installed on each machine, so you can gain control of your software distributions and ensure your rollouts go smoothly. Thanks to Software Management\'s user-friendly features, some of Matrix42\'s customers have reduced their rollout failure rates from 10% to 0.002%.</p>\n					<p><span class=\"bold\">OS Deployment</span> automates your operating system deployments and migrations, which will reduce your errors, help desk calls and the amount of time you spend creating configurations for hardware. You can update your systems either on site or remotely with just one click.</p>\n					<p><span class=\"bold\">Personal Backup</span> restores all user data and settings with the push of a button - either remotely or directly from the end user\'s system. This module can also restore all application, data and operating system settings during an OS migration.</p>\n					<p><span class=\"bold\">Easy Recovery</span> provides complete disaster recovery after a virus infection, hardware failure or fatal system error.</p>\n					<p><span class=\"bold\">Remote Control</span> lets you gain remote access to a user\'s system in under 7 seconds - even if it\'s protected by firewalls. This allows you to provide your end users with instant support upon request while saving the costs and hassles of travel.</p>\n					<p>Matrix42 won IT-Administrator\'s \"Migration to Windows 7\" benchmark test in 2010</p>\n				</div><!-- why -->\n			</div><!-- tab-content -->\n		</div><!-- tab-content -->\n	</div><!-- product-tab-container -->\n</div><!-- padded -->\n%%leadform%%',NULL),
+	(6,7,'main','<div class=\"padded\">\n	Asset Management\n</div><!-- padded -->\n%%leadform%%',NULL),
+	(7,8,'main','<div class=\"padded\">\n	Windows 7 Migration\n</div><!-- padded -->\n%%leadform%%',NULL);
 
 /*!40000 ALTER TABLE `contents` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -425,7 +496,7 @@ DROP TABLE IF EXISTS `events`;
 
 CREATE TABLE `events` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `type` enum('webinar','conference','partner_event','training') NOT NULL DEFAULT 'webinar',
+  `type` enum('webinar','conference','partner','training') NOT NULL DEFAULT 'webinar',
   `title` varchar(255) NOT NULL DEFAULT '',
   `subtitle` varchar(255) DEFAULT NULL,
   `description` text,
@@ -436,6 +507,7 @@ CREATE TABLE `events` (
   `end_date` datetime DEFAULT NULL,
   `use_time` tinyint(1) NOT NULL DEFAULT '0',
   `seats` int(10) unsigned DEFAULT NULL,
+  `featured` tinyint(1) NOT NULL DEFAULT '0',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -443,10 +515,14 @@ CREATE TABLE `events` (
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
 
-INSERT INTO `events` (`id`, `type`, `title`, `subtitle`, `description`, `location`, `link`, `thumbnail`, `start_date`, `end_date`, `use_time`, `seats`, `disabled`)
+INSERT INTO `events` (`id`, `type`, `title`, `subtitle`, `description`, `location`, `link`, `thumbnail`, `start_date`, `end_date`, `use_time`, `seats`, `featured`, `disabled`)
 VALUES
-	(1,'conference','AirWatch Connect 2012','','<p>We understand the world of enterprise mobility is evolving quickly.  Join us at AirWatch Connect 2012 to gain insight, strategies, tools and  relationships to make the right business and technology decisions today  and in the future.</p>\n\n<p>AirWatch Connect 2012 provides an environment where you can connect  with AirWatch specialists, industry experts, strategic partners and IT  executives. Learn best practices, understand emerging technologies,  share success stories, and find answers to enterprise mobility  challenges.</p>\n\n<p><a href=\"http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g\" external=\"1\">www.air-watch.com</a></p>','Atlanta, GA','http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g','','2012-05-14 08:00:00','2012-05-16 20:00:00',0,NULL,0),
-	(2,'conference','Test Conference','subtitle','<p>This is a description</p>','San Francisco','','','2012-05-19 10:00:00','2012-05-20 20:00:00',1,NULL,0);
+	(1,'conference','AirWatch Connect 2012','','<p>We understand the world of enterprise mobility is evolving quickly.  Join us at AirWatch Connect 2012 to gain insight, strategies, tools and  relationships to make the right business and technology decisions today  and in the future.</p>\n\n<p>AirWatch Connect 2012 provides an environment where you can connect  with AirWatch specialists, industry experts, strategic partners and IT  executives. Learn best practices, understand emerging technologies,  share success stories, and find answers to enterprise mobility  challenges.</p>\n\n<p><a href=\"http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g\" external=\"1\">www.air-watch.com</a></p>','Atlanta, GA','http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g','','2012-05-14 08:00:00','2012-05-16 20:00:00',0,NULL,0,0),
+	(2,'conference','Test Conference','subtitle','<p>This is a description</p>','San Francisco','','','2012-05-19 10:00:00','2012-05-20 20:00:00',1,NULL,0,0),
+	(3,'webinar','Webinar: Turning the BYOD Problem into the BYOD Opportunity with Matrix42 Mobile Device Management','An informative webinar discussion on how your IT department can transform this organizational challenge into an opportunity','<p>In a rising trend known as BYOD (Bring Your Own Device), employees are now bringing their own smartphones, tablets and other technology to the workplace. Users now expect their devices to be supported by the IT department, which can introduce serious security risks, as well challenges surrounding the managing of multiple operating systems and devices across physical, virtual and cloud environments.</p>\n<p>We\'re sure this sounds familiar. Join us on Thursday, March 29th at 2:00 PM EST for an informative webinar discussion on how your IT department can transform this organizational challenge into an opportunity by implementing Matrix42 Mobile Device Management (MDM).</p>\n<p>We\'ll examine how Matrix42 Mobile Device Management gives you control over the entire mobile device lifecycle – from deployment to security, monitoring, management and support. Specifically we\'ll discuss how your organization can:</p>\n<ul>\n<li><strong>Reduce Risk</stong> – Maintain real-time security to meet compliance standards</li>\n<li><strong>Automate deployment</strong> – Automate all tasks to make devices ready for business use, thousands of devices at a time</li>\n<li><strong>Manage Apps</strong> – Control mobile applications across a global device\n fleet</li>\n<li><strong>Monitor Devices</strong> – Keep mobile workers productive with 24/7 monitoring via an automated central management console</li>\n<li><strong>Reduce Costs</strong> – Avoid mobility-related costs</li>\n</ul>','Online','https://cc.callinfo.com/r/14fnj1sgo3wac','','2012-06-13 13:30:00','2012-06-21 07:00:00',1,NULL,0,0),
+	(4,'webinar','Webinar: Mobile Device Management','Don’t Wait, Take Control of Your Mobile Devices and Workplace with Matrix42!','<p>During this webcast you will learn how to manage your mobile devices, like iPhone, Android, Blackberry and Co. with Matrix42.</p>','Online','https://www3.gotomeeting.com/register/320202830','','2012-06-21 09:00:00',NULL,1,NULL,0,0),
+	(5,'conference','AirWatch Connect 2012','We understand the world of enterprise mobility is evolving quickly. Join us at AirWatch Connect 2012','<p>AirWatch Connect 2012 provides an environment where you can connect with AirWatch specialists, industry experts, strategic partners and IT executives. Learn best practices, understand emerging technologies, share success stories, and find answers to enterprise mobility challenges.</p>','Atlanta, GA','http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g','','2012-06-28 00:00:00','2012-06-30 00:00:00',0,NULL,0,0),
+	(6,'partner','Partner event Windmark: Tooling Event','On March 28 & 29 the first Belgian edition of The Tooling Event will take place in Brussels Expo.','<p>The Tooling Event is focused on tools & techniques that optimize the IT services and support to the business. In both the seminar program and at the exhibition floor, topics such as IT service management, ITIL, Service desk support, Customer satisfaction and SLA’s will be covered. But also how to get insight in and control over your (virtual) infrastructure, systems, network and desktops/devices.</p>','Brussels Expo, Belgium','http://www.toolingevent.be/nl-NL/Bezoeker.aspx','','2012-07-04 00:00:00','2012-07-06 00:00:00',0,NULL,0,0);
 
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -478,8 +554,11 @@ LOCK TABLES `leads` WRITE;
 INSERT INTO `leads` (`id`, `business_name`, `campaign_id`, `newsletter`, `inquiry_ip`, `inquiry_date`, `contact_date`, `downloaded`)
 VALUES
 	(2,'',NULL,0,'127.0.0.1','2012-05-04 16:43:02','2012-05-17 17:14:23',0),
-	(3,NULL,NULL,0,'127.0.0.1','2012-05-09 16:05:52',NULL,0),
-	(4,NULL,NULL,0,'127.0.0.1','2012-05-10 12:49:43',NULL,0);
+	(3,NULL,NULL,0,'127.0.0.1','2012-05-09 16:05:52','2012-05-22 16:55:06',0),
+	(4,NULL,NULL,0,'127.0.0.1','2012-05-10 12:49:43',NULL,0),
+	(5,NULL,3,0,'127.0.0.1','2012-05-24 10:44:43',NULL,0),
+	(6,'WWF',3,0,'127.0.0.1','2012-05-29 16:30:47','2012-05-29 16:37:48',0),
+	(11,NULL,3,0,'127.0.0.1','2012-06-04 17:09:52',NULL,0);
 
 /*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -493,8 +572,9 @@ DROP TABLE IF EXISTS `menus`;
 CREATE TABLE `menus` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned DEFAULT NULL,
+  `campaign_id` int(10) unsigned DEFAULT NULL,
   `role` enum('public','admin','member') NOT NULL DEFAULT 'public',
-  `type` enum('main','submenu','footer','hidden') NOT NULL DEFAULT 'main',
+  `type` enum('main','submenu','subheader','footer','hidden') NOT NULL DEFAULT 'main',
   `title` varchar(55) NOT NULL,
   `url` text NOT NULL,
   `classes` varchar(255) DEFAULT NULL,
@@ -507,29 +587,33 @@ CREATE TABLE `menus` (
   `banner` varchar(255) DEFAULT NULL,
   `banner_title` varchar(255) DEFAULT NULL,
   `banner_subtitle` varchar(255) DEFAULT NULL,
+  `banner_x` mediumint(4) DEFAULT NULL,
+  `banner_y` mediumint(4) DEFAULT NULL,
+  `title_width` mediumint(4) DEFAULT NULL,
+  `title_color` varchar(7) DEFAULT NULL COMMENT '#hexidecimal',
   `order` int(2) DEFAULT NULL,
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
-  KEY `fk-parent-menus` (`parent_id`),
-  CONSTRAINT `fk-menu-menus` FOREIGN KEY (`parent_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE
+  KEY `fk-campaign-menus` (`campaign_id`),
+  KEY `fk-menu-menus` (`parent_id`),
+  CONSTRAINT `fk-menu-menus` FOREIGN KEY (`parent_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk-campaign-menus` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `menus` WRITE;
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 
-INSERT INTO `menus` (`id`, `parent_id`, `role`, `type`, `title`, `url`, `classes`, `section`, `controller`, `method`, `pagetitle`, `subtitle`, `keywords`, `banner`, `banner_title`, `banner_subtitle`, `order`, `disabled`)
+INSERT INTO `menus` (`id`, `parent_id`, `campaign_id`, `role`, `type`, `title`, `url`, `classes`, `section`, `controller`, `method`, `pagetitle`, `subtitle`, `keywords`, `banner`, `banner_title`, `banner_subtitle`, `banner_x`, `banner_y`, `title_width`, `title_color`, `order`, `disabled`)
 VALUES
-	(1,NULL,'public','main','Solutions','/solutions','dropdown','public','solutions','index','','','','sub-banner-woman.jpg','holistic workplace','The Solution That Solves your IT needs.',1,0),
-	(2,NULL,'public','main','Products','/products',NULL,'public','products','index',NULL,NULL,NULL,NULL,NULL,NULL,2,0),
-	(3,NULL,'public','main','Support','/support',NULL,'public','support','index',NULL,NULL,NULL,NULL,NULL,NULL,3,0),
-	(4,NULL,'public','main','About','/about','dropdown','public','about','index',NULL,NULL,NULL,NULL,NULL,NULL,4,0),
-	(5,1,'public','main','IT Service Management','/solutions/it_service_management',NULL,'public','solutions','it_service_management','IT Service Management',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,1,0),
-	(6,1,'public','main','IT Asset Management','/solutions/it_asset_management',NULL,'public','solutions','it_asset_management','IT Asset Management',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,3,0),
-	(7,1,'public','main','Mobile IT Service','/solutions/it_service_management/mobile_it_service','minor','public','solutions','mobile_it_service','Mobile IT Service',NULL,NULL,'sub-banner-woman.jpg',NULL,NULL,2,0),
-	(8,4,'public','main','Press','/press',NULL,'public','press','index','Press Releases',NULL,NULL,NULL,NULL,NULL,NULL,0),
-	(9,4,'public','main','Events','/events',NULL,'public','events','index','Events',NULL,NULL,NULL,NULL,NULL,NULL,0),
-	(10,1,'public','main','Window 7 Migration','/solutions/windows_7_migration','','public','solutions','windows_7_migration','Windows 7 Migration','','','','','',NULL,0),
-	(11,1,'public','main','Workplace Mobility','/solutions/workplace_mobility','','public','solutions','workplace_mobility','Workplace Mobility','Matrix42 Workplace Mobility blah','byod, mobile workplace','','','',NULL,0);
+	(1,NULL,NULL,'public','main','Products &amp; Solutions','/solutions','dropdown','public','solutions','index','','',NULL,'sub-banner-woman.jpg','holistic workplace','The Solution That Solves your IT needs.',NULL,NULL,NULL,NULL,1,0),
+	(2,NULL,NULL,'public','main','About','/about','dropdown','public','about','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0),
+	(3,NULL,NULL,'public','main','How to Buy','/purchase','','public','purchase','index','How to Buy Matrix42 Products and Services','How to purchase Matrix42 Products and Solutions by contacting us or finding a partner reseller.',NULL,'sub-banner-woman.jpg','start today','Purchase Matrix42 Products and Solutions',NULL,NULL,NULL,NULL,3,0),
+	(4,1,NULL,'public','submenu','Bring Your Own Device (BYOD)','/solutions/byod',NULL,'public','solutions','byod','Bring Your Own Device','Allow your employees to bring their own device while maintaining security. A BYOD initiative management solution.','byod, mobile workplace, personal device, mobile device, mobile workforce','sub-banner-byod.jpg','bring your own device?','No Problem, Manage the Entire Mobile Device Lifecycle',60,35,600,NULL,1,0),
+	(5,1,NULL,'public','submenu','Desktop Virtualization','/solutions/desktop_virtualization',NULL,'public','solutions','desktop_virtualization','Desktop Virtualization',NULL,NULL,'sub-banner-virtualization.jpg','virtual workplace','The essential solution for desktop transformation',100,25,500,NULL,2,0),
+	(6,1,NULL,'public','submenu','Endpoint Management','/solutions/endpoint_management',NULL,'public','solutions','endpoint_management','Endpoint Management','Automate many of your time-consuming tasks such as software deployments and common help desk services. While reducing your IT department’s workload and reducing costs.',NULL,'sub-banner-integration.jpg','full integration','Automation of all IT Management Processes',100,25,500,NULL,3,0),
+	(7,1,5,'public','submenu','Asset Management (Compliance)','/solutions/compliance',NULL,'public','solutions','compliance','Compliance with Matrix42','Full Control of all IT-Assets, Licenses and Contracts','compliance, software compliance','sub-banner-compliance.jpg','compliance','Full Control of all IT-Assets, Licenses and Contracts',100,25,500,'#ffffff',4,0),
+	(8,1,3,'public','submenu','Windows 7 Migration','/solutions/windows_7_migration',NULL,'public','solutions','windows_7_migration','Windows 7 Migration','Matrix42 Workplace Management allows for an easy, low-cost and secure migration to Windows 7. It helps you automate and simplify every step of the process including hardware and software analysis, data backup and driver/operating system installation','window7 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','windows 7 migration','Quick & Reliable Migration to Windows 7',60,35,600,'#ffffff',5,0),
+	(9,NULL,5,'public','footer','Compliance','/compliance',NULL,'public','compliance','index','Compliance with Matrix42','Full Control of all IT-Assets, Licenses and Contracts','compliance, software compliance','sub-banner-compliance.jpg','compliance','Full Control of all IT-Assets, Licenses and Contracts',100,25,500,'#ffffff',NULL,0);
 
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -568,9 +652,43 @@ VALUES
 	(3,2,1,1,'general','This is a subnote followup etc.','2012-05-18 11:20:34',0),
 	(6,2,1,1,'general','This is a reply','2012-05-18 14:45:09',0),
 	(7,2,1,NULL,'sales','I really like this guy, but maybe just a little too much','2012-05-18 14:56:47',0),
-	(8,2,1,NULL,'general','This is a new note','2012-05-21 23:36:01',0);
+	(8,2,1,NULL,'general','This is a new note','2012-05-21 23:36:01',0),
+	(9,3,1,NULL,'general','This is a new note','2012-05-22 16:55:24',1),
+	(10,2,1,8,'response','This is a reply','2012-05-24 08:48:02',0),
+	(11,5,5,NULL,'inquiry','I was associated to your windows7 migration campaign.','2012-05-24 10:44:43',0),
+	(12,6,6,NULL,'inquiry','I am interested in stuff','2012-05-29 16:30:47',0),
+	(13,6,1,12,'response','This is a follow up','2012-05-29 16:35:37',0),
+	(14,11,11,NULL,'inquiry','This is my question','2012-06-04 17:09:52',0);
 
 /*!40000 ALTER TABLE `notes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table partners
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `partners`;
+
+CREATE TABLE `partners` (
+  `id` int(10) unsigned NOT NULL,
+  `company_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk-company-partners` (`company_id`),
+  CONSTRAINT `fk-company-partners` FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`),
+  CONSTRAINT `fk-user-partner` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `partners` WRITE;
+/*!40000 ALTER TABLE `partners` DISABLE KEYS */;
+
+INSERT INTO `partners` (`id`, `company_id`)
+VALUES
+	(7,1),
+	(8,2),
+	(9,3),
+	(10,4);
+
+/*!40000 ALTER TABLE `partners` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -597,7 +715,10 @@ INSERT INTO `phones` (`id`, `type`, `user_id`, `number`, `disabled`)
 VALUES
 	(1,'primary',2,'2837438123',0),
 	(2,'primary',3,'2348753234',0),
-	(3,'primary',4,'3479572642',0);
+	(3,'primary',4,'3479572642',0),
+	(4,'primary',5,'2342345523',0),
+	(5,'primary',6,'8654563521',0),
+	(6,'primary',11,'2837438234',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -610,12 +731,16 @@ DROP TABLE IF EXISTS `press_releases`;
 
 CREATE TABLE `press_releases` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type` enum('release','award') NOT NULL DEFAULT 'release',
   `title` varchar(255) NOT NULL DEFAULT '',
   `subtitle` varchar(255) DEFAULT NULL,
   `content` text,
   `link` varchar(255) DEFAULT NULL,
   `thumbnail` varchar(85) DEFAULT NULL,
   `release_date` date NOT NULL,
+  `archive_date` date DEFAULT NULL,
+  `featured` tinyint(1) NOT NULL DEFAULT '0',
+  `archive` tinyint(1) NOT NULL DEFAULT '0',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -623,9 +748,12 @@ CREATE TABLE `press_releases` (
 LOCK TABLES `press_releases` WRITE;
 /*!40000 ALTER TABLE `press_releases` DISABLE KEYS */;
 
-INSERT INTO `press_releases` (`id`, `title`, `subtitle`, `content`, `link`, `thumbnail`, `release_date`, `disabled`)
+INSERT INTO `press_releases` (`id`, `type`, `title`, `subtitle`, `content`, `link`, `thumbnail`, `release_date`, `archive_date`, `featured`, `archive`, `disabled`)
 VALUES
-	(1,'My Test Release','This is the subtitle for this release it will show in italics on the page I am sure','<p><strong>Press Release LEHI UT - Matrix42</strong></p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor scelerisque fringilla. Cras elementum scelerisque semper. Sed placerat urna non massa ornare lobortis. Aliquam sem lacus, rutrum vitae faucibus vitae, pharetra eget nisi. Vestibulum augue nisl, pulvinar sed tincidunt eget, imperdiet et erat. Integer posuere, ante in pretium congue, lectus est pharetra sapien, sit amet molestie nisl nibh vitae purus. Maecenas lorem tellus, tempor a pharetra in, dapibus vitae arcu. Nam sodales iaculis lobortis. Integer nibh elit, congue sit amet consequat in, accumsan at augue. Suspendisse odio justo, dictum at tincidunt ac, dapibus ut mauris. Nullam id ligula sit amet arcu iaculis euismod et sed quam. Sed vel lacus arcu, vel cursus nisl. Aliquam feugiat ullamcorper metus eu adipiscing. Suspendisse porta, sem eu tempor consequat, nisl nunc tincidunt diam, id euismod quam ligula vel urna. Vestibulum sollicitudin viverra nisi. Nulla facilisis, nisi sed lacinia varius, ligula velit porta mi, eget eleifend felis eros condimentum risus.</p>','','','2012-05-03',0);
+	(1,'release','matrix42 Wins Top 100 Seal of Quality','Innovation, Technological Expertise and Business Acumen among Criteria For Capturing Prestigious Vienna University Award','<p><strong class=\"emphasis\">ATLANTA (July 5, 2006)</strong> – matrix42, an international developer of system management software, has been awarded the coveted Top 100 Quality Seal 2006 from Vienna University Professor Dr. Nikolaus Franke.  The award is based on five aspects of innovation management:</p>\n<ul class=\"list\">\n<li>Commercial Success</li>\n<li>Climate of Innovation</li>\n<li>Innovative Processes and Organization</li>\n<li>Senior Management Innovation</li>\n<li>Marketing Innovation</li>\n</ul>\n<p>matrix42 corporate headquarters are near Frankfurt, Germany.  The company also maintains a U.S. subsidiary in Atlanta.  For more than a decade, matrix42 has provided software to automate and manage networked systems.  The company’s software suite, Empirum, is the first to enable IT professionals to manage all aspects of the enterprise, including PCs, servers and software from a central location.  When used to administer complex networks, Empirum has been shown to save companies up to 85 percent of IT costs.</p>\n<p>\"The Top 100 companies are not afraid to excel.  The way in which they blend technological expertise with business acumen not only brings them commercial success, but also generates new jobs,\" said Lothar Spath, Top 100 in Innovation project mentor and award presenter.</p>\n<p>\"We work to breed a spirit of innovation among our employees, by fostering an atmosphere for idea generation and by demonstrating the ability to act quickly and decisively in response to market demands,” said Ron Harrison, Chief Operating Officer for matrix42.  “We’re pleased to receive this honor and intend to continue our commitment to technology advancements that improve efficiency and productivity for businesses.\"</p>\n<p>The Top 100 award is based on a benchmarking survey in which Professor Franke of the Vienna University of Economics and Business Administration investigates the innovation management capabilities of medium-sized businesses in Germany.  Chosen from an initial pool of 1,750 German companies that showed interest, the highest ranking 100 companies are entitled to display the Top 100 Seal for 2006.  The Top 100 are also featured in the book, “Top 100 2006 – Germany’s most innovative medium-sized businesses”.  For more information, go to <a href=\"http://www.top100.de\" target=\"_blank\">www.top100.de.</a></p>\n<h3>About Matrix42</h3>\n<p>Matrix42’s suite of Empirum products supports lifecycle management for networked devices, helping to reduce total cost of ownership (TCO).  With Empirum, companies are able to achieve dramatic and long-term savings on their IT operational costs, while increasing their flexibility and efficiency.  matrix42 customers include such leading names as T-Systems, Gerling and ING-DiBa.  Matrix42 corporate headquarters are located near Frankfurt, Germany, with branch offices in Vienna and Zurich.  The company also maintains a U.S. subsidiary in Atlanta.</p>','','','2006-07-05',NULL,1,0,0),
+	(2,'release','Empirum Paves the Way for the Future of Microsoft OS Installations','Matrix42’s Empirum is first to automate installations of Windows Vista','<p><strong class=\"emphasis\">ATLANTA (June 13, 2006)</strong> – matrix42, a leading developer of system management software, today previewed a version of Empirum that enables enterprise-wide distribution of the Microsoft Windows Vista™ operating system.  The solution fully automates the activities involved in migrating computers to Windows Vista, which is scheduled for general availability in early 2007.  Windows Vista Beta 2 is available now.</p>\n<p>A unique component of Empirum is its differentiated driver mapping technology.  Empirum’s automated hardware recognition facilitates an automated installation of the Vista OS independent of underlying hardware.</p>\n<p>In a report published in April 2006, Gartner estimates that the corporate process of migrating to Vista can take up to 18 months.1   According to Holger Maul, Founder and Chief Technology Officer of matrix42, \"The new Empirum technology can help enterprises shorten this process dramatically.  Empirum is the first to support automated distribution and remote installation of the new Vista OS.\"</p>\n<p>Additionally, Maul outlines three basic questions that must be addressed by corporations planning to deploy Vista OS:</p>\n<ol>\n<li><span class=\"italics\">Which hardware meets the system requirements of Vista?</span> matrix42’s Empirum product enables administrators to learn at the push of a button which systems do not meet these requirements.</li>\n<li><span class=\"italics\">Which existing applications are compatible with the new operating system?</span> Empirum performs a check on previously installed software to identify potential compatibility problems prior to a roll-out.</li>\n<li><span class=\"italics\">Are user data and settings backed up?</span> Nothing is more laborious and time-consuming than recreating the configuration of a PC.  Empirum can automatically reproduce and migrate each user’s data and settings following the successful migration to Vista.</li>\n</ol>\n<p>matrix42’s suite of Empirum products supports lifecycle management for networked devices, helping to reduce total cost of ownership (TCO). With Empirum, companies are able to achieve dramatic and long-term savings on their IT operational costs, while increasing their flexibility and efficiency.  matrix42 customers include such leading names as T-Systems, Gerling and ING-DiBa.  matrix42 corporate headquarters are located near Frankfurt, Germany, with branch offices in Vienna and Zurich.  The company also maintains a U.S. subsidiary in Atlanta.</p>','','','2006-06-13',NULL,1,0,0),
+	(3,'release','Matrix42 Brings Security and Flexibility to BYOD Policies','First and only integration of mobile device management and IT service management gives companies control of mobile assets while giving employees more flexibility','<p><strong class=\"emphasis\">LEHI, UTAH - May 7, 2012</strong> - Matrix42 (www.matrix42.com) a leading provider of workplace management solutions, today announced the integration of mobile device management (MDM) with IT service management (ITSM). Matrix42 is the first to fully integrate these two complementary offerings to give organizations greater visibility and control over their mobile assets and the flexibility to effectively implement BYOD (bring your own device) policies and self-provisioning for employees.</p>\n<p>This combination provides organizations and their employees flexibility in the devices that are used and how they are managed. IT administrators can ensure all mobile devices connected to the network are inventoried, secured and managed within company policies, whether they support BYOD for employees or the devices are owned by the company. Users can be given the ability to acquire and self-provision their device and access management features such as device location and data wiping.</p>\n<p>\"Our approach to mobile device management and IT service management mirrors what most organizations are facing today with employees wanting more flexibility to use their own mobile device or to have more control over the company-provided device,” said Oliver Bendig, Matrix42 vice president of product management. “We provide a user-centric focus that gives employees more freedom with their mobile devices while still providing the company the security and management features they require.\"</p>\n<p>The integration of mobile device management and IT service management is available as part of the newly released Matrix42 Service Store 5.3 SP3. Other enhancements as part of the release include:</p>\n<ul class=\"list\">\n<li>Improved workflow management processes for approving and provisioning services\n    Integration with Matrix42 Enterprise Manager for provisioning Microsoft SCCM software packages from the service catalog</li>\n<li>Updated iPhone app for users to easily access the service catalog, place orders, open help tickets, etc.</li>\n<li>Addition of Polish user interface</li>\n</ul>\n<p>Matrix42 Service Store 5.3 SP3 is now available for download from the Matrix42 Support Portal on its web site or by contacting a Matrix42 representative. For more information about Matrix42 Service Store, please visit <a href=\"/solutions/endpoint_management\">www.matrix42.com/solutions/endpoint_management</a>.</p>','','','2012-05-07',NULL,0,0,0),
+	(4,'release','Matrix42 Integrates Workplace Management with ServiceNow to Extend IT Service Automation','Matrix42 physical, virtual and mobile device management integrated with ServiceNow service catalog','<p><strong class=\"emphasis\">NEW ORLEANS (Knowledge12, Booth #102) - May 15, 2012</strong> - Matrix42\n(www.matrix42.com) has integrated its Workplace Management solutions with ServiceNow to offer integrated mobile device management, VDI (virtual desktop infrastructure) and endpoint management capabilities through the ServiceNow service catalog. This allows IT to be more automated and efficient by giving them the ability to provide any service to any device through ITSM processes, while offering users flexibility and speed for IT service delivery with intuitive\nself-service options.</p>\n<p>\"IT organizations have an opportunity to transform the way services are delivered to the business,\" said Rob Luddy, ServiceNow VP of business development. \"ServiceNow cloudbased IT service automation can help significantly relieve the burden of manual tasks and oneoff requests through automation and self service. ServiceNow integrated with Matrix42 enables\nIT transformation and delivers value for our customers and partners.\"</p>\n<p>With Matrix42, users can request and provision their own physical, virtual and mobile assets through ServiceNow service request and catalog functionality. Automated process work flow eliminates the need for users to wait for an IT administrator to respond to a request logged through ServiceNow, resulting in more rapid service delivery for requests like mobile device support, IT asset provisioning and endpoint management.</p>\n<p>Matrix42 offers three solutions integrated with ServiceNow:</p>\n<ul class=\"list\">\n<li>Workplace Mobility (Mobile Device Management) – Whether a company has a BYOD policy or supplies employees with mobile devices, devices can be requested or enrolled through the service catalog, and users can add applications and manage them within company policies. This also allows companies to support any mobile device platform.</li>\n<li>Workplace Virtualization (VDI) – For virtualizing desktops, mobile devices or applications, employees can initiate the process through a service store request. The back-end process is automated to run the workflow and deliver the image, allowing customers to enjoy the benefits of virtualization without all the costs.</li>\n<li>Workplace Automation (Endpoint Management) – Users are able to easily complete many help desk functions on their own such as provisioning services, adding or reinstalling software, and recovering their computer. This lowers the overall desktop management costs and allows IT administrators to spend their time on more strategic projects.</li>\n</ul>\n<p>Matrix42 CEO Herbert Uhl added, \"Our work with ServiceNow brings together two highly complementary solutions. We are able to provide ServiceNow customers new capabilities that are in demand in today’s business environment, and this opens up new channels and markets for Matrix42 to strengthen its position in Workplace Management.\"</p>\n<p>ServiceNow is a leading provider of cloud-based services that automate enterprise IT operations. ServiceNow helps organizations transform IT by automating and standardizing business processes and consolidating IT across the global enterprise. Organizations deploy ServiceNow to create a single system of record for enterprise IT, lower operational costs and enhance efficiency.\nMatrix42 will be demonstrating its ServiceNow integration at the ServiceNow Knowledge12 Global IT Conference in Booth #102; during the breakout session at 3:40 p.m. on Tuesday, May 15; and in the ExpoNow Theatre at 12:10 p.m. on Wednesday, May 16. For more information about Matrix42 solutions, please visit http://www.matrix42.com.</p>','','','2012-05-15',NULL,0,0,0);
 
 /*!40000 ALTER TABLE `press_releases` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -714,26 +842,26 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) NOT NULL DEFAULT '',
-  `first` varchar(255) NOT NULL DEFAULT '',
-  `initial` char(2) DEFAULT NULL,
-  `last` varchar(255) DEFAULT NULL,
-  `password` varchar(255) NOT NULL DEFAULT '',
-  `temp_password` char(10) DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `first` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `initial` char(2) CHARACTER SET latin1 DEFAULT NULL,
+  `last` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `temp_password` char(10) CHARACTER SET latin1 DEFAULT NULL,
   `temp_password_date` datetime DEFAULT NULL,
-  `role` enum('lead','client','employee','admin','jedi') NOT NULL DEFAULT 'lead',
+  `role` enum('lead','partner','client','employee','admin','jedi') CHARACTER SET latin1 NOT NULL DEFAULT 'lead',
   `logins` int(11) NOT NULL DEFAULT '0',
   `last_login` datetime DEFAULT NULL,
   `registration_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_activity_date` datetime DEFAULT NULL,
-  `user_notes` text,
-  `token` varchar(255) DEFAULT NULL,
+  `user_notes` text CHARACTER SET latin1,
+  `token` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `email_confirmed` tinyint(1) NOT NULL DEFAULT '0',
-  `last_ip` varchar(20) DEFAULT NULL,
+  `last_ip` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unq_email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
@@ -743,7 +871,14 @@ VALUES
 	(1,'jeff.neslen@matrix42.com','Jeff',NULL,'Neslen','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'jedi',0,NULL,'2012-05-04 15:55:36',NULL,NULL,NULL,1,NULL,0),
 	(2,'jon@greaser.com','John',NULL,'Travolta','bcrypt$2a$12$rzwWbf5vfuaaN9yNRgnivOHD8zn8947SZ5xolrxSh41Jmt81Nzs/e',NULL,NULL,'lead',0,NULL,'2012-05-04 16:43:02','2012-05-04 16:43:02',NULL,NULL,0,'127.0.0.1',0),
 	(3,'joe@smo.com','Joe',NULL,'Smo','bcrypt$2a$12$4rXUpQ7KMjcoqZL6VEB2DuMsHJnJe7za/wuc8M/33iAOp6Bpjn35a',NULL,NULL,'lead',0,NULL,'2012-05-09 16:05:52','2012-05-09 16:05:52',NULL,NULL,0,'127.0.0.1',0),
-	(4,'charlie@manson.com','Charles',NULL,'Manson','bcrypt$2a$12$OvroMdgvIJznkfJo1MjD6e24NKR3sgL9Az2c79T9qhFg8OQifxjB.',NULL,NULL,'lead',0,NULL,'2012-05-10 12:01:29','2012-05-10 12:49:43',NULL,NULL,0,'127.0.0.1',0);
+	(4,'charlie@manson.com','Charles',NULL,'Manson','bcrypt$2a$12$OvroMdgvIJznkfJo1MjD6e24NKR3sgL9Az2c79T9qhFg8OQifxjB.',NULL,NULL,'lead',0,NULL,'2012-05-10 12:01:29','2012-05-10 12:49:43',NULL,NULL,0,'127.0.0.1',0),
+	(5,'sly@italianstallion.com','Sylvester',NULL,'Stalone','bcrypt$2a$12$2flYGnXz70X1QTCzigNmF.2WpGBoZ87iXy9RSQh4eXfHLDKKRAYZG',NULL,NULL,'lead',0,NULL,'2012-05-24 10:44:43','2012-05-24 10:44:43',NULL,NULL,0,'127.0.0.1',0),
+	(6,'hulk@hogan.com','Hulk',NULL,'Hogan','bcrypt$2a$12$RbNLAP2lzh7dDsPNV0KzIu00ZA.WvgZOnh6rtYhCx2QdboY6/TxfO',NULL,NULL,'lead',0,NULL,'2012-05-29 16:30:47','2012-05-29 16:30:47',NULL,NULL,0,'127.0.0.1',1),
+	(7,'info@microsoft.com','Micro',NULL,'Soft','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:07:47',NULL,NULL,NULL,0,NULL,0),
+	(8,'info@citrix.com','Citrix',NULL,'Ready','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:08:27',NULL,NULL,NULL,0,NULL,0),
+	(9,'info@gartner.com','Gartner',NULL,'MagicQ','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:09:53',NULL,NULL,NULL,0,NULL,0),
+	(10,'info@servicenow.com','Service',NULL,'Now','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:10:27',NULL,NULL,NULL,0,NULL,0),
+	(11,'karl@malone.com','Karl',NULL,'Malone','bcrypt$2a$12$HB76WAJrV68ERIjYjz3tnOOLP8RIQH9WL4N4vfQzyf5.Z72qEHOQ6',NULL,NULL,'lead',0,NULL,'2012-06-04 17:09:52','2012-06-04 17:09:52',NULL,NULL,0,'127.0.0.1',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -42936,44 +43071,6 @@ VALUES
 UNLOCK TABLES;
 
 
-
---
--- Dumping routines (PROCEDURE) for database 'darth'
---
-DELIMITER ;;
-
-# Dump of PROCEDURE sp_belongs_to
-# ------------------------------------------------------------
-
-/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
-/*!50003 SET SESSION SQL_MODE=""*/;;
-/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
-BEGIN
-		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
-		FROM INFORMATION_SCHEMA.key_column_usage
-		WHERE TABLE_SCHEMA = schemaName
-		AND TABLE_NAME = tableName
-		AND REFERENCED_TABLE_NAME IS NOT NULL
-		GROUP BY constraintName;
-	END */;;
-
-/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
-# Dump of PROCEDURE sp_has_many
-# ------------------------------------------------------------
-
-/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
-/*!50003 SET SESSION SQL_MODE=""*/;;
-/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
-BEGIN
-	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
-	  FROM INFORMATION_SCHEMA.key_column_usage
-	  WHERE TABLE_SCHEMA = schemaName
-	  AND REFERENCED_TABLE_NAME = tableName
-	  GROUP BY constraintName;
-	END */;;
-
-/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
-DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth_de
-# Generation Time: 2012-06-01 17:06:46 +0000
+# Generation Time: 2012-06-08 22:28:33 +0000
 # ************************************************************
 
 
@@ -43,9 +43,9 @@ CREATE TABLE `addresses` (
   KEY `fk-country-addresses` (`country_id`),
   KEY `fk-state-addresses` (`state_id`),
   KEY `fk-user-addresses` (`user_id`),
+  CONSTRAINT `fk-user-addresses` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk-country-addresses` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `fk-state-addresses` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
-  CONSTRAINT `fk-user-addresses` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+  CONSTRAINT `fk-state-addresses` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -71,9 +71,76 @@ VALUES
 	(1,100,'general','General Site Visit'),
 	(2,200,'servicenow','ServiceNow'),
 	(3,300,'microsoft','Microsoft SCCM Enterprise Manager'),
-	(4,400,'citrix','VDI-Desktop Virtualization, Citrix Management &amp; p2v by Matrix42');
+	(4,400,'citrix','VDI-Desktop Virtualization, Citrix Management &amp; p2v by Matrix42'),
+	(5,500,'compliance','Compliance with Matrix42');
 
 /*!40000 ALTER TABLE `campaigns` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table case_studies
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `case_studies`;
+
+CREATE TABLE `case_studies` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `company` varchar(255) NOT NULL DEFAULT '',
+  `description` text,
+  `logo` varchar(255) DEFAULT NULL,
+  `pdf` varchar(255) DEFAULT NULL,
+  `video` varchar(255) DEFAULT NULL,
+  `study_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `featured` tinyint(1) NOT NULL DEFAULT '0',
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `case_studies` WRITE;
+/*!40000 ALTER TABLE `case_studies` DISABLE KEYS */;
+
+INSERT INTO `case_studies` (`id`, `company`, `description`, `logo`, `pdf`, `video`, `study_date`, `featured`, `disabled`)
+VALUES
+	(1,'BMW Group Switzerland',NULL,'bmw-logo.png',NULL,NULL,'2012-06-04 13:27:37',1,0),
+	(2,'Magna International Inc.',NULL,'magna-logo.png',NULL,NULL,'2012-06-04 13:28:54',1,0),
+	(3,'Vinci',NULL,'vinci-logo.png',NULL,NULL,'2012-06-04 13:29:55',1,0),
+	(4,'IBC Solar AG',NULL,'ibc-solar-logo.png',NULL,NULL,'2012-06-04 13:30:55',1,0);
+
+/*!40000 ALTER TABLE `case_studies` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table companies
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `companies`;
+
+CREATE TABLE `companies` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `address_id` int(10) unsigned DEFAULT NULL,
+  `phone_id` int(10) unsigned DEFAULT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `description` text,
+  `logo` varchar(255) DEFAULT NULL,
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk-address-company` (`address_id`),
+  KEY `fk-phone-company` (`phone_id`),
+  CONSTRAINT `fk-address-company` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk-phone-company` FOREIGN KEY (`phone_id`) REFERENCES `phones` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `companies` WRITE;
+/*!40000 ALTER TABLE `companies` DISABLE KEYS */;
+
+INSERT INTO `companies` (`id`, `address_id`, `phone_id`, `name`, `description`, `logo`, `disabled`)
+VALUES
+	(1,NULL,NULL,'Microsoft',NULL,'microsoft-logo.png',0),
+	(2,NULL,NULL,'Citrix',NULL,'citrix-logo.png',0),
+	(3,NULL,NULL,'Gartner',NULL,'gartner-magicq-logo.png',0),
+	(4,NULL,NULL,'ServiceNow',NULL,'servicenow-logo.png',0);
+
+/*!40000 ALTER TABLE `companies` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -84,20 +151,20 @@ DROP TABLE IF EXISTS `components`;
 
 CREATE TABLE `components` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `type` enum('model','method','view','content') CHARACTER SET utf8 NOT NULL DEFAULT 'content',
-  `name` varchar(85) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `description` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `content` text CHARACTER SET utf8,
-  `model` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `directory` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `controller` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `method` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `view` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `vars` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `type` enum('model','method','view','content') NOT NULL DEFAULT 'content',
+  `name` varchar(85) NOT NULL DEFAULT '',
+  `description` varchar(255) DEFAULT NULL,
+  `content` text,
+  `model` varchar(255) DEFAULT NULL,
+  `directory` varchar(255) DEFAULT NULL,
+  `controller` varchar(255) DEFAULT NULL,
+  `method` varchar(255) DEFAULT NULL,
+  `view` varchar(255) DEFAULT NULL,
+  `vars` varchar(255) DEFAULT NULL,
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `components` WRITE;
 /*!40000 ALTER TABLE `components` DISABLE KEYS */;
@@ -128,15 +195,6 @@ CREATE TABLE `contents` (
   CONSTRAINT `fk-menu-contents` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `contents` WRITE;
-/*!40000 ALTER TABLE `contents` DISABLE KEYS */;
-
-INSERT INTO `contents` (`id`, `menu_id`, `type`, `content`, `elements`)
-VALUES
-	(1,13,'main','%%germantest%%',NULL);
-
-/*!40000 ALTER TABLE `contents` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table countries
@@ -412,7 +470,7 @@ DROP TABLE IF EXISTS `events`;
 
 CREATE TABLE `events` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `type` enum('webinar','conference','partner_event','training') NOT NULL DEFAULT 'webinar',
+  `type` enum('webinar','conference','partner','training') NOT NULL DEFAULT 'webinar',
   `title` varchar(255) NOT NULL DEFAULT '',
   `subtitle` varchar(255) DEFAULT NULL,
   `description` text,
@@ -423,6 +481,7 @@ CREATE TABLE `events` (
   `end_date` datetime DEFAULT NULL,
   `use_time` tinyint(1) NOT NULL DEFAULT '0',
   `seats` int(10) unsigned DEFAULT NULL,
+  `featured` tinyint(1) NOT NULL DEFAULT '0',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -461,7 +520,7 @@ CREATE TABLE `menus` (
   `parent_id` int(10) unsigned DEFAULT NULL,
   `campaign_id` int(10) unsigned DEFAULT NULL,
   `role` enum('public','admin','member') NOT NULL DEFAULT 'public',
-  `type` enum('main','submenu','footer','hidden') NOT NULL DEFAULT 'main',
+  `type` enum('main','submenu','subheader','footer','hidden') NOT NULL DEFAULT 'main',
   `title` varchar(55) NOT NULL,
   `url` text NOT NULL,
   `classes` varchar(255) DEFAULT NULL,
@@ -474,6 +533,10 @@ CREATE TABLE `menus` (
   `banner` varchar(255) DEFAULT NULL,
   `banner_title` varchar(255) DEFAULT NULL,
   `banner_subtitle` varchar(255) DEFAULT NULL,
+  `banner_x` mediumint(4) DEFAULT NULL,
+  `banner_y` mediumint(4) DEFAULT NULL,
+  `title_width` mediumint(4) DEFAULT NULL,
+  `title_color` varchar(7) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `order` int(2) DEFAULT NULL,
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
@@ -486,9 +549,16 @@ CREATE TABLE `menus` (
 LOCK TABLES `menus` WRITE;
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 
-INSERT INTO `menus` (`id`, `parent_id`, `campaign_id`, `role`, `type`, `title`, `url`, `classes`, `section`, `controller`, `method`, `pagetitle`, `subtitle`, `keywords`, `banner`, `banner_title`, `banner_subtitle`, `order`, `disabled`)
+INSERT INTO `menus` (`id`, `parent_id`, `campaign_id`, `role`, `type`, `title`, `url`, `classes`, `section`, `controller`, `method`, `pagetitle`, `subtitle`, `keywords`, `banner`, `banner_title`, `banner_subtitle`, `banner_x`, `banner_y`, `title_width`, `title_color`, `order`, `disabled`)
 VALUES
-	(13,NULL,NULL,'public','main','Lösungen','/losungen','','public','losungen','index','Matrix42 Lösungen','','','sub-banner-woman.jpg','','',1,0);
+	(1,NULL,NULL,'public','main','Produkte &amp; Lösungen','/losungen','dropdown','public','losungen','index','Matrix42 Produkte &amp; Lösungen','','','sub-banner-woman.jpg','ganzheitliches workplace','',NULL,NULL,NULL,NULL,1,0),
+	(2,NULL,NULL,'public','main','Über','/uber','dropdown','public','uber','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0),
+	(3,NULL,NULL,'public','main','Zum Kauf','/kaufen','','public','kaufen','index','So kaufen Sie Matrix42 Produkte und Dienstleistungen','Wie Matrix42 Produkte und Lösungen, indem Sie uns einen Partner zu finden oder Händler kaufen.',NULL,'sub-banner-woman.jpg','heute beginnen','Kauf Matrix42 Produkte und Lösungen',NULL,NULL,NULL,NULL,3,0),
+	(4,1,NULL,'public','submenu','Bring Your Own Device (BYOD)','/losungen/byod',NULL,'public','losungen','byod','Bring Your Own Device','Lassen Sie Ihre Mitarbeiter ihre eigenen Geräte mitbringen gleich bleibender Sicherheit. Eine Initiative BYOD-Management-Lösung.','BYOD, mobiler Arbeitsplatz, persönliche Geräte, mobile Geräte, mobile Arbeitswelt','sub-banner-byod.jpg','bringen sie Ihr eigenes gerät?','Kein Problem, der Verwaltung des gesamten Lebenszyklus für mobile Geräte',60,35,600,NULL,1,0),
+	(5,1,NULL,'public','submenu','Desktop Virtualization','/losungen/desktop_virtualization',NULL,'public','losungen','desktop_virtualization','Desktop Virtualization','Workplace Management, Service Management und Client Lifecycle Management mit Matrix42',NULL,'sub-banner-virtualization.jpg','virtual workplace','Workplace Management, Service Management und Client Lifecycle Management mit Matrix42',100,25,500,NULL,2,0),
+	(6,1,NULL,'public','submenu','Endpoint Management','/losungen/endpoint_management',NULL,'public','losungen','endpoint_management','Endpoint Management','Volle Integration und Automatisierung aller IT Management Prozesse',NULL,'sub-banner-integration.jpg','full integration','Volle Integration und Automatisierung aller IT Management Prozesse',100,25,500,NULL,3,0),
+	(7,1,5,'public','submenu','Asset Management (Compliance)','/losungen/compliance',NULL,'public','losungen','compliance','Compliance with Matrix42','Volle Kontrolle über alle IT-Assets, Lizenzen und Verträge','compliance, software compliance','sub-banner-compliance.jpg','compliance','Volle Kontrolle über alle IT-Assets, Lizenzen und Verträge',100,25,500,'#ffffff',4,0),
+	(8,1,3,'public','submenu','Windows 7 Migration','/losungen/windows_7_migration',NULL,'public','losungen','windows_7_migration','Windows 7 Migration','Windows 7 Migration:\nEinfach und zuverlässig.','window7 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','windows 7 migration','Windows 7 Migration:\nEinfach und zuverlässig.',60,35,600,'#ffffff',5,0);
 
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -512,11 +582,39 @@ CREATE TABLE `notes` (
   KEY `fk-user-notes` (`user_id`),
   KEY `fk-author-notes` (`author_id`),
   KEY `fk-parent-notes` (`parent_id`),
+  CONSTRAINT `fk-user-notes` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk-author-notes` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `fk-parent-notes` FOREIGN KEY (`parent_id`) REFERENCES `notes` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `fk-user-notes` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+  CONSTRAINT `fk-parent-notes` FOREIGN KEY (`parent_id`) REFERENCES `notes` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+
+# Dump of table partners
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `partners`;
+
+CREATE TABLE `partners` (
+  `id` int(10) unsigned NOT NULL,
+  `company_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk-company-partners` (`company_id`),
+  CONSTRAINT `fk-company-partners` FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`),
+  CONSTRAINT `fk-user-partner` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `partners` WRITE;
+/*!40000 ALTER TABLE `partners` DISABLE KEYS */;
+
+INSERT INTO `partners` (`id`, `company_id`)
+VALUES
+	(2,1),
+	(3,2),
+	(4,3),
+	(5,4);
+
+/*!40000 ALTER TABLE `partners` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table phones
@@ -544,12 +642,16 @@ DROP TABLE IF EXISTS `press_releases`;
 
 CREATE TABLE `press_releases` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type` enum('release','award') NOT NULL DEFAULT 'release',
   `title` varchar(255) NOT NULL DEFAULT '',
   `subtitle` varchar(255) DEFAULT NULL,
   `content` text,
   `link` varchar(255) DEFAULT NULL,
   `thumbnail` varchar(85) DEFAULT NULL,
   `release_date` date NOT NULL,
+  `archive_date` date DEFAULT NULL,
+  `featured` tinyint(1) NOT NULL DEFAULT '0',
+  `archive` tinyint(1) NOT NULL DEFAULT '0',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -645,7 +747,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL DEFAULT '',
   `temp_password` char(10) DEFAULT NULL,
   `temp_password_date` datetime DEFAULT NULL,
-  `role` enum('lead','client','employee','admin','jedi') NOT NULL DEFAULT 'lead',
+  `role` enum('lead','partner','client','employee','admin','jedi') NOT NULL DEFAULT 'lead',
   `logins` int(11) NOT NULL DEFAULT '0',
   `last_login` datetime DEFAULT NULL,
   `registration_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -657,14 +759,18 @@ CREATE TABLE `users` (
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unq_email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 
 INSERT INTO `users` (`id`, `email`, `first`, `initial`, `last`, `password`, `temp_password`, `temp_password_date`, `role`, `logins`, `last_login`, `registration_date`, `last_activity_date`, `user_notes`, `token`, `email_confirmed`, `last_ip`, `disabled`)
 VALUES
-	(1,'jeff.neslen@matrix42.com','Jeff',NULL,'Neslen','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'jedi',0,NULL,'2012-05-04 15:55:36',NULL,NULL,NULL,1,NULL,0);
+	(1,'jeff.neslen@matrix42.com','Jeff',NULL,'Neslen','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'jedi',0,NULL,'2012-05-04 15:55:36',NULL,NULL,NULL,1,NULL,0),
+	(2,'info@microsoft.com','Micro',NULL,'Soft','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:07:47',NULL,NULL,NULL,0,NULL,0),
+	(3,'info@citrix.com','Citrix',NULL,'Ready','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:08:27',NULL,NULL,NULL,0,NULL,0),
+	(4,'info@gartner.com','Gartner',NULL,'MagicQ','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:09:53',NULL,NULL,NULL,0,NULL,0),
+	(5,'info@servicenow.com','Service',NULL,'Now','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:10:27',NULL,NULL,NULL,0,NULL,0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
