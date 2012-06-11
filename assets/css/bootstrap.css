@@ -4423,7 +4423,7 @@ body {
     width: 32px;
   }
 }
-@media (max-width: 550px) {
+@media (max-width: 979px) {
   body {
     padding-top: 0;
   }

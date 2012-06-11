@@ -1,4 +1,10 @@
 $(document).ready(function() {
+	media_btn_resize();
+
+	$(window).resize(function() {
+		media_btn_resize();
+	});
+
 	$('.datepicker').datepicker();
 
 	$('.dropdown-toggle').dropdown();
@@ -87,4 +93,21 @@ $(document).ready(function() {
 			}
 		});
 	});
+
+	function media_btn_resize() {
+		if($(window).width() < 480) {
+			$('.btn-large').addClass('btn-mini');
+			$('.btn-large').addClass('former-large');
+			$('.btn-large').removeClass('btn-large');
+		}
+		else if($(window).width() < 768) {
+			$('.btn-large').addClass('former-large');
+			$('.btn-large').removeClass('btn-large');
+		}
+		else if($(window).width() > 768) {
+			$('.former-large').addClass('btn-large');
+			$('.former-large').removeClass('btn-mini');
+			$('.former-large').removeClass('former-large');
+		}
+	}
 });

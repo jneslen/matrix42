@@ -44,9 +44,11 @@
 						<?=$form->number->render()?>
 					</div>
 				</div>
-				<div class="span4">
-					<?=$form->message->render()?>
-					<?=$form->submit->render()?>
+				<div class="<?=$full ? 'span8' : 'span4'?>">
+					<div class="padded-content">
+						<?=$form->message->render()?>
+						<?=$form->submit->render()?>
+					</div>
 				</div>
 				<?=$form->view()->close()?>
 			<?php endif; ?>

@@ -1,6 +1,6 @@
 <div class="span16 large-space"></div>
 <div class="span6">
-	<img src="/assets/img/ipad-iphone-combo.jpg" alt="Matrix42 Mobile Device Management" />
+	<img id="mdm-image" src="/assets/img/ipad-iphone-combo.jpg" alt="Matrix42 Mobile Device Management" />
 </div>
 <div class="span10">
 		<div class="well margin-right">
