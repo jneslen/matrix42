@@ -22,6 +22,8 @@ class Controller_Public extends Controller_Site {
 		$this->_banner->title_width = 500;
 		$this->_banner->title_color = '#333333';
 
+		$this->_lead_form = $this->lead_form(true);
+
 		/*
 		$this->_controller = $this->request->param('mycontroller') == null ? 'index' : $this->request->param('mycontroller');
 		$this->_method = $this->request->param('method') == null ? 'index' : $this->request->param('method');
@@ -92,10 +94,17 @@ class Controller_Public extends Controller_Site {
 			$this->_banner->title_color = $menu->title_color != null ? $menu->title_color : $this->_banner->title_color;
 		}
 
+		$sidebar = $menu->get_content('sidebar');
+		if($sidebar->content != null)
+		{
+			$this->_sidebar = $sidebar->content;
+		}
+
 		$this->_description = $menu->subtitle != null ? $menu->subtitle : $this->_description;
 		$this->_keywords = $menu->keywords != null ? $menu->keywords : $this->_keywords;
 
 		$main_content = $menu->replace_contents();
+		$this->_lead_form_render = $menu->default_lead_form;
 		$this->_content = \View::factory('content')
 			->bind('page_contents', $main_content);
 	}

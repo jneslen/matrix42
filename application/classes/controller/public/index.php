@@ -39,7 +39,6 @@ class Controller_Public_Index extends Controller_Public {
 			->set('partners', $partners)
 			->set('press_releases', $press_releases)
 			->set('feature', $feature)
-			->set('lead_form', parent::lead_form(true))
 			->set('support', \View::factory('sidebar/support'));
 	}
 }

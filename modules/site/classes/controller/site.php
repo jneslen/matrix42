@@ -44,6 +44,9 @@ class Controller_Site extends Controller_Template
 	protected $_modal_content = null;
 	protected $_modal_view;
 
+	protected $_lead_form;
+	protected $_lead_form_render = true;
+
 	//protected $_chat; //TODO: Add a chat client system dynamically
 
 	protected function _authenticate()
@@ -179,6 +182,8 @@ class Controller_Site extends Controller_Template
 			$this->template->content = $this->_content;
 
 			$this->template->modal = $this->_modal_view;
+
+			$this->template->lead_form = $this->_lead_form_render ? $this->_lead_form : null;
 
 		}
 

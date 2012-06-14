@@ -87,6 +87,3 @@
 		</div><!-- span4 -->
 	</div><!-- row -->
 </div><!-- span10 -->
-<div class="span16">
-	<?=$lead_form?>
-</div><!-- span12 -->
