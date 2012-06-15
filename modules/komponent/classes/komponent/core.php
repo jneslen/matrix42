@@ -44,7 +44,7 @@ class Komponent_Core {
 
 					break;
 				case 'method':
-					$mycontroller = 'Controller_'.$component->controller;
+					$mycontroller = $component->directory ? 'Controller_'.ucfirst($component->directory).'_'.ucfirst($component->controller) : 'Controller_'.ucfirst($component->controller);
 					$controller = new $mycontroller(\Request::current(), \Response::factory());
 					$replacement = $controller->{$component->method}();
 					$content->content = str_replace($component->name, $replacement, $content->content);

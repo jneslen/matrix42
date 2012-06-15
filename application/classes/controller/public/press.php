@@ -9,9 +9,9 @@ class Controller_Public_Press extends Controller_Public {
 		$this->_title = "Matrix42 Press Releases";
 	}
 
-	public function action_index()
+	public function action_index($type = 'release')
 	{
-		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->equals('type', 'release')->sort('release_date', 'ASC'));
+		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->equals('type', $type)->sort('release_date', 'ASC'));
 
 		$table = \Kable::factory()
 			->setDataSource($press_releases, 'dom')
@@ -26,7 +26,14 @@ class Controller_Public_Press extends Controller_Public {
 						'value' => function($o)
 						{
 							$thumbnail = $o->thumbnail ? $o->thumbnail : 'press-release.png';
-							return '<span class="hidden">'.\Format::date($o->release_date, 'mysql').'</span><a href="/press/release/'.$o->id.'" class="thumbnail"><img src="/assets/img/thumbnails/press/'.$thumbnail.'" alt="Press Thumbnail" /></a>';
+							if($o->type == 'award')
+							{
+								return '<span class="hidden">'.\Format::date($o->release_date, 'mysql').'</span><span class="thumbnail"><img src="/assets/img/thumbnails/press/'.$thumbnail.'" alt="Award Thumbnail" /></span>';
+							}
+							else
+							{
+								return '<span class="hidden">'.\Format::date($o->release_date, 'mysql').'</span><a href="/press/release/'.$o->id.'" class="thumbnail"><img src="/assets/img/thumbnails/press/'.$thumbnail.'" alt="Press Thumbnail" /></a>';
+							}
 						}
 					),
 					array
@@ -34,14 +41,28 @@ class Controller_Public_Press extends Controller_Public {
 						'header' => '',
 						'value' => function($o)
 						{
-							return '<h4><a href="/press/release/'.$o->id.'">'.$o->title.'</a></h4><h5 class="italics">'.\Format::date($o->release_date, 'readable').'</h5><p>'.substr(strip_tags($o->content), 0, 255).'...<a href="/press/release/'.$o->id.'">more &gt;&gt;</a></p>';
+							if($o->type == 'award')
+							{
+								return '<h4 class="emphasis">'.$o->title.'</h4><p>'.$o->content.'</p>';
+							}
+							else
+							{
+								return '<h4><a href="/press/release/'.$o->id.'">'.$o->title.'</a></h4><h5 class="italics">'.\Format::date($o->release_date, 'readable').'</h5><p>'.substr(strip_tags($o->content), 0, 255).'...<a href="/press/release/'.$o->id.'">more &gt;&gt;</a></p>';
+							}
 						}
 					),
 				)
 			);
 
-		$this->_content = View::factory('table')
-			->set('table', $table);
+			$this->_content = View::factory('table')
+				->set('table', $table);
+	}
+
+	public function awards()
+	{
+		$awards = \Kacela::find_active('press_release', \Kacela::criteria()->equals('type', 'award')->sort('release_date', 'ASC'));
+		return \View::factory('awards/awards')
+			->set('awards', $awards);
 	}
 
 	public function action_release()
