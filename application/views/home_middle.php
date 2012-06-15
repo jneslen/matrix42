@@ -9,7 +9,6 @@
 					<img class="customer-three" src="/assets/img/customers/<?=$customers[2]->logo?>" alt="<?=$customers[2]->company?>" />
 					<img class="customer-four" src="/assets/img/customers/<?=$customers[3]->logo?>" alt="<?=$customers[3]->company?>" />
 				</div><!-- logo-container -->
-				<p>Matrix42 is solving our customer&#39;s needs with real solutions. <a href="#lead-form-anchor" class="scroll">Let Matrix42 solve your IT business needs.</a></p>
 			</div><!-- our-customers -->
 		</div><!-- span5 -->
 		<div class="span4 offset1">
@@ -28,7 +27,7 @@
 				<a href="/">Learn more &gt;&gt;</a>
 			</div>
 		</div><!-- span5 -->
-		<div class="clear space">&nbsp;</div>
+		<div class="clear"></div>
 	</div>
 </div><!-- home-middle -->
 <?php /*
