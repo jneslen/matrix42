@@ -4800,3 +4800,25 @@ body {
     margin-left: 30px;
   }
 }
+
+
+.show-grid .span1,
+.show-grid .span2,
+.show-grid .span3,
+.show-grid .span4,
+.show-grid .span5,
+.show-grid .span6,
+.show-grid .span7,
+.show-grid .span8,
+.show-grid .span9,
+.show-grid .span10,
+.show-grid .span11,
+.show-grid .span12,
+.show-grid .span13,
+.show-grid .span14,
+.show-grid .span15,
+.show-grid .span16 {
+	background-color: #ff0000;
+	min-height: 20px;
+	display: block;
+}

@@ -20,6 +20,7 @@
 @content_bg_color: #ffffff;
 @titlebar_bg_color: #eeeeee;
 @breadcrumb_color: #068da0;
+@matrix_grey: #4c5055;
 
 //Sizes
 @icon_size: 24px;
@@ -223,7 +224,7 @@
 }
 
 .middle {
-	display: table-cell;
+	display: inline-block;
 	vertical-align: middle;
 }
 
@@ -247,6 +248,10 @@
 	background: transparent url(@{img_path}solid-aaa.png) no-repeat top right;
 }
 
+.border-left {
+	background: transparent url(@{img_path}solid-aaa.png) no-repeat top left;
+}
+
 .full-border-right {
 	background: transparent url(@{img_path}solid-e3e3e3.png) repeat-y top right;
 }
@@ -257,6 +262,10 @@
 
 .padded {
 	margin-left: 20px;
+}
+
+.padded-all {
+	margin: 5px 20px;
 }
 
 .padded-content {
