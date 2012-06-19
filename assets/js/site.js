@@ -9,7 +9,9 @@ $(document).ready(function() {
 
 	$('.dropdown-toggle').dropdown();
 
-	$('#home-banner').carousel();
+	$('#home-banner').carousel({
+		interval: 8000
+	});
 
 	$('.hint').popover();
 

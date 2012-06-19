@@ -1,4 +1,4 @@
-<div id="home-banner" class="carousel span16">
+<div id="home-banner" class="carousel slide carousel-fade span16">
 	<div class="carousel-inner">
 		<div id="banner1" class="active item">
 			<div class="item-container">
