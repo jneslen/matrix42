@@ -128,4 +128,23 @@ class Controller_Public extends Controller_Site {
 			->set('complete', $complete)
 			->set('full', $full);
 	}
+
+	public function side_lead_form()
+	{
+		$complete = false;
+		$user = new \Darth\Model\Lead;
+		$lead_form = $user->get_lead_form()
+			->add('submit', 'submit', array('text' => __('Send Inquiry!')));
+
+		$lead_form->campaign_id->set('value', $this->_campaign);
+
+		if ($lead_form->load()->validate())
+		{
+			$complete = true;
+		}
+
+		return View::factory('sidebar_lead_form', array('language' => true))
+			->bind('form', $lead_form)
+			->set('complete', $complete);
+	}
 }

@@ -133,7 +133,7 @@ class Controller_Site extends Controller_Template
 
 		$this->template->header = View::factory('header');
 		$this->template->breadcrumb = View::factory('breadcrumb/breadcrumb');
-		$this->template->footer = View::factory('footer');
+		$this->template->footer = View::factory('footer', array('language' => true));
 
 		if ($this->request->is_ajax())
 		{

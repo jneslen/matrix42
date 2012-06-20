@@ -31,11 +31,11 @@
 		</ul>
 	</div><!-- solutions-foot -->
 	<div id="about-foot" class="span3 offset1 border-right">
-		<h3>About</h3>
+		<h3>Unternehmen</h3>
 		<ul class="link-list">
-			<li><a href="/about">Company Information</a></li>
-			<li><a href="/press">Press</a></li>
-			<li><a href="/press/awards">Awards</a></li>
+			<li><a href="/unternehmen">Unternehmen</a></li>
+			<li><a href="/press">Presse-Mitteilungen</a></li>
+			<li><a href="/press/awards">Auszeichnungen</a></li>
 			<li><a href="/events">Events</a></li>
 		</ul>
 	</div><!-- about-foot -->

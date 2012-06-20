@@ -28,9 +28,9 @@ class Controller_Public_Index extends Controller_Public {
 
 		$this->_banner = View::factory('home_banner');
 
-		$blogs = \Helper::array_to_object(\Feed::parse('http://blog.matrix42.com/feed', 2)); //TODO:need to setup the RSS feed to include some kind of thumbnail (either author thumbnail or a post thumb)
-		$events = \Kacela::find_active('event', \Kacela::criteria()->limit(0,2)->sort('start_date', 'DESC'));
-		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->limit(0,2)->sort('release_date', 'ASC'));
+		$blogs = \Helper::array_to_object(\Feed::parse('http://blog.matrix42.com/feed', 3)); //TODO:need to setup the RSS feed to include some kind of thumbnail (either author thumbnail or a post thumb)
+		$events = \Kacela::find_active('event', \Kacela::criteria()->limit(0,3)->sort('start_date', 'DESC'));
+		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->limit(0,3)->sort('release_date', 'ASC'));
 
 		$feature = \Kacela::find_one('press_release', \Kacela::criteria()->equals('featured', '1')->sort('release_date', 'ASC')); //TODO: make this take the latest feature including events and possibly blog posts
 

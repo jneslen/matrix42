@@ -1,6 +1,6 @@
 <?php $form->html(); ?>
 <?php $form->view()->attr('action', \Request::$current->url().'#lead-form-anchor'); ?>
-<div class="row show-grid">
+<div class="row">
 	<div id="lead-form" class="<?=$full ? 'span16' : 'span12'?>">
 		<div id="lead-form-anchor" class="span4"></div>
 		<div class="span4 contact-well">
