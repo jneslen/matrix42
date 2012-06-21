@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth
-# Generation Time: 2012-06-20 22:56:58 +0000
+# Generation Time: 2012-06-21 22:50:47 +0000
 # ************************************************************
 
 
@@ -28,12 +28,11 @@ DROP TABLE IF EXISTS `addresses`;
 CREATE TABLE `addresses` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `type` enum('home','billing','business','previous') NOT NULL DEFAULT 'business',
-  `user_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
   `care_of` varchar(34) DEFAULT NULL,
   `address1` varchar(85) DEFAULT NULL,
   `address2` varchar(85) DEFAULT NULL,
   `city` varchar(85) DEFAULT NULL,
-  `county_id` int(10) unsigned NOT NULL,
   `state_id` char(2) DEFAULT '',
   `province` text,
   `postal` varchar(10) DEFAULT NULL,
@@ -51,9 +50,10 @@ CREATE TABLE `addresses` (
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
 
-INSERT INTO `addresses` (`id`, `type`, `user_id`, `care_of`, `address1`, `address2`, `city`, `county_id`, `state_id`, `province`, `postal`, `country_id`, `disabled`)
+INSERT INTO `addresses` (`id`, `type`, `user_id`, `care_of`, `address1`, `address2`, `city`, `state_id`, `province`, `postal`, `country_id`, `disabled`)
 VALUES
-	(1,'business',2,'Johnny Boy','123 Test Ave','Suite 3','Sandy',0,'UT',NULL,'84092','US',0);
+	(1,'business',2,'Johnny Boy','123 Test Ave','Suite 3','Sandy','UT',NULL,'84092','US',0),
+	(2,'business',23,'','1650 West 82nd Street','Suite 650','Bloomington','MN',NULL,'55431','US',0);
 
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -131,6 +131,7 @@ CREATE TABLE `companies` (
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` text,
   `logo` varchar(255) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk-address-company` (`address_id`),
@@ -139,18 +140,6 @@ CREATE TABLE `companies` (
   CONSTRAINT `fk-phone-company` FOREIGN KEY (`phone_id`) REFERENCES `phones` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `companies` WRITE;
-/*!40000 ALTER TABLE `companies` DISABLE KEYS */;
-
-INSERT INTO `companies` (`id`, `address_id`, `phone_id`, `name`, `description`, `logo`, `disabled`)
-VALUES
-	(1,NULL,NULL,'Microsoft',NULL,'microsoft-logo.png',0),
-	(2,NULL,NULL,'Citrix',NULL,'citrix-logo.png',0),
-	(3,NULL,NULL,'Gartner',NULL,'gartner-magicq-logo.png',0),
-	(4,NULL,NULL,'ServiceNow',NULL,'servicenow-logo.png',0);
-
-/*!40000 ALTER TABLE `companies` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table components
@@ -533,7 +522,8 @@ VALUES
 	(3,'webinar','Webinar: Turning the BYOD Problem into the BYOD Opportunity with Matrix42 Mobile Device Management','An informative webinar discussion on how your IT department can transform this organizational challenge into an opportunity','<p>In a rising trend known as BYOD (Bring Your Own Device), employees are now bringing their own smartphones, tablets and other technology to the workplace. Users now expect their devices to be supported by the IT department, which can introduce serious security risks, as well challenges surrounding the managing of multiple operating systems and devices across physical, virtual and cloud environments.</p>\n<p>We\'re sure this sounds familiar. Join us on Thursday, March 29th at 2:00 PM EST for an informative webinar discussion on how your IT department can transform this organizational challenge into an opportunity by implementing Matrix42 Mobile Device Management (MDM).</p>\n<p>We\'ll examine how Matrix42 Mobile Device Management gives you control over the entire mobile device lifecycle – from deployment to security, monitoring, management and support. Specifically we\'ll discuss how your organization can:</p>\n<ul>\n<li><strong>Reduce Risk</stong> – Maintain real-time security to meet compliance standards</li>\n<li><strong>Automate deployment</strong> – Automate all tasks to make devices ready for business use, thousands of devices at a time</li>\n<li><strong>Manage Apps</strong> – Control mobile applications across a global device\n fleet</li>\n<li><strong>Monitor Devices</strong> – Keep mobile workers productive with 24/7 monitoring via an automated central management console</li>\n<li><strong>Reduce Costs</strong> – Avoid mobility-related costs</li>\n</ul>','Online','https://cc.callinfo.com/r/14fnj1sgo3wac','','2012-06-13 13:30:00','2012-06-21 07:00:00',1,NULL,0,0),
 	(4,'webinar','Webinar: Mobile Device Management','Don’t Wait, Take Control of Your Mobile Devices and Workplace with Matrix42!','<p>During this webcast you will learn how to manage your mobile devices, like iPhone, Android, Blackberry and Co. with Matrix42.</p>','Online','https://www3.gotomeeting.com/register/320202830','','2012-06-21 09:00:00',NULL,1,NULL,0,0),
 	(5,'conference','AirWatch Connect 2012','We understand the world of enterprise mobility is evolving quickly. Join us at AirWatch Connect 2012','<p>AirWatch Connect 2012 provides an environment where you can connect with AirWatch specialists, industry experts, strategic partners and IT executives. Learn best practices, understand emerging technologies, share success stories, and find answers to enterprise mobility challenges.</p>','Atlanta, GA','http://www.air-watch.com/connect?gclid=CNHE88_d568CFSoZQgodIjdn2g','','2012-06-28 00:00:00','2012-06-30 00:00:00',0,NULL,0,0),
-	(6,'partner','Partner event Windmark: Tooling Event','On March 28 & 29 the first Belgian edition of The Tooling Event will take place in Brussels Expo.','<p>The Tooling Event is focused on tools & techniques that optimize the IT services and support to the business. In both the seminar program and at the exhibition floor, topics such as IT service management, ITIL, Service desk support, Customer satisfaction and SLA’s will be covered. But also how to get insight in and control over your (virtual) infrastructure, systems, network and desktops/devices.</p>','Brussels Expo, Belgium','http://www.toolingevent.be/nl-NL/Bezoeker.aspx','','2012-07-04 00:00:00','2012-07-06 00:00:00',0,NULL,0,0);
+	(6,'partner','Partner event Windmark: Tooling Event','On March 28 & 29 the first Belgian edition of The Tooling Event will take place in Brussels Expo.','<p>The Tooling Event is focused on tools & techniques that optimize the IT services and support to the business. In both the seminar program and at the exhibition floor, topics such as IT service management, ITIL, Service desk support, Customer satisfaction and SLA’s will be covered. But also how to get insight in and control over your (virtual) infrastructure, systems, network and desktops/devices.</p>','Brussels Expo, Belgium','http://www.toolingevent.be/nl-NL/Bezoeker.aspx','','2012-07-04 00:00:00','2012-07-06 00:00:00',0,NULL,0,0),
+	(7,'webinar','Test Conference','subtitle','dflkjasdflkj','my house','','','2012-06-22 00:00:00','2012-06-28 00:00:00',0,123,0,0);
 
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -550,7 +540,7 @@ CREATE TABLE `leads` (
   `campaign_id` int(10) unsigned DEFAULT NULL,
   `newsletter` tinyint(1) NOT NULL DEFAULT '0',
   `inquiry_ip` varchar(20) DEFAULT NULL,
-  `inquiry_date` datetime NOT NULL,
+  `inquiry_date` datetime DEFAULT NULL,
   `contact_date` datetime DEFAULT NULL,
   `downloaded` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
@@ -569,8 +559,7 @@ VALUES
 	(4,NULL,NULL,0,'127.0.0.1','2012-05-10 12:49:43',NULL,0),
 	(5,NULL,3,0,'127.0.0.1','2012-05-24 10:44:43',NULL,0),
 	(6,'WWF',3,0,'127.0.0.1','2012-05-29 16:30:47','2012-05-29 16:37:48',0),
-	(11,NULL,3,0,'127.0.0.1','2012-06-04 17:09:52',NULL,0),
-	(12,NULL,NULL,0,'127.0.0.1','2012-06-20 15:16:54',NULL,0);
+	(11,NULL,3,0,'127.0.0.1','2012-06-04 17:09:52',NULL,0);
 
 /*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -628,7 +617,7 @@ VALUES
 	(7,1,5,'public','submenu','Asset Management (Compliance)','/solutions/compliance',NULL,NULL,'public','solutions','compliance','Compliance with Matrix42','Full Control of all IT-Assets, Licenses and Contracts','compliance, software compliance','sub-banner-compliance.jpg','compliance','Full Control of all IT-Assets, Licenses and Contracts',100,25,500,'#ffffff',4,0,0),
 	(8,1,3,'public','submenu','Windows 7 Migration','/solutions/windows_7_migration',NULL,NULL,'public','solutions','windows_7_migration','Windows 7 Migration','Matrix42 Workplace Management allows for an easy, low-cost and secure migration to Windows 7. It helps you automate and simplify every step of the process including hardware and software analysis, data backup and driver/operating system installation','window7 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','windows 7 migration','Quick & Reliable Migration to Windows 7',60,35,600,'#ffffff',5,0,0),
 	(9,NULL,5,'public','footer','Compliance','/compliance',NULL,NULL,'public','compliance','index','Compliance with Matrix42','Full Control of all IT-Assets, Licenses and Contracts','compliance, software compliance','sub-banner-compliance.jpg','compliance','Full Control of all IT-Assets, Licenses and Contracts',100,25,500,'#ffffff',NULL,0,0),
-	(10,NULL,NULL,'public','main','Sign up','/sign_up',NULL,'bold','public','sign_up','index','Inquire and Sign up for Matrix42','Recieve a call from Matrix42 to get started with your IT solution today','contact, inquire, sign up, purchase','sub-banner-abstract.jpg','get started','Setup a consultation today!',100,25,500,'#ffffff',4,0,0);
+	(10,NULL,NULL,'public','main','Get started','/get_started',NULL,'bold','public','get_started','index','Inquire and Gets started with Matrix42','Recieve a call from Matrix42 to get started with your IT solution today','contact, inquire, sign up, purchase, get started','sub-banner-abstract.jpg','get started','Setup a consultation today!',100,25,500,'#ffffff',4,0,0);
 
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -693,22 +682,25 @@ DROP TABLE IF EXISTS `partners`;
 
 CREATE TABLE `partners` (
   `id` int(10) unsigned NOT NULL,
-  `company_id` int(10) unsigned NOT NULL,
+  `type` enum('technology','reseller') NOT NULL DEFAULT 'reseller',
+  `company_name` varchar(255) NOT NULL DEFAULT '',
+  `description` varchar(255) DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk-company-partners` (`company_id`),
-  CONSTRAINT `fk-company-partners` FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`),
   CONSTRAINT `fk-user-partner` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `partners` WRITE;
 /*!40000 ALTER TABLE `partners` DISABLE KEYS */;
 
-INSERT INTO `partners` (`id`, `company_id`)
+INSERT INTO `partners` (`id`, `type`, `company_name`, `description`, `logo`, `website`)
 VALUES
-	(7,1),
-	(8,2),
-	(9,3),
-	(10,4);
+	(7,'technology','Microsoft',NULL,'microsoft-logo.png','www.microsoft.com'),
+	(8,'technology','Citrix',NULL,'citrix-logo.png','www.citrix.com'),
+	(9,'technology','Gartner',NULL,'gartner-magicq-logo.png',NULL),
+	(10,'technology','ServiceNow',NULL,'servicenow-logo.png',NULL),
+	(23,'reseller','Intuitive Technology Group','Intuitive Technology Group is a professional corporation serving large and small organizations nationwide as well as local, state and federal government agencies under the SBA Small Business program.','intuitive-logo.jpg','www.be-intuitive.com');
 
 /*!40000 ALTER TABLE `partners` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -735,13 +727,21 @@ LOCK TABLES `phones` WRITE;
 
 INSERT INTO `phones` (`id`, `type`, `user_id`, `number`, `disabled`)
 VALUES
-	(1,'primary',2,'2837438123',0),
+	(1,'primary',2,'2837438112',0),
 	(2,'primary',3,'2348753234',0),
 	(3,'primary',4,'3479572642',0),
 	(4,'primary',5,'2342345523',0),
 	(5,'primary',6,'8654563521',0),
 	(6,'primary',11,'2837438234',0),
-	(7,'primary',12,'2738342453',0);
+	(7,'primary',12,'2738342453',0),
+	(28,'primary',NULL,'9528541663',0),
+	(29,'primary',NULL,'1234562345',0),
+	(30,'primary',NULL,'1234567890',0),
+	(31,'primary',NULL,'1234567891',0),
+	(32,'primary',NULL,'2345327656',0),
+	(33,'primary',NULL,'4561234578',0),
+	(34,'primary',NULL,'9528541663',0),
+	(35,'primary',23,'9528541663',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -867,7 +867,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `first` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `first` varchar(255) CHARACTER SET latin1 DEFAULT '',
   `initial` char(2) CHARACTER SET latin1 DEFAULT NULL,
   `last` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `password` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
@@ -903,7 +903,8 @@ VALUES
 	(9,'info@gartner.com','Gartner',NULL,'MagicQ','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:09:53',NULL,NULL,NULL,0,NULL,0),
 	(10,'info@servicenow.com','Service',NULL,'Now','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:10:27',NULL,NULL,NULL,0,NULL,0),
 	(11,'karl@malone.com','Karl',NULL,'Malone','bcrypt$2a$12$HB76WAJrV68ERIjYjz3tnOOLP8RIQH9WL4N4vfQzyf5.Z72qEHOQ6',NULL,NULL,'lead',0,NULL,'2012-06-04 17:09:52','2012-06-04 17:09:52',NULL,NULL,0,'127.0.0.1',0),
-	(12,'bingo@jones.com','Bingo',NULL,'Jones','bcrypt$2a$12$cOt1UXHMJq01VhLGEPAAEOCBD9d6eHzs7LUTneEK0sS6RPrsC7yqO',NULL,NULL,'lead',0,NULL,'2012-06-20 15:16:53','2012-06-20 15:16:54',NULL,NULL,0,'127.0.0.1',0);
+	(12,'bingo@jones.com','Bingo',NULL,'Jones','bcrypt$2a$12$cOt1UXHMJq01VhLGEPAAEOCBD9d6eHzs7LUTneEK0sS6RPrsC7yqO',NULL,NULL,'lead',0,NULL,'2012-06-20 15:16:53','2012-06-20 15:16:54',NULL,NULL,0,'127.0.0.1',0),
+	(23,'justin.ware@be-intuitive.com','Justin',NULL,'Ware','bcrypt$2a$12$Oafyxzjcx6mx4qWXmQ34iu7Kdz26pIq6wngwM1w9um8ZQovuoHMwS',NULL,NULL,'partner',0,NULL,'2012-06-21 16:28:19',NULL,NULL,NULL,0,NULL,0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

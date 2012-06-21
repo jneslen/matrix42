@@ -122,6 +122,12 @@ class Controller_Admin_Leads extends Controller_Admin {
 		}
 		$lead->save($form);
 
+		$phone = $lead->get_phone();
+		$phone->save($form->phone);
+
+		$address = $lead->get_address();
+		$address->save($form->address);
+
 		exit(json_encode(array('success' => true)));
 
 	}

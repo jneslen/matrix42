@@ -76,8 +76,8 @@ class Lead extends User
 		$phone = $this->get_phone();
 		$form->add('phone', 'group', $phone->get_form());
 
-		//$address = $this->get_address();
-		//$form->add('address', 'group', $address->get_form());
+		$address = $this->get_address();
+		$form->add('address', 'group', $address->get_form());
 
 		$form->remove
 		(
