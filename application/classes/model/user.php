@@ -340,6 +340,12 @@ class User extends Model {
 			$this->temp_password_date = strtotime(self::$temp_password_expiration);
 		}
 
+		if($this->password == null)
+		{
+			$bonafide = \Bonafide::instance();
+			$this->password = $bonafide->hash('temp12123');
+		}
+
 		return parent::save($data);
 	}
 

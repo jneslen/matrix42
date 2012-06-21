@@ -43,7 +43,6 @@ class Address extends Model
 		(
 			array
 			(
-				'county_id',
 				'disabled',
 			)
 		);
@@ -57,17 +56,6 @@ class Address extends Model
 		$form->country_id->set('driver', 'select')
 			->set('label', 'Country')
 			->set('options', $countries_array);
-
-		$form->callbacks(array
-		(
-			'pass' => array
-			(
-				':self' => array
-				(
-					array(array($this, 'save'), array(':value')),
-				),
-			),
-		));
 
 		return $form;
 	}

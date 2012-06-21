@@ -15,10 +15,10 @@
 			<div id="making-waves" class="padded-top-half">
 				<a href="#lead-form-anchor" class="scroll"><span class="icon play"></span></a><h3 class="no-margin">Making Waves:</h3>
 				<div class="logo-container">
-					<img class="partner-one" src="/assets/img/partners/<?=$partners[0]->company->logo?>" alt="<?=$partners[0]->company->name?>" />
-					<img class="partner-two" src="/assets/img/partners/<?=$partners[1]->company->logo?>" alt="<?=$partners[1]->company->name?>" />
-					<img class="partner-three" src="/assets/img/partners/<?=$partners[2]->company->logo?>" alt="<?=$partners[2]->company->name?>" />
-					<img class="partner-four" src="/assets/img/partners/<?=$partners[3]->company->logo?>" alt="<?=$partners[3]->company->name?>" />
+					<img class="partner-one" src="/assets/img/partners/<?=$partners[0]->logo?>" alt="<?=$partners[0]->company_name?>" />
+					<img class="partner-two" src="/assets/img/partners/<?=$partners[1]->logo?>" alt="<?=$partners[1]->company_name?>" />
+					<img class="partner-three" src="/assets/img/partners/<?=$partners[2]->logo?>" alt="<?=$partners[2]->company_name?>" />
+					<img class="partner-four" src="/assets/img/partners/<?=$partners[3]->logo?>" alt="<?=$partners[3]->company_name?>" />
 				</div><!-- logo-container -->
 			</div><!-- making-waves -->
 		</div><!-- span6 -->

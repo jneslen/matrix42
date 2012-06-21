@@ -45,6 +45,12 @@ return array
 		),
 		array
 		(
+			'url'		=> '/admin/partners',
+			'title'		=> __('Partners'),
+			'type'		=> 'main',
+		),
+		array
+		(
 			'url'		=> '/logout',
 			'title'		=> __('Logout'),
 			'type'		=> 'main',
