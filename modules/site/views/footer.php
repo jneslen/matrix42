@@ -34,6 +34,8 @@
 		<h3>About</h3>
 		<ul class="link-list">
 			<li><a href="/about">Company Information</a></li>
+			<li><a href="/about">Contact Us</a></li>
+			<li><a href="/partners/technology">Technology Partners</a></li>
 			<li><a href="/press">Press</a></li>
 			<li><a href="/press/awards">Awards</a></li>
 			<li><a href="/events">Events</a></li>
@@ -44,8 +46,8 @@
 		<ul class="link-list">
 			<li><a href="/purchase">How to Buy</a></li>
 			<li><a href="http://blog.matrix42.com/" target="_blank">Marix42 Blog</a></li>
+			<li><a href="/partners">Resellers</a></li>
 			<li><a href="/">Help &amp; Support</a></li>
-			<li><a href="/">Monthly Newsletter</a></li>
 			<li><a href="/">Disclaimer</a></li>
 			<li><a href="/">Sitemap</a></li>
 		</ul>
