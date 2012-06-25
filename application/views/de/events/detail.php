@@ -19,7 +19,7 @@
 	<?php endif; ?>
 	<?=$event->description?>
 	<?php if($event->link): ?>
-	<a href="<?=$event->link?>" class="btn btn-large btn-primary" target="_blank">Mehr Information / Register</a>
+	<a href="<?=$event->link?>" class="btn btn-large btn-primary" target="_blank">Anmelden</a>
 	<?php endif; ?>
 	<div class="space"></div>
 </div><!-- padded-content -->

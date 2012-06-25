@@ -40,7 +40,7 @@ class Controller_Admin_Leads extends Controller_Admin {
 				),
 				array
 				(
-					'header' => 'Full Name',
+					'header' => __('Full Name'),
 					'value' => function($o) { return $o->full_name; }
 				),
 				array

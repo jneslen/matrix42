@@ -108,10 +108,10 @@ class Lead extends User
 	{
 		$form = \Formo::form('lead')
 			->add('campaign_id', 'hidden')
-			->add('name', array('label' => 'Full Name'))
+			->add('name', array('label' => __('Full Name')))
 			->add('email', array('type' => 'email', 'label' => 'Email'))
-			->add('number', array('label' => 'Phone Number'))
-			->add('message', 'textarea', array('label' => 'Message'))
+			->add('number', array('label' => __('Phone Number')))
+			->add('message', 'textarea', array('label' => __('Message')))
 			->rules('name', array(
 			array('not_empty'),
 			array('\Valid::full_name'),

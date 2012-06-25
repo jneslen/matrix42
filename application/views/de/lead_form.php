@@ -5,8 +5,8 @@
 		<div id="lead-form-anchor" class="span4"></div>
 		<div class="span4 contact-well">
 			<div class="padded-content padded-top">
-				<h3>Inquire online today</h3>
-				<p>Please fill out the inquiry form, or contact us below using traditional methods.[translation needed]</p>
+				<h3>Rückruf anfordern!</h3>
+				<p>Füllen Sie die folgenden Informationen, um eine Konsultation darüber, wie Matrix42 können zur Lösung Ihrer IT-Anforderungen zu empfangen.</p>
 				<table>
 					<tr>
 						<td class="align-top"><h4>Address:&nbsp;</h4></td>
@@ -31,8 +31,8 @@
 			<div class="row padded-top">
 			<?php if($complete): ?>
 				<div class="span8">
-					<h2 class="padded-content">Your inquiry has been submitted</h2>
-					<p class="padded-content">You will be contacted shortly in regards to your request.</p>
+					<h2 class="padded-content">Ihre Anfrage ist eingegangen</h2>
+					<p class="padded-content">In Kürze in Bezug auf Ihre Anfrage kontaktiert werden.</p>
 				</div>
 			<?php else: ?>
 				<?=$form->view()->open()?>
