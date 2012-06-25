@@ -35,7 +35,8 @@ class Controller_Public_Events extends Controller_Public {
 						'value' => function($o)
 						{
 							$date_format = $o->use_time ? 'human' : 'readable';
-							$date = $o->end_date ? '<h5 class="italics">'.\Format::date($o->start_date, $date_format).'&nbsp;-&nbsp;'.\Format::date($o->end_date, $date_format).'</h5>' : '<h5 class="italics">'.\Format::date($o->start_date, $date_format).'</h5>';
+							$timezone = ($o->use_time AND $o->time_zone) ? ' ('.$o->time_zone.')' : '';
+							$date = $o->end_date ? '<h5 class="italics">'.\Format::date($o->start_date, $date_format).'&nbsp;-&nbsp;'.\Format::date($o->end_date, $date_format).$timezone.'</h5>' : '<h5 class="italics">'.\Format::date($o->start_date, $date_format).$timezone.'</h5>';
 							return '<h4><a href="/events/detail/'.$o->id.'">'.$o->title.'</a></h4>'.$date.'<p>'.substr(strip_tags($o->description), 0, 255).'...<a href="/events/detail/'.$o->id.'">more &gt;&gt;</a></p>';
 						}
 					),
@@ -72,7 +73,7 @@ class Controller_Public_Events extends Controller_Public {
 
 		$this->_title = $event->title;
 
-		$this->_content = View::factory('events/detail')
+		$this->_content = View::factory('events/detail', array('language' => true))
 			->set('event', $event)
 			->set('lead_form', parent::lead_form());
 

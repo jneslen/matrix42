@@ -46,7 +46,8 @@ class Controller_Admin_Events extends Controller_Admin {
 					'header' => 'Start Date/Time',
 					'value' => function($o) {
 						$format = $o->use_time ? 'human' : 'short';
-						return \Format::date($o->start_date, $format);
+						$timezone = $o->time_zone ? ' '.$o->time_zone : '';
+						return \Format::date($o->start_date, $format).$timezone;
 					}
 				),
 				array
@@ -54,7 +55,8 @@ class Controller_Admin_Events extends Controller_Admin {
 					'header' => 'End Date/Time',
 					'value' => function($o) {
 						$format = $o->use_time ? 'human' : 'short';
-						return \Format::date($o->end_date, $format);
+						$timezone = $o->time_zone ? ' '.$o->time_zone : '';
+						return \Format::date($o->end_date, $format).$timezone;
 					}
 				),
 				array

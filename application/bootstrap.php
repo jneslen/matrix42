@@ -17,20 +17,25 @@ else
 }
 
 /**
- * Set the default time zone.
+ * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
  *
- * @see  http://kohanaframework.org/guide/using.configuration
- * @see  http://php.net/timezones
+ * Note: If you supply an invalid environment name, a PHP warning will be thrown
+ * saying "Couldn't find constant Kohana::<INVALID_ENV_NAME>"
  */
-date_default_timezone_set('America/Denver');
+if (isset($_SERVER['KOHANA_ENV']))
+{
+	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
+}
+else
+{
+	// Fetch the local.php config file as an array
+	$environment_config = include(APPPATH.'config/environment.php');
 
-/**
- * Set the default locale.
- *
- * @see  http://kohanaframework.org/guide/using.configuration
- * @see  http://php.net/setlocale
- */
-setlocale(LC_ALL, 'en_US.utf-8');
+	// Use the 'environment' key to define the environment
+	Kohana::$environment = (isset($environment_config['environment']))
+		? $environment_config['environment']
+		: 'DEV';
+}
 
 /**
  * Enable the Kohana auto-loader.
@@ -51,25 +56,36 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
 // -- Configuration and initialization -----------------------------------------
 
 /**
- * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
+ * Set the default time zone.
  *
- * Note: If you supply an invalid environment name, a PHP warning will be thrown
- * saying "Couldn't find constant Kohana::<INVALID_ENV_NAME>"
+ * @see  http://kohanaframework.org/guide/using.configuration
+ * @see  http://php.net/timezones
  */
-if (isset($_SERVER['KOHANA_ENV']))
+if(\Helper::language() == 'de')
 {
-	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
+	date_default_timezone_set('Europe/Berlin');
 }
 else
 {
-	// Fetch the local.php config file as an array
-	$environment_config = include(APPPATH.'config/environment.php');
-
-	// Use the 'environment' key to define the environment
-	Kohana::$environment = (isset($environment_config['environment']))
-		? $environment_config['environment']
-		: 'DEV';
+	date_default_timezone_set('America/Denver');
 }
+
+/**
+ * Set the default locale.
+ *
+ * @see  http://kohanaframework.org/guide/using.configuration
+ * @see  http://php.net/setlocale
+ */
+if(\Helper::language() == 'de')
+{
+	setlocale(LC_ALL, "de_DE", "de_DE@euro", "deu", "deu_deu", "german");
+}
+else
+{
+	setlocale(LC_ALL, 'en_US.utf-8');
+}
+
+
 /**
  * Set the language
  */

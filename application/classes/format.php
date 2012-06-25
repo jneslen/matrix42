@@ -3,11 +3,12 @@
 class Format extends Kohana_Text
 {
 	const SHORT = 'n/j/Y';
-	const LONG = 'M d Y';
+	const LONG = '%b %d %Y';
 	const HUMAN = 'm/d/Y g:i A';
+	const HUMANDE = 'd.m.Y H:i';
 	const TIMESTAMP = 'Y-m-d H:i:s';
 	const UNIXTIMESTAMP = 'Ymdhis';
-	const READABLE = 'F j, Y';
+	const READABLE = '%B %d, %Y';
 
 	/**
 	 * Returns alpha version of decimal, in dollars and cents
@@ -252,16 +253,16 @@ class Format extends Kohana_Text
 				$return = date(self::UNIXTIMESTAMP, $date);
 				break;
 			case 'human':
-				$return = date(self::HUMAN, $date);
+				$return = \Helper::language() === 'de' ? date(self::HUMANDE, $date) : date(self::HUMAN, $date);
 				break;
 			case 'short':
 				$return = date(self::SHORT, $date);
 				break;
 			case 'long':
-				$return = date(self::LONG, $date);
+				$return = strftime(self::LONG, $date);
 				break;
 			case 'readable':
-				$return = date(self::READABLE, $date);
+				$return = strftime(self::READABLE, $date);
 				break;
 			default:
 				$return = date($out, $date);
