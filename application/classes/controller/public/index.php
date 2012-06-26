@@ -18,7 +18,7 @@ class Controller_Public_Index extends Controller_Public {
 
 		$this->_sidebar = false;
 
-		$customers = \Kacela::find_active('case_study', \Kacela::criteria()->equals('featured', '1')->limit(0,4));
+		$customers = \Kacela::find_active('case_study', \Kacela::criteria()->equals('featured', '1')->limit(0,4)->sort('rand()'));
 
 		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4));
 
@@ -39,6 +39,6 @@ class Controller_Public_Index extends Controller_Public {
 			->set('events', $events)
 			->set('press_releases', $press_releases)
 			->set('feature', $feature)
-			->set('support', \View::factory('sidebar/support'));
+			->set('support', \View::factory('sidebar/support', array('language' => true)));
 	}
 }

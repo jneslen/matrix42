@@ -49,7 +49,7 @@ class Sidebar_Core {
 	{
 		if($this->_support)
 		{
-			$support_view = View::factory('sidebar/support');
+			$support_view = View::factory('sidebar/support', array('language' => true));
 		}
 		else
 		{

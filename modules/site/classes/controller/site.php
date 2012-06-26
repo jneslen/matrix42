@@ -45,7 +45,7 @@ class Controller_Site extends Controller_Template
 	protected $_modal_view;
 
 	protected $_lead_form;
-	protected $_lead_form_render = true;
+	protected $_lead_form_render = false;
 
 	//protected $_chat; //TODO: Add a chat client system dynamically
 

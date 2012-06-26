@@ -6,7 +6,7 @@
 			</div>
 		</div>
 		<div class="span2">
-			<a href="#lead-form-anchor" class="btn btn-mini btn-inverse scroll"><span class="icon phone"></span> Request a Call!</a>
+			<a href="/get_started" class="btn btn-mini btn-inverse"><span class="icon phone"></span> Request a Call!</a>
 		</div>
 	</div>
 </div><!-- feature -->
@@ -15,13 +15,12 @@
 </div>
 <div class="span12">
 	<div class="row">
-		<div id="home-explanation" class="span6">
-			<div class="padded-all dashed-right">
+		<div id="home-explanation" class="span6 dashed-right">
+			<div class="padded-all">
 				<h3>Why Matrix42?</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
-				<h3>A little more about us</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sapien a mauris	mattis congue. Ut a erat arcu. Duis semper laoreet convallis. Non sapien a mauris mattis congue. Ut a erat arcu. Duis semper</p>
+				<p>Today&#39;s workplace is a dynamic environment with workers connected from multiple places using multiple devices and types of systems. This creates more complexity and greater demands for security from IT, often within tighter budgetary parameters. Cloud-based services make it easier for employees to use their own devices to access data and services and bypass IT. The same, end-point focused approach of technology providers just doesn&#39;t cut it anymore. Organizations need a holistic approach that empowers both IT departments and end users.</p>
+				<p>Matrix42 is a pioneer in providing Workplace Management solutions and is the only company that can seamlessly manage mobile, virtual and physical environments. IT administrators can ensure access, security and compliance from a single management console. Users can access data and services from anywhere at anytime, and they can add devices and order services within company policies from a central marketplace. Most importantly, Matrix42 improves employee productivity, IT efficiencies, cost savings and user satisfaction that all contribute to the profitability of the organization.</p>
+				<p>Matrix42 software manages more than 6 million clients and has been providing workplace management solutions for 20 years. Join more than 2,500 customers worldwide and take control of your workplace today with Matrix42.</p>
 			</div><!-- padded-all -->
 		</div><!-- span6 -->
 		<div class="span6 padded">

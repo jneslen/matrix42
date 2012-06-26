@@ -50,7 +50,14 @@ class Komponent_Core {
 					$content->content = str_replace($component->name, $replacement, $content->content);
 					break;
 				case 'view':
-					$replacement = \View::factory($component->view);
+					if($component->language)
+					{
+						$replacement = \View::factory($component->view, array('language' => true));
+					}
+					else
+					{
+						$replacement = \View::factory($component->view);
+					}
 					$content->content = str_replace($component->name, $replacement, $content->content);
 					break;
 				case 'content':

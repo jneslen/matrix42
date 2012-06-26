@@ -5,7 +5,7 @@
 				<div class="tag-content">
 					<h1 class="no-margin">workplace management</h1>
 					<h4 class="no-margin">Empowering the <span class="emphasis">Dynamic Workplace</span></h4>
-					<h3 class="no-margin">User-Friendly and transparent provisioning of any service to any device</h3><a href="/"><span class="icon play"></span></a>
+					<h3 class="no-margin">Industry&#39;s only solution to seamlessly manage mobile, virtual and physical environments.</h3><a href="/"><span class="icon play"></span></a>
 				</div>
 				<img class="bg" src="/assets/img/banners/home-banner-001.jpg" alt="Dynamic" />
 			</div>
@@ -14,7 +14,7 @@
 			<div class="item-container">
 				<div class="tag-content">
 					<h1 class="no-margin">desktop virtualization</h1>
-					<h3 class="no-margin">The Essential Solution for Citrix Desktop Transformation</h3><a href="/solutions/desktop_virtualization"><span class="icon play"></span></a>
+					<h3 class="no-margin">The Essential Solution for Citrix desktop deployments</h3><a href="/solutions/desktop_virtualization"><span class="icon play"></span></a>
 					<div class="clear"></div>
 					<a href="/solutions/virtual_desktop_management" class="btn btn-primary btn-large">The Virtual Desktop Solution!</a>
 					<img src="/assets/img/partners/citrix-ready-logo.png" alt="Citrix Ready" />
@@ -36,8 +36,8 @@
 		<div id="banner8" class="item">
 			<div class="item-container">
 				<div class="tag-content">
-					<h1 class="no-margin">bring your own device?</h1>
-					<h3 class="no-margin">No Problem, Manage the Entire Mobile Device Lifecycle</h3><a href="/solutions/mobile_device_management/"><span class="icon play"></span></a>
+					<h1 class="no-margin">byod on your terms</h1>
+					<h3 class="no-margin">Bring Your Own Device minimizes field resources and makes workforce more efficient.</h3><a href="/solutions/mobile_device_management/"><span class="icon play"></span></a>
 					<div class="clear"></div>
 					<a href="/solutions/mobile_device_management/" class="btn btn-primary btn-large">Learn How Today!</a>
 				</div>
