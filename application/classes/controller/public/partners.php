@@ -29,7 +29,7 @@ class Controller_Public_Partners extends Controller_Public {
 						'header' => '',
 						'value' => function($o)
 						{
-							return '<span class="hidden">'.$o->id.'</span><a href="/partners/partner/'.$o->id.'" class="thumbnail"><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" /></a>';
+							return '<span class="hidden">'.$o->id.'</span><span class="thumbnail"><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" /></span>';
 						}
 					),
 					array
@@ -37,7 +37,7 @@ class Controller_Public_Partners extends Controller_Public {
 						'header' => '',
 						'value' => function($o)
 						{
-							return '<h4><a href="/partners/partner/'.$o->id.'">'.$o->company_name.'</a></h4><h5 class="italics">'.$o->description.'</h5>';
+							return '<h4 class="emphasis">'.$o->company_name.'</h4><h5 class="italics">'.$o->description.'</h5>';
 						}
 					),
 					array
@@ -67,31 +67,41 @@ class Controller_Public_Partners extends Controller_Public {
 
 	public function resellers()
 	{
-		/*
-		$partners = \Kacela::find_active('partner', \Kacela::criteria()->equals('type', 'reseller'));
-		return \View::factory('partners/partners')
-			->set('partners', $partners);
-		*/
 		return $this->action_index('reseller', true);
 	}
 
 	public function action_technology()
 	{
-		$this->action_index('technology');
-	}
+		$partners = \Kacela::find_active('partner', \Kacela::criteria()->equals('type', 'technology'));
 
-	public function action_partner()
-	{
-		$partner_id = $this->request->param('id');
+		$table = \Kable::factory()
+			->setDataSource($partners, 'dom')
+			->attr('class', 'table')
+			->add
+		(
+			array
+			(
+				array
+				(
+					'header' => '',
+					'value' => function($o)
+					{
+						return '<span class="hidden">'.$o->id.'</span><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" />';
+					}
+				),
+				array
+				(
+					'header' => '',
+					'value' => function($o)
+					{
+						return '<h4 class="emphasis">'.$o->company_name.'</h4><h5 class="italics">'.$o->description.'</h5>';
+					}
+				),
+			)
+		);
 
-		$partner = \Kacela::find_one('partner', \Kacela::criteria()->equals('id', $partner_id));
-
-		$this->_title = $partner->company_name;
-
-		$this->_content = View::factory('partner/award')
-			->set('partner', $partner)
-			->set('lead_form', parent::lead_form());
-
+		$this->_content = View::factory('table')
+			->set('table', $table);
 	}
 
 }
