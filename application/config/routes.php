@@ -42,7 +42,7 @@ Route::set
 	'(<controller>(/<action>(/<id>)))',
 	array
 	(
-		'controller' => '(press|events|support|partners)',
+		'controller' => '(press|events|partners)',
 	)
 )
 	->defaults

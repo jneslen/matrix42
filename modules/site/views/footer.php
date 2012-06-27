@@ -33,22 +33,21 @@
 	<div id="about-foot" class="span3 offset1 border-right">
 		<h3>About</h3>
 		<ul class="link-list">
-			<li><a href="/about">Company Information</a></li>
 			<li><a href="/about">Contact Us</a></li>
 			<li><a href="/partners/technology">Technology Partners</a></li>
 			<li><a href="/press">Press</a></li>
 			<li><a href="/press/awards">Awards</a></li>
+			<li><a href="/press/publications">Publications</a></li>
 			<li><a href="/events">Events</a></li>
 		</ul>
 	</div><!-- about-foot -->
 	<div id="navigate" class="span3 offset1">
 		<h3>Navigate</h3>
 		<ul class="link-list">
-			<li><a href="/purchase">How to Buy</a></li>
+			<li><a href="/request_a_call">How to Buy</a></li>
 			<li><a href="http://blog.matrix42.com/" target="_blank">Marix42 Blog</a></li>
 			<li><a href="/partners">Resellers</a></li>
-			<li><a href="/">Help &amp; Support</a></li>
-			<li><a href="/">Disclaimer</a></li>
+			<li><a href="/support">Services &amp; Support</a></li>
 			<li><a href="/">Sitemap</a></li>
 		</ul>
 	</div><!-- navigate -->

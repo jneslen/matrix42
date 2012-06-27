@@ -11,7 +11,12 @@ defined('SYSPATH') OR die('No direct access allowed.');
 <html lang="<?=\Helper::language()?>">
 	<head>
 		<meta charset="utf-8" />
-		<title><?=$title?></title>
+<?php if($page_title != $title): ?>
+<?php $title_string = $title.' | '.$page_title; ?>
+<?php else: ?>
+<?php $title_string = $title; ?>
+<?php endif; ?>
+		<title><?=substr($title_string, 0, 254)?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="<?=$description?>" />
 		<meta name="keywords" content="<?=$keywords?>" />

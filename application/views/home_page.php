@@ -38,7 +38,7 @@
 						<ul class="listed">
 							<?php foreach($press_releases as $release): ?>
 							<li>
-								<a href="/press/release/<?=$release->id?>" class="thumbnail left"><img src="/assets/img/thumbnails/press/<?=$release->thumbnail ? $release->thumbnail : 'press-release.png'?>" alt="Press Thumbnail" /></a>
+								<a href="/press/release/<?=$release->id?>" class="thumbnail left"><img width="50" height="50" src="/assets/img/thumbnails/press/<?=$release->thumbnail ? $release->thumbnail : 'press-release.png'?>" alt="Press Thumbnail" /></a>
 								<h4><a href="/press/release/<?=$release->id?>"><?=substr($release->title, 0, 40)?></a></h4>
 								<h5 class="italics"><?=\Format::date($release->release_date, 'readable')?></h5>
 								<h5><?=substr(strip_tags($release->content), 0, 40)?>...</h5>

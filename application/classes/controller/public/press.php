@@ -63,6 +63,11 @@ class Controller_Public_Press extends Controller_Public {
 		$this->action_index('award');
 	}
 
+	public function action_publications()
+	{
+		$this->action_index('publication');
+	}
+
 	public function awards()
 	{
 		$awards = \Kacela::find_active('press_release', \Kacela::criteria()->equals('type', 'award')->sort('release_date', 'ASC'));
