@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth
-# Generation Time: 2012-06-28 15:24:04 +0000
+# Generation Time: 2012-06-28 23:11:47 +0000
 # ************************************************************
 
 
@@ -627,7 +627,7 @@ VALUES
 	(7,1,5,'public','submenu','Asset Management (Compliance)','/solutions/compliance',NULL,NULL,'public','solutions','compliance','The ideal solution to maximize the interaction between compliance and security','The ideal solution to maximize the interaction between compliance and security','compliance, software compliance','sub-banner-compliance.jpg','compliance','Take control of all IT assets, licenses and contracts',100,25,500,'#ffffff',4,0,0),
 	(8,1,3,'public','submenu','Windows 7 Migration','/solutions/windows_7_migration',NULL,NULL,'public','solutions','windows_7_migration','Matrix42 Workplace Management allows for an easy, low-cost and secure migration to Windows 7.','Matrix42 Workplace Management allows for an easy, low-cost and secure migration to Windows 7. It helps you automate and simplify every step of the process including hardware and software analysis, data backup and driver/operating system installation','window7 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','windows 7 migration','Quick & Reliable Migration to Windows 7',60,35,600,'#ffffff',6,0,0),
 	(10,NULL,NULL,'public','footer','Services &amp; Support','/support',NULL,NULL,'public','support','index','Matrix42 Service and Support','At Matrix42, we are dedicated to customer satisfaction. That means not only providing the best products but also world-class customer support.',NULL,'sub-banner-abstract.jpg','support','Services and Support when you need it.',100,25,500,'#ffffff',NULL,0,0),
-	(11,1,NULL,'public','submenu','Self-Service','/solutions/self_service',NULL,NULL,'public','solutions','self_service','ITSM','ITSM',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0);
+	(11,1,NULL,'public','submenu','Self-Service','/solutions/self_service',NULL,NULL,'public','solutions','self_service','Only solution to integrate ITSM with mobile, virtual and endpoint management','Only solution to integrate ITSM with mobile, virtual and endpoint management',NULL,NULL,'lighten your IT burden','Automation and self-service reduce support costs by 70%',NULL,NULL,NULL,NULL,5,0,0);
 
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -43108,6 +43108,44 @@ VALUES
 UNLOCK TABLES;
 
 
+
+--
+-- Dumping routines (PROCEDURE) for database 'darth'
+--
+DELIMITER ;;
+
+# Dump of PROCEDURE sp_belongs_to
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+		FROM INFORMATION_SCHEMA.key_column_usage
+		WHERE TABLE_SCHEMA = schemaName
+		AND TABLE_NAME = tableName
+		AND REFERENCED_TABLE_NAME IS NOT NULL
+		GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+# Dump of PROCEDURE sp_has_many
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+	  FROM INFORMATION_SCHEMA.key_column_usage
+	  WHERE TABLE_SCHEMA = schemaName
+	  AND REFERENCED_TABLE_NAME = tableName
+	  GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
