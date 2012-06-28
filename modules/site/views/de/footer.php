@@ -21,32 +21,33 @@
 </div><!-- footer-top -->
 <div id="footer-links" class="row">
 	<div id="solutions-foot" class="span3 offset3 border-right">
-		<h3>Solutions</h3>
+		<h3>Lösungen</h3>
 		<ul class="link-list">
-			<li><a href="/solutions/mobile_device_management">Mobile IT Sevice Management</a></li>
-			<li><a href="/solutions/desktop_virtualization">Desktop Virtualization</a></li>
-			<li><a href="/solutions/endpoint_management">Endpoint Management</a></li>
-			<li><a href="/solutions/compliance">Asset Management</a></li>
-			<li><a href="/solutions/windows_7_migration">Windows 7 Migration</a></li>
+			<li><a href="/losungen/mobile_device_management">Mobile IT Sevice Management</a></li>
+			<li><a href="/losungen/desktop_virtualization">Desktop Virtualization</a></li>
+			<li><a href="/losungen/endpoint_management">Endpoint Management</a></li>
+			<li><a href="/losungen/compliance">Asset Management</a></li>
+			<li><a href="/losungen/windows_7_migration">Windows 7 Migration</a></li>
 		</ul>
 	</div><!-- solutions-foot -->
 	<div id="about-foot" class="span3 offset1 border-right">
-		<h3>Unternehmen</h3>
+		<h3>Über Matrix42</h3>
 		<ul class="link-list">
-			<li><a href="/unternehmen">Unternehmen</a></li>
-			<li><a href="/press">Presse-Mitteilungen</a></li>
-			<li><a href="/press/awards">Auszeichnungen</a></li>
+			<li><a href="/uber">Contact Us</a></li>
+			<li><a href="/partners/technology">Technology Partners</a></li>
+			<li><a href="/press">Press</a></li>
+			<li><a href="/press/awards">Awards</a></li>
+			<li><a href="/press/publications">Publications</a></li>
 			<li><a href="/events">Events</a></li>
 		</ul>
 	</div><!-- about-foot -->
 	<div id="navigate" class="span3 offset1">
-		<h3>Navigate</h3>
+		<h3>Navigieren</h3>
 		<ul class="link-list">
-			<li><a href="/purchase">How to Buy</a></li>
+			<li><a href="/kaufen">Rückruf anfordern</a></li>
 			<li><a href="http://blog.matrix42.com/" target="_blank">Marix42 Blog</a></li>
-			<li><a href="/">Help &amp; Support</a></li>
-			<li><a href="/">Monthly Newsletter</a></li>
-			<li><a href="/">Disclaimer</a></li>
+			<li><a href="/partners">Resellers</a></li>
+			<li><a href="/support">Services &amp; Support</a></li>
 			<li><a href="/">Sitemap</a></li>
 		</ul>
 	</div><!-- navigate -->
