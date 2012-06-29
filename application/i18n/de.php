@@ -80,5 +80,6 @@ return array
 	'Sales' => 'Vertrieb',
 	'Reply' => 'Antworten',
 	'Detail' => 'Einzelheit',
-	'Send Inquiry!' => 'Anfrage versenden!'
+	'Send Inquiry!' => 'Anfrage versenden!',
+	'read more' => 'mehr lesen',
 );

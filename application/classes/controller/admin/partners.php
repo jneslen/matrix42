@@ -84,9 +84,11 @@ class Controller_Admin_Partners extends Controller_Admin {
 		$partner->save($form);
 
 		$phone = $partner->get_phone();
+		$phone->user_id = $partner->id;
 		$phone->save($form->phone);
 
 		$address = $partner->get_address();
+		$address->user_id = $partner->id;
 		$address->save($form->address);
 
 		exit(json_encode(array('success' => true)));

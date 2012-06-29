@@ -7,7 +7,8 @@ class Partner extends User
 	public function get_form($name = null)
 	{
 		$form = parent::get_form($name);
-		$form->role->set('value', 'partner');
+
+		$form->description->set('driver', 'textarea');
 
 		$phone = $this->get_phone();
 		$form->add('phone', 'group', $phone->get_form());
@@ -19,9 +20,10 @@ class Partner extends User
 		(
 			array
 			(
-				'company_name' => 0,
-				'full_name' => 1,
-				'email' => 2,
+				'type' => 0,
+				'company_name' => 1,
+				'full_name' => 2,
+				'email' => 3,
 			)
 		);
 

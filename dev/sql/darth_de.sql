@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth_de
-# Generation Time: 2012-06-28 23:12:04 +0000
+# Generation Time: 2012-06-29 22:58:46 +0000
 # ************************************************************
 
 
@@ -34,7 +34,7 @@ CREATE TABLE `addresses` (
   `address2` varchar(85) DEFAULT NULL,
   `city` varchar(85) DEFAULT NULL,
   `state_id` char(3) DEFAULT '',
-  `province` text,
+  `province` varchar(255) DEFAULT '',
   `postal` varchar(10) DEFAULT NULL,
   `country_id` char(2) NOT NULL DEFAULT 'US',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
@@ -399,6 +399,7 @@ VALUES
 	('NU','Niue',155),
 	('NZ','Neuseeland',149),
 	('OM','Oman',160),
+	('OT','Other',0),
 	('PA','Panama',164),
 	('PE','Peru',167),
 	('PF','FranzÌ¦sisch-Polynesien',61),
@@ -701,6 +702,7 @@ CREATE TABLE `states` (
   `id` char(3) NOT NULL DEFAULT '',
   `country_id` varchar(2) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk-country-states` (`country_id`),
   CONSTRAINT `fk-country-states` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE CASCADE
@@ -709,59 +711,60 @@ CREATE TABLE `states` (
 LOCK TABLES `states` WRITE;
 /*!40000 ALTER TABLE `states` DISABLE KEYS */;
 
-INSERT INTO `states` (`id`, `country_id`, `name`)
+INSERT INTO `states` (`id`, `country_id`, `name`, `disabled`)
 VALUES
-	('AG','CH','Aargau'),
-	('AI','CH','Appenzell Innerrhoden'),
-	('AR','CH','Appenzell Ausserrhoden'),
-	('AT1','AT','Burgenland'),
-	('AT2','AT','KŠrnten'),
-	('AT3','AT','Niederšsterreich'),
-	('AT4','AT','Oberšsterreich'),
-	('AT5','AT','Salzburg'),
-	('AT6','AT','Steiermark'),
-	('AT7','AT','Tirol'),
-	('AT8','AT','Vorarlberg'),
-	('AT9','AT','Wien'),
-	('BB','DE','Brandenburg'),
-	('BE','DE','Berlin'),
-	('BEC','CH','Bern'),
-	('BL','CH','Basel-Land'),
-	('BS','CH','Basel-Stadt'),
-	('BW','DE','Baden-WŸrttemberg'),
-	('BY','DE','Bayern'),
-	('FR','CH','Freiburg'),
-	('GE','CH','Genf'),
-	('GL','CH','Glarus'),
-	('GR','CH','GraubŸnden'),
-	('HB','DE','Bremen'),
-	('HE','DE','Hessen'),
-	('HH','DE','Hamburg'),
-	('JU','CH','Jura'),
-	('LU','CH','Luzern'),
-	('MV','DE','Mecklenburg-Vorpommern'),
-	('NE','CH','Neuenburg'),
-	('NI','DE','Niedersachsen'),
-	('NW','DE','Nordrhein-Westfalen'),
-	('NWC','CH','Nidwalden'),
-	('OW','CH','Obwalden'),
-	('RP','DE','Rheinland-Pfalz'),
-	('SG','CH','St. Gallen'),
-	('SH','DE','Schleswig-Holstein'),
-	('SHC','CH','Schaffhausen'),
-	('SL','DE','Saarland'),
-	('SN','DE','Sachsen'),
-	('SO','CH','Solothurn'),
-	('ST','DE','Sachsen-Anhalt'),
-	('SZ','CH','Schwyz'),
-	('TG','CH','Thurgau'),
-	('TH','DE','ThŸringen'),
-	('TI','CH','Tessin'),
-	('UR','CH','Uri'),
-	('VD','CH','Waadt'),
-	('VS','CH','Wallis'),
-	('ZG','CH','Zug'),
-	('ZH','CH','ZŸrich');
+	('AG','CH','Aargau',0),
+	('AI','CH','Appenzell Innerrhoden',0),
+	('AR','CH','Appenzell Ausserrhoden',0),
+	('AT1','AT','Burgenland',0),
+	('AT2','AT','KŠrnten',0),
+	('AT3','AT','Niederšsterreich',0),
+	('AT4','AT','Oberšsterreich',0),
+	('AT5','AT','Salzburg',0),
+	('AT6','AT','Steiermark',0),
+	('AT7','AT','Tirol',0),
+	('AT8','AT','Vorarlberg',0),
+	('AT9','AT','Wien',0),
+	('BB','DE','Brandenburg',0),
+	('BE','DE','Berlin',0),
+	('BEC','CH','Bern',0),
+	('BL','CH','Basel-Land',0),
+	('BS','CH','Basel-Stadt',0),
+	('BW','DE','Baden-WŸrttemberg',0),
+	('BY','DE','Bayern',0),
+	('FR','CH','Freiburg',0),
+	('GE','CH','Genf',0),
+	('GL','CH','Glarus',0),
+	('GR','CH','GraubŸnden',0),
+	('HB','DE','Bremen',0),
+	('HE','DE','Hessen',0),
+	('HH','DE','Hamburg',0),
+	('JU','CH','Jura',0),
+	('LU','CH','Luzern',0),
+	('MV','DE','Mecklenburg-Vorpommern',0),
+	('NE','CH','Neuenburg',0),
+	('NI','DE','Niedersachsen',0),
+	('NW','DE','Nordrhein-Westfalen',0),
+	('NWC','CH','Nidwalden',0),
+	('OT','OT','Other',1),
+	('OW','CH','Obwalden',0),
+	('RP','DE','Rheinland-Pfalz',0),
+	('SG','CH','St. Gallen',0),
+	('SH','DE','Schleswig-Holstein',0),
+	('SHC','CH','Schaffhausen',0),
+	('SL','DE','Saarland',0),
+	('SN','DE','Sachsen',0),
+	('SO','CH','Solothurn',0),
+	('ST','DE','Sachsen-Anhalt',0),
+	('SZ','CH','Schwyz',0),
+	('TG','CH','Thurgau',0),
+	('TH','DE','ThŸringen',0),
+	('TI','CH','Tessin',0),
+	('UR','CH','Uri',0),
+	('VD','CH','Waadt',0),
+	('VS','CH','Wallis',0),
+	('ZG','CH','Zug',0),
+	('ZH','CH','ZŸrich',0);
 
 /*!40000 ALTER TABLE `states` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -810,44 +813,6 @@ VALUES
 UNLOCK TABLES;
 
 
-
---
--- Dumping routines (PROCEDURE) for database 'darth_de'
---
-DELIMITER ;;
-
-# Dump of PROCEDURE sp_belongs_to
-# ------------------------------------------------------------
-
-/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
-/*!50003 SET SESSION SQL_MODE=""*/;;
-/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
-BEGIN
-		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
-		FROM INFORMATION_SCHEMA.key_column_usage
-		WHERE TABLE_SCHEMA = schemaName
-		AND TABLE_NAME = tableName
-		AND REFERENCED_TABLE_NAME IS NOT NULL
-		GROUP BY constraintName;
-	END */;;
-
-/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
-# Dump of PROCEDURE sp_has_many
-# ------------------------------------------------------------
-
-/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
-/*!50003 SET SESSION SQL_MODE=""*/;;
-/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
-BEGIN
-	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
-	  FROM INFORMATION_SCHEMA.key_column_usage
-	  WHERE TABLE_SCHEMA = schemaName
-	  AND REFERENCED_TABLE_NAME = tableName
-	  GROUP BY constraintName;
-	END */;;
-
-/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
-DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

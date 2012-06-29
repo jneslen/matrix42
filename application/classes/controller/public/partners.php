@@ -29,7 +29,7 @@ class Controller_Public_Partners extends Controller_Public {
 						'header' => '',
 						'value' => function($o)
 						{
-							return '<span class="hidden">'.$o->id.'</span><span class="thumbnail"><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" /></span>';
+							return '<span class="hidden">'.$o->id.'</span><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" />';
 						}
 					),
 					array
@@ -47,6 +47,21 @@ class Controller_Public_Partners extends Controller_Public {
 						'value' => function($o)
 						{
 							return '<h4>'.$o->get_phone()->formatted_phone.'</h4>'.$o->get_address()->formatted_address;
+						}
+					),
+					array
+					(
+						'header' => 'Certified',
+						'value' => function($o)
+						{
+							if($o->certified)
+							{
+								return '<span class="hidden">1</span><span class="icon certificate"></span>';
+							}
+							else
+							{
+								return '<span class="hidden">0</span>';
+							}
 						}
 					)
 				)

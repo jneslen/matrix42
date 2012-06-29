@@ -11,7 +11,7 @@ class Controller_Public_Press extends Controller_Public {
 
 	public function action_index($type = 'release')
 	{
-		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->equals('type', $type)->sort('release_date', 'ASC'));
+		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->equals('type', $type)->sort('release_date', 'DESC'));
 
 		$table = \Kable::factory()
 			->setDataSource($press_releases, 'dom')
@@ -32,7 +32,7 @@ class Controller_Public_Press extends Controller_Public {
 							}
 							else
 							{
-								return '<span class="hidden">'.\Format::date($o->release_date, 'mysql').'</span><a href="/press/release/'.$o->id.'" class="thumbnail"><img src="/assets/img/thumbnails/press/'.$thumbnail.'" alt="Press Thumbnail" /></a>';
+								return '<span class="hidden">'.\Format::date($o->release_date, 'mysql').'</span><a href="/press/release/'.$o->id.'" class="thumbnail"><img src="/assets/img/thumbnails/press/'.$thumbnail.'" width="50" alt="Press Thumbnail" /></a>';
 							}
 						}
 					),
@@ -70,9 +70,16 @@ class Controller_Public_Press extends Controller_Public {
 
 	public function awards()
 	{
-		$awards = \Kacela::find_active('press_release', \Kacela::criteria()->equals('type', 'award')->sort('release_date', 'ASC'));
+		$awards = \Kacela::find_active('press_release', \Kacela::criteria()->equals('type', 'award')->sort('release_date', 'DESC'));
 		return \View::factory('awards/awards')
 			->set('awards', $awards);
+	}
+
+	public function publications()
+	{
+		$publications = \Kacela::find_active('press_release', \Kacela::criteria()->equals('type', 'publication')->sort('release_date', 'DESC'));
+		return \View::factory('awards/awards')
+			->set('awards', $publications);
 	}
 
 	public function action_release()

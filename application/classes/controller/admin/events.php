@@ -10,7 +10,9 @@ class Controller_Admin_Events extends Controller_Admin {
 
 	public function action_index()
 	{
-		$events = Kacela::find_active('event');
+		$events = Kacela::find_all('event');
+
+		$time = time();
 
 		$table = \Kable::factory()
 			->setDataSource($events, 'dom')
@@ -57,6 +59,31 @@ class Controller_Admin_Events extends Controller_Admin {
 						$format = $o->use_time ? 'human' : 'short';
 						$timezone = $o->time_zone ? ' '.$o->time_zone : '';
 						return \Format::date($o->end_date, $format).$timezone;
+					}
+				),
+				array
+				(
+					'header' => 'Completed/Upcoming',
+					'attr' => array('class' => function($o) {
+						if($o->start_date < time())
+						{
+							return 'completed';
+						}
+						else
+						{
+							return 'upcoming';
+						}
+
+					}),
+					'value'	=> function($o) {
+						if($o->start_date < time())
+						{
+							return 'Completed';
+						}
+						else
+						{
+							return 'Upcoming';
+						}
 					}
 				),
 				array

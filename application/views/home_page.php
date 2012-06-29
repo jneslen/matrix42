@@ -27,10 +27,10 @@
 			<div id="latest-container" class="well margin-right">
 				<ul id="latest" class="nav nav-tabs" data-tabs="latest">
 					<li class="active"><a href="#press" data-toggle="tab">News</a></li>
-					<li><a href="#blog" data-toggle="tab">Blog</a></li>
-				<?php if($events->count() > 0): ?>
+					<?php if($events->count() > 0): ?>
 					<li><a href="#events" data-toggle="tab">Events</a></li>
-				<?php endif; ?>
+					<?php endif; ?>
+					<li><a href="#blog" data-toggle="tab">Blog</a></li>
 				</ul><!-- nav-tabs -->
 				<div class="tab-content">
 					<div class="tab-pane active" id="press">
@@ -47,6 +47,23 @@
 							<?php endforeach; ?>
 						</ul>
 					</div><!-- press -->
+					<?php if($events->count() > 0): ?>
+					<div class="tab-pane" id="events">
+						<div class="padded"><a href="/events">view all &gt;&gt;</a></div>
+						<ul class="listed">
+							<?php foreach($events as $event): ?>
+							<li>
+								<a href="/events/detail/<?=$event->id?>" class="thumbnail left"><img src="/assets/img/thumbnails/events/<?=$event->thumbnail ? $event->thumbnail : $event->type.'-event.png'?>" alt="<?=ucfirst($event->type)?> Event Thumbnail" /></a>
+								<h4><a href="/events/detail/<?=$event->id?>"><?=substr($event->title, 0, 40)?></a></h4>
+								<?php $date_format = $event->use_time ? 'human' : 'readable'; ?>
+								<h5><?=$event->location ? $event->location : ''?></h5>
+								<h5 class="italics"><?=\Format::date($event->start_date, $date_format)?><?=$event->end_date ? '&nbsp;-&nbsp;'.\Format::date($event->end_date, $date_format) : ''?></h5>
+								<div class="clear"></div>
+							</li>
+							<?php endforeach; ?>
+						</ul>
+					</div><!-- events -->
+					<?php endif; ?>
 					<div class="tab-pane" id="blog">
 						<ul class="listed">
 						<?php foreach($blogs as $blog): ?>
@@ -60,23 +77,6 @@
 						<?php endforeach; ?>
 						</ul>
 					</div><!-- blog -->
-			<?php if($events->count() > 0): ?>
-					<div class="tab-pane" id="events">
-						<div class="padded"><a href="/events">view all &gt;&gt;</a></div>
-						<ul class="listed">
-						<?php foreach($events as $event): ?>
-							<li>
-								<a href="/events/detail/<?=$event->id?>" class="thumbnail left"><img src="/assets/img/thumbnails/events/<?=$event->thumbnail ? $event->thumbnail : $event->type.'-event.png'?>" alt="<?=ucfirst($event->type)?> Event Thumbnail" /></a>
-								<h4><a href="/events/detail/<?=$event->id?>"><?=substr($event->title, 0, 40)?></a></h4>
-							<?php $date_format = $event->use_time ? 'human' : 'readable'; ?>
-								<h5><?=$event->location ? $event->location : ''?></h5>
-								<h5 class="italics"><?=\Format::date($event->start_date, $date_format)?><?=$event->end_date ? '&nbsp;-&nbsp;'.\Format::date($event->end_date, $date_format) : ''?></h5>
-								<div class="clear"></div>
-							</li>
-						<?php endforeach; ?>
-						</ul>
-					</div><!-- events -->
-			<?php endif; ?>
 				</div><!-- tab-content -->
 			</div><!-- well -->
 		</div><!-- span4 -->

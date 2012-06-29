@@ -19,7 +19,7 @@
 		<h3><a href="#" class="icon download right download-selected-btn"></a><span class="right">Download:</span></h3>
 		<div class="clear"></div>
 	<?php endif; ?>
-		<?=$table->js()?>
+		<?=$table->js(array("aaSorting" => array()))?>
 	</div><!-- padded-content -->
 </div><!-- span16 -->
 <div class="clear space"></div>

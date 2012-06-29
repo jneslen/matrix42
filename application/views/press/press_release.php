@@ -9,7 +9,7 @@
 <?php endif; ?>
 <?=$release->content?>
 <?php if($release->link): ?>
-<a href="<?=$release->link?>" target="_blank">Read more &gt;&gt;</a>
+<a href="<?=$release->link?>" class="btn btn-mini" target="_blank"><?=__('read more')?></a>
 <?php endif; ?>
 </div><!-- padded-content -->
 <div class="space"></div>

@@ -26,17 +26,19 @@ class Address extends Model
 			}
 		}
 
-		if($this->country_id == 'US')
+		$form->state_id->set('driver', 'select')
+			->set('label', 'State')
+			->set('options', $states);
+		$form->province->set('label', 'Province / Prefecture');
+
+		if($this->country_id == 'US' OR $this->country_id == null)
 		{
-			$form->remove('province');
-			$form->state_id->set('driver', 'select')
-				->set('label', 'State')
-				->set('options', $states);
+			$form->province->set('attr', array('disabled' => 'disabled'));
 		}
 		else
 		{
-			$form->remove('state_id');
-			$form->province->set('label', 'Province / Prefecture');
+			$form->state_id->set('attr', array('disabled' => 'disabled'));
+			$form->state_id->set('value', 'OT');
 		}
 
 		$form->remove
@@ -56,6 +58,14 @@ class Address extends Model
 		$form->country_id->set('driver', 'select')
 			->set('label', 'Country')
 			->set('options', $countries_array);
+
+		$form->order
+		(
+			array
+			(
+				'country_id' => 6,
+			)
+		);
 
 		return $form;
 	}

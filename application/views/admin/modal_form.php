@@ -46,6 +46,22 @@
 			$('.content-text').val($('.content-text').val()+$(this).attr('data-content'));
 		});
 	<?php endif; ?>
+		$('#address-country_id').change(function() {
+			if($(this).val() != 'US') {
+				$('#address-state_id').prop('disabled', true);
+				$('#address-state_id').append($("<option></option>").attr("value",'OT'));
+				$('#address-state_id').val('OT');
+				$("#address-state_id option[value='OT']").attr('selected', true);
+				$('#address-province').prop('disabled', false);
+			} else {
+				$('#address-province').prop('disabled', true);
+				$('#address-province').val('');
+				$("#address-state_id option[value='OT']").prop('selected', false);
+				$("#address-state_id option[value='OT']").remove();
+				$('#address-state_id').prop('disabled', false);
+
+			}
+		});
 	});
 
 	$('#Menu-parent_id').change(function(){

@@ -25,7 +25,7 @@ class Phone extends Model
 				array
 				(
 					':value',
-					array(10, 18)
+					array(10,11,12,18)
 				)
 			)
 		));
