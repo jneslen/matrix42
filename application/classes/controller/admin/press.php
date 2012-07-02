@@ -10,7 +10,7 @@ class Controller_Admin_Press extends Controller_Admin {
 
 	public function action_index()
 	{
-		$press = Kacela::find_active('press_release');
+		$press = \Kacela::find_active('press_release', \Kacela::criteria()->sort('release_date', 'DESC'));
 
 		$table = \Kable::factory()
 			->setDataSource($press, 'dom')
