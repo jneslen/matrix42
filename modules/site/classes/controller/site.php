@@ -47,7 +47,9 @@ class Controller_Site extends Controller_Template
 	protected $_lead_form;
 	protected $_lead_form_render = false;
 
-	//protected $_chat; //TODO: Add a chat client system dynamically
+	protected $_chat;
+	public $chat_url;
+	public $chat_id;
 
 	protected function _authenticate()
 	{
@@ -62,6 +64,7 @@ class Controller_Site extends Controller_Template
 
 		$this->_set_user();
 		$this->_kick_out();
+		$this->_set_chat();
 
 		if ($this->request->is_initial() === false) {
 			// Subrequests are marked internal
@@ -185,6 +188,8 @@ class Controller_Site extends Controller_Template
 
 			$this->template->lead_form = $this->_lead_form_render ? $this->_lead_form : null;
 
+			$this->template->chat = $this->_chat;
+
 		}
 
 		parent::after();
@@ -282,6 +287,30 @@ class Controller_Site extends Controller_Template
 				$this->_breadcrumb = \Breadcrumb::factory($trail, $this->_title)->render();
 			}
 		}
+	}
+
+	protected function _set_chat()
+	{
+		//setup variables for bold chat to be added to the url string
+		if(empty($this->_user))
+		{
+			$chat_vars = array
+			(
+				'vi' => 'Visitor',
+				'url' => $this->request->uri()
+			);
+		}
+		else
+		{
+			$chat_vars = array
+			(
+				'url' => $this->request->uri(),
+				'ip' => '' //initial question to visitor - left blank, but I imagine we can use this in the future
+			);
+		}
+
+		//set chat view
+		$this->_chat =  \Boldchat::factory(array('vars' => $chat_vars));
 	}
 
 	protected function _set_user()

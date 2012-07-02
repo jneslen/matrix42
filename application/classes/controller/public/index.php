@@ -39,6 +39,6 @@ class Controller_Public_Index extends Controller_Public {
 			->set('events', $events)
 			->set('press_releases', $press_releases)
 			->set('feature', $feature)
-			->set('support', \View::factory('sidebar/support', array('language' => true)));
+			->set('support', \View::factory('sidebar/support', array('language' => true))->bind('chat', $this->_chat));
 	}
 }

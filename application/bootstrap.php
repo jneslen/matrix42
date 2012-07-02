@@ -148,6 +148,7 @@ Kohana::modules(array
 		'bonafide' => MODPATH.'bonafide',
 		'xls' => MODPATH.'xls',
 		'cache' => MODPATH.'cache',
+		'boldchat' => MODPATH.'boldchat',
 	)
 );
 

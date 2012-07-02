@@ -123,7 +123,7 @@ class Controller_Public extends Controller_Site {
 			$complete = true;
 		}
 
-		return View::factory('lead_form', array('language' => true))
+		return \View::factory('lead_form', array('language' => true))
 			->bind('form', $lead_form)
 			->set('complete', $complete)
 			->set('full', $full);
@@ -143,8 +143,16 @@ class Controller_Public extends Controller_Site {
 			$complete = true;
 		}
 
-		return View::factory('sidebar_lead_form', array('language' => true))
+		return \View::factory('sidebar_lead_form', array('language' => true))
 			->bind('form', $lead_form)
 			->set('complete', $complete);
+	}
+
+	public function side_support()
+	{
+		$this->_set_chat();
+
+		return \View::factory('sidebar/support')
+			->set('chat', $this->_chat);
 	}
 }
