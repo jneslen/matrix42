@@ -158,4 +158,11 @@ Kohana::modules(array
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-require APPPATH.'config/routes.php';
+try
+{
+	require APPPATH.'/config/routes.php';
+}
+catch (Exception $e)
+{
+	print_r($e);
+}

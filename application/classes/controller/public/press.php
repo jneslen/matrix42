@@ -60,11 +60,13 @@ class Controller_Public_Press extends Controller_Public {
 
 	public function action_awards()
 	{
+		$this->_title = 'Matrix42 '.__('Awards');
 		$this->action_index('award');
 	}
 
 	public function action_publications()
 	{
+		$this->_title = 'Matrix42 '.__('Publications');
 		$this->action_index('publication');
 	}
 

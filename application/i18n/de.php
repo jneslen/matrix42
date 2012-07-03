@@ -29,6 +29,8 @@ return array
 	'This email already is in our system' => 'Diese E-Mail gibt es bereits in unserem System',
 	'Must be a valid phone number' => ':field muss eine gültige Telefonnummer enthalten',
 	'Press/Awards' => 'Presse/Auszeichnungen',
+	'Awards' => 'Auszeichnungen',
+	'Publications' => 'Publikationen',
 	'Full Name' => 'Vollständiger Name',
 	'Phone Number' => 'Telefonnummer',
 	'Message' => 'Nachricht',

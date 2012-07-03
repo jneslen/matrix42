@@ -55,6 +55,7 @@ class Helper
 		if(\Kohana::$environment === 'LIVE')
 		{
 			$base_url = \URL::base(true);
+			//$base_url = 'bane';
 		}
 		elseif(\Kohana::$environment === 'DEV-DE')
 		{

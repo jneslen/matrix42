@@ -32,13 +32,10 @@ class Controller_Public_Index extends Controller_Public {
 		$events = \Kacela::find_active('event', \Kacela::criteria()->limit(0,3)->sort('start_date', 'DESC'));
 		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->limit(0,3)->sort('release_date', 'DESC'));
 
-		$feature = \Kacela::find_one('press_release', \Kacela::criteria()->equals('featured', '1')->sort('release_date', 'DESC')); //TODO: make this take the latest feature including events and possibly blog posts
-
 		$this->_content = View::factory('home_page')
 			->set('blogs', $blogs)
 			->set('events', $events)
 			->set('press_releases', $press_releases)
-			->set('feature', $feature)
 			->set('support', \View::factory('sidebar/support', array('language' => true))->bind('chat', $this->_chat));
 	}
 }

@@ -1,15 +1,4 @@
-<div id="feature" class="span16">
-	<div class="row">
-		<div class="span14">
-			<div class="padded">
-				<h5>Matrix42 News:</h5> <h6><?=$feature->title?></h6> <h7><span class="italics"><?=substr($feature->subtitle, 0, 100)?></span>... <a href="/press/release/<?=$feature->id?>">more &gt;&gt;</a></h7>
-			</div>
-		</div>
-		<div class="span2">
-			<a href="/get_started" class="btn btn-mini btn-inverse"><span class="icon phone"></span> Request a Call!</a>
-		</div>
-	</div>
-</div><!-- feature -->
+<div class="span16 space"></div>
 <div class="span4">
 	<img id="mdm-image" src="/assets/img/ipad-iphone-combo.jpg" alt="Matrix42 Mobile Device Management" />
 </div>
@@ -82,3 +71,4 @@
 		</div><!-- span4 -->
 	</div><!-- row -->
 </div><!-- span10 -->
+<div class="span16 space"></div>
