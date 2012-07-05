@@ -84,4 +84,5 @@ return array
 	'Detail' => 'Einzelheit',
 	'Send Inquiry!' => 'Anfrage versenden!',
 	'read more' => 'mehr lesen',
+	'Losungen' => 'Lösungen',
 );

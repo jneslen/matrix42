@@ -6,15 +6,15 @@
 		<?php if($complete): ?>
 		<div class="padded-content">
 			<h2 class="emphasis"><span class="icon checkmark"></span>Vielen Dank!</h2>
-			<h3>Ihre Anfrage ist eingegangen</h3>
-			<p>In Kürze in Bezug auf Ihre Anfrage kontaktiert werden.</p>
+			<h3>Ihre Anfrage ist eingegangen.</h3>
+			<p>Sie werden in Kürze bezüglich Ihrer Anfrage kontaktiert werden.</p>
 		</div><!-- padded-content -->
 		<?php else: ?>
 		<?=$form->view()->open()?>
 		<?=$form->campaign_id->render()?>
 		<div class="padded-content">
-			<h2 class="emphasis"><span class="icon phone"></span>Rückruf anfordern!</h2>
-			<h6>Füllen Sie die folgenden Informationen, um eine Konsultation darüber, wie Matrix42 können zur Lösung Ihrer IT-Anforderungen zu empfangen.</h6>
+			<h2 class="emphasis"><span class="icon phone"></span>Fordern Sie einen Anruf an!</h2>
+			<h6>Füllen Sie bitte folgende Felder aus, wenn Sie beraten werden möchten, wie Matrix42 Ihnen bei der Erfüllung Ihrer IT-Anforderungen helfen kann.</h6>
 			<?=$form->name->render()?>
 			<?=$form->email->render()?>
 			<?=$form->number->render()?>

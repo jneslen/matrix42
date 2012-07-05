@@ -251,6 +251,7 @@ class Controller_Site extends Controller_Template
 					'solutions',
 					'about',
 					'purchase',
+					'losungen',
 				);
 
 				$home_link = $this->request->directory() == 'public' ? '/' : $this->request->directory();
@@ -263,7 +264,7 @@ class Controller_Site extends Controller_Template
 
 				//Set Controller path
 				$controller = $this->request->param('mycontroller') ? $this->request->param('mycontroller') : $this->request->controller();
-				$controller_name = ucwords(preg_replace('/[_-]/', ' ', $controller));
+				$controller_name = __(ucwords(preg_replace('/[_-]/', ' ', $controller)));
 				$controller_link = '/'.$controller;
 				if(!in_array($controller, $exclude_controller_array) AND !in_array($method, $exclude_method_array))
 				{

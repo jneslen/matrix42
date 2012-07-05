@@ -152,7 +152,7 @@ class Controller_Public extends Controller_Site {
 	{
 		$this->_set_chat();
 
-		return \View::factory('sidebar/support')
+		return \View::factory('sidebar/support', array('language' => true))
 			->set('chat', $this->_chat);
 	}
 }

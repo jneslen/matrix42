@@ -26,13 +26,13 @@ class Controller_Public_Index extends Controller_Public {
 			->set('customers', $customers)
 			->set('partners', $partners);
 
-		$this->_banner = View::factory('home_banner');
+		$this->_banner = View::factory('home_banner', array('language' => true));
 
 		$blogs = \Helper::array_to_object(\Feed::parse('http://blog.matrix42.com/feed', 3)); //TODO:need to setup the RSS feed to include some kind of thumbnail (either author thumbnail or a post thumb)
 		$events = \Kacela::find_active('event', \Kacela::criteria()->limit(0,3)->sort('start_date', 'DESC'));
 		$press_releases = \Kacela::find_active('press_release', \Kacela::criteria()->limit(0,3)->sort('release_date', 'DESC'));
 
-		$this->_content = View::factory('home_page')
+		$this->_content = View::factory('home_page', array('language' => true))
 			->set('blogs', $blogs)
 			->set('events', $events)
 			->set('press_releases', $press_releases)
