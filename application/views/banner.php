@@ -4,7 +4,7 @@
 <?php else: ?>
 	<div class="tag-content" style="top: <?=$top?>px; left: <?=$left?>px; width: <?=$title_width?>px;">
 	<?php if(isset($title)): ?>
-		<h1 style="color: <?=$title_color?>;"><?=mb_strtolower($title)?></h1>
+		<h1 style="color: <?=$title_color?>;"><?=strtolower($title)?></h1>
 	<?php endif; ?>
 	<?php if(isset($subtitle)): ?>
 		<h4 class="emphasis"><?=$subtitle?></h4>
