@@ -28,6 +28,3 @@
 [submodule "modules/kacela"]
 	path = modules/kacela
 	url = https://github.com/gabriel1836/kohana-kacela.git
-[submodule "modules/kable"]
-	path = modules/kable
-	url = https://github.com/gabriel1836/kohana-kable.git
