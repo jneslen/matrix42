@@ -1,6 +1,6 @@
 <?php
 
-class Kacela extends Kacela_Core
+class Kacela extends Kohana_Kacela
 {
 	public static function find_active($mapper, Gacela\Criteria $criteria = null)
 	{

@@ -25,6 +25,9 @@
 [submodule "system"]
 	path = system
 	url = https://github.com/kohana/core.git
+[submodule "modules/kable"]
+	path = modules/kable
+	url = https://github.com/noah-goodrich/kohana-kable.git
 [submodule "modules/kacela"]
 	path = modules/kacela
-	url = https://github.com/gabriel1836/kohana-kacela.git
+	url = https://github.com/noah-goodrich/kohana-kacela.git
