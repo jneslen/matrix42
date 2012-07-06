@@ -7,9 +7,6 @@
 [submodule "modules/acl"]
 	path = modules/acl
 	url = https://github.com/Wouterrr/ACL.git
-[submodule "modules/bonafide"]
-	path = modules/bonafide
-	url = https://github.com/shadowhand/bonafide.git
 [submodule "modules/maps"]
 	path = modules/maps
 	url = https://github.com/solidsnake/Kohana-Google-Maps-Module.git
@@ -37,3 +34,6 @@
 [submodule "modules/komponent"]
 	path = modules/komponent
 	url = https://github.com/jneslen/kohana-komponent.git
+[submodule "modules/bonafide"]
+	path = modules/bonafide
+	url = https://github.com/shadowhand/bonafide.git
