@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth_de
-# Generation Time: 2012-07-05 23:18:53 +0000
+# Generation Time: 2012-07-06 20:04:51 +0000
 # ************************************************************
 
 
@@ -735,7 +735,24 @@ VALUES
 	(22,'publication','„Who-is-Who“– Durchblick im Lizenz-Dschungel','Internationale Lizenz-Management-Studie','<p>In einer aufwändigen Studie hat der international bekannte Software Asset Management Spezialist Martin Thompson jetzt die weltweit führenden Software Asset Management (SAM)-Tools unter die Lupe genommen. Herausgekommen ist eine informative Übersicht der führenden SAM-Tools, die sich wie ein Who-is-Who des Lizenz Managements liest.</p>','','itmanagement-logo.png','2011-03-30',NULL,0,0,0),
 	(23,'publication','Praxistest Matrix42 Empirum v14','Neue Software auch per Selbstbedienung','<p>Seit der Fusion der Karlsruher Update4u Software und der Neu-Isenburger Matrix42 im April 2009 firmiert das neue Unternehmen unter dem alten Namen Matrix42 AG. Infolge dieser Firmenehe verfügt Matrix42 neben der System-Management-Software auch über ein darauf aufsetzendes Service-Management. Die Service-Management-Anteile erweitern den Einsatzbereich der Software auf Unternehmensbereiche außerhalb der IT.</p>','','lanline-logo.png','2011-05-04',NULL,0,0,0),
 	(24,'publication','Probleme lösen, nicht verwalten','m Gespräch mit Joachim Koch, Director Service – Information Technology bei der Magna Exteriors & Interiors GmbH & Co. KG in Sailauf, über die Einführung eines neuen System- und Servicemanagements','<p>Die IT-Abteilung muss Probleme lösen und nicht verwalten. Unsere internen Kunden erwarten von der IT-Abteilung absolute Kundennähe sowie schnellste Hilfe, und dies zu einem unschlagbaren Kostensatz.</p>','','itd-logo.png','2011-07-04',NULL,0,0,0),
-	(25,'publication','Virtualisierung greift nach den Prozessen','Virtualisierung ist die Schlüsseltechnologie','<p>Weniger Aufwand für den Administrator und geringere Kosten für die IT – das waren\ndie wesentlichen Treiber für die starke Verbreitung der Server-Virtualisierung. Bei der\nDesktop-Virtualisierung greifen diese Argumente allerdings zu kurz: Sie zielt auf\nProzess-Verbesserungen ab.</p>','','itbusiness.png','2011-07-04',NULL,0,0,0);
+	(25,'publication','Virtualisierung greift nach den Prozessen','Virtualisierung ist die Schlüsseltechnologie','<p>Weniger Aufwand für den Administrator und geringere Kosten für die IT – das waren\ndie wesentlichen Treiber für die starke Verbreitung der Server-Virtualisierung. Bei der\nDesktop-Virtualisierung greifen diese Argumente allerdings zu kurz: Sie zielt auf\nProzess-Verbesserungen ab.</p>','','itbusiness.png','2011-07-04',NULL,0,0,0),
+	(26,'publication','Zwischen Wunsch und Wirklichkeit','Trotz zahlreicher Bedenken zeigen viele Unternehmen eine große Migrationsbereitschaft. Wer mit dem Gedanken spielt, auf Windows 7 umzusteigen, sollte sich gründlich darauf vorbereiten.','<p>Das Ende des Supports für Windows XP im April 2014 stellt viele Unternehmen vor die Notwendigkeit, ihr Betriebssystem auf Windows 7 zu migrieren. Mit den Vorbereitungen für den Wechsel sollten die IT-Verantwortlichen besser heute als morgen beginnen, schließlich kosten Kompatibilitätsanalysen der Soft- und Hardware Zeit.</p>','','business-it-logo.png','2011-07-07',NULL,0,0,0),
+	(27,'publication','Enterprise Manager bügelt Microsoft-SCCM-Falten aus','Systemverwaltung der einfachen Art','<p>Windows-Systeme bringen bereits Basisfunktionen zur Verwaltung und Betreuung der Systeme mit. IT-Profis brauchen zumeist aber mehr Funktionalitäten und wechseln zum Microsoft System Center Configuration Manager (SCCM). Doch die Komplexität dieser Anwendung fordert hohen Aufwand bei Schulung und Einarbeitung: Ein Problem, das durch den Einsatz des „Enterprise Manager für SCCM“ von Matrix42 gelöst werden kann.</p>','','searchnetworking-logo.png','2011-08-22',NULL,0,0,0),
+	(28,'publication','Mobile Geräte im Griff','Matrix42 erweitert Workplace-Managementsoftware','<p>Mit seiner neuen Workplace-Managementsoftware für mobile Endgeräte bietet Matrix42 aus Neu-Isenburg ein Tool zur Administration aller Formen von Endgeräten - sei es physisch, virtuell oder mobil.</p>','','dv-dialog-logo.png','2011-08-22',NULL,0,0,0),
+	(29,'publication','Es ist angerichtet','Vor allem um die Aktivitäten des Außendienstes zu vereinfachen, setzt Villeroy & Boch seit Kurzem das Modul „Mobility for SAP CRM“ ein.','<p>MOBILE BUSINESS sprach mit Joachim Deitz, Head of CRM, über die Herausforderungen eines solchen Projekts.</p>','','mobile-business.png','2011-11-22',NULL,0,0,0),
+	(30,'publication','VDI als organisatorische Herausforderung','Artikel von Oliver Bendig (Vice President Product Management bei Matrix42) über Herausforderungen und Erfolgsfaktoren der Desktop-Transformation','<p>Die Nutzung von VDI (Virtual Desktop Infrastructure) als technisches Bindeglied zwischen der traditionellen PC- und der Terminal-Service- Welt ist derzeit in aller Munde. VDI bietet eine Vielzahl von Vorteilen in der Bereitstellung einer sicheren und zentralisierten Desktop- Umgebung und ist für eine Vielzahl von Szenarien sehr interessant. Doch diese Architektur erfordert auch einige organisatorische und technische Änderungen im IT-Betrieb...</p>','','lanline-logo.png','2011-11-24',NULL,0,0,0),
+	(31,'publication','Den mobilen Gerätepark sicher beherrschen','Artikel von Oliver Bendig (Vice President Product Management bei Matrix42) über Herausforderungen, Aspekte und Elemente von Mobile Device Management','<p>Die Zeiten, als die IT-Abteilung Alleinherrscherin über sämtliche Hardware eines Unternehmens war, sind vorbei. Viele Mitarbeiter nutzen an den IT-Abteilungen vorbei eigene mobile Hardware. Wie behält man die Kontrolle beziehungsweise wie gewinnt man sie zurück?</p>','http://www.zdnet.de/magazin/41558647/den-mobilen-geraetepark-sicher-beherrschen.htm','zdnet-logo.png','2011-12-19',NULL,0,0,0),
+	(32,'publication','Mobile Geräte sicher unter Kontrolle','Integriertes PC- und Mobile-Device-Management','<p>Die Arbeitsbedingungen und Anforderungen an IT-Spezialisten ändern sich immer schneller: Mussten sie bis vor nicht allzu langer Zeit neben PCs nur mobile Geräte wie Notebooks verwalten, sehen sich Administratoren heute mit einem wahren Zoo unterschiedlicher Geräte konfrontiert. Spezielle Lösungen für die Verwaltung mobiler Geräte (Mobile-Device-Management, MDM) sollen helfen, auch solche neuen Endgeräte in die IT-Infrastruktur zu integrieren. Meist sind dies aber Stand-alone-Werkzeuge....</p>','','lanline-logo.png','2011-12-22',NULL,0,0,0),
+	(33,'publication','Client-Management im steten Wandel','Neue Endgeräte, neue Probleme: Wie kommen die Anwendungen geordnet und gesichert auf die unterschiedlichen Geräte?','<p>IT-Verantwortliche und Administratoren, die heute einen Blick auf die „Landschaft“ der Geräte in ihrem Unternehmensnetzwerk werfen, sehen sich mit einer Reihe aktueller Probleme konfrontiert: Nicht nur das immer mehr unterschiedliche Geräte auftauchen, sondern die Anwender bestehen auch darauf, ihre eigene Tablets und Smartphones im Netz zu verwenden. Damit steht das Client-Management zunehmend vor neuen Herausforderungen...</p>','','nt4admins-logo.png','2012-01-18',NULL,0,0,0),
+	(34,'publication','Mobile Device Management: Noch eine grüne Wiese','Im Mobile Device Management liegt noch viel Potenzial für Reseller','<p>Die wenigsten Unternehmen verfügen über eine Strategie für das Management ihrer Smartphones und Tablet-PCs – Integratoren und Fachhändlern mit dem richtigen Know-how bietet sich hier ein riesiger Markt...</p>','','telecomhandel-logo.png','2012-01-18',NULL,0,0,0),
+	(35,'publication','Wie modernes IT Service Management bei Mitarbeitern und Bewerbern punktet','So klappt’s auch mit dem Mitarbeiter','<p>In Zeiten zunehmenden Fachkräftemangels konkurrieren viele Unternehmen um wenige, kompetente Bewerber. Diese wiederum haben oft nicht nur die Qual der Wahl, sondern auch ganz klare Vorstellungen von ihrem zukünftigen Arbeitgeber. Entscheidungskriterien sind für sie, neben den klassischen Hardskills wie Bezahlung und Softskills wie das Betriebsklima, die Arbeitszeitenregelung, auch die IT-Ausstattung des zukünftigen Arbeitsplatzes.</p>','','itmanagement-logo.png','2012-01-30',NULL,0,0,0),
+	(36,'publication','Interview Mobile Device Management','Den mobilen Gerätepark sicher beherrschen','<p>Interview mit Oliver Bendig zu den Themen Mobile Device Management (MDM) und Bring Your Own Device (BYOD) im Handelsblatt.</p>','','handelsblatt-logo.png','2012-02-08',NULL,0,0,0),
+	(37,'publication','Mobile Device Workplace Management in der Cloud','Mobile Workplace Management als SaaS-Lösung','<p>Premiere auf der CeBIT: Matrix42 präsentiert erstmals seine Mobile Workplace Management Lösung als Software as a Service (SaaS) Angebot. Außerdem demonstriert das Unternehmen, wie anwenderfreundliches Workplace Management funktioniert und wie es den IT-Abteilungen dabei hilft, auch bei zunehmender Gerätevielfalt den Überblick nicht zu verlieren.</p>','','chefbuero-logo.png','2012-03-20',NULL,0,0,0),
+	(38,'publication','Virtualisierung und Mobilität erhöhen Bedarf beim Client-Management','Matrix42 will mit Partnern signifikant wachsen','<p>Durch die Trendthemen Virtualisierung und Mobile Device Management will der hiesige Systemmanagement-Anbieter Matrix42 deutlich wachsen. Der Channel soll wesentlich dazu beitragen.</p>','http://www.crn.de/software/artikel-95052.html','crn-logo.png','2012-04-19',NULL,0,0,0),
+	(39,'publication','Management will Usability, IT das Business unterstützen','An der Swiss IT Conference präsentierten Computerworld und das IDC zum vierten Mal die Ergebnisse der grossen Marktstudie mit detaillierten Fakten zu den IT-Investitionen in der Schweiz.','<p>Am Donnerstag trafen sich rund 150 Vertreter aus Wirtschaft und Industrie zur jährlichen Swiss IT Conference von Computerworld und IDC....</p>','http://www.computerworld.ch/news/it-branche/artikel/management-will-usability-it-das-business-unterstuetzen-59847/','computerworld-logo.png','2012-04-20',NULL,0,0,0),
+	(40,'publication','Matrix42 stärkt Channel-Ausrichtung','Feinschliff am Partnerprogramm','<p>Unter vielen Systemhäusern galt Matrix42 lange als echter Geheimtipp. Denn mit den Produkten des Herstellers lassen sich viele Probleme lösen, die IT-Leitern derzeit auf den Nägeln brennen....</p>','http://www.channelpartner.de/channelcenter/windows/2582139/index.html','channelpartner-logo.png','2012-04-26',NULL,0,0,0),
+	(41,'publication','Nicht ohne meinen Mac','Was das Management heterogener IT-Landschaften mit Recruiting zu tun hat','<p>Die Interessenten haben andererseits oft sehr genaue Vorstellungen davon, was und wie sie arbeiten möchten. Immer wichtiger werden bei der Arbeitgeberwahl neben den klassischen Fragen nach Bezahlung und Urlaubsanspruch auch Aspekte wie das Betriebsklima, Weiterbildungsmöglichkeiten und die IT-Ausstattung</p>','','chefbuero-logo.png','2012-05-03',NULL,0,0,0),
+	(42,'publication','Wie man die IT-Kosten transparent macht','Prozesse lassen sich nicht mit einer Software implementieren. Das erfuhr auch der Logistikspezialist Simon Hegele, als er eine neue Struktur für das Management der IT-Service-Provider einschließlich der internen Leistungsverrechnung einführte.','<p>Wer mehr als 90 Jahre am Markt für kundennahe Logistikdienstleistungen erfolgreich ist, sollte die Anforderungen und Wünsche der Kunden wohl ganz genau kennen. Ein zentraler Erfolgsfaktor beim Logistikdienstleister Simon Hegele sind standardisierte und nachvollziebare Prozesse. Selbstverständlich gehört dazu auch ein wettbewerbsfähiges Preis-Leistungsverhältnis, und dazu muss das Unternehmen seine Kosten zu jeder Zeit im Griff haben...</p>','http://www.computerwoche.de/management/it-strategie/2513218/','computerwoche.png','2012-06-13',NULL,1,0,0);
 
 /*!40000 ALTER TABLE `press_releases` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -861,6 +878,44 @@ VALUES
 UNLOCK TABLES;
 
 
+
+--
+-- Dumping routines (PROCEDURE) for database 'darth_de'
+--
+DELIMITER ;;
+
+# Dump of PROCEDURE sp_belongs_to
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+		FROM INFORMATION_SCHEMA.key_column_usage
+		WHERE TABLE_SCHEMA = schemaName
+		AND TABLE_NAME = tableName
+		AND REFERENCED_TABLE_NAME IS NOT NULL
+		GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+# Dump of PROCEDURE sp_has_many
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+	  FROM INFORMATION_SCHEMA.key_column_usage
+	  WHERE TABLE_SCHEMA = schemaName
+	  AND REFERENCED_TABLE_NAME = tableName
+	  GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
