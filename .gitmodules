@@ -7,9 +7,6 @@
 [submodule "modules/acl"]
 	path = modules/acl
 	url = https://github.com/Wouterrr/ACL.git
-[submodule "modules/cache"]
-	path = modules/cache
-	url = https://github.com/gabriel1836/cache.git
 [submodule "modules/bonafide"]
 	path = modules/bonafide
 	url = https://github.com/shadowhand/bonafide.git
