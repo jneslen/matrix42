@@ -16,9 +16,6 @@
 [submodule "modules/openid"]
 	path = modules/openid
 	url = https://github.com/shadowhand/openid.git
-[submodule "system"]
-	path = system
-	url = https://github.com/kohana/core.git
 [submodule "modules/kable"]
 	path = modules/kable
 	url = https://github.com/noah-goodrich/kohana-kable.git
@@ -37,3 +34,6 @@
 [submodule "modules/formo"]
 	path = modules/formo
 	url = https://github.com/bmidget/kohana-formo.git
+[submodule "system"]
+	path = system
+	url = https://github.com/kohana/core.git
