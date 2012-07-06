@@ -1,6 +1,3 @@
-[submodule "modules/formo"]
-	path = modules/formo
-	url = https://github.com/bmidget/kohana-formo.git
 [submodule "modules/userguide"]
 	path = modules/userguide
 	url = https://github.com/kohana/userguide.git
@@ -37,3 +34,6 @@
 [submodule "modules/bonafide"]
 	path = modules/bonafide
 	url = https://github.com/shadowhand/bonafide.git
+[submodule "modules/formo"]
+	path = modules/formo
+	url = https://github.com/bmidget/kohana-formo.git
