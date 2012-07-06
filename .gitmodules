@@ -34,3 +34,6 @@
 [submodule "modules/cache"]
 	path = modules/cache
 	url = https://github.com/jneslen/kohana-cache.git
+[submodule "modules/komponent"]
+	path = modules/komponent
+	url = https://github.com/jneslen/kohana-komponent.git
