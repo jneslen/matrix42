@@ -31,3 +31,6 @@
 [submodule "modules/kacela"]
 	path = modules/kacela
 	url = https://github.com/noah-goodrich/kohana-kacela.git
+[submodule "modules/cache"]
+	path = modules/cache
+	url = https://github.com/jneslen/kohana-cache.git
