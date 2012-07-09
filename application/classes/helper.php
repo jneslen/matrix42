@@ -54,7 +54,7 @@ class Helper
 	{
 		if(\Kohana::$environment === 'LIVE')
 		{
-			$base_url = \URL::base(true);
+			$base_url = $_SERVER['HTTP_HOST'];
 			//$base_url = 'bane';
 		}
 		elseif(\Kohana::$environment === 'DEV-DE')
