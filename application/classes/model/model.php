@@ -122,6 +122,11 @@ class Model extends M\Model
 		return parent::validate($this->_filter_values($data));
 	}
 
+	protected function _field()
+	{
+		return $this->_singleton()->autoload("\\Field\\Field");
+	}
+
 	protected function _filter_values(array $array = null)
 	{
 		if(is_null($array))

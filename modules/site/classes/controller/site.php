@@ -10,7 +10,7 @@ defined('SYSPATH') OR die('No direct access allowed.');
 
 class Controller_Site extends Controller_Template
 {
-	public $template = 'site';
+	public $template = 'public';
 	public $sidebar_loc = 'right';
 
 	protected $_title = '';

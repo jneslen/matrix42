@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="span6 offset1">
 			<div id="our-customers" class="padded-top-half">
-				<a href="#lead-form-anchor" class="scroll"><span class="icon play"></span></a><h3 class="no-margin">Our Customers</h3>
+				<h3 class="no-margin">Our Customers</h3>
 				<div class="logo-container">
 					<img class="customer-one" src="/assets/img/customers/<?=$customers[0]->logo?>" alt="<?=$customers[0]->company?>" />
 					<img class="customer-two" src="/assets/img/customers/<?=$customers[1]->logo?>" alt="<?=$customers[1]->company?>" />
@@ -13,12 +13,13 @@
 		</div><!-- span6 -->
 		<div class="span7 offset1">
 			<div id="making-waves" class="padded-top-half">
-				<a href="#lead-form-anchor" class="scroll"><span class="icon play"></span></a><h3 class="no-margin">Making Waves:</h3>
+				<h3 class="no-margin">Making Waves:</h3>
 				<div class="logo-container">
-					<img class="partner-one" src="/assets/img/partners/<?=$partners[0]->logo?>" alt="<?=$partners[0]->company_name?>" />
-					<img class="partner-two" src="/assets/img/partners/<?=$partners[1]->logo?>" alt="<?=$partners[1]->company_name?>" />
-					<img class="partner-three" src="/assets/img/partners/<?=$partners[2]->logo?>" alt="<?=$partners[2]->company_name?>" />
-					<img class="partner-four" src="/assets/img/partners/<?=$partners[3]->logo?>" alt="<?=$partners[3]->company_name?>" />
+				<?php $count = 1; ?>
+				<?php foreach($partners as $partner): ?>
+					<?=$partner->link ? '<a href="'.$partner->link.'">' : ''?><img class="partner-<?=\Format::alpha_number($count, 0, null)?>" src="/assets/img/partners/<?=$partner->logo?>" border="0" alt="<?=$partner->company_name?>" /><?=$partner->link ? '</a>' : ''?>
+				<?php $count++; ?>
+				<?php endforeach; ?>
 				</div><!-- logo-container -->
 			</div><!-- making-waves -->
 		</div><!-- span6 -->

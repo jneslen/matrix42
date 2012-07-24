@@ -20,7 +20,7 @@ class Controller_Public_Index extends Controller_Public {
 
 		$customers = \Kacela::find_active('case_study', \Kacela::criteria()->equals('featured', '1')->limit(0,4)->sort('rand()'));
 
-		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4));
+		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4)->equals('type', 'technology')->sort('order'));
 
 		$this->_titlebar = View::factory('home_middle')
 			->set('customers', $customers)

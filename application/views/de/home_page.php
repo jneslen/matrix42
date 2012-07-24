@@ -52,6 +52,19 @@
 						</ul>
 					</div><!-- events -->
 					<?php endif; ?>
+					<div class="tab-pane" id="blog">
+						<ul class="listed">
+							<?php foreach($blogs as $blog): ?>
+							<li>
+								<a href="<?=$blog->link?>" class="thumbnail left"><img src="/assets/img/thumbnails/blog/blog.png" alt="<?=$blog->title?>" /></a>
+								<h4><a href="<?=$blog->link?>"><?=$blog->title?></a></h4>
+								<h5><?=substr(strip_tags($blog->description), 0, 40)?>...</h5>
+								<span class="italics"><?=\Format::date($blog->pubDate, 'human')?></span>
+								<div class="clear"></div>
+							</li>
+							<?php endforeach; ?>
+						</ul>
+					</div><!-- blog -->
 				</div><!-- tab-content -->
 			</div><!-- well -->
 		</div><!-- span4 -->

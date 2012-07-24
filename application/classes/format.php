@@ -22,10 +22,18 @@ class Format extends Kohana_Text
 	 */
 	public static function alpha_number($num, $dec = 0, $units = "dollars")
 	{
+		$num = strval($num);
 		$return = '';
 		$alphaNums1 = array('', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve','thirteen', 'fourteen', 'fifteen',  'sixteen', 'seventeen', 'eighteen', 'nineteen');
 		$alphaNums2 = array('', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety');
-		$num = explode(".", self::clean_number($num, true));
+		if(is_numeric($num) AND floor($num) != $num)
+		{
+			$num = explode(".", self::clean_number($num, true));
+		}
+		else
+		{
+			$num = array($num);
+		}
 		$numLen = strlen($num[0]);
 		switch($numLen)
 		{
