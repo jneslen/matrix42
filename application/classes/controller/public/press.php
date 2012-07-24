@@ -28,11 +28,11 @@ class Controller_Public_Press extends Controller_Public {
 							$thumbnail = $o->thumbnail ? $o->thumbnail : 'press-release.png';
 							if($o->type == 'award')
 							{
-								return '<span class="hidden">'.\Format::date($o->release_date, 'mysql').'</span><span class="thumbnail"><img src="/assets/img/thumbnails/press/'.$thumbnail.'" alt="Award Thumbnail" /></span>';
+								return '<span class="hidden">'.\Format::date($o->release_date, 'mysql').'</span><span class="thumbnail" style="min-width:100px;"><img src="/assets/img/thumbnails/press/'.$thumbnail.'" alt="Award Thumbnail" /></span>';
 							}
 							else
 							{
-								return '<span class="hidden">'.\Format::date($o->release_date, 'mysql').'</span><a href="/press/release/'.$o->id.'" class="thumbnail"><img src="/assets/img/thumbnails/press/'.$thumbnail.'" width="50" alt="Press Thumbnail" /></a>';
+								return '<span class="hidden">'.\Format::date($o->release_date, 'mysql').'</span><a href="/press/release/'.$o->id.'" class="thumbnail" style="min-width:50px;min-height:50px;"><img src="/assets/img/thumbnails/press/'.$thumbnail.'" alt="Press Thumbnail" /></a>';
 							}
 						}
 					),
@@ -47,7 +47,7 @@ class Controller_Public_Press extends Controller_Public {
 							}
 							else
 							{
-								return '<h4><a href="/press/release/'.$o->id.'">'.$o->title.'</a></h4><h5 class="italics">'.\Format::date($o->release_date, 'readable').'</h5><p>'.substr(strip_tags($o->content), 0, 255).'...<a href="/press/release/'.$o->id.'">more &gt;&gt;</a></p>';
+								return '<h4><a href="/press/release/'.$o->id.'">'.$o->title.'</a></h4><h5 class="italics">'.\Format::date($o->release_date, 'readable').'</h5><p>'.substr(strip_tags($o->content), 0, 255).'...<a href="/press/release/'.$o->id.'">more <span class="carrot">&gt;&gt;</span></a></p>';
 							}
 						}
 					),

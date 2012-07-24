@@ -23,7 +23,7 @@
 				</ul><!-- nav-tabs -->
 				<div class="tab-content">
 					<div class="tab-pane active" id="press">
-						<div class="padded"><a href="/press">view all &gt;&gt;</a></div>
+						<div class="padded"><a href="/press">view all <span class="carrot">&gt;&gt;</span></a></div>
 						<ul class="listed">
 							<?php foreach($press_releases as $release): ?>
 							<li>
@@ -38,7 +38,7 @@
 					</div><!-- press -->
 					<?php if($events->count() > 0): ?>
 					<div class="tab-pane" id="events">
-						<div class="padded"><a href="/events">view all &gt;&gt;</a></div>
+						<div class="padded"><a href="/events">view all <span class="carrot">&gt;&gt;</span></a></div>
 						<ul class="listed">
 							<?php foreach($events as $event): ?>
 							<li>

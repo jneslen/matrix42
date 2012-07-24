@@ -34,7 +34,7 @@ class Controller_Public_Awards extends Controller_Public {
 					'header' => '',
 					'value' => function($o)
 					{
-						return '<h4><a href="/awards/award/'.$o->id.'">'.$o->title.'</a></h4><h5 class="italics">'.\Format::date($o->release_date, 'readable').'</h5><p>'.substr(strip_tags($o->content), 0, 255).'...<a href="/awards/award/'.$o->id.'">more &gt;&gt;</a></p>';
+						return '<h4><a href="/awards/award/'.$o->id.'">'.$o->title.'</a></h4><h5 class="italics">'.\Format::date($o->release_date, 'readable').'</h5><p>'.substr(strip_tags($o->content), 0, 255).'...<a href="/awards/award/'.$o->id.'">more <span class="carrot">&gt;&gt;</span></a></p>';
 					}
 				),
 			)
