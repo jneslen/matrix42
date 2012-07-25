@@ -1,5 +1,4 @@
 <div class="well margin-right">
-	<h3>Success Stories</h3>
 	<p class="quote"><span class="italics">&quot;Matrix42’s most noteworthy capability is management of citrix xenapp and xendesktop hybrid physical and virtual desktop infrastructure.  It’s the only citrix management solution in the wave&quot;</span></p>
 	<img src="/assets/img/partners/forrester-logo.png" alt="Forrester" class="right" />
 	<div class="clear"></div>
