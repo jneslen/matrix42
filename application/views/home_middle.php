@@ -1,7 +1,7 @@
 <div id="home-middle" class="span16" xmlns="http://www.w3.org/1999/html">
 	<div class="row">
 		<div class="span6 offset1">
-			<div id="our-customers" class="padded-top-half">
+			<div id="our-customers" class="padded-all">
 				<h3 class="no-margin">Our Customers</h3>
 				<div class="logo-container">
 					<img class="customer-one" src="/assets/img/customers/<?=$customers[0]->logo?>" alt="<?=$customers[0]->company?>" />
@@ -12,7 +12,7 @@
 			</div><!-- our-customers -->
 		</div><!-- span6 -->
 		<div class="span7 offset1">
-			<div id="making-waves" class="padded-top-half">
+			<div id="making-waves" class="padded-all">
 				<h3 class="no-margin">Making Waves:</h3>
 				<div class="logo-container">
 				<?php $count = 1; ?>

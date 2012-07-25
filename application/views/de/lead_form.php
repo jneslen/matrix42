@@ -1,8 +1,8 @@
 <?php $form->html(); ?>
 <?php $form->view()->attr('action', \Request::$current->url().'#lead-form-anchor'); ?>
 <div class="row">
-	<div id="lead-form" class="<?=$full ? 'span16' : 'span12'?>">
-		<div id="lead-form-anchor" class="span4"></div>
+	<div id="lead-form" class="<?=$full ? 'span16' : 'span11'?>">
+		<div id="lead-form-anchor" class="span3"></div>
 		<div class="span4 contact-well">
 			<div class="padded-content padded-top">
 				<h3>Rückruf anfordern!</h3>
@@ -27,7 +27,7 @@
 				</table>
 			</div>
 		</div><!-- contact-well -->
-		<div class="<?=$full ? 'span12' : 'span8'?> contact-form">
+		<div class="<?=$full ? 'span13' : 'span8'?> contact-form">
 			<div class="row padded-top">
 			<?php if($complete): ?>
 				<div class="span8">

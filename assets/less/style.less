@@ -176,7 +176,7 @@ ul.list {
 		display: inline-block;
 	}
 	.bg {
-		z-index: 0;
+		z-index: 1;
 	}
 	.tag-content {
 		.abs;
@@ -351,6 +351,67 @@ ul.link-list {
 /*responsive*/
 @media (max-width: 480px) {
 /* Need to adjust the size of the headers in banners */
+	.carousel-control {
+		top: 50%;
+		width: 20px;
+		height: 20px;
+		font-size: 30px;
+		line-height: 17px;
+	}
+	.dashed-right,
+	.dashed-left {
+		background: none;
+	}
+	#footer-links {
+		.hidden;
+	}
+	#our-customers,
+	#making-waves {
+		img {
+			max-width: 50px;
+		}
+	}
+	#titlebar {
+		h1 {
+			font-size: 14px;
+		}
+	}
+	#banner {
+		h1 {
+			font-size: 16px;
+			line-height: 14px;
+			letter-spacing: -2px;
+		}
+		h2 {
+			font-size: 11px;
+			line-height: 10px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+		h3 {
+			.left;
+			font-size: 8px;
+			line-height: 7px;
+			letter-spacing: -1px;
+		}
+		h4 {
+			font-size: 6px;
+			line-height: 5px;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+		}
+	}
+}
+@media (min-width: 481px) {
+	.carousel-control {
+		top: 40%;
+		width: 40px;
+		height: 40px;
+		font-size: 60px;
+		line-height: 30px;
+	}
+}
+@media (min-width: 481px) and (max-width: 767px) {
 	#banner {
 		h1 {
 			font-size: 20px;
@@ -372,33 +433,6 @@ ul.link-list {
 		h4 {
 			font-size: 11px;
 			line-height: 10px;
-			text-transform: uppercase;
-			letter-spacing: -1px;
-		}
-	}
-}
-@media (min-width: 481px) and (max-width: 767px) {
-	#banner {
-		h1 {
-			font-size: 24px;
-			line-height: 22px;
-			letter-spacing: -2px;
-		}
-		h2 {
-			font-size: 18px;
-			line-height: 16px;
-			text-transform: uppercase;
-			letter-spacing: -1px;
-		}
-		h3 {
-			.left;
-			font-size: 15px;
-			line-height: 14px;
-			letter-spacing: -1px;
-		}
-		h4 {
-			font-size: 12px;
-			line-height: 11px;
 			text-transform: uppercase;
 			letter-spacing: -1px;
 		}
@@ -426,6 +460,11 @@ ul.link-list {
 			text-transform: uppercase;
 			letter-spacing: -1px;
 		}
+	}
+}
+@media (max-width: 980px) {
+	.container {
+		overflow: hidden;
 	}
 }
 @media (min-width: 980px) {

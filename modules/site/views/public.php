@@ -39,18 +39,20 @@ defined('SYSPATH') OR die('No direct access allowed.');
 	<?php if($sidebar): ?>
 		<div class="span16 medium-space"></div>
 		<?php if($sidebar_loc == "left"): ?>
-		<div class="span4">
+		<div class="span5">
 			<?=$sidebar?>
 		</div>
-		<div class="span12">
+		<div class="span11">
 			<?=$content?>
 		</div>
 		<?php else: ?>
-			<div class="span12">
+			<div class="span11">
 				<?=$content?>
 			</div>
-			<div class="span4">
-				<?=$sidebar?>
+			<div class="span5">
+				<div class="padded">
+					<?=$sidebar?>
+				</div>
 			</div>
 		<?php endif; ?>
 		<div class="span16 medium-space"></div>

@@ -3885,14 +3885,9 @@ a.thumbnail:hover {
 }
 .carousel-control {
   position: absolute;
-  top: 40%;
   left: 15px;
-  width: 40px;
-  height: 40px;
   margin-top: -20px;
-  font-size: 60px;
   font-weight: 100;
-  line-height: 30px;
   color: #ffffff;
   text-align: center;
   background: #222222;
@@ -3902,6 +3897,7 @@ a.thumbnail:hover {
   border-radius: 23px;
   opacity: 0.5;
   filter: alpha(opacity=50);
+  font-family: Arial Helvetica;
 }
 .carousel-control.right {
   left: auto;
