@@ -12,7 +12,7 @@
 				<p>Matrix42 software manages more than 6 million clients and has been providing workplace management solutions for 20 years. Join more than 2,500 customers worldwide and take control of your workplace today with Matrix42.</p>
 			</div><!-- padded-all -->
 		</div><!-- span6 -->
-		<div class="span6 dashed-left">
+		<div class="span6">
 			<div class="padded-all">
 				<div id="latest-container" class="well">
 					<ul id="latest" class="nav nav-tabs" data-tabs="latest">

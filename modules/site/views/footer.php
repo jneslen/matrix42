@@ -24,9 +24,10 @@
 		<h3>Solutions</h3>
 		<ul class="link-list">
 			<li><a href="/solutions/mobile_device_management">Mobile IT Sevice Management</a></li>
-			<li><a href="/solutions/desktop_virtualization">Desktop Virtualization</a></li>
+			<li><a href="/solutions/desktop_virtualization">Virtual Desktop Managment/a></li>
 			<li><a href="/solutions/endpoint_management">Endpoint Management</a></li>
-			<li><a href="/solutions/compliance">Asset Management</a></li>
+			<li><a href="/solutions/compliance">Software Asset Management</a></li>
+			<li><a href="/solutions/self_service">Self-Service</a></li>
 			<li><a href="/solutions/windows_7_migration">Windows 7 Migration</a></li>
 		</ul>
 	</div><!-- solutions-foot -->
@@ -38,6 +39,7 @@
 			<li><a href="/press">Press</a></li>
 			<li><a href="/press/awards">Awards</a></li>
 			<li><a href="/press/publications">Publications</a></li>
+			<li><a href="/customers">Case Studies</a></li>
 			<li><a href="/events">Events</a></li>
 		</ul>
 	</div><!-- about-foot -->

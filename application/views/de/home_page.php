@@ -12,7 +12,7 @@
 				<p>Matrix42 Software verwaltet mehr als 6 Millionen Kunden und stellt seit 20 Jahren Workplace Management-Lösungen bereit. Schließen Sie sich den 2.500 Kunden weltweit an und übernehmen Sie noch heute die Kontrolle über Ihren Arbeitsplatz mit Matrix42.</p>
 			</div><!-- padded-all -->
 		</div><!-- span6 -->
-		<div class="span6 dashed-left">
+		<div class="span6">
 			<div class="padded-all">
 				<div id="latest-container" class="well">
 					<ul id="latest" class="nav nav-tabs" data-tabs="latest">
