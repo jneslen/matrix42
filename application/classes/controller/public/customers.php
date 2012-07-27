@@ -40,7 +40,8 @@ class Controller_Public_Customers extends Controller_Public {
 		);
 
 		$this->_content = View::factory('table')
-			->set('table', $table);
+			->set('table', $table)
+			->set('sorting', false);
 	}
 
 	public function action_case()
