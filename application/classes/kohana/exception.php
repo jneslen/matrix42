@@ -125,8 +125,30 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 					? self::$_404_view
 					: self::$_500_view;
 
+				//Until I find a slicker solution... I need to set up a template for displaying the exception page
+				$template = \View::factory('public');
+				$template->title = 'Matrix42';
+				$template->page_title = $code;
+				$template->description = 'Matrix42 - '.$code;
+				$template->keywords = null;
+				$template->breadcrumb = null;
+				$template->banner = null;
+				$template->titlebar = null;
+				$template->head_analytics = \Analytics::factory('head');
+				$template->foot_analytics = \Analytics::factory('foot');
+				$template->sidebar = \Sidebar::factory(array(\View::factory('sidebar/success_stories')))->render();
+				$template->sidebar_loc = 'right';
+				$template->content = \View::factory('error/'.$view_file, array('language' => true));
+				$template->lead_form = null;
+				$template->modal = null;
+				$template->footer = \View::factory('footer', array('language' => true));
+
+				$template->header = \View::factory('header')
+					->set('menu', \Menu::factory('public')->set_current(null))
+					->set('user_menu', \View::factory('/menu/user'));
+
 				// Include the view file
-				include \Kohana::find_file('views', 'error/'.$view_file);
+				//include \Kohana::find_file('views', 'error/'.$view_file);
 
 				if ($code != 404)
 				{
@@ -147,7 +169,8 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 				}
 			}
 
-			exit(1);
+			exit($template->render());
+			//exit(1);
 		}
 		catch (Exception $e)
 		{
