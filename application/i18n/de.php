@@ -85,4 +85,5 @@ return array
 	'Send Inquiry!' => 'Anfrage versenden!',
 	'read more' => 'mehr lesen',
 	'Losungen' => 'Lösungen',
+	'Case Studies' => 'Referenzen',
 );

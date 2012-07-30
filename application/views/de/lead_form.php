@@ -3,7 +3,7 @@
 <div class="row">
 	<div id="lead-form" class="<?=$full ? 'span16' : 'span11'?>">
 		<div id="lead-form-anchor" class="span3"></div>
-		<div class="span4 contact-well">
+		<div class="span3 contact-well">
 			<div class="padded-content padded-top">
 				<h3>Rückruf anfordern!</h3>
 				<p>Füllen Sie das Anfrageformular aus oder kontaktieren Sie uns auf herkömmlichem Wege.</p>

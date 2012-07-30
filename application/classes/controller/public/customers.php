@@ -6,7 +6,7 @@ class Controller_Public_Customers extends Controller_Public {
 	{
 		parent::before();
 
-		$this->_title = "Matrix42 Case Studies";
+		$this->_title = "Matrix42 ".__('Case Studies');
 	}
 
 	public function action_index()

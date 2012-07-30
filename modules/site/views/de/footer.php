@@ -38,6 +38,7 @@
 			<li><a href="/press">Presse</a></li>
 			<li><a href="/press/awards">Auszeichnungen</a></li>
 			<li><a href="/press/publications">Veröffentlichungen</a></li>
+			<li><a href="/customers">Referenzen</a></li>
 			<li><a href="/events">Events</a></li>
 		</ul>
 	</div><!-- about-foot -->
