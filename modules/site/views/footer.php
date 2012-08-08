@@ -28,7 +28,7 @@
 			<li><a href="/solutions/endpoint_management">Endpoint Management</a></li>
 			<li><a href="/solutions/compliance">Software Asset Management</a></li>
 			<li><a href="/solutions/self_service">Self-Service</a></li>
-			<li><a href="/solutions/workplace_manager">Workplace Management for SCCM</a></li>
+			<li><a href="/solutions/enterprise_manager">Workplace Management for SCCM</a></li>
 			<li><a href="/solutions/windows_7_migration">Windows 7 Migration</a></li>
 		</ul>
 	</div><!-- solutions-foot -->
