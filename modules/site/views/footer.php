@@ -23,11 +23,12 @@
 	<div id="solutions-foot" class="span3 offset3 border-right">
 		<h3>Solutions</h3>
 		<ul class="link-list">
-			<li><a href="/solutions/mobile_device_management">Mobile IT Sevice Management</a></li>
-			<li><a href="/solutions/desktop_virtualization">Virtual Desktop Managment/a></li>
+			<li><a href="/solutions/mobile_device_management">Mobile Device Management</a></li>
+			<li><a href="/solutions/desktop_virtualization">Virtual Desktop Management</a></li>
 			<li><a href="/solutions/endpoint_management">Endpoint Management</a></li>
 			<li><a href="/solutions/compliance">Software Asset Management</a></li>
 			<li><a href="/solutions/self_service">Self-Service</a></li>
+			<li><a href="/solutions/workplace_manager">Workplace Management for SCCM</a></li>
 			<li><a href="/solutions/windows_7_migration">Windows 7 Migration</a></li>
 		</ul>
 	</div><!-- solutions-foot -->

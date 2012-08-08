@@ -27,6 +27,7 @@
 			<li><a href="/losungen/desktop_virtualization">Desktop Virtualization</a></li>
 			<li><a href="/losungen/endpoint_management">Endpoint Management</a></li>
 			<li><a href="/losungen/compliance">Asset Management</a></li>
+			<li><a href="/losungen/workplace_manager">Workplace Management für SCCM</a></li>
 			<li><a href="/losungen/windows_7_migration">Windows 7 Migration</a></li>
 		</ul>
 	</div><!-- solutions-foot -->

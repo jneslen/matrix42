@@ -46,7 +46,7 @@ class Controller_Public_Partners extends Controller_Public {
 						'attr' => array('class' => 'nowrap'),
 						'value' => function($o)
 						{
-							return '<h4>'.$o->get_phone()->formatted_phone.'</h4>'.$o->get_address()->formatted_address;
+							return '<h4>'.$o->get_phone()->formatted_phone.'</h4><h5><a href="mailto:'.$o->email.'">'.$o->email.'</a></h5>'.$o->get_address()->formatted_address;
 						}
 					),
 					array
