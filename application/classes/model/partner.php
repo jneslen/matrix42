@@ -10,6 +10,7 @@ class Partner extends User
 
 		$form->description->set('driver', 'textarea');
 
+		$form->role->set('value', 'partner');
 		$phone = $this->get_phone();
 		$form->add('phone', 'group', $phone->get_form());
 
