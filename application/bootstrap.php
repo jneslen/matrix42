@@ -149,6 +149,7 @@ Kohana::modules(array
 		'xls' => MODPATH.'xls',
 		'cache' => MODPATH.'cache',
 		'boldchat' => MODPATH.'boldchat',
+		'email' => MODPATH.'email',
 	)
 );
 

@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth
-# Generation Time: 2012-08-08 19:27:07 +0000
+# Generation Time: 2012-08-17 21:07:58 +0000
 # ************************************************************
 
 
@@ -55,7 +55,8 @@ VALUES
 	(1,'business',7,'','1650 West 82nd Street','Suite 650','Bloomington','MN',NULL,'55431','US',0),
 	(2,'business',6,'','1650 West 82nd Street','Suite 650','Bloomington','MN','','55431','US',0),
 	(3,'business',11,'','115 Perimeter Center Place','NE, Suite 250','Dunwoody','GA','','30346','US',0),
-	(7,'business',12,NULL,'85 Buxton Road',NULL,NULL,'OT','Stockport','SK2 6','GB',0);
+	(7,'business',12,NULL,'85 Buxton Road',NULL,NULL,'OT','Stockport','SK2 6','GB',0),
+	(8,'business',14,'','33 Badgers Island West','','Kittery','ME','','03904','US',0);
 
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -582,6 +583,15 @@ CREATE TABLE `leads` (
   CONSTRAINT `fk-user-lead` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `leads` WRITE;
+/*!40000 ALTER TABLE `leads` DISABLE KEYS */;
+
+INSERT INTO `leads` (`id`, `business_name`, `campaign_id`, `newsletter`, `inquiry_ip`, `inquiry_date`, `contact_date`, `downloaded`)
+VALUES
+	(13,NULL,NULL,0,'65.42.17.59','2012-08-14 08:07:10',NULL,0);
+
+/*!40000 ALTER TABLE `leads` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table menus
@@ -666,6 +676,15 @@ CREATE TABLE `notes` (
   CONSTRAINT `fk-user-notes` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `notes` WRITE;
+/*!40000 ALTER TABLE `notes` DISABLE KEYS */;
+
+INSERT INTO `notes` (`id`, `user_id`, `author_id`, `parent_id`, `type`, `note`, `note_date`, `disabled`)
+VALUES
+	(1,13,13,NULL,'inquiry','I am interested in finding out more information.','2012-08-14 09:07:10',0);
+
+/*!40000 ALTER TABLE `notes` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table partners
@@ -701,8 +720,9 @@ VALUES
 	(8,'technology','Novell','Novell offers enterprise class infrastructure software and services in a flexible combination of open source and proprietary technologies. This software helps customers manage, simplify, secure and integrate their heterogeneous IT environments at low cost. As a result, customers can reduce cost and complexity while increasing the return on their IT investment. Unlike others, we also help customers migrate from proprietary to open source at a pace that suits them. When it suits them.','novell-logo.png','www.novell.com',NULL,0,5),
 	(9,'technology','Netviewer AG','Netviewer AG is the leading European manufacturer and provider of Web conferencing solutions. Netviewer gives Internet users a live view of a partner\'s screen so documents can be jointly discussed and edited or support cases can be solved. Visual real-time communication over the Internet significantly reduces the time and expense of travel while increasing productivity. As a basis for Matrix42 remote control Netviewer enables secure remote maintenance of clients and efficient server management. ','netviewer-logo.png','www.netviewer.com',NULL,0,7),
 	(10,'technology','Intel','Intel, the world leader in silicon innovation, develops technologies, products and initiatives to continually advance how people work and live.','intel-logo.png','www.intel.com',NULL,0,6),
-	(11,'reseller','Mtrix Resources, Inc.','Matrix Resources provides professional services and project management for advanced infrastructure solution, server virtualization and other IT areas. Matrix Resources is a Microsoft Gold Certified Partner and GSA approved vendor with many locations across the United States.','matrix-resources-logo.png','http://www.matrixresources.com','',0,NULL),
-	(12,'reseller','Altimate UK','ALTIMATE UK (formerly Codework) is a specialist value added IT distributor providing a range of IT Management and Security solutions to the Industrial, Commercial and Enterprise marketplace.\nOur mission is to help partners develop and remain at the cutting edge by proposing a unique hardware and software portfolio and an offer of appropriate commercial and technical services. Thanks to their competence and expertise in the field of storage, data management, security and, more generally, IT infrastructures solutions, our teams accompany partners in the mastery of the most advanced technologies, defining the best solutions for their end customers, thereby contributing to their differentiation, development and, ultimately, their success. The ALTIMATE UK is a part of a leading European value added distributor. ALTIMATE Group operates in 8 countries: Belgium, France, Luxembourg, the Netherlands, Portugal, Spain, UK and Ireland, and has a network of more than 2500 value added resellers, integrators and ISV partners.','altimate-logo.png','http://www.altimate-group.co.uk','',0,NULL);
+	(11,'reseller','Mtrix Resources, Inc.','Matrix Resources provides professional services and project management for advanced infrastructure solution, server virtualization and other IT areas. Matrix Resources is a Microsoft Gold Certified Partner and GSA approved vendor with many locations across the United States.','matrix-resources-logo.png','www.matrixresources.com','',0,NULL),
+	(12,'reseller','Altimate UK','ALTIMATE UK (formerly Codework) is a specialist value added IT distributor providing a range of IT Management and Security solutions to the Industrial, Commercial and Enterprise marketplace.\nOur mission is to help partners develop and remain at the cutting edge by proposing a unique hardware and software portfolio and an offer of appropriate commercial and technical services. Thanks to their competence and expertise in the field of storage, data management, security and, more generally, IT infrastructures solutions, our teams accompany partners in the mastery of the most advanced technologies, defining the best solutions for their end customers, thereby contributing to their differentiation, development and, ultimately, their success. The ALTIMATE UK is a part of a leading European value added distributor. ALTIMATE Group operates in 8 countries: Belgium, France, Luxembourg, the Netherlands, Portugal, Spain, UK and Ireland, and has a network of more than 2500 value added resellers, integrators and ISV partners.','altimate-logo.png','www.altimate-group.co.uk','',0,NULL),
+	(14,'reseller','GreenPages Technology Solutions','<p>GreenPages is a leading virtualization and cloud management consulting and integration firm that helps clients fully virtualize their environments and transform their datacenter and IT operations to effectively leverage the power of cloud computing.</p>\n<p>The company’s deep technology expertise, broad engineering certifications, and vendor agnostic business model offer clients a strategic, cross-platform, proactive approach to designing, deploying, and supporting modern IT environments.</p>\n<p>GreenPages’ core practice areas include Virtualization & Cloud Computing; Application Development & Integration; Storage & Information Management; Network Infrastructure; Telephony & Unified Communications; and IT Management. Each practice area is comprised of a cross-certified engineering team and directed by a senior engineer.</p>\n<p>GreenPages has offices in Boston; Kittery, Maine; New York City; and Atlanta.</p>','greenpages-logo.png','www.greenpages.com','',1,NULL);
 
 /*!40000 ALTER TABLE `partners` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -732,7 +752,9 @@ VALUES
 	(1,'primary',23,'9528541663',0),
 	(2,'primary',6,'9528541663',0),
 	(3,'primary',11,'8006273533',0),
-	(4,'primary',12,'4401614740444',0);
+	(4,'primary',12,'4401614740444',0),
+	(5,'primary',13,'5173274687',0),
+	(6,'primary',14,'8009892989',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -904,8 +926,10 @@ VALUES
 	(8,'info@novell.com','Novell',NULL,'Novell','bcrypt$2a$12$sniEWyqBwqVeCID10Nx0hOtmoxuSeEGei9ZsUx69EQIp4WRX35fzW',NULL,NULL,'partner',0,NULL,'2012-06-29 12:58:24',NULL,NULL,NULL,0,NULL,1),
 	(9,'info@netviewer.com','Netviewer',NULL,'AG','bcrypt$2a$12$4uWJVDwjhkog8asXwLnoRuU8zkg9BOgPCcBLVy/hqHy304NzLM91K',NULL,NULL,'partner',0,NULL,'2012-06-29 13:04:23',NULL,NULL,NULL,0,NULL,0),
 	(10,'info@intel.com','Intel',NULL,'Microsystems','bcrypt$2a$12$A0ejyuhh4rDM17G1w0BXrO9yxT0veC/dOyaCTBlnam7cWWn0Ui9I2',NULL,NULL,'partner',0,NULL,'2012-06-29 13:06:13',NULL,NULL,NULL,0,NULL,0),
-	(11,'matrixatl@matrixresources.com','Matrix',NULL,'Resources','bcrypt$2a$12$1YBgBROdlBwfUEt87DiFmeYMDUw3CjG4tH71IetXxq01i27/DoS/q',NULL,NULL,'lead',0,NULL,'2012-08-06 12:04:01',NULL,NULL,NULL,0,NULL,0),
-	(12,'uk@altimate-group.com','Altimate',NULL,'Uk','bcrypt$2a$12$4xQU039VAUbd11a8uuWwbuzsGyVOc6VN8/wb5ISZU7yk01X4zHbqu',NULL,NULL,'lead',0,NULL,'2012-08-06 13:04:51',NULL,NULL,NULL,0,NULL,0);
+	(11,'matrixatl@matrixresources.com','Matrix',NULL,'Resources','bcrypt$2a$12$1YBgBROdlBwfUEt87DiFmeYMDUw3CjG4tH71IetXxq01i27/DoS/q',NULL,NULL,'partner',0,NULL,'2012-08-06 12:04:01',NULL,NULL,NULL,0,NULL,0),
+	(12,'uk@altimate-group.com','Altimate',NULL,'Uk','bcrypt$2a$12$4xQU039VAUbd11a8uuWwbuzsGyVOc6VN8/wb5ISZU7yk01X4zHbqu',NULL,NULL,'partner',0,NULL,'2012-08-06 13:04:51',NULL,NULL,NULL,0,NULL,0),
+	(13,'mckennad@ebsi.com','Dave',NULL,'McKenna','bcrypt$2a$12$TnMNrlmO5OFKSWiihdsqF.cofKxnrvasRlH2CSJS3v2aVXwiaAEg6',NULL,NULL,'lead',0,NULL,'2012-08-14 09:07:10','2012-08-14 08:07:10',NULL,NULL,0,'65.42.17.59',0),
+	(14,'esales@greenpages.com','',NULL,'Pages','bcrypt$2a$12$DELRoPoiZ3rPjPBeYi2gDOekLTeSc8ARr0MWOwLcJpBdYEwXneWSq',NULL,NULL,'partner',0,NULL,'2012-08-16 16:09:13',NULL,NULL,NULL,0,NULL,0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -43098,6 +43122,44 @@ VALUES
 UNLOCK TABLES;
 
 
+
+--
+-- Dumping routines (PROCEDURE) for database 'darth'
+--
+DELIMITER ;;
+
+# Dump of PROCEDURE sp_belongs_to
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+		FROM INFORMATION_SCHEMA.key_column_usage
+		WHERE TABLE_SCHEMA = schemaName
+		AND TABLE_NAME = tableName
+		AND REFERENCED_TABLE_NAME IS NOT NULL
+		GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+# Dump of PROCEDURE sp_has_many
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+	  FROM INFORMATION_SCHEMA.key_column_usage
+	  WHERE TABLE_SCHEMA = schemaName
+	  AND REFERENCED_TABLE_NAME = tableName
+	  GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
