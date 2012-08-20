@@ -37,7 +37,7 @@ class Controller_Public_Partners extends Controller_Public {
 						'header' => '',
 						'value' => function($o)
 						{
-							return '<h4 class="emphasis">'.$o->company_name.'</h4><h5 class="italics">'.$o->description.'</h5>';
+							return '<h4 class="emphasis">'.$o->company_name.'</h4><h5 class="italics">'.substr($o->description,0,255).'...</h5>';
 						}
 					),
 					array
@@ -78,6 +78,19 @@ class Controller_Public_Partners extends Controller_Public {
 				->set('table', $table);
 		}
 
+	}
+
+	public function action_detail()
+	{
+		$partner_id = $this->request->param('id');
+
+		$partner = \Kacela::find_one('partner', \Kacela::criteria()->equals('id', $partner_id));
+
+		$this->_title = $partner->company_name;
+
+		$this->_content = View::factory('partners/partner')
+			->set('partner', $partner)
+			->set('lead_form', parent::lead_form());
 	}
 
 	public function resellers()

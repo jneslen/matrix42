@@ -45,7 +45,7 @@ class Phone extends Model
 
 	protected function _get_formatted_phone()
 	{
-		return \Format::phone($this->number);
+		return \Format::phone($this->number, $this->format);
 	}
 
 	protected function _set_number($value)
