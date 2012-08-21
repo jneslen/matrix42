@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth_de
-# Generation Time: 2012-08-17 21:08:18 +0000
+# Generation Time: 2012-08-20 23:22:39 +0000
 # ************************************************************
 
 
@@ -709,6 +709,7 @@ CREATE TABLE `phones` (
   `type` enum('primary','alternate','mobile') DEFAULT NULL,
   `user_id` int(10) unsigned DEFAULT NULL,
   `number` varchar(18) NOT NULL DEFAULT '',
+  `format` enum('north_america','europe') NOT NULL DEFAULT 'europe',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk-user-phones` (`user_id`),

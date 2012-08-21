@@ -297,8 +297,9 @@ class Format extends Kohana_Text
 	 * @param $number
 	 * @return string: (555) 555-5555
 	 */
-	public static function phone($number)
+	public static function phone($number, $format = null)
 	{
+		$world_array = array('world', 'europe', 'spain', 'england');
 		if(empty($number))
 		{
 			return $number;
@@ -322,6 +323,45 @@ class Format extends Kohana_Text
 			$string = "+{$pieces[3]} ".$string;
 		}
 
+		if(in_array($format, $world_array))
+		{
+			$string = \Format::intl_phone($number, $format);
+		}
+
+		return $string;
+	}
+
+	public static function intl_phone($number, $format = null)
+	{
+		$pieces = array();
+		$string = $number;
+
+		switch($format)
+		{
+			case 'world':
+				$pieces[0] = substr($number,0,2);
+				$pieces[1] = substr($number,2,1);
+				$pieces[2] = substr($number,3,2);
+				$pieces[3] = substr($number,5,3);
+				$pieces[4] = substr($number,8);
+				$string = "+".$pieces[0]." (".$pieces[1].")".$pieces[2]." ".$pieces[3]." ".$pieces[4];
+				break;
+			case 'england':
+				$pieces[0] = substr($number,0,2);
+				$pieces[1] = substr($number,2,1);
+				$pieces[2] = substr($number,3,3);
+				$pieces[3] = substr($number,6,3);
+				$pieces[4] = substr($number,9);
+				$string = "+".$pieces[0]." (".$pieces[1].") ".$pieces[2]." ".$pieces[3]." ".$pieces[4];
+				break;
+			case 'spain':
+				$pieces[0] = substr($number,0,2);
+				$pieces[1] = substr($number,2,3);
+				$pieces[2] = substr($number,5,3);
+				$pieces[3] = substr($number,8);
+				$string = "(+".$pieces[0].") ".$pieces[1]." ".$pieces[2]." ".$pieces[3];
+				break;
+		}
 		return $string;
 	}
 

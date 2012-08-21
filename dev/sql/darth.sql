@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth
-# Generation Time: 2012-08-17 21:07:58 +0000
+# Generation Time: 2012-08-20 23:21:24 +0000
 # ************************************************************
 
 
@@ -56,7 +56,8 @@ VALUES
 	(2,'business',6,'','1650 West 82nd Street','Suite 650','Bloomington','MN','','55431','US',0),
 	(3,'business',11,'','115 Perimeter Center Place','NE, Suite 250','Dunwoody','GA','','30346','US',0),
 	(7,'business',12,NULL,'85 Buxton Road',NULL,NULL,'OT','Stockport','SK2 6','GB',0),
-	(8,'business',14,'','33 Badgers Island West','','Kittery','ME','','03904','US',0);
+	(8,'business',14,'','33 Badgers Island West','','Kittery','ME','','03904','US',0),
+	(12,'business',15,NULL,'C/Julián Camarillo 29','building D2','Madrid','OT','','28037','ES',0);
 
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -722,7 +723,9 @@ VALUES
 	(10,'technology','Intel','Intel, the world leader in silicon innovation, develops technologies, products and initiatives to continually advance how people work and live.','intel-logo.png','www.intel.com',NULL,0,6),
 	(11,'reseller','Mtrix Resources, Inc.','Matrix Resources provides professional services and project management for advanced infrastructure solution, server virtualization and other IT areas. Matrix Resources is a Microsoft Gold Certified Partner and GSA approved vendor with many locations across the United States.','matrix-resources-logo.png','www.matrixresources.com','',0,NULL),
 	(12,'reseller','Altimate UK','ALTIMATE UK (formerly Codework) is a specialist value added IT distributor providing a range of IT Management and Security solutions to the Industrial, Commercial and Enterprise marketplace.\nOur mission is to help partners develop and remain at the cutting edge by proposing a unique hardware and software portfolio and an offer of appropriate commercial and technical services. Thanks to their competence and expertise in the field of storage, data management, security and, more generally, IT infrastructures solutions, our teams accompany partners in the mastery of the most advanced technologies, defining the best solutions for their end customers, thereby contributing to their differentiation, development and, ultimately, their success. The ALTIMATE UK is a part of a leading European value added distributor. ALTIMATE Group operates in 8 countries: Belgium, France, Luxembourg, the Netherlands, Portugal, Spain, UK and Ireland, and has a network of more than 2500 value added resellers, integrators and ISV partners.','altimate-logo.png','www.altimate-group.co.uk','',0,NULL),
-	(14,'reseller','GreenPages Technology Solutions','<p>GreenPages is a leading virtualization and cloud management consulting and integration firm that helps clients fully virtualize their environments and transform their datacenter and IT operations to effectively leverage the power of cloud computing.</p>\n<p>The company’s deep technology expertise, broad engineering certifications, and vendor agnostic business model offer clients a strategic, cross-platform, proactive approach to designing, deploying, and supporting modern IT environments.</p>\n<p>GreenPages’ core practice areas include Virtualization & Cloud Computing; Application Development & Integration; Storage & Information Management; Network Infrastructure; Telephony & Unified Communications; and IT Management. Each practice area is comprised of a cross-certified engineering team and directed by a senior engineer.</p>\n<p>GreenPages has offices in Boston; Kittery, Maine; New York City; and Atlanta.</p>','greenpages-logo.png','www.greenpages.com','',1,NULL);
+	(14,'reseller','GreenPages Technology Solutions','<p>GreenPages is a leading virtualization and cloud management consulting and integration firm that helps clients fully virtualize their environments and transform their datacenter and IT operations to effectively leverage the power of cloud computing.</p>\n<p>The company’s deep technology expertise, broad engineering certifications, and vendor agnostic business model offer clients a strategic, cross-platform, proactive approach to designing, deploying, and supporting modern IT environments.</p>\n<p>GreenPages’ core practice areas include Virtualization & Cloud Computing; Application Development & Integration; Storage & Information Management; Network Infrastructure; Telephony & Unified Communications; and IT Management. Each practice area is comprised of a cross-certified engineering team and directed by a senior engineer.</p>\n<p>GreenPages has offices in Boston; Kittery, Maine; New York City; and Atlanta.</p>','greenpages-logo.png','www.greenpages.com','',1,NULL),
+	(15,'reseller','Asseco Spain','<p>Asseco Spain is an IT company which has different business areas: Outsourcing, IT Support, Datacenter, IT Engineering, Software Development, Renting and Human Resources Solutions (flexible spending plans and programs to provide Internet access and technology for employees), IT Commerce, Client Lifecycle Management, IT Service Management and License Management.</p>','asseco-spain-logo.png','www.asseco.es','',1,NULL),
+	(16,'reseller','ITR Technology','<p>ITR Technology Pty Ltd specializes in Infrastructure & Lifecycle Management Solutions. We offer a carefully selected set of tools which not only monitor\'s various components of the LAN or WAN, but also application and OS Deployment tools to keep the Desktop and Server Configurations operational.</p>','itr-technology-logo.png','www.itrtech.co.za/','',0,NULL);
 
 /*!40000 ALTER TABLE `partners` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -738,6 +741,7 @@ CREATE TABLE `phones` (
   `type` enum('primary','alternate','mobile') DEFAULT NULL,
   `user_id` int(10) unsigned DEFAULT NULL,
   `number` varchar(18) NOT NULL DEFAULT '',
+  `format` enum('north_america','europe') NOT NULL DEFAULT 'north_america',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk-user-phones` (`user_id`),
@@ -747,14 +751,16 @@ CREATE TABLE `phones` (
 LOCK TABLES `phones` WRITE;
 /*!40000 ALTER TABLE `phones` DISABLE KEYS */;
 
-INSERT INTO `phones` (`id`, `type`, `user_id`, `number`, `disabled`)
+INSERT INTO `phones` (`id`, `type`, `user_id`, `number`, `format`, `disabled`)
 VALUES
-	(1,'primary',23,'9528541663',0),
-	(2,'primary',6,'9528541663',0),
-	(3,'primary',11,'8006273533',0),
-	(4,'primary',12,'4401614740444',0),
-	(5,'primary',13,'5173274687',0),
-	(6,'primary',14,'8009892989',0);
+	(1,'primary',23,'9528541663','north_america',0),
+	(2,'primary',6,'9528541663','north_america',0),
+	(3,'primary',11,'8006273533','north_america',0),
+	(4,'primary',12,'4401614740444','europe',0),
+	(5,'primary',13,'5173274687','north_america',0),
+	(6,'primary',14,'8009892989','north_america',0),
+	(7,'primary',15,'3491375000','europe',0),
+	(8,'primary',NULL,'270113147533','europe',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -929,7 +935,9 @@ VALUES
 	(11,'matrixatl@matrixresources.com','Matrix',NULL,'Resources','bcrypt$2a$12$1YBgBROdlBwfUEt87DiFmeYMDUw3CjG4tH71IetXxq01i27/DoS/q',NULL,NULL,'partner',0,NULL,'2012-08-06 12:04:01',NULL,NULL,NULL,0,NULL,0),
 	(12,'uk@altimate-group.com','Altimate',NULL,'Uk','bcrypt$2a$12$4xQU039VAUbd11a8uuWwbuzsGyVOc6VN8/wb5ISZU7yk01X4zHbqu',NULL,NULL,'partner',0,NULL,'2012-08-06 13:04:51',NULL,NULL,NULL,0,NULL,0),
 	(13,'mckennad@ebsi.com','Dave',NULL,'McKenna','bcrypt$2a$12$TnMNrlmO5OFKSWiihdsqF.cofKxnrvasRlH2CSJS3v2aVXwiaAEg6',NULL,NULL,'lead',0,NULL,'2012-08-14 09:07:10','2012-08-14 08:07:10',NULL,NULL,0,'65.42.17.59',0),
-	(14,'esales@greenpages.com','',NULL,'Pages','bcrypt$2a$12$DELRoPoiZ3rPjPBeYi2gDOekLTeSc8ARr0MWOwLcJpBdYEwXneWSq',NULL,NULL,'partner',0,NULL,'2012-08-16 16:09:13',NULL,NULL,NULL,0,NULL,0);
+	(14,'esales@greenpages.com','',NULL,'Pages','bcrypt$2a$12$DELRoPoiZ3rPjPBeYi2gDOekLTeSc8ARr0MWOwLcJpBdYEwXneWSq',NULL,NULL,'partner',0,NULL,'2012-08-16 16:09:13',NULL,NULL,NULL,0,NULL,0),
+	(15,'info@asseco.es','Asseco',NULL,'Spain','bcrypt$2a$12$GMrIfjlNIWP3mjiuLkBf1eQtJt3gOrHY/TtaZHGMcW3xvJhVm6bXK',NULL,NULL,'partner',0,NULL,'2012-08-20 15:01:23',NULL,NULL,NULL,0,NULL,0),
+	(16,'sales@itrtech.co.za','Itr',NULL,'Technology','bcrypt$2a$12$l5EQGWGhkKCd25rrDy3Pp.Pk9QIwjoxfKVDyD5pr5ZyUYlhD6mdqK',NULL,NULL,'partner',0,NULL,'2012-08-20 16:44:33',NULL,NULL,NULL,0,NULL,0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

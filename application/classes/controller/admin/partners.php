@@ -66,6 +66,15 @@ class Controller_Admin_Partners extends Controller_Admin {
 		parent::disable();
 	}
 
+	public function action_detail()
+	{
+		$partner = \Kacela::find('partner', $this->request->param('id'));
+
+		$this->_content = View::factory('admin/partners/detail')
+			->set('user', $this->_user)
+			->set('partner', $partner);
+	}
+
 	public function action_form()
 	{
 		$partner = \Kacela::find('partner', $this->request->param('id'));
