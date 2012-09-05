@@ -1,5 +1,5 @@
 <?php $form->html(); ?>
-<?php $form->view()->attr('action', \Request::$current->url().'#lead-form-anchor'); ?>
+<?php $form->view()->attr('action', \Request::$current->uri().'#lead-form-anchor'); ?>
 <div class="row">
 	<div id="lead-form" class="<?=$full ? 'span16' : 'span11'?>">
 		<div id="lead-form-anchor" class="span3"></div>

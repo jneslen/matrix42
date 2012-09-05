@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.21)
 # Database: darth_de
-# Generation Time: 2012-08-20 23:22:39 +0000
+# Generation Time: 2012-09-05 22:47:47 +0000
 # ************************************************************
 
 
@@ -58,20 +58,26 @@ CREATE TABLE `campaigns` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `campaign_code` int(10) NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
-  `descripton` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `download_link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `campaigns` WRITE;
 /*!40000 ALTER TABLE `campaigns` DISABLE KEYS */;
 
-INSERT INTO `campaigns` (`id`, `campaign_code`, `name`, `descripton`)
+INSERT INTO `campaigns` (`id`, `campaign_code`, `name`, `description`, `download_link`)
 VALUES
-	(1,100,'general','General Site Visit'),
-	(2,200,'servicenow','ServiceNow'),
-	(3,300,'microsoft','Microsoft SCCM Enterprise Manager'),
-	(4,400,'citrix','VDI-Desktop Virtualization, Citrix Management &amp; p2v by Matrix42'),
-	(5,500,'compliance','Compliance with Matrix42');
+	(1,100,'general','General Site Visit',NULL),
+	(2,200,'servicenow','ServiceNow',NULL),
+	(3,300,'microsoft','Microsoft SCCM Enterprise Manager',NULL),
+	(4,400,'citrix','VDI-Desktop Virtualization, Citrix Management &amp; p2v by Matrix42',NULL),
+	(5,500,'compliance','Compliance with Matrix42',NULL),
+	(6,600,'addon','Add-on Sept. Promo',NULL),
+	(7,601,'addon-sale','Order place on add-on promotion',NULL),
+	(8,610,'addon-rc','Kostenlose 30-Tage Demo-Version von Remote Control anfragen',NULL),
+	(9,611,'addon-pm','Kostenlose 30-Tage Demo-Version von Power Management anfragen','/assets/uploads/power_management_trial.zip'),
+	(10,612,'addon-pr','Kostenlose 30-Tage Demo-Version von Package Robot anfragen','http://www.matrix42.de/fileadmin/downloads/Package_Robot/MPR-Setup.exe');
 
 /*!40000 ALTER TABLE `campaigns` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -233,7 +239,7 @@ VALUES
 	(12,6,'sidebar','%%sidebarleadform%%\n%%sidebarsuccessstories%%\n%%sidebarsupport%%',NULL),
 	(13,7,'sidebar','%%sidebarleadform%%\n%%sidebarsupport%%',NULL),
 	(14,8,'sidebar','%%sidebarleadform%%\n%%sidebarsupport%%',NULL),
-	(15,10,'sidebar','<div id=\"links\" class=\"well margin-right\">\n	<div class=\"well-container\">\n		<div class=\"padded\">\n			<h2>Related Links!</h2>\n		</div><!-- padded -->\n		<ul class=\"list\">\n			<li><a href=\"https://support.matrix42.de/sps/portal\" target=\"_blank\">Matrix42 Support Portal</a></li>\n			<li><a href=\"http://forum.matrix42.com\" target=\"_blank\">Matrix42 Forum</a></li>\n		</ul>\n	</div><!-- support-container -->\n</div><!-- support -->\n%%sidebarsupport%%\n%%sidebarleadform%%',NULL),
+	(15,10,'sidebar','<div id=\"links\" class=\"well margin-right\">\n	<div class=\"well-container\">\n		<div class=\"padded\">\n			<h2>Related Links!</h2>\n		</div><!-- padded -->\n		<ul class=\"list\">\n			<li><a href=\"https://support.matrix42.de/sps/portal\" target=\"_blank\">Matrix42 Support Portal</a></li>\n			<li><a href=\"http://forum.matrix42.com\" target=\"_blank\">Matrix42 Forum</a></li>\n			<li><a href=\"http://feedback.matrix42.com\" target=\"_blank\">Matrix42 Feedback Portal</a></li>\n		</ul>\n	</div><!-- support-container -->\n</div><!-- support -->\n%%sidebarsupport%%\n%%sidebarleadform%%',NULL),
 	(16,9,'main','<div class=\"padded\">\n	<h3 class=\"emphasis\">Reduzierung der Supportkosten um 70 Prozent durch Automatisierung und Self-Service</h3>\n	<p>Die IT-Verwaltung wird von Tag zu Tag komplexer. Von der ständig wachsenden Popularität der SaaS-Angebote (Software as a Service) bis zur Verbreitung von Mobilgeräten: Neue Denkansätze und Managementmethoden für die Endanwender-Assets sind wesentlich für den Erfolg der IT-Abteilungen. Mit Self-Service sind Unternehmen in der Lage, die Art der Bereitstellung von IT-Services umzuwandeln und die Belastung durch manuelle Aufgaben und einmalige Anfragen beträchtlich zu reduzieren. Die täglichen Supportkosten machen für viele Unternehmen den größten Prozentanteil des IT-Budgets aus. Matrix42 rationalisiert die Supportprozesse und stellt ein automatisiertes Self-Service-Portal bereit, damit Endanwender ihre IT-Probleme auf Abfrage lösen und die Supportkosten somit um 70 Prozent reduziert werden können.</p>\n	<p>Matrix42 ist das einzige Unternehmen, das Self-Service in das Mobile Device Management, Virtual Desktop Management und Endpoint Management integriert. Die Vorteile für den Kunden sind so greifbar, dass Matrix42 den Self-Service in alle drei Kernlösungen integriert hat. Daraus ergibt sich ein einzigartiger, benutzerorientierter Ansatz für das Workplace Management, der Endanwendern die gewünschte Flexibilität und Kontrolle gibt, online zu bleiben und die Produktivität zu verbessern. Die Belastung für IT-Abteilungen wird tatsächlich verringert, obwohl sie nach wie vor die Grenzen für die Anwender festlegen, um Sicherheit und Compliance zu gewährleisten.</p>\n	<p>Anwender können Services von beliebigen physischen, virtuellen und mobilen Geräten jederzeit über den Service-Katalog anfordern und bereitstellen. Der automatisierte Prozess eliminiert die Notwendigkeit für Anwender, darauf zu warten, bis der IT-Administrator auf einen Support-Antrag reagiert, was zu einer schnelleren Lösung führt. Wenn IT-Administratoren nicht eingeschaltet werden müssen, können sie alle Assets remote auf Fehler prüfen und verwalten.</p>\n	%%getstartedpage%%\n	<h3 class=\"emphasis\">ServiceNow Integration</h3>\n	<p>Für Anwender, die bereits über eine ITSM-Lösung von ServiceNow verfügen, sind alle Matrix42 Workforce Management-Lösungen für das Mobile Device Management, das Virtual Desktop Management und das Endpoint Management vollständig integriert und können problemlos über den ServiceNow Service-Katalog bereitgestellt werden.</p>\n	<div id=\"product-tab-container\" class=\"well margin-right\">\n		<ul id=\"product-tab\" class=\"nav nav-tabs\" data-tabs=\"product-tab\">\n			<li class=\"active\"><a href=\"#features\" data-toggle=\"tab\">Merkmale und Vorteile</a></li>\n		</ul><!-- product-tab -->\n		<div class=\"tab-container\">\n			<div class=\"tab-content\">\n				<div class=\"tab-pane active padded-content\" id=\"features\">\n					<h3 class=\"emphasis\">Entscheidende Merkmale des IT Service Management</h3>\n					<p>Die webbasierte, ITIL-kompatible Self-Service-Lösung von Matrix42 enthält drei Hauptkomponenten:</p>\n					<h4 class=\"emphasis\">Service-Katalog</h4>\n					<p>Der Matrix42 Service-Katalog automatisiert den kompletten Service-Request-Prozess, um die Supportkosten drastisch zu reduzieren, die Zufriedenheit der Endanwender zu erhöhen und die Unternehmensrichtlinien einzuhalten. Aufgrund des hohen Automatisierungsgrades können Unternehmen bis zu 70 Prozent ihrer IT-Support-Kosten einsparen.  Endanwender können IT-Services recherchieren und erhalten automatisierten Support rund um die Uhr. Dies kann die Helpdesk-Anrufe um bis zu 40 Prozent reduzieren und schnellere Antwortzeiten für Endanwender bedeuten.</p>\n					<p>Der Matrix42 Service-Katalog verfolgt die Endanwender, die IT-Services anfordern und berechnet diese auf Nutzungsbasis. Dies bedeutet, dass IT den einzelnen Abteilungen die angeforderten Services berechnen kann und nicht länger Vermutungen über die gesamten IT-Kosten des Unternehmens aufstellen muss. Endanwender werden zudem auf ihre Nutzung hingewiesen, damit sie kostensparende Maßnahmen ergreifen können.</p>\n					<h4 class=\"emphasis\">Helpdesk</h4>\n					<p>Der Matrix42 Helpdesk automatisiert das ITIL-Incident-, Problem- und Change Management und bietet Endanwendern besseren Service und schnellere Antwortzeiten. Die für den Helpdesk-Support erforderlichen Ressourcen können reduziert und die Supportkosten um bis zu 20 Prozent gesenkt werden. Unternehmen können alles, von der Ticket-Erstellung bis zur Software-Installation, automatisieren und die häufigsten Probleme ihrer Endanwender lösen. Das erhöht nicht nur die Zufriedenheit der Endanwender, sondern reduziert auch die Möglichkeit von Geldstrafen, wenn gegen SLAs (Service Level Agreements/Leistungsverträge) verstoßen wird.</p>\n					<p>Ein Self-Service-Portal befähigt die Endanwender zur Lösung ihrer eigenen Probleme. Sie können Support anfordern, eine Wissensdatenbank durchsuchen und automatische Updates erhalten, wenn sich der Status ihrer Helpdesk-Tickets ändert. Dadurch werden die Wartezeiten und die Anzahl der Fälle verringert, die vom IT-Team zu bearbeiten sind.</p>\n					<h4 class=\"emphasis\">Mobile Self-Service App</h4>\n					<p>Eine iPhone App ermöglicht Endanwendern den Zugriff auf den Helpdesk und Katalog. Mit nur wenigen Bewegungen lassen sich Service-Optionen und Preise einsehen und Support anfordern. Bei Bestellungen kann der Status der Anfrage/Bestellung mithilfe der App verfolgt werden. Mit diesen Self-Service-Optionen kann das Volumen der Anrufe beim Helpdesk beträchtlich reduziert werden. Mit der iPhone App können Anwender zudem Unternehmens-News empfangen und das Mitarbeiterverzeichnis aufrufen, wenn sie unterwegs sind.</p>\n				</div><!-- features -->\n			</div><!-- tab-content -->\n		</div><!-- tab-content -->\n	</div><!-- product-tab-container -->\n</div><!-- padded -->',NULL),
 	(17,9,'sidebar','%%sidebarleadform%%\n%%sidebarsupport%%',NULL),
 	(18,11,'main','<div class=\"padded\">\n	<h4 class=\"emphasis\">Das Beste an Ihrem Microsoft SCCM ist Matrix42</h4>\n	<p>Microsoft SCCM ist ein sehr leistungsfähiges Desktop Management Tool. Trotzdem: Bei eigentlich einfachen Aufgaben ist der Zeitaufwand manchmal immer noch zu hoch. Wenn Sie zum Beispiel SCCM-Jobs an Mitarbeiter außerhalb der IT delegieren wollen, müssen sie ihnen Zugriff auf die gesamte Konsole geben. Das führt unter Umständen zu Fehlern und falschen Konfigurationen.</p>\n	<p>Bei Software-Updates müssen Ihre Anwender außerdem Verzögerungen und Ausfällen in Kauf nehmen: Jeden Support-Fall braucht ein eigenes Ticket - und dann kommt erst noch die Wartezeit, bis sich jemand darum kümmert.</p>\n	<p>Gemeinsam mit Microsoft und Kunden wie BMW haben wir deshalb ein Add-on entwickelt, mit dem Sie Ihre Wertschöpfung für SCCM maximieren: den Matrix42 Enterprise Manager.</p>\n	<ul class=\"list\">\n		<li><span class=\"bold emphasis\">Delegieren von Aufgaben auch an Mitarbeiter ohne großes SCCM-Wissen.</span> Mit dem Enterprise Manager können auch IT-Laien administrative Aufgaben ausführen, ohne Fehler in der SCCM-Umgebung zu riskieren. Ihre IT-Mitarbeiter müssen damit nicht mehr so viel Zeit für Routineaufgaben aufwenden und können sich stattdessen auf anspruchsvollere Projekte konzentrieren.</li>\n		<li><span class=\"bold emphasis\">Ausbau der vorhandenen Microsoft SCCM-Features.</span> Der Matrix42 Enterprise Manager ergänzt SCCM um viele sinnvolle Features, beispielsweise den Emergency Stop: Er unterbricht Rollouts sofort, wenn ein Problem erkannt wird.</li>\n		<li><span class=\"bold emphasis\">Einfacheres Desktop Management.</span> Über die anwenderfreundliche, webbasierte Konsole können Sie Aufgaben in den Bereichen Bestandsmanagement, Software Deployment, Paketierung und Fehlersuche ganz einfach verwalten.</li>\n		<li><span class=\"bold emphasis\">Weniger Zeitaufwand bei der Verteilung von Softwarepaketen.</span> Mit dem Enterprise Manager wird das Verteilen von Paketen zum Kinderspiel und dauert nur noch ein paar Sekunden statt Stunden.</li>\n		<li><span class=\"bold emphasis\">Glückliche Endanwender.</span> Über den Matrix42 Service Catalog können die Anwender ganz nach Bedarf Applikationen aus einem Softwarekatalog anfordern. Schon nach wenigen Minuten sind die Programme installiert und einsatzbereit. Störende Ausfallzeiten gehören damit der Vergangenheit an.</li>\n	</ul>\n	<h4 class=\"secondary\">Der Matrix42 Enterprise Manager ist das einzige Produkt dieser Art und verfügt unter allen SCCM Add-ons über die größte Funktionalität.</h4>\n	%%getstartedpage%%\n	<div id=\"product-tab-container\" class=\"well margin-right\">\n		<ul id=\"product-tab\" class=\"nav nav-tabs\" data-tabs=\"product-tab\">\n			<li class=\"active\"><a href=\"#funktionen\" data-toggle=\"tab\">Funktionen &amp; Vorteile</a></li>\n			<li><a href=\"#warum\" data-toggle=\"tab\">Warum Matrix42?</a></li>\n		</ul><!-- product-tab -->\n		<div class=\"tab-container\">\n			<div class=\"tab-content\">\n				<div class=\"tab-pane active padded-content\" id=\"funktionen\">\n					<h3 class=\"emphasis\">Einfachere Abwicklung von Microsoft SCCM-Aufgaben und höchste Wertschöpfung aus den IT-Ressourcen</h3>\n					<p>Matrix42 Enterprise Manager ist ein webbasiertes Add-on für Microsoft SCCM, mit dem Sie den Zeit- und Kostenaufwand für das Desktop Management deutlich reduzieren können. Das Tool verbessert die SCCM-Features in folgenden Bereichen:</p>\n					<h4 class=\"emphasis\">Erweitertes Paketmanagement</h4>\n					<p>In Kombination mit Microsoft SCCM vereinfacht der Matrix42 Enterprise Manager die Verwaltung Ihrer Softwarepakete und spart Ihnen damit viel Zeit.</p>\n					<p>Aufgaben wie das Installieren, Konfigurieren, Aufrüsten und Entfernen von Software sind oft sehr zeitaufwändig. Mit dem Matrix42 Enterprise Manager sind Rollouts deutlich weniger zeitintensiv. </p>\n					<p>Mit dem Enterprise Manager von Matrix42 haben Sie Ihre Software voll im Blick. So können Sie jederzeit sicher sein, dass die Pakete getestet wurden und fehlerfrei laufen. Sie erkennen sofort, welche Pakete zur Verfügung stehen, wo sie sich befinden, wie lange der Download auf die Clients gedauert hat und ob Fehler aufgetreten sind.</p>\n					<p>Mit dem Matrix42 Enterprise Manager können Sie Ihr Softwarepaket-Management individuell anpassen und beispielsweise festlegen, in welcher Reihenfolge Software installiert werden soll. Außerdem können Sie Installationspläne erstellen und  genau definieren, was im Fehlerfall passieren soll.</p>\n					<h4 class=\"emphasis\">Hochentwickeltes Rollout Management</h4>\n					<p>Der Matrix42 Enterprise Manager gibt Ihnen volle Kontrolle über Software-Rollouts.</p>\n					<p>Das Rollout Management bietet Ihnen unbegrenzte Flexibilität. Sie können Rollouts für bestimmte Nutzer oder Abteilungen aufsetzen und damit schnelle Betatests durchführen.</p>\n					<p>Falls Probleme auftreten, sorgt die Emergency Stop Funktion dafür, dass Rollouts ohne Verzögerung unterbrochen werden.</p>\n					<p>Die für einen Rollout erforderliche Software wird standardmäßig mit dem Software Deployment verlinkt. So passieren weniger Fehler während des Deployments und Sie haben die Kontrolle über die Client-Systeme.</p>\n					<h4 class=\"emphasis\">Optimiertes Delegationsmanagement</h4>\n					<p>Mit dem Enterprise Manager von Matrix42 können Sie Aufgaben delegieren - ganz ohne Sorge, dass dadurch in der Microsoft SCCM-Umgebung Fehler oder falsche Konfigurationen auftreten.</p>\n					<p>Über die intuitiv zu bedienende, webbasierte Konsole können sogar Anfänger problemlos Aufgaben in den Bereichen Bestandsmanagement, Software Deployment, Paketierung und Fehlersuche übernehmen.</p>\n					<p>Sie kontrollieren, wer auf das System zugreifen darf. Dazu können Sie beispielsweise Zugriffsrechte für einzelne Nutzer oder Gruppen aufsetzen.</p>\n					<p>Alternativ erlauben Sie Ihren Nutzern das Sichten von Computern, Paketen und Reports nur dann, wenn sie auch über entsprechende Managementrechte verfügen. Damit schützen Sie Ihre IT-Assets.</p>\n					<h4 class=\"emphasis\">Besserer Self-Service für Anwender</h4>\n					<p>Mit Matrix42 muss niemand mehr mit einem einfachen Software-Update warten, bis die Technik dafür Zeit findet.</p>\n					<p>Die Anwender können sich per Service Catalog selbst um ihre Systeme kümmern und Anwendungen nach Bedarf anfordern. Die Programme werden automatisch installiert und sind schon nach wenigen Minuten einsatzbereit. Störende Ausfallzeiten sind damit Geschichte und Ihre Mitarbeiter werden produktiver.</p>\n					<p>Mit dem Enterprise Manager lässt sich der gesamte Beauftragungsprozess für Software automatisieren. Dadurch gehen Helpdesk-Anfragen deutlich zurück. Supportanfragen bearbeiten, Software installieren, Installationen überprüfen, Lizenz-Updates durchführen - all das fällt weg.</p>\n					<p>Die Software wird immer aus dem nächstliegenden Verteilungs-Port heruntergeladen. Das braucht weniger Bandbreite und die Updates kommen schneller dort an, wo sie gebraucht werden: bei den Anwendern.</p>\n				</div><!-- funktionen -->\n				<div class=\"tab-pane padded-content\" id=\"warum\">\n					<h3 class=\"emphasis\">Das Microsoft SCCM Add-on mit den meisten Funktionen und der größten Flexibilität</h3>\n					<p>Warum braucht man überhaupt ein Add-on für Microsoft SCCM? SCCM ist ein sehr leistungsfähiges Desktop Management Tool - aber wenn die Lösung nicht gut gepflegt wird, ist die Performance in Gefahr.</p>\n					<p>SCCM häuft zum Beispiel oft Dateien an - meistens, weil der Administrator Collections erstellt und sie dann vergisst. Die ungenutzten Collections beeinträchtigen mit der Zeit die Performance. Der Matrix42 Enterprise Manager archiviert und löscht ältere Objekte wie Collections, Advertisements und Computer nach einer definierten Zeitspanne, so dass die Systeme immer im Idealzustand sind.</p>\n					<p>Der Enterprise Manager kann aber noch mehr:</p>\n					<ul class=\"list\">\n						<li><span class=\"bold emphasis\">Er erledigt die Arbeit von 3 bis 4 Vollzeitmitarbeitern.</span> Hochqualifizierte IT-Spezialisten können also in anspruchsvollere Projekte eingebunden werden. Enterprise Manager und SCCM kümmern sich derweil um die zeitaufwändigen Routineaufgaben.</li>\n						<li><span class=\"bold emphasis\">Höhere Reaktionsfähigkeit in der IT-Abteilung.</span> Mit dem Enterprise Manager können Sie Managementaufgaben an Techniker delegieren, die sich mit SCCM nicht so gut auskennen. So können Anfragen schneller und besser beantwortet werden.</li>\n						<li><span class=\"bold emphasis\">Schnellere Abwicklung von Supportanfragen.</span> Der Enterprise Manager verfügt über automatisierte Support-Tools. Damit können Sie Softwareinstallationen oder Reparaturen um 50 bis 200% schneller durchführen. Lästige Arbeitsunterbrechungen und Produktivitätsausfälle gibt es damit nicht mehr - sie gehören zu den häufigsten Beschwerden auf Seiten der Anwender.</li>\n					</ul>\n					<p>Der Enterprise Manager von Matrix42 bietet als einzige Lösung im Markt eine so hohe Flexibilität und Kontrolle über SCCM. In Zusammenarbeit mit Microsoft-Kunden wie BMW hat Matrix42 SCCM deutlich anwenderfreundlicher gemacht - für eine noch höhere Wertschöpfung.</p>\n				</div><!-- warum -->\n			</div><!-- tab-content -->\n		</div><!-- tab-content -->\n	</div><!-- product-tab-container -->\n</div><!-- padded -->',NULL),
@@ -579,6 +585,25 @@ CREATE TABLE `leads` (
   CONSTRAINT `fk-user-lead` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `leads` WRITE;
+/*!40000 ALTER TABLE `leads` DISABLE KEYS */;
+
+INSERT INTO `leads` (`id`, `business_name`, `campaign_id`, `newsletter`, `inquiry_ip`, `inquiry_date`, `contact_date`, `downloaded`)
+VALUES
+	(6,NULL,8,0,'193.47.104.10','2012-09-05 08:09:05',NULL,1),
+	(7,NULL,8,0,'217.145.109.4','2012-09-05 07:56:59',NULL,1),
+	(8,NULL,8,0,'83.83.59.133','2012-09-05 08:39:20',NULL,1),
+	(9,NULL,8,0,'82.100.247.36','2012-09-05 08:39:36',NULL,1),
+	(10,NULL,8,0,'194.25.30.13','2012-09-05 08:55:54',NULL,1),
+	(11,NULL,8,0,'62.225.163.218','2012-09-05 09:52:45',NULL,1),
+	(12,NULL,9,0,'195.226.166.74','2012-09-05 10:02:18',NULL,1),
+	(13,NULL,8,0,'195.145.237.234','2012-09-05 10:09:40',NULL,1),
+	(14,NULL,8,0,'212.77.186.119','2012-09-05 10:11:51',NULL,1),
+	(15,NULL,8,0,'62.206.130.2','2012-09-05 12:15:31',NULL,1),
+	(16,NULL,6,0,'62.176.232.140','2012-09-05 12:33:38',NULL,1);
+
+/*!40000 ALTER TABLE `leads` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table menus
@@ -628,7 +653,7 @@ VALUES
 	(2,NULL,NULL,'public','main','Über Matrix42','/uber','dropdown',NULL,'public','uber','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,0),
 	(3,NULL,NULL,'public','main','Rückruf anfordern','/kaufen','','bold','public','kaufen','index','So kaufen Sie die Produkte und Services von Matrix42','So können Sie Matrix42 kontaktieren bzw. einen Reseller-Partner finden',NULL,'sub-banner-woman.jpg','fangen sie noch heute damit an!','So kaufen Sie Matrix42 Produkte und Lösungen',NULL,NULL,NULL,NULL,3,0,0),
 	(4,1,NULL,'public','submenu','Mobile Device Management (BYOD)','/losungen/mobile_device_management',NULL,NULL,'public','losungen','mobile_device_management','Flexibilität für Mitarbeiter, Sicherheit für IT','Flexibilität für Mitarbeiter, Sicherheit für IT - Description: „Bring Your Own Device&ldquo; minimiert Ressourcen und macht die Belegschaft effizienter.','byod, mobile workplace, personal device, mobile device, mobile workforce','sub-banner-byod.jpg','bring your own device?','Kein Problem, wenn Sie den gesamten Lebenszyklus der mobilen Endgeräte managen',60,35,600,NULL,1,0,0),
-	(5,1,NULL,'public','submenu','Virtual Desktop Management','/losungen/virtual_desktop_management',NULL,NULL,'public','losungen','virtual_desktop_management','Die unabdingbare Lösung für Citrix Desktop-Deployments ','Virtueller Desktop - einfach und erschwinglich Die unabdingbare Lösung für Citrix Desktop-Deployments',NULL,'sub-banner-virtualization.jpg','desktop-virtualisierung','Die unabdingbare Lösung für Citrix Desktop-Deployments',30,35,700,NULL,2,0,0),
+	(5,1,NULL,'public','submenu','Desktop Virtualization','/losungen/virtual_desktop_management',NULL,NULL,'public','losungen','virtual_desktop_management','Die unabdingbare Lösung für Citrix Desktop-Deployments ','Virtueller Desktop - einfach und erschwinglich Die unabdingbare Lösung für Citrix Desktop-Deployments',NULL,'sub-banner-virtualization.jpg','desktop-virtualisierung','Die unabdingbare Lösung für Citrix Desktop-Deployments',30,35,700,NULL,2,0,0),
 	(6,1,NULL,'public','submenu','Endpoint Management','/losungen/endpoint_management',NULL,NULL,'public','losungen','endpoint_management','Automatisierung aller IT-Management-Prozesse','Automatisierung vieler zeitaufwändiger Aufgaben, wie z.B. Software-Implementierung und gängige Helpdesk-Services. Bei gleichzeitiger Reduzierung der IT-Arbeitsbelastung und der Kosten.',NULL,'sub-banner-integration.jpg','vollständige integration','Automatisierung aller IT-Management-Prozesse',30,25,600,NULL,3,0,0),
 	(7,1,5,'public','submenu','Software Asset Management','/losungen/compliance',NULL,NULL,'public','losungen','compliance','Kontrolle über alle IT-Assets, Lizenzen und Verträge Description','Kontrolle über alle IT-Assets, Lizenzen und Verträge Description: Die ideale Lösung, um die Interaktion zwischen Compliance und Sicherheit zu maximieren','compliance, software compliance','sub-banner-compliance.jpg','compliance','Volle Kontrolle über alle IT-Bestände, Lizenzen und Verträge',100,25,500,'#ffffff',4,0,0),
 	(8,1,3,'public','submenu','Windows 7 Migration','/losungen/windows_7_migration',NULL,NULL,'public','losungen','windows_7_migration','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7. Das Matrix42 Workplace Management vereinfacht jeden Schritt des Prozesses, darunter die Hardware- und Software-Analyse, Datensicherung und Treiber-/Betrieb','window7 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','migration zu windows 7','Schnelle und zuverlässige Migration zu Windows 7',60,45,700,'#ffffff',6,0,0),
@@ -661,6 +686,64 @@ CREATE TABLE `notes` (
   CONSTRAINT `fk-author-notes` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk-parent-notes` FOREIGN KEY (`parent_id`) REFERENCES `notes` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk-user-notes` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `notes` WRITE;
+/*!40000 ALTER TABLE `notes` DISABLE KEYS */;
+
+INSERT INTO `notes` (`id`, `user_id`, `author_id`, `parent_id`, `type`, `note`, `note_date`, `disabled`)
+VALUES
+	(1,6,6,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 00:47:54',0),
+	(2,7,7,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 00:56:59',0),
+	(3,8,8,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 01:39:20',0),
+	(4,9,9,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 01:39:36',0),
+	(5,10,10,NULL,'inquiry','bitte schicken Sie uns eine kostenlose 30-Tage Demo-Version von Remote Control incl. Dokumentationen\nvielen Dank','2012-09-05 01:55:54',0),
+	(6,11,11,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 02:52:45',0),
+	(7,12,12,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-05 03:02:18',0),
+	(8,13,13,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 03:09:40',0),
+	(9,14,14,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 03:11:51',0),
+	(10,15,15,NULL,'inquiry','Kostenlose 30-Tage Demo-Version und Angebot für Remote Control anfragen. Wir setzten Empirum ein und haben dort 650 Clients. Für diese wollen wir evtl. auch in Zukunft Remote Control verwenden.\n\nMit freundlichen Grüßen\nSilke Bischoff\nBremer Straßenbahn AG','2012-09-05 05:15:31',0),
+	(11,16,16,NULL,'inquiry','Guten Tag,\nich habe Ihre Mail zum Thema AddOns gelesen und würde Sie gern bitten, folgenden Sachverhalt zu überprüfen: \n\nNach meinen Informationen müssten die AddOns \"Remote Control\" und \"Package Robot\" in unserem Lizenzpaket(ganz alter Kunde mit \"umfassendem Gesamtpaket\") enthalten sein.\n\nÜber eine Rückmeldung würde ich mich sehr freuen\n\nMit freundlichen Grüßen \nLSW LandE-Stadtwerke Wolfsburg GmbH & Co. KG \nAbteilung Informationsmanagement\ni.A. Bodo Nies \nT +49 5361 189-432 \nF +49 5361 189-160 \nM +49 171 9715023 \nmailto:bodo.nies@lsw.de \nwww.lsw.de \n','2012-09-05 05:33:38',0);
+
+/*!40000 ALTER TABLE `notes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table order_products
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `order_products`;
+
+CREATE TABLE `order_products` (
+  `order_id` int(10) unsigned NOT NULL,
+  `product_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`order_id`,`product_id`),
+  KEY `fk-order-products` (`order_id`),
+  KEY `fk-product-orders` (`product_id`),
+  CONSTRAINT `fk-order-products` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk-product-orders` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table orders
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `orders`;
+
+CREATE TABLE `orders` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `lead_id` int(10) unsigned NOT NULL,
+  `promotion_id` int(10) unsigned NOT NULL,
+  `partner` varchar(255) DEFAULT NULL,
+  `devices` int(10) unsigned DEFAULT NULL,
+  `price_estimate` decimal(10,2) DEFAULT NULL,
+  `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `fk-lead-orders` (`lead_id`),
+  KEY `fk-promotion-orders` (`promotion_id`),
+  CONSTRAINT `fk-lead-orders` FOREIGN KEY (`lead_id`) REFERENCES `leads` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk-promotion-orders` FOREIGN KEY (`promotion_id`) REFERENCES `promotions` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -708,7 +791,7 @@ CREATE TABLE `phones` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `type` enum('primary','alternate','mobile') DEFAULT NULL,
   `user_id` int(10) unsigned DEFAULT NULL,
-  `number` varchar(18) NOT NULL DEFAULT '',
+  `number` varchar(20) NOT NULL DEFAULT '',
   `format` enum('north_america','europe') NOT NULL DEFAULT 'europe',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
@@ -716,6 +799,25 @@ CREATE TABLE `phones` (
   CONSTRAINT `fk-user-phones` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `phones` WRITE;
+/*!40000 ALTER TABLE `phones` DISABLE KEYS */;
+
+INSERT INTO `phones` (`id`, `type`, `user_id`, `number`, `format`, `disabled`)
+VALUES
+	(1,'primary',6,'41445226389','europe',0),
+	(2,'primary',7,'0921802272','europe',0),
+	(3,'primary',8,'0302735225','europe',0),
+	(4,'primary',9,'040600880205','europe',0),
+	(5,'primary',10,'069689702368','europe',0),
+	(6,'primary',11,'07243707129','europe',0),
+	(7,'primary',12,'030759218522000','europe',0),
+	(8,'primary',13,'04561619314','europe',0),
+	(9,'primary',14,'094215101500','europe',0),
+	(10,'primary',15,'494215596638','europe',0),
+	(11,'primary',16,'05361189432','europe',0);
+
+/*!40000 ALTER TABLE `phones` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table press_releases
@@ -788,6 +890,69 @@ VALUES
 	(42,'publication','Wie man die IT-Kosten transparent macht','Prozesse lassen sich nicht mit einer Software implementieren. Das erfuhr auch der Logistikspezialist Simon Hegele, als er eine neue Struktur für das Management der IT-Service-Provider einschließlich der internen Leistungsverrechnung einführte.','<p>Wer mehr als 90 Jahre am Markt für kundennahe Logistikdienstleistungen erfolgreich ist, sollte die Anforderungen und Wünsche der Kunden wohl ganz genau kennen. Ein zentraler Erfolgsfaktor beim Logistikdienstleister Simon Hegele sind standardisierte und nachvollziebare Prozesse. Selbstverständlich gehört dazu auch ein wettbewerbsfähiges Preis-Leistungsverhältnis, und dazu muss das Unternehmen seine Kosten zu jeder Zeit im Griff haben...</p>','http://www.computerwoche.de/management/it-strategie/2513218/','computerwoche.png','2012-06-13',NULL,1,0,0);
 
 /*!40000 ALTER TABLE `press_releases` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table products
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `products`;
+
+CREATE TABLE `products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(10) unsigned DEFAULT NULL,
+  `type` enum('service','add-on','package') NOT NULL DEFAULT 'service',
+  `sku` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `logo` varchar(255) DEFAULT NULL,
+  `description` text,
+  `price` decimal(10,2) DEFAULT NULL,
+  `webinar_link` varchar(255) DEFAULT NULL,
+  `pdf` varchar(255) DEFAULT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk-campaign-products` (`campaign_id`),
+  CONSTRAINT `fk-campaign-products` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+
+INSERT INTO `products` (`id`, `campaign_id`, `type`, `sku`, `name`, `logo`, `description`, `price`, `webinar_link`, `pdf`, `deleted`)
+VALUES
+	(1,8,'add-on','M42-RC','Matrix42 Remote Control','rc-logo.png','<h5>Teilen Sie den Bildschirm mit Ihren Anwendern nicht nur im Firmennetz, sondern jetzt auch im Internet</h5>',10.00,'http://www.matrix42.de/events/webinar/','remote-control-de.pdf',0),
+	(2,9,'add-on','M42-PM','Matrix42 Power Management','pm-logo.png','<h5>Überwachen und reduzieren Sie den Stromverbrauch Ihrer Windows Endgeräte</h5>',10.00,'http://www.matrix42.de/events/webinar/','power-management-de.pdf',0),
+	(3,10,'add-on','M42-PR','Matrix42 Package Robot','pr-logo.png','<h5>Zeichnen Sie ALLE Installationen und Konfigurationen einfach auf und spielen Sie diese beliebig oft ab</h5>',10.00,'http://www.matrix42.de/events/webinar/','package-robot-de.pdf',0);
+
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table promotions
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `promotions`;
+
+CREATE TABLE `promotions` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `description` text,
+  `reg_price` decimal(10,2) NOT NULL,
+  `promo_price` decimal(10,2) NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `promotions` WRITE;
+/*!40000 ALTER TABLE `promotions` DISABLE KEYS */;
+
+INSERT INTO `promotions` (`id`, `name`, `description`, `reg_price`, `promo_price`, `deleted`)
+VALUES
+	(1,'+PlusEins','1 <strong class=\"emphasis\">Add-On</strong> Ihrer Wahl zum Preis von 5,- Euro <span class=\"line-through\">(8,-Euro)</span> pro Basislizenz ',8.00,5.00,0),
+	(2,'+PlusZwei','2 <strong class=\"emphasis\">Add-Ons</strong> Ihrer Wahl zum Preis von 7,-Euro  <span class=\"line-through\">(16,-Euro)</span> pro Basislizenz',16.00,7.00,0),
+	(3,'+PlusDrei','3 <strong class=\"emphasis\">Add-Ons</strong> Ihrer Wahl zum Preis von 9,-Euro  <span class=\"line-through\">(24,-Euro)</span> pro Basislizenz',24.00,9.00,0);
+
+/*!40000 ALTER TABLE `promotions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -905,7 +1070,18 @@ VALUES
 	(2,'info@microsoft.com','Micro',NULL,'Soft','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:07:47',NULL,NULL,NULL,0,NULL,0),
 	(3,'info@citrix.com','Citrix',NULL,'Ready','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:08:27',NULL,NULL,NULL,0,NULL,0),
 	(4,'info@gartner.com','Gartner',NULL,'MagicQ','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:09:53',NULL,NULL,NULL,0,NULL,0),
-	(5,'info@servicenow.com','Service',NULL,'Now','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:10:27',NULL,NULL,NULL,0,NULL,0);
+	(5,'info@servicenow.com','Service',NULL,'Now','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'partner',0,NULL,'2012-06-04 14:10:27',NULL,NULL,NULL,0,NULL,0),
+	(6,'Ha.Mu@mail.com','Hans',NULL,'Muster','bcrypt$2a$12$zA2REO3vt3l0RruWlMYfFeCHSvKDE3oMVyKN9298N1Sd8VbsqcNmu',NULL,NULL,'lead',0,NULL,'2012-09-05 00:47:54','2012-09-05 08:09:05',NULL,NULL,0,'193.47.104.10',0),
+	(7,'carmen.hofmann@avs.de','Carmen',NULL,'Hofmann','bcrypt$2a$12$XTfQjxTg8Y23bDMARKIU8.c0.54ezfF/LcIrabBCxSbxiR3NHDkaG',NULL,NULL,'lead',0,NULL,'2012-09-05 00:56:59','2012-09-05 07:56:59',NULL,NULL,0,'217.145.109.4',0),
+	(8,'robertdewindt@windmark.nl','Robert',NULL,'Windt','bcrypt$2a$12$pf1TIShFN6ZlGSRonKNtSOtFJodS0erksyDR6K2nwXywVL8rN48JS',NULL,NULL,'lead',0,NULL,'2012-09-05 01:39:20','2012-09-05 08:39:20',NULL,NULL,0,'83.83.59.133',0),
+	(9,'bastian.schramm@tpw.de','Bastian',NULL,'Schramm','bcrypt$2a$12$XnDqBP9rClv4CLayDBRWRuxuX9wMvzocYSlvf7TYtUk0dlzvF9Mdu',NULL,NULL,'lead',0,NULL,'2012-09-05 01:39:36','2012-09-05 08:39:36',NULL,NULL,0,'82.100.247.36',0),
+	(10,'henry.koch@o-s.de','Henry',NULL,'Koch','bcrypt$2a$12$OX2FM2MorU1IdiswA1ui4ubE.vDtARmWxM21VUubzm7VuSC9avoTq',NULL,NULL,'lead',0,NULL,'2012-09-05 01:55:54','2012-09-05 08:55:54',NULL,NULL,0,'194.25.30.13',0),
+	(11,'mike.fonn@bardusch.de','Mike',NULL,'Fonn','bcrypt$2a$12$B1OZt196UOq3hsCQ0dgvZu/vokoHqeNU9GlxBMfZTT1QU8cNN908O',NULL,NULL,'lead',0,NULL,'2012-09-05 02:52:45','2012-09-05 09:52:45',NULL,NULL,0,'62.225.163.218',0),
+	(12,'Stefan.Eisermann@BSR.de','Stefan',NULL,'Eisermann','bcrypt$2a$12$NABTY1UMjUxBI6OLXQuK3ur.0H8LnlhOn2UDGW1tuNdQO4cN.oSzu',NULL,NULL,'lead',0,NULL,'2012-09-05 03:02:18','2012-09-05 10:02:18',NULL,NULL,0,'195.226.166.74',0),
+	(13,'sh@snih.de','Stefan',NULL,'Hermes','bcrypt$2a$12$uc6KbK3uVUoNAD0Gx7kVtucmhtYvpr0nL5sltx2WYx.csw2Jxc8da',NULL,NULL,'lead',0,NULL,'2012-09-05 03:09:40','2012-09-05 10:09:40',NULL,NULL,0,'195.145.237.234',0),
+	(14,'dhaus@tap.de','Dirk',NULL,'Haus','bcrypt$2a$12$XM1fuOviXizDTyFA56s2wOLx.2UUkkscHY7A/.rwGQgdFayEORaG6',NULL,NULL,'lead',0,NULL,'2012-09-05 03:11:51','2012-09-05 10:11:51',NULL,NULL,0,'212.77.186.119',0),
+	(15,'silkebischoff@bsag.de','Silke',NULL,'Bischoff','bcrypt$2a$12$F8rdeQJmt7KtOVfVFLrroOz2BzqHBtFUQHYWtvTHlcHX4sbCNpvgK',NULL,NULL,'lead',0,NULL,'2012-09-05 05:15:31','2012-09-05 12:15:31',NULL,NULL,0,'62.206.130.2',0),
+	(16,'bodo.nies@wolfsburg.de','Bodo',NULL,'Nies','bcrypt$2a$12$fDIeb1C1GYUT4RTrsrAiv.FZRlk7k5dlS6E199EgjQ.EdxN7BpRyy',NULL,NULL,'lead',0,NULL,'2012-09-05 05:33:38','2012-09-05 12:33:38',NULL,NULL,0,'62.176.232.140',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

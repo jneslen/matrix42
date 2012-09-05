@@ -84,6 +84,7 @@ class Controller_Site extends Controller_Template
 			array
 			(
 				'jquery-ui',
+				'plugins/jquery.pngfix',
 				'bootstrap.min',
 				'plugins/datatables',
 				'site',

@@ -40,6 +40,8 @@ $(document).ready(function() {
 	});
 
 	$('#modal form').live('submit', function() {
+		$(document).pngFix();
+
 		$(this).ajaxSubmit({
 			target: '#modal-body',
 			type: 'post',
