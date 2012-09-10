@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 127.0.0.1 (MySQL 5.5.21)
+# Host: 127.0.0.1 (MySQL 5.5.25-cll)
 # Database: darth_de
-# Generation Time: 2012-09-05 22:47:47 +0000
+# Generation Time: 2012-09-10 18:08:18 +0000
 # ************************************************************
 
 
@@ -594,13 +594,18 @@ VALUES
 	(7,NULL,8,0,'217.145.109.4','2012-09-05 07:56:59',NULL,1),
 	(8,NULL,8,0,'83.83.59.133','2012-09-05 08:39:20',NULL,1),
 	(9,NULL,8,0,'82.100.247.36','2012-09-05 08:39:36',NULL,1),
-	(10,NULL,8,0,'194.25.30.13','2012-09-05 08:55:54',NULL,1),
+	(10,'operational services',8,0,'194.25.30.13','2012-09-10 12:31:12',NULL,1),
 	(11,NULL,8,0,'62.225.163.218','2012-09-05 09:52:45',NULL,1),
-	(12,NULL,9,0,'195.226.166.74','2012-09-05 10:02:18',NULL,1),
+	(12,NULL,9,0,'195.226.166.74','2012-09-06 14:02:25',NULL,1),
 	(13,NULL,8,0,'195.145.237.234','2012-09-05 10:09:40',NULL,1),
 	(14,NULL,8,0,'212.77.186.119','2012-09-05 10:11:51',NULL,1),
 	(15,NULL,8,0,'62.206.130.2','2012-09-05 12:15:31',NULL,1),
-	(16,NULL,6,0,'62.176.232.140','2012-09-05 12:33:38',NULL,1);
+	(16,NULL,6,0,'62.176.232.140','2012-09-05 12:33:38',NULL,1),
+	(17,NULL,8,0,'145.253.89.20','2012-09-05 13:15:25',NULL,1),
+	(18,NULL,8,0,'82.195.75.194','2012-09-06 11:37:11',NULL,1),
+	(19,NULL,10,0,'93.104.249.74','2012-09-07 07:40:13',NULL,1),
+	(20,'New Yorker',9,0,'195.125.219.98','2012-09-10 06:25:38',NULL,1),
+	(21,'Kabel Deutschland',9,0,'83.169.152.175','2012-09-10 09:00:36',NULL,1);
 
 /*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -697,13 +702,18 @@ VALUES
 	(2,7,7,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 00:56:59',0),
 	(3,8,8,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 01:39:20',0),
 	(4,9,9,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 01:39:36',0),
-	(5,10,10,NULL,'inquiry','bitte schicken Sie uns eine kostenlose 30-Tage Demo-Version von Remote Control incl. Dokumentationen\nvielen Dank','2012-09-05 01:55:54',0),
+	(5,10,10,NULL,'inquiry','Hallo zusammen,\nhabe bis heute leider noch keine Antwort auf meine Anfrage vom 05.09.12:\nWir möchten die kostenlose 30-Tage Demo-Version von Remote Control.\n\nvielen Dank\nmfg\nH.Koch','2012-09-05 01:55:54',0),
 	(6,11,11,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 02:52:45',0),
 	(7,12,12,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-05 03:02:18',0),
 	(8,13,13,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 03:09:40',0),
 	(9,14,14,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 03:11:51',0),
 	(10,15,15,NULL,'inquiry','Kostenlose 30-Tage Demo-Version und Angebot für Remote Control anfragen. Wir setzten Empirum ein und haben dort 650 Clients. Für diese wollen wir evtl. auch in Zukunft Remote Control verwenden.\n\nMit freundlichen Grüßen\nSilke Bischoff\nBremer Straßenbahn AG','2012-09-05 05:15:31',0),
-	(11,16,16,NULL,'inquiry','Guten Tag,\nich habe Ihre Mail zum Thema AddOns gelesen und würde Sie gern bitten, folgenden Sachverhalt zu überprüfen: \n\nNach meinen Informationen müssten die AddOns \"Remote Control\" und \"Package Robot\" in unserem Lizenzpaket(ganz alter Kunde mit \"umfassendem Gesamtpaket\") enthalten sein.\n\nÜber eine Rückmeldung würde ich mich sehr freuen\n\nMit freundlichen Grüßen \nLSW LandE-Stadtwerke Wolfsburg GmbH & Co. KG \nAbteilung Informationsmanagement\ni.A. Bodo Nies \nT +49 5361 189-432 \nF +49 5361 189-160 \nM +49 171 9715023 \nmailto:bodo.nies@lsw.de \nwww.lsw.de \n','2012-09-05 05:33:38',0);
+	(11,16,16,NULL,'inquiry','Guten Tag,\nich habe Ihre Mail zum Thema AddOns gelesen und würde Sie gern bitten, folgenden Sachverhalt zu überprüfen: \n\nNach meinen Informationen müssten die AddOns \"Remote Control\" und \"Package Robot\" in unserem Lizenzpaket(ganz alter Kunde mit \"umfassendem Gesamtpaket\") enthalten sein.\n\nÜber eine Rückmeldung würde ich mich sehr freuen\n\nMit freundlichen Grüßen \nLSW LandE-Stadtwerke Wolfsburg GmbH & Co. KG \nAbteilung Informationsmanagement\ni.A. Bodo Nies \nT +49 5361 189-432 \nF +49 5361 189-160 \nM +49 171 9715023 \nmailto:bodo.nies@lsw.de \nwww.lsw.de \n','2012-09-05 05:33:38',0),
+	(12,17,17,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-05 06:15:03',0),
+	(13,18,18,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-06 04:37:10',0),
+	(14,19,19,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Package Robot anfragen','2012-09-07 00:40:13',0),
+	(15,20,20,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-09 23:25:38',0),
+	(16,21,21,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-10 02:00:36',0);
 
 /*!40000 ALTER TABLE `notes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -810,11 +820,16 @@ VALUES
 	(4,'primary',9,'040600880205','europe',0),
 	(5,'primary',10,'069689702368','europe',0),
 	(6,'primary',11,'07243707129','europe',0),
-	(7,'primary',12,'030759218522000','europe',0),
+	(7,'primary',12,'03075922000','europe',0),
 	(8,'primary',13,'04561619314','europe',0),
 	(9,'primary',14,'094215101500','europe',0),
 	(10,'primary',15,'494215596638','europe',0),
-	(11,'primary',16,'05361189432','europe',0);
+	(11,'primary',16,'05361189432','europe',0),
+	(12,'primary',17,'01733470299','europe',0),
+	(13,'primary',18,'061517806127','europe',0),
+	(14,'primary',19,'09067821182','europe',0),
+	(15,'primary',20,'49053121355773','europe',0),
+	(16,'primary',21,'01779617683','europe',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -949,8 +964,8 @@ LOCK TABLES `promotions` WRITE;
 INSERT INTO `promotions` (`id`, `name`, `description`, `reg_price`, `promo_price`, `deleted`)
 VALUES
 	(1,'+PlusEins','1 <strong class=\"emphasis\">Add-On</strong> Ihrer Wahl zum Preis von 5,- Euro <span class=\"line-through\">(8,-Euro)</span> pro Basislizenz ',8.00,5.00,0),
-	(2,'+PlusZwei','2 <strong class=\"emphasis\">Add-Ons</strong> Ihrer Wahl zum Preis von 7,-Euro  <span class=\"line-through\">(16,-Euro)</span> pro Basislizenz',16.00,7.00,0),
-	(3,'+PlusDrei','3 <strong class=\"emphasis\">Add-Ons</strong> Ihrer Wahl zum Preis von 9,-Euro  <span class=\"line-through\">(24,-Euro)</span> pro Basislizenz',24.00,9.00,0);
+	(2,'+PlusZwei','2 <strong class=\"emphasis\">Add-Ons</strong> Ihrer Wahl zum Preis von 7,-Euro  <span class=\"line-through\">(16,-Euros)</span> pro Basislizenz',16.00,7.00,0),
+	(3,'+PlusDrei','3 <strong class=\"emphasis\">Add-Ons</strong> Ihrer Wahl zum Preis von 9,-Euro  <span class=\"line-through\">(24,-Euros)</span> pro Basislizenz',24.00,9.00,0);
 
 /*!40000 ALTER TABLE `promotions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1075,13 +1090,18 @@ VALUES
 	(7,'carmen.hofmann@avs.de','Carmen',NULL,'Hofmann','bcrypt$2a$12$XTfQjxTg8Y23bDMARKIU8.c0.54ezfF/LcIrabBCxSbxiR3NHDkaG',NULL,NULL,'lead',0,NULL,'2012-09-05 00:56:59','2012-09-05 07:56:59',NULL,NULL,0,'217.145.109.4',0),
 	(8,'robertdewindt@windmark.nl','Robert',NULL,'Windt','bcrypt$2a$12$pf1TIShFN6ZlGSRonKNtSOtFJodS0erksyDR6K2nwXywVL8rN48JS',NULL,NULL,'lead',0,NULL,'2012-09-05 01:39:20','2012-09-05 08:39:20',NULL,NULL,0,'83.83.59.133',0),
 	(9,'bastian.schramm@tpw.de','Bastian',NULL,'Schramm','bcrypt$2a$12$XnDqBP9rClv4CLayDBRWRuxuX9wMvzocYSlvf7TYtUk0dlzvF9Mdu',NULL,NULL,'lead',0,NULL,'2012-09-05 01:39:36','2012-09-05 08:39:36',NULL,NULL,0,'82.100.247.36',0),
-	(10,'henry.koch@o-s.de','Henry',NULL,'Koch','bcrypt$2a$12$OX2FM2MorU1IdiswA1ui4ubE.vDtARmWxM21VUubzm7VuSC9avoTq',NULL,NULL,'lead',0,NULL,'2012-09-05 01:55:54','2012-09-05 08:55:54',NULL,NULL,0,'194.25.30.13',0),
+	(10,'Henry.Koch@o-s.de','Henry',NULL,'Koch','bcrypt$2a$12$OX2FM2MorU1IdiswA1ui4ubE.vDtARmWxM21VUubzm7VuSC9avoTq',NULL,NULL,'lead',0,NULL,'2012-09-05 01:55:54','2012-09-10 12:31:12',NULL,NULL,0,'194.25.90.65',0),
 	(11,'mike.fonn@bardusch.de','Mike',NULL,'Fonn','bcrypt$2a$12$B1OZt196UOq3hsCQ0dgvZu/vokoHqeNU9GlxBMfZTT1QU8cNN908O',NULL,NULL,'lead',0,NULL,'2012-09-05 02:52:45','2012-09-05 09:52:45',NULL,NULL,0,'62.225.163.218',0),
-	(12,'Stefan.Eisermann@BSR.de','Stefan',NULL,'Eisermann','bcrypt$2a$12$NABTY1UMjUxBI6OLXQuK3ur.0H8LnlhOn2UDGW1tuNdQO4cN.oSzu',NULL,NULL,'lead',0,NULL,'2012-09-05 03:02:18','2012-09-05 10:02:18',NULL,NULL,0,'195.226.166.74',0),
+	(12,'Stefan.Eisermann@BSR.de','Stefan',NULL,'Eisermann','bcrypt$2a$12$NABTY1UMjUxBI6OLXQuK3ur.0H8LnlhOn2UDGW1tuNdQO4cN.oSzu',NULL,NULL,'lead',0,NULL,'2012-09-05 03:02:18','2012-09-06 14:02:25',NULL,NULL,0,'195.226.166.74',0),
 	(13,'sh@snih.de','Stefan',NULL,'Hermes','bcrypt$2a$12$uc6KbK3uVUoNAD0Gx7kVtucmhtYvpr0nL5sltx2WYx.csw2Jxc8da',NULL,NULL,'lead',0,NULL,'2012-09-05 03:09:40','2012-09-05 10:09:40',NULL,NULL,0,'195.145.237.234',0),
 	(14,'dhaus@tap.de','Dirk',NULL,'Haus','bcrypt$2a$12$XM1fuOviXizDTyFA56s2wOLx.2UUkkscHY7A/.rwGQgdFayEORaG6',NULL,NULL,'lead',0,NULL,'2012-09-05 03:11:51','2012-09-05 10:11:51',NULL,NULL,0,'212.77.186.119',0),
 	(15,'silkebischoff@bsag.de','Silke',NULL,'Bischoff','bcrypt$2a$12$F8rdeQJmt7KtOVfVFLrroOz2BzqHBtFUQHYWtvTHlcHX4sbCNpvgK',NULL,NULL,'lead',0,NULL,'2012-09-05 05:15:31','2012-09-05 12:15:31',NULL,NULL,0,'62.206.130.2',0),
-	(16,'bodo.nies@wolfsburg.de','Bodo',NULL,'Nies','bcrypt$2a$12$fDIeb1C1GYUT4RTrsrAiv.FZRlk7k5dlS6E199EgjQ.EdxN7BpRyy',NULL,NULL,'lead',0,NULL,'2012-09-05 05:33:38','2012-09-05 12:33:38',NULL,NULL,0,'62.176.232.140',0);
+	(16,'bodo.nies@wolfsburg.de','Bodo',NULL,'Nies','bcrypt$2a$12$fDIeb1C1GYUT4RTrsrAiv.FZRlk7k5dlS6E199EgjQ.EdxN7BpRyy',NULL,NULL,'lead',0,NULL,'2012-09-05 05:33:38','2012-09-05 12:33:38',NULL,NULL,0,'62.176.232.140',0),
+	(17,'oliver.bendig@matrix42.com','Oliver',NULL,'Bendig','bcrypt$2a$12$kPwqZKHUU8GtJk6N1cnquuFMEoUgAamzpda1/hkzlbJaNQjrrwCF2',NULL,NULL,'lead',0,NULL,'2012-09-05 06:15:03','2012-09-05 13:15:25',NULL,NULL,0,'145.253.89.20',1),
+	(18,'maik.sterzing@darmstadtium.de','Maik',NULL,'Sterzing','bcrypt$2a$12$R4IXDp8rnUTgxco1rBxPP.aLULYplpZmkSLbr3yPojSewD9d2xAK2',NULL,NULL,'lead',0,NULL,'2012-09-06 04:37:10','2012-09-06 11:37:11',NULL,NULL,0,'82.195.75.194',0),
+	(19,'fischer@donkliniken.de','Sven',NULL,'Fischer','bcrypt$2a$12$X8rYUdYSF9kl6a8mOWLbPuv.K3p.lG8HXhkCHUzez2RheLWyDxnNK',NULL,NULL,'lead',0,NULL,'2012-09-07 00:40:13','2012-09-07 07:40:13',NULL,NULL,0,'93.104.249.74',0),
+	(20,'mneikes@newyorker.de','Michael',NULL,'Neikes','bcrypt$2a$12$WTH0dAxumsLPKACtwgrMBOdNnP7tkyUh7knsNWRv30brnREL/Jlv6',NULL,NULL,'lead',0,NULL,'2012-09-09 23:25:37','2012-09-10 06:25:38',NULL,NULL,0,'195.125.219.98',0),
+	(21,'Tino.Carl@Kabeldeutschland.de','Tino',NULL,'Carl','bcrypt$2a$12$yt9pJPbYLhXfuqPFeN8yO.HYYld8UXS7lIYQmDIHlGpgQrGO9NvTK',NULL,NULL,'lead',0,NULL,'2012-09-10 02:00:36','2012-09-10 09:00:36',NULL,NULL,0,'83.169.152.175',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
