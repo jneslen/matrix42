@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.25-cll)
 # Database: darth_de
-# Generation Time: 2012-09-10 22:21:57 +0000
+# Generation Time: 2012-09-11 16:24:59 +0000
 # ************************************************************
 
 
@@ -605,7 +605,9 @@ VALUES
 	(18,NULL,8,0,'82.195.75.194','2012-09-06 11:37:11',NULL,1),
 	(19,NULL,10,0,'93.104.249.74','2012-09-07 07:40:13',NULL,1),
 	(20,'New Yorker',9,0,'195.125.219.98','2012-09-10 06:25:38',NULL,1),
-	(21,'Kabel Deutschland',9,0,'83.169.152.175','2012-09-10 09:00:36',NULL,1);
+	(21,'Kabel Deutschland',9,0,'83.169.152.175','2012-09-10 09:00:36',NULL,1),
+	(22,'GRZ',8,0,'212.183.26.250','2012-09-11 11:04:58',NULL,1),
+	(23,'Matrix42',9,0,'145.253.89.20','2012-09-11 17:16:12',NULL,1);
 
 /*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -713,7 +715,9 @@ VALUES
 	(13,18,18,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-06 04:37:10',0),
 	(14,19,19,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Package Robot anfragen','2012-09-07 00:40:13',0),
 	(15,20,20,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-09 23:25:38',0),
-	(16,21,21,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-10 02:00:36',0);
+	(16,21,21,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-10 02:00:36',0),
+	(17,22,22,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-11 04:04:58',0),
+	(18,23,23,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-11 10:16:12',0);
 
 /*!40000 ALTER TABLE `notes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -829,7 +833,9 @@ VALUES
 	(13,'primary',18,'061517806127','europe',0),
 	(14,'primary',19,'09067821182','europe',0),
 	(15,'primary',20,'49053121355773','europe',0),
-	(16,'primary',21,'01779617683','europe',0);
+	(16,'primary',21,'01779617683','europe',0),
+	(17,'primary',22,'43512530424441','europe',0),
+	(18,'primary',23,'06102816143','europe',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1102,7 +1108,9 @@ VALUES
 	(18,'maik.sterzing@darmstadtium.de','Maik',NULL,'Sterzing','bcrypt$2a$12$R4IXDp8rnUTgxco1rBxPP.aLULYplpZmkSLbr3yPojSewD9d2xAK2',NULL,NULL,'lead',0,NULL,'2012-09-06 04:37:10','2012-09-06 11:37:11',NULL,NULL,0,'82.195.75.194',0),
 	(19,'fischer@donkliniken.de','Sven',NULL,'Fischer','bcrypt$2a$12$X8rYUdYSF9kl6a8mOWLbPuv.K3p.lG8HXhkCHUzez2RheLWyDxnNK',NULL,NULL,'lead',0,NULL,'2012-09-07 00:40:13','2012-09-07 07:40:13',NULL,NULL,0,'93.104.249.74',0),
 	(20,'mneikes@newyorker.de','Michael',NULL,'Neikes','bcrypt$2a$12$WTH0dAxumsLPKACtwgrMBOdNnP7tkyUh7knsNWRv30brnREL/Jlv6',NULL,NULL,'lead',0,NULL,'2012-09-09 23:25:37','2012-09-10 06:25:38',NULL,NULL,0,'195.125.219.98',0),
-	(21,'Tino.Carl@Kabeldeutschland.de','Tino',NULL,'Carl','bcrypt$2a$12$yt9pJPbYLhXfuqPFeN8yO.HYYld8UXS7lIYQmDIHlGpgQrGO9NvTK',NULL,NULL,'lead',0,NULL,'2012-09-10 02:00:36','2012-09-10 09:00:36',NULL,NULL,0,'83.169.152.175',0);
+	(21,'Tino.Carl@Kabeldeutschland.de','Tino',NULL,'Carl','bcrypt$2a$12$yt9pJPbYLhXfuqPFeN8yO.HYYld8UXS7lIYQmDIHlGpgQrGO9NvTK',NULL,NULL,'lead',0,NULL,'2012-09-10 02:00:36','2012-09-10 09:00:36',NULL,NULL,0,'83.169.152.175',0),
+	(22,'andreas.lezuo@grz.at','Andreas',NULL,'Lezuo','bcrypt$2a$12$NEjsL082pDtfwV9ylIJzKOVJ8IOqJwdyamlejQf0rAUIlw.PdG.1u',NULL,NULL,'lead',0,NULL,'2012-09-11 04:04:58','2012-09-11 11:04:58',NULL,NULL,0,'212.183.26.250',0),
+	(23,'horst.droege@matrix42.com','Horst',NULL,'Droege','bcrypt$2a$12$RyFSwL5dIerc3GsdRUpIHe7fgaHdELQvweL.HDhkd9phk8ZTJPA76',NULL,NULL,'lead',0,NULL,'2012-09-11 10:16:12','2012-09-11 17:16:12',NULL,NULL,0,'145.253.89.20',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
