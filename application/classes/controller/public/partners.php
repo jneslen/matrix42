@@ -114,7 +114,7 @@ class Controller_Public_Partners extends Controller_Public {
 					'header' => '',
 					'value' => function($o)
 					{
-						return '<span class="hidden">'.$o->id.'</span><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" />';
+						return '<span class="hidden">'.$o->id.'</span><span class="thumbnail" style="min-width:100px;"><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" /></span>';
 					}
 				),
 				array
