@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.25-cll)
 # Database: darth_de
-# Generation Time: 2012-09-12 17:12:41 +0000
+# Generation Time: 2012-09-17 16:10:43 +0000
 # ************************************************************
 
 
@@ -604,11 +604,13 @@ VALUES
 	(17,NULL,8,0,'145.253.89.20','2012-09-05 13:15:25',NULL,1),
 	(18,NULL,8,0,'82.195.75.194','2012-09-06 11:37:11',NULL,1),
 	(19,NULL,10,0,'93.104.249.74','2012-09-07 07:40:13',NULL,1),
-	(20,'New Yorker',9,0,'195.125.219.98','2012-09-10 06:25:38',NULL,1),
-	(21,'Kabel Deutschland',9,0,'83.169.152.175','2012-09-10 09:00:36',NULL,1),
+	(20,'NEW YORKER Group-Services International GmbH & Co. KG',9,0,'195.125.219.98','2012-09-17 11:06:11',NULL,1),
+	(21,'Kabel Deutschland',9,0,'83.169.152.175','2012-09-17 15:58:44',NULL,1),
 	(22,'GRZ',8,0,'212.183.26.250','2012-09-11 11:04:58',NULL,1),
 	(23,'TAP Desktop Solutions',8,0,'212.77.186.119','2012-09-12 17:06:51',NULL,1),
-	(24,'Pepperl+Fuchs GmbH',8,0,'145.253.89.20','2012-09-12 16:04:59',NULL,1);
+	(24,'Pepperl+Fuchs GmbH',8,0,'145.253.89.20','2012-09-12 16:04:59',NULL,1),
+	(25,'Simon Hegele GmbH',8,0,'194.25.130.138','2012-09-13 09:57:00',NULL,1),
+	(26,'innomea GmbH',8,0,'212.211.201.40','2012-09-13 16:19:38',NULL,1);
 
 /*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -667,7 +669,8 @@ VALUES
 	(8,1,3,'public','submenu','Windows 7/8 Migration','/losungen/windows_7_migration','','','public','losungen','windows_7_migration','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8.','window7 migration, windows8 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','migration zu windows 7/8','Schnelle und zuverlässige Migration zu Windows 7/8',60,45,700,'#ffffff',6,0,0),
 	(9,1,NULL,'public','submenu','Self-Service','/losungen/self_service',NULL,NULL,'public','losungen','self_service','Automatisierung und Self-Service','Automatisierung und Self-Service','automatisierung, self-service, itsm',NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0),
 	(10,NULL,NULL,'public','footer','Services &amp; Support','/support',NULL,NULL,'public','support','index','Matrix42 Service and Support','At Matrix42, we are dedicated to customer satisfaction. That means not only providing the best products but also world-class customer support.',NULL,'sub-banner-abstract.jpg','support','Services and Support when you need it.',100,25,500,'#ffffff',NULL,0,0),
-	(11,NULL,NULL,'public','footer','Workplace Management for SCCM','/losungen/enterprise_manager',NULL,NULL,'public','losungen','enterprise_manager','Matrix42 Enterprise Manager Für SCCM','Microsoft SCCM add-on that helps you to reduce the costs and efforts of your desktop management.','microsoft sccm, enterprise manager, sccm console','sub-banner-windows7.jpg','microsoft SCCM','Das führt unter Umständen zu Fehlern und falschen Konfigurationen.',60,35,600,'#ffffff',7,0,0);
+	(11,NULL,NULL,'public','footer','Workplace Management for SCCM','/losungen/enterprise_manager',NULL,NULL,'public','losungen','enterprise_manager','Matrix42 Enterprise Manager Für SCCM','Microsoft SCCM add-on that helps you to reduce the costs and efforts of your desktop management.','microsoft sccm, enterprise manager, sccm console','sub-banner-windows7.jpg','microsoft SCCM','Das führt unter Umständen zu Fehlern und falschen Konfigurationen.',60,35,600,'#ffffff',7,0,0),
+	(12,NULL,NULL,'public','main','English','http://www.matrix42.com',NULL,NULL,NULL,NULL,'index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,0,0);
 
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -719,7 +722,9 @@ VALUES
 	(16,21,21,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-10 02:00:36',0),
 	(17,22,22,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-11 04:04:58',0),
 	(18,23,23,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-12 07:58:46',0),
-	(19,24,24,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen\n\nDaten im Namen des Kunden eingegeben von Boris Samsel, Matrix42','2012-09-12 09:04:59',0);
+	(19,24,24,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen\n\nDaten im Namen des Kunden eingegeben von Boris Samsel, Matrix42','2012-09-12 09:04:59',0),
+	(20,25,25,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-13 02:51:08',0),
+	(22,26,27,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-13 09:19:38',0);
 
 /*!40000 ALTER TABLE `notes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -833,11 +838,13 @@ VALUES
 	(12,'primary',17,'01733470299','europe',0),
 	(13,'primary',18,'061517806127','europe',0),
 	(14,'primary',19,'09067821182','europe',0),
-	(15,'primary',20,'49053121355773','europe',0),
-	(16,'primary',21,'01779617683','europe',0),
+	(15,'primary',20,'4953121355773','europe',0),
+	(16,'primary',21,'4989960108134','europe',0),
 	(17,'primary',22,'43512530424441','europe',0),
 	(18,'primary',23,'094215101500','europe',0),
-	(19,'primary',24,'496217761190','europe',0);
+	(19,'primary',24,'496217761190','europe',0),
+	(20,'primary',25,'49721570097538','europe',0),
+	(22,'primary',26,'491637246072','europe',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1109,11 +1116,13 @@ VALUES
 	(17,'oliver.bendig@matrix42.com','Oliver',NULL,'Bendig','bcrypt$2a$12$kPwqZKHUU8GtJk6N1cnquuFMEoUgAamzpda1/hkzlbJaNQjrrwCF2',NULL,NULL,'lead',0,NULL,'2012-09-05 06:15:03','2012-09-05 13:15:25',NULL,NULL,0,'145.253.89.20',1),
 	(18,'maik.sterzing@darmstadtium.de','Maik',NULL,'Sterzing','bcrypt$2a$12$R4IXDp8rnUTgxco1rBxPP.aLULYplpZmkSLbr3yPojSewD9d2xAK2',NULL,NULL,'lead',0,NULL,'2012-09-06 04:37:10','2012-09-06 11:37:11',NULL,NULL,0,'82.195.75.194',0),
 	(19,'fischer@donkliniken.de','Sven',NULL,'Fischer','bcrypt$2a$12$X8rYUdYSF9kl6a8mOWLbPuv.K3p.lG8HXhkCHUzez2RheLWyDxnNK',NULL,NULL,'lead',0,NULL,'2012-09-07 00:40:13','2012-09-07 07:40:13',NULL,NULL,0,'93.104.249.74',0),
-	(20,'mneikes@newyorker.de','Michael',NULL,'Neikes','bcrypt$2a$12$WTH0dAxumsLPKACtwgrMBOdNnP7tkyUh7knsNWRv30brnREL/Jlv6',NULL,NULL,'lead',0,NULL,'2012-09-09 23:25:37','2012-09-10 06:25:38',NULL,NULL,0,'195.125.219.98',0),
-	(21,'Tino.Carl@Kabeldeutschland.de','Tino',NULL,'Carl','bcrypt$2a$12$yt9pJPbYLhXfuqPFeN8yO.HYYld8UXS7lIYQmDIHlGpgQrGO9NvTK',NULL,NULL,'lead',0,NULL,'2012-09-10 02:00:36','2012-09-10 09:00:36',NULL,NULL,0,'83.169.152.175',0),
+	(20,'mneikes@newyorker.de','Herr',NULL,'Neikes','bcrypt$2a$12$WTH0dAxumsLPKACtwgrMBOdNnP7tkyUh7knsNWRv30brnREL/Jlv6',NULL,NULL,'lead',0,NULL,'2012-09-09 23:25:37','2012-09-17 11:06:11',NULL,NULL,0,'178.15.138.226',0),
+	(21,'Tino.Carl@Kabeldeutschland.de','Tino',NULL,'Carl','bcrypt$2a$12$yt9pJPbYLhXfuqPFeN8yO.HYYld8UXS7lIYQmDIHlGpgQrGO9NvTK',NULL,NULL,'lead',0,NULL,'2012-09-10 02:00:36','2012-09-17 15:58:44',NULL,NULL,0,'83.169.152.175',0),
 	(22,'andreas.lezuo@grz.at','Andreas',NULL,'Lezuo','bcrypt$2a$12$NEjsL082pDtfwV9ylIJzKOVJ8IOqJwdyamlejQf0rAUIlw.PdG.1u',NULL,NULL,'lead',0,NULL,'2012-09-11 04:04:58','2012-09-11 11:04:58',NULL,NULL,0,'212.183.26.250',0),
 	(23,'mspannmacher@tap.de','Monika',NULL,'Spannmacher','bcrypt$2a$12$NiVECZ89O7qoouBOagqvoONdbICCayJ27/ZQ18BpCHCfrPz6HtrC2',NULL,NULL,'lead',0,NULL,'2012-09-12 07:58:46','2012-09-12 17:06:51',NULL,NULL,0,'212.77.186.119',0),
-	(24,'mgallei@de.pepperl-fuchs.com','Michael',NULL,'Gallei','bcrypt$2a$12$N0VhCJEqnoAqB4v7Z0eY5.WP5e/ZNmTsw8g.qnaY/.VCEq.1hUTLa',NULL,NULL,'lead',0,NULL,'2012-09-12 09:04:59','2012-09-12 16:04:59',NULL,NULL,0,'145.253.89.20',0);
+	(24,'mgallei@de.pepperl-fuchs.com','Michael',NULL,'Gallei','bcrypt$2a$12$N0VhCJEqnoAqB4v7Z0eY5.WP5e/ZNmTsw8g.qnaY/.VCEq.1hUTLa',NULL,NULL,'lead',0,NULL,'2012-09-12 09:04:59','2012-09-12 16:04:59',NULL,NULL,0,'145.253.89.20',0),
+	(25,'guido.loebel@hegele.de','Guido',NULL,'Löbel','bcrypt$2a$12$FyYQL8LRQvpDJzHPzyEjFOC1zDIdvoSY7ekI6sJvZF7jrffP5ZC7K',NULL,NULL,'lead',0,NULL,'2012-09-13 02:51:08','2012-09-13 09:57:00',NULL,NULL,0,'194.25.130.138',0),
+	(26,'Jochen.Shmitt@innomea.com','Jochen',NULL,'Schmitt','bcrypt$2a$12$QVouC9ItEpqGcTv41YEjIeh.nkjgUcC3vTV.7slX.bx8WAYd0wVBe',NULL,NULL,'lead',0,NULL,'2012-09-13 09:19:38','2012-09-13 16:19:38',NULL,NULL,0,'212.211.201.40',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

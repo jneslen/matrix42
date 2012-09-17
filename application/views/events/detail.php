@@ -15,7 +15,7 @@
 	<p class="italics"><?=$event->subtitle?></p>
 <?php endif; ?>
 <?php if($event->thumbnail): ?>
-	<div class="thumbnail left"><img src="/assets/img/thumbnails/events/<?=$event->thumbnail?>" alt="<?=$event->title?>" /></div>
+	<div class="thumbnail left" style="margin: 0 10px 10px 0;"><img src="/assets/img/thumbnails/events/<?=$event->thumbnail?>" alt="<?=$event->title?>" /></div>
 <?php endif; ?>
 	<?=$event->description?>
 <?php if($event->link): ?>

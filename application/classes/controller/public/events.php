@@ -25,8 +25,8 @@ class Controller_Public_Events extends Controller_Public {
 						'header' => '',
 						'value' => function($o)
 						{
-							$thumbnail = $o->thumbnail ? $o->thumbnail : $o->type;
-							return '<span class="hidden">'.\Format::date($o->start_date, 'mysql').'</span><a href="/events/detail/'.$o->id.'" class="thumbnail"><img src="/assets/img/thumbnails/events/'.$thumbnail.'-event.png" alt="'.ucfirst($o->type).' Event Thumbnail" /></a>';
+							$thumbnail = $o->thumbnail ? $o->thumbnail : $o->type.'-event.png';
+							return '<span class="hidden">'.\Format::date($o->start_date, 'mysql').'</span><a href="/events/detail/'.$o->id.'" class="thumbnail"><img src="/assets/img/thumbnails/events/'.$thumbnail.'" alt="'.ucfirst($o->type).' Event Thumbnail" /></a>';
 						}
 					),
 					array

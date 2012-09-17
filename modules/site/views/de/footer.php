@@ -10,7 +10,8 @@
 	<div id="copyright" class="span3">
 		<span>&copy;</span><a href="/"><img src="/assets/img/matrix42-footer-logo.png" alt="Copyright Matrix42 <?=date('Y')?>" /></a><span><?=date('Y')?></span>
 	</div><!-- copyright -->
-	<div id="social-link" class="span3 offset10">
+	<div id="social-link" class="span5 offset8">
+		<img id="asseco" src="/assets/img/asseco-group-logo.png" alt="Member Asseco Group" />
 		<ul id="social-links">
 			<li><a id="blog" href="http://blog.matrix42.com" target="_blank">Blog</a></li>
 			<li><a id="facebook" href="http://www.facebook.com/matrix42page" target="_blank">Facebook</a></li>
