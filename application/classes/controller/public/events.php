@@ -9,9 +9,16 @@ class Controller_Public_Events extends Controller_Public {
 		$this->_title = "Matrix42 Events";
 	}
 
-	public function action_index()
+	public function action_index($type = 'all')
 	{
-		$events = \Kacela::find_active('event', \Kacela::criteria()->sort('start_date', 'ASC'));
+		if($type == 'all')
+		{
+			$events = \Kacela::find_active('event', \Kacela::criteria()->sort('start_date', 'ASC'));
+		}
+		else
+		{
+			$events = \Kacela::find_active('event', \Kacela::criteria()->equals('type', $type)->sort('start_date', 'ASC'));
+		}
 
 		$table = \Kable::factory()
 			->setDataSource($events, 'dom')
@@ -64,6 +71,12 @@ class Controller_Public_Events extends Controller_Public {
 			->set('table', $table);
 	}
 
+	public function action_conferences()
+	{
+		$this->_title = 'Matrix42 '.__('Conferences');
+		$this->action_index('conference');
+	}
+
 	public function action_detail()
 	{
 		$this->_titlebar = false;
@@ -79,4 +92,33 @@ class Controller_Public_Events extends Controller_Public {
 
 	}
 
+	public function action_foren()
+	{
+		$this->_title = 'Matrix42 Messen &amp; Foren';
+		$this->action_index('conference');
+	}
+
+	public function action_partners()
+	{
+		$this->_title = 'Matrix42 Partner Events';
+		$this->action_index('partner');
+	}
+
+	public function action_schulungen()
+	{
+		$this->_title = 'Matrix42 Schulungen';
+		$this->action_index('training');
+	}
+
+	public function action_trainings()
+	{
+		$this->_title = 'Matrix42 '.__('Trainings');
+		$this->action_index('training');
+	}
+
+	public function action_webinars()
+	{
+		$this->_title = 'Matrix42 Webinars';
+		$this->action_index('webinar');
+	}
 }

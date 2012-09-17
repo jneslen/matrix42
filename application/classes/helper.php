@@ -94,4 +94,22 @@ class Helper
 		}
 		return $array;
 	}
+
+	static public function has_event($type = 'all')
+	{
+		if($type == 'all')
+		{
+			$events = \Kacela::find_active('event');
+		}
+		else
+		{
+			$events = \Kacela::find_active('event', \Kacela::criteria()->equals('type', $type));
+		}
+
+		if($events->count() > 0)
+		{
+			return true;
+		}
+		return false;
+	}
 }

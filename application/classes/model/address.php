@@ -78,7 +78,14 @@ class Address extends Model
 
 		if($this->country_id != 'US')
 		{
-			$address .= $this->city.', '.$this->province.' '.$this->postal;
+			if($this->city)
+			{
+				$address .= $this->city.', '.$this->province.' '.$this->postal;
+			}
+			else
+			{
+				$address .= $this->province.' '.$this->postal;
+			}
 
 		}
 		else

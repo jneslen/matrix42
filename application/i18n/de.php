@@ -86,4 +86,6 @@ return array
 	'read more' => 'mehr lesen',
 	'Losungen' => 'Lösungen',
 	'Case Studies' => 'Referenzen',
+	'Conferences' => 'Messen &amp; Foren',
+	'Trainings' => 'Schulungen',
 );

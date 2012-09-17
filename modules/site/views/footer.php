@@ -36,12 +36,22 @@
 		<h3>About</h3>
 		<ul class="link-list">
 			<li><a href="/about">Contact Us</a></li>
-			<li><a href="/partners/technology">Technology Partners</a></li>
 			<li><a href="/press">Press</a></li>
 			<li><a href="/press/awards">Awards</a></li>
 			<li><a href="/press/publications">Publications</a></li>
 			<li><a href="/customers">Case Studies</a></li>
+		<?php if(\Helper::has_event()): ?>
 			<li><a href="/events">Events</a></li>
+		<?php endif;?>
+		<?php if(\Helper::has_event('webinar')): ?>
+			<li><a href="/events/webinars">Webinars</a></li>
+		<?php endif;?>
+		<?php if(\Helper::has_event('conference')): ?>
+			<li><a href="/events/conferences">Conferences</a></li>
+		<?php endif;?>
+		<?php if(\Helper::has_event('training')): ?>
+			<li><a href="/events/trainings">Trainings</a></li>
+		<?php endif;?>
 		</ul>
 	</div><!-- about-foot -->
 	<div id="navigate" class="span3 offset1">
@@ -49,6 +59,7 @@
 		<ul class="link-list">
 			<li><a href="/request_a_call">How to Buy</a></li>
 			<li><a href="http://blog.matrix42.com/" target="_blank">Marix42 Blog</a></li>
+			<li><a href="/partners/technology">Technology Partners</a></li>
 			<li><a href="/partners">Resellers</a></li>
 			<li><a href="/support">Services &amp; Support</a></li>
 			<li><a href="/">Sitemap</a></li>
