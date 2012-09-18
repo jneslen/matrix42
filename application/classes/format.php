@@ -267,10 +267,10 @@ class Format extends Kohana_Text
 				$return = date(self::SHORT, $date);
 				break;
 			case 'long':
-				$return = strftime(self::LONG, $date);
+				$return = utf8_encode(strftime(self::LONG, $date));
 				break;
 			case 'readable':
-				$return = strftime(self::READABLE, $date);
+				$return = utf8_encode(strftime(self::READABLE, $date));
 				break;
 			default:
 				$return = date($out, $date);

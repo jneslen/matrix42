@@ -15,7 +15,7 @@
 			<div class="item-container">
 				<div class="tag-content">
 					<h1 class="no-margin">desktop virtualization</h1>
-					<h3 class="no-margin">The Essential Solution for Citrix desktop deployments</h3><a href="/solutions/desktop_virtualization"><span class="icon play"></span></a>
+					<h3 class="no-margin">The Essential Solution for Citrix desktop deployments</h3><a href="/solutions/virtual_desktop_management"><span class="icon play"></span></a>
 					<div class="clear"></div>
 					<a href="/solutions/virtual_desktop_management" class="btn btn-primary btn-large">The Virtual Desktop Solution!</a>
 					<img src="/assets/img/partners/citrix-ready-logo.png" alt="Citrix Ready" />

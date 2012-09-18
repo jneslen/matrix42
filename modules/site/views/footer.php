@@ -24,7 +24,7 @@
 		<h3>Solutions</h3>
 		<ul class="link-list">
 			<li><a href="/solutions/mobile_device_management">Mobile Device Management</a></li>
-			<li><a href="/solutions/desktop_virtualization">Desktop Virtualization</a></li>
+			<li><a href="/solutions/virtual_desktop_management">Desktop Virtualization</a></li>
 			<li><a href="/solutions/endpoint_management">Endpoint Management</a></li>
 			<li><a href="/solutions/compliance">Software Asset Management</a></li>
 			<li><a href="/solutions/self_service">Self-Service</a></li>

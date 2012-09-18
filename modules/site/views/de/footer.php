@@ -25,8 +25,8 @@
 		<h3>Lösungen</h3>
 		<ul class="link-list">
 			<li><a href="/losungen/mobile_device_management">Mobile IT Sevice Management</a></li>
-			<li><a href="/losungen/desktop_virtualization">Desktop Virtualization</a></li>
-		d	<li><a href="/losungen/endpoint_management">Endpoint Management</a></li>
+			<li><a href="/losungen/virtual_desktop_management">Desktop Virtualization</a></li>
+			<li><a href="/losungen/endpoint_management">Endpoint Management</a></li>
 			<li><a href="/losungen/compliance">Asset Management</a></li>
 			<li><a href="/losungen/enterprise_manager">Workplace Management für SCCM</a></li>
 			<li><a href="/losungen/windows_7_migration">Windows 7/8 Migration</a></li>
