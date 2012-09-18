@@ -2,5 +2,5 @@
 return array
 (
 	// LIVE, RC, DEV, DEV-DE
-	'environment' => 'DEV',
+	'environment' => 'DEV-DE',
 );
