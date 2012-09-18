@@ -26,7 +26,7 @@
 		<ul class="link-list">
 			<li><a href="/losungen/mobile_device_management">Mobile IT Sevice Management</a></li>
 			<li><a href="/losungen/desktop_virtualization">Desktop Virtualization</a></li>
-			<li><a href="/losungen/endpoint_management">Endpoint Management</a></li>
+		d	<li><a href="/losungen/endpoint_management">Endpoint Management</a></li>
 			<li><a href="/losungen/compliance">Asset Management</a></li>
 			<li><a href="/losungen/enterprise_manager">Workplace Management für SCCM</a></li>
 			<li><a href="/losungen/windows_7_migration">Windows 7/8 Migration</a></li>
@@ -41,18 +41,18 @@
 			<li><a href="/press/awards">Auszeichnungen</a></li>
 			<li><a href="/press/publications">Veröffentlichungen</a></li>
 			<li><a href="/customers">Referenzen</a></li>
-		<?php if(\Helper::has_event()): ?>
+			<?php if(\Helper::has_event()): ?>
 			<li><a href="/events">Events</a></li>
-		<?php endif;?>
-		<?php if(\Helper::has_event('webinar')): ?>
+			<?php endif;?>
+			<?php if(\Helper::has_event('webinar')): ?>
 			<li><a href="/events/webinars">Webinars</a></li>
-		<?php endif;?>
-		<?php if(\Helper::has_event('conference')): ?>
+			<?php endif;?>
+			<?php if(\Helper::has_event('conference')): ?>
 			<li><a href="/events/foren">Messen &amp; Foren</a></li>
-		<?php endif;?>
-		<?php if(\Helper::has_event('training')): ?>
+			<?php endif;?>
+			<?php if(\Helper::has_event('training')): ?>
 			<li><a href="/events/schulungen">Schulungen</a></li>
-		<?php endif;?>
+			<?php endif;?>
 		</ul>
 	</div><!-- about-foot -->
 	<div id="navigate" class="span3 offset1">

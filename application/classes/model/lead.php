@@ -47,26 +47,25 @@ class Lead extends User
 		$note->save();
 
 		// Start building the email
-		/*TODO: need to set up email system
+		$header = \View::factory('email/_header')
+			->set('title', 'New Lead');
+		$footer = \View::factory('email/_footer');
+		$email_content = \View::factory('email/new_lead')
+			->set('lead', $lead);
+
 		$message = \View::factory('email/_template')
 			->bind('header', $header)
 			->bind('footer', $footer)
 			->bind('content', $email_content);
 
-
-		$header = \View::factory('email/_header')
-			->set('title', 'Welcome to Lendio');
-		$footer = \View::factory('email/_footer');
-		$email_content = \View::factory('email/welcome')
-			->set('temp_password', $temp_password);
-
 		// Send the email
-		$email = \Email::factory('Welcome to Lendio')
-			->to($form->email->val())
-			->from('members@lendio.com')
+		$email_address = \Helper::language() === 'en-us' ? 'leads@matrix42.com' : 'leads@matrix42.de';
+		$subject = 'New Matrix42 '.$lead->campaign->name.' Lead';
+		$email = \Email::factory($subject)
+			->to($email_address)
+			->from('info@matrix42.com')
 			->message($message->render(), 'text/html')
 			->send();
-		*/
 	}
 
 	public function get_form($name = null)
