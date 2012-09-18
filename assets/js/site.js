@@ -7,7 +7,9 @@ $(document).ready(function() {
 
 	$('.datepicker').datepicker();
 
-	$('.dropdown-toggle').dropdown();
+	$('.dropdown-toggle').click(function(){
+		event.preventDefault();
+	});
 
 	$('#home-banner').carousel({
 		interval: 8000
