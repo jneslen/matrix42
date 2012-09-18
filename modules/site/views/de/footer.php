@@ -62,7 +62,6 @@
 			<li><a href="http://blog.matrix42.com/" target="_blank">Marix42 Blog</a></li>
 			<li><a href="/partners">Wiederverkäufer</a></li>
 			<li><a href="/support">Services &amp; Support</a></li>
-			<li><a href="/">Sitemap</a></li>
 		</ul>
 	</div><!-- navigate -->
 </div><!-- footer-links -->

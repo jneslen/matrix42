@@ -62,7 +62,6 @@
 			<li><a href="/partners/technology">Technology Partners</a></li>
 			<li><a href="/partners">Resellers</a></li>
 			<li><a href="/support">Services &amp; Support</a></li>
-			<li><a href="/">Sitemap</a></li>
 		</ul>
 	</div><!-- navigate -->
 </div><!-- footer-links -->
