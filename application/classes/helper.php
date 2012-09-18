@@ -52,7 +52,7 @@ class Helper
 	//This will return the language that needs to be displayed for the site.
 	static public function language()
 	{
-		if(\Kohana::$environment === 'LIVE')
+		if(\Kohana::$environment === 'LIVE' OR \Kohana::$environment === 'RC')
 		{
 			$base_url = $_SERVER['HTTP_HOST'];
 			//$base_url = 'bane';
