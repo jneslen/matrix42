@@ -21,7 +21,7 @@
 	</div><!-- social-link -->
 </div><!-- footer-top -->
 <div id="footer-links" class="row">
-	<div id="solutions-foot" class="span3 offset3 border-right">
+	<div id="solutions-foot" class="span3 offset2 border-right">
 		<h3>Lösungen</h3>
 		<ul class="link-list">
 			<li><a href="/losungen/mobile_device_management">Mobile IT Sevice Management</a></li>
@@ -32,7 +32,16 @@
 			<li><a href="/losungen/windows_7_migration">Windows 7/8 Migration</a></li>
 		</ul>
 	</div><!-- solutions-foot -->
-	<div id="about-foot" class="span3 offset1 border-right">
+	<div id="addons-foot" class="span3 border-right">
+		<h3>Add-Ons</h3>
+		<ul class="link-list">
+			<li><a href="/addons/power_management">Power Management</a></li>
+			<li><a href="/addons/remote_control">Remote Control</a></li>
+			<li><a href="/addons/patch_management">Patch Management</a></li>
+			<li><a href="/addons/package_robot">Package Robot</a></li>
+		</ul>
+	</div><!-- addons-foot -->
+	<div id="about-foot" class="span3 border-right">
 		<h3>Über Matrix42</h3>
 		<ul class="link-list">
 			<li><a href="/uber">Kontakt</a></li>
@@ -55,7 +64,7 @@
 			<?php endif;?>
 		</ul>
 	</div><!-- about-foot -->
-	<div id="navigate" class="span3 offset1">
+	<div id="navigate" class="span3">
 		<h3>Navigieren</h3>
 		<ul class="link-list">
 			<li><a href="/kaufen">Rückruf anfordern</a></li>
