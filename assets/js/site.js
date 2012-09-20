@@ -1,6 +1,11 @@
 $(document).ready(function() {
 	media_btn_resize();
 
+	if(window.location.href.indexOf("#lead-form-anchor") > -1) {
+		$('#addon-lead-form').show();
+		$('#addon-lead-form').removeClass('hidden');
+	}
+
 	$(window).resize(function() {
 		media_btn_resize();
 	});
@@ -98,6 +103,19 @@ $(document).ready(function() {
 				parent.remove();
 			}
 		});
+	});
+
+	$(".main-lead").click(function(event){
+		event.preventDefault();
+
+		$('#lead-campaign_id').val($(this).attr('data-campaign'));
+		$('#lead-message').val($(this).attr('data-message'));
+
+		if($('#addon-lead-form').is(":hidden")) {
+			$('#addon-lead-form').slideDown().fadeIn();
+			$('#addon-lead-form').removeClass('hidden');
+		}
+		$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
 	});
 
 	function media_btn_resize() {

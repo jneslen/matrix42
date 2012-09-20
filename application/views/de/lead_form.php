@@ -33,6 +33,12 @@
 				<div class="span8">
 					<h2 class="padded-content">Ihre Anfrage wurde gesendet.</h2>
 					<p class="padded-content">Sie werden in Kürze bezüglich Ihrer Anfrage kontaktiert werden.</p>
+					<?php if($lead_download): ?>
+					<div class="well padded">
+						<h3 class="emphasis">Um den Download zu starten, klicken Sie hier...</h3>
+						<a href="<?=$lead_download?>" class="btn btn-primary btn-large btn-icon"><span class="icon download"></span>Jetzt Herunterladen!</a>
+					</div>
+					<?php endif; ?>
 				</div>
 			<?php else: ?>
 				<?=$form->view()->open()?>

@@ -46,6 +46,7 @@ class Controller_Site extends Controller_Template
 
 	protected $_lead_form;
 	protected $_lead_form_render = false;
+	protected $_lead_download;
 
 	protected $_chat;
 	public $chat_url;
