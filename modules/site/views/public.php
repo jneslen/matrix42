@@ -59,9 +59,11 @@ defined('SYSPATH') OR die('No direct access allowed.');
 	<?php else: ?>
 		<?=$content?>
 	<?php endif; ?>
+	<?php if($lead_form): ?>
 	<div class="span16">
 		<?=$lead_form?>
 	</div><!-- span12 -->
+	<?php endif; ?>
 	</div><!-- main-row -->
 </div><!-- main-container -->
 <div id="footer" class="container">

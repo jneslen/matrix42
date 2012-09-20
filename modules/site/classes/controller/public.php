@@ -22,7 +22,7 @@ class Controller_Public extends Controller_Site {
 		$this->_banner->title_width = 500;
 		$this->_banner->title_color = '#333333';
 
-		$this->_lead_form = $this->lead_form(true);
+		//$this->_lead_form = $this->lead_form(true);
 
 		/*
 		$this->_controller = $this->request->param('mycontroller') == null ? 'index' : $this->request->param('mycontroller');
@@ -103,7 +103,7 @@ class Controller_Public extends Controller_Site {
 		$this->_description = $menu->subtitle != null ? $menu->subtitle : $this->_description;
 		$this->_keywords = $menu->keywords != null ? $menu->keywords : $this->_keywords;
 
-		$main_content = $menu->replace_contents();
+		$main_content = $menu->replace_contents('main'); //get only the main content to be placed in the page.
 		$this->_lead_form_render = $menu->default_lead_form;
 		$this->_content = \View::factory('content')
 			->bind('page_contents', $main_content);
@@ -133,7 +133,7 @@ class Controller_Public extends Controller_Site {
 	{
 		$complete = false;
 		$user = new \Darth\Model\Lead;
-		$lead_form = $user->get_lead_form()
+		$lead_form = $user->get_lead_form('sidelead')
 			->add('submit', 'submit', array('text' => __('Send Inquiry!')));
 
 		$lead_form->campaign_id->set('value', $this->_campaign);

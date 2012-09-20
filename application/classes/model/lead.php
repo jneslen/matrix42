@@ -46,6 +46,7 @@ class Lead extends User
 		$note->note = $form->message->val();
 		$note->save();
 
+		echo \Debug::vars('Submitted');
 		// Start building the email
 		$header = \View::factory('email/_header')
 			->set('title', 'New Lead');
@@ -103,9 +104,9 @@ class Lead extends User
 		return $form;
 	}
 
-	public function get_lead_form()
+	public function get_lead_form($name = 'lead')
 	{
-		$form = \Formo::form('lead')
+		$form = \Formo::form($name)
 			->add('campaign_id', 'hidden')
 			->add('name', array('label' => __('Full Name')))
 			->add('email', array('type' => 'email', 'label' => 'Email'))

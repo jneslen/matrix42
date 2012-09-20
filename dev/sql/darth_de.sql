@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.25-cll)
 # Database: darth_de
-# Generation Time: 2012-09-18 21:33:55 +0000
+# Generation Time: 2012-09-20 15:05:11 +0000
 # ************************************************************
 
 
@@ -77,7 +77,8 @@ VALUES
 	(7,601,'addon-sale','Order place on add-on promotion',NULL),
 	(8,610,'addon-rc','Kostenlose 30-Tage Demo-Version von Remote Control anfragen',NULL),
 	(9,611,'addon-pm','Kostenlose 30-Tage Demo-Version von Power Management anfragen','/assets/uploads/power_management_trial.zip'),
-	(10,612,'addon-pr','Kostenlose 30-Tage Demo-Version von Package Robot anfragen','http://www.matrix42.de/fileadmin/downloads/Package_Robot/MPR-Setup.exe');
+	(10,612,'addon-pr','Kostenlose 30-Tage Demo-Version von Package Robot anfragen','http://www.matrix42.de/fileadmin/downloads/Package_Robot/MPR-Setup.exe'),
+	(11,613,'addon-ptm','Kostenlose 30-Tage Demo-Version von Patch Management anfragen',NULL);
 
 /*!40000 ALTER TABLE `campaigns` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -610,7 +611,13 @@ VALUES
 	(23,'TAP Desktop Solutions',8,0,'212.77.186.119','2012-09-12 17:06:51',NULL,1),
 	(24,'Pepperl+Fuchs GmbH',8,0,'145.253.89.20','2012-09-12 16:04:59',NULL,1),
 	(25,'Simon Hegele GmbH',8,0,'194.25.130.138','2012-09-13 09:57:00',NULL,1),
-	(26,'innomea GmbH',8,0,'212.211.201.40','2012-09-13 16:19:38',NULL,1);
+	(26,'innomea GmbH',8,0,'212.211.201.40','2012-09-13 16:19:38',NULL,1),
+	(27,'BZ Berater Zentrum AG',7,0,'109.164.213.219','2012-09-19 10:21:56',NULL,0),
+	(28,'Stadtverwaltung Altenburg',8,0,'88.79.178.170','2012-09-19 12:44:17',NULL,0),
+	(29,'PUMA SE',9,0,'212.204.111.246','2012-09-19 14:49:25',NULL,0),
+	(30,'Fraunhofer ISC',8,0,'153.96.216.2','2012-09-19 17:58:23',NULL,0),
+	(31,'Fripa Papierfabrik Albert Friedrich KG',8,0,'79.212.131.167','2012-09-20 12:42:18',NULL,0),
+	(32,'Landratsamt Pfaffenhofen',7,0,'62.159.188.141','2012-09-20 14:06:24',NULL,0);
 
 /*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -659,7 +666,7 @@ LOCK TABLES `menus` WRITE;
 
 INSERT INTO `menus` (`id`, `parent_id`, `campaign_id`, `role`, `type`, `title`, `url`, `classes`, `a_classes`, `section`, `controller`, `method`, `pagetitle`, `subtitle`, `keywords`, `banner`, `banner_title`, `banner_subtitle`, `banner_x`, `banner_y`, `title_width`, `title_color`, `order`, `default_lead_form`, `disabled`)
 VALUES
-	(1,NULL,NULL,'public','main','Lösungen','/losungen','dropdown','','public','losungen','index','','','','sub-banner-woman.jpg','der ganzheitliche arbeitsplatz','Die Lösung für Ihre IT-Anforderungen',NULL,NULL,NULL,'',1,0,0),
+	(1,NULL,NULL,'public','main','Lösungen','#','dropdown','','public','losungen','index','','','','sub-banner-woman.jpg','der ganzheitliche arbeitsplatz','Die Lösung für Ihre IT-Anforderungen',NULL,NULL,NULL,'',1,0,0),
 	(2,NULL,NULL,'public','main','Über Matrix42','/uber','dropdown',NULL,'public','uber','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,0,0),
 	(3,NULL,NULL,'public','main','Rückruf anfordern','/kaufen','','bold','public','kaufen','index','So kaufen Sie die Produkte und Services von Matrix42','So können Sie Matrix42 kontaktieren bzw. einen Reseller-Partner finden',NULL,'sub-banner-woman.jpg','fangen sie noch heute damit an!','So kaufen Sie Matrix42 Produkte und Lösungen',NULL,NULL,NULL,NULL,4,0,0),
 	(4,1,NULL,'public','submenu','Mobile Device Management (BYOD)','/losungen/mobile_device_management',NULL,NULL,'public','losungen','mobile_device_management','Flexibilität für Mitarbeiter, Sicherheit für IT','Flexibilität für Mitarbeiter, Sicherheit für IT - Description: „Bring Your Own Device&ldquo; minimiert Ressourcen und macht die Belegschaft effizienter.','byod, mobile workplace, personal device, mobile device, mobile workforce','sub-banner-byod.jpg','bring your own device?','Kein Problem, wenn Sie den gesamten Lebenszyklus der mobilen Endgeräte managen',60,35,600,NULL,1,0,0),
@@ -669,9 +676,9 @@ VALUES
 	(8,1,3,'public','submenu','Windows 7/8 Migration','/losungen/windows_7_migration','','','public','losungen','windows_7_migration','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8.','window7 migration, windows8 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','migration zu windows 7/8','Schnelle und zuverlässige Migration zu Windows 7/8',60,45,700,'#ffffff',6,0,0),
 	(9,1,NULL,'public','submenu','Self-Service','/losungen/self_service',NULL,NULL,'public','losungen','self_service','Automatisierung und Self-Service','Automatisierung und Self-Service','automatisierung, self-service, itsm',NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0),
 	(10,NULL,NULL,'public','footer','Services &amp; Support','/support',NULL,NULL,'public','support','index','Matrix42 Service and Support','At Matrix42, we are dedicated to customer satisfaction. That means not only providing the best products but also world-class customer support.',NULL,'sub-banner-abstract.jpg','support','Services and Support when you need it.',100,25,500,'#ffffff',NULL,0,0),
-	(11,NULL,NULL,'public','footer','Workplace Management for SCCM','/losungen/enterprise_manager',NULL,NULL,'public','losungen','enterprise_manager','Matrix42 Enterprise Manager Für SCCM','Microsoft SCCM add-on that helps you to reduce the costs and efforts of your desktop management.','microsoft sccm, enterprise manager, sccm console','sub-banner-windows7.jpg','microsoft SCCM','Das führt unter Umständen zu Fehlern und falschen Konfigurationen.',60,35,600,'#ffffff',7,0,0),
+	(11,NULL,NULL,'public','footer','Workplace Management for SCCM','/losungen/enterprise_manager',NULL,NULL,'public','losungen','enterprise_manager','Matrix42 Enterprise Manager Für SCCM','Microsoft SCCM add-on that helps you to reduce the costs and efforts of your desktop management.','microsoft sccm, enterprise manager, sccm console','sub-banner-windows7.jpg','workplace management for SCCM','Das führt unter Umständen zu Fehlern und falschen Konfigurationen.',60,35,700,'#ffffff',7,0,0),
 	(12,NULL,NULL,'public','main','English','http://www.matrix42.com',NULL,NULL,NULL,NULL,'index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0),
-	(13,NULL,NULL,'public','main','Add-Ons','/addons','dropdown','','public','addons','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,0),
+	(13,NULL,NULL,'public','main','Add-Ons','#','dropdown','','public','addons','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,0),
 	(14,13,NULL,'public','submenu','Power Management','/addons/power_management',NULL,NULL,'public','addons','power_management',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0),
 	(15,13,NULL,'public','submenu','Remote Control','/addons/remote_control',NULL,NULL,'public','addons','remote_control',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,0),
 	(16,13,NULL,'public','submenu','Patch Management','/addons/patch_management',NULL,NULL,'public','addons','patch_management',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,0,0),
@@ -729,7 +736,11 @@ VALUES
 	(18,23,23,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-12 07:58:46',0),
 	(19,24,24,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen\n\nDaten im Namen des Kunden eingegeben von Boris Samsel, Matrix42','2012-09-12 09:04:59',0),
 	(20,25,25,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-13 02:51:08',0),
-	(22,26,27,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-13 09:19:38',0);
+	(22,26,27,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-13 09:19:38',0),
+	(23,28,28,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-19 05:44:17',0),
+	(24,29,29,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-19 07:48:45',0),
+	(25,30,30,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-19 10:58:23',0),
+	(26,31,31,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-20 05:42:18',0);
 
 /*!40000 ALTER TABLE `notes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -750,6 +761,18 @@ CREATE TABLE `order_products` (
   CONSTRAINT `fk-product-orders` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `order_products` WRITE;
+/*!40000 ALTER TABLE `order_products` DISABLE KEYS */;
+
+INSERT INTO `order_products` (`order_id`, `product_id`)
+VALUES
+	(1,1),
+	(1,3),
+	(2,1),
+	(2,3);
+
+/*!40000 ALTER TABLE `order_products` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table orders
@@ -772,6 +795,16 @@ CREATE TABLE `orders` (
   CONSTRAINT `fk-promotion-orders` FOREIGN KEY (`promotion_id`) REFERENCES `promotions` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+
+INSERT INTO `orders` (`id`, `lead_id`, `promotion_id`, `partner`, `devices`, `price_estimate`, `order_date`)
+VALUES
+	(1,27,2,'',10,70.00,'2012-09-19 03:21:56'),
+	(2,32,2,'Fa. TAP',380,2660.00,'2012-09-20 07:06:24');
+
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table partners
@@ -849,7 +882,13 @@ VALUES
 	(18,'primary',23,'094215101500','europe',0),
 	(19,'primary',24,'496217761190','europe',0),
 	(20,'primary',25,'49721570097538','europe',0),
-	(22,'primary',26,'491637246072','europe',0);
+	(22,'primary',26,'491637246072','europe',0),
+	(23,'primary',27,'0041434959966','europe',0),
+	(24,'primary',28,'03447594166','europe',0),
+	(25,'primary',29,'09132812121','europe',0),
+	(26,'primary',30,'09314100170','europe',0),
+	(27,'primary',31,'09371502596','europe',0),
+	(28,'primary',32,'0844127290','europe',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1128,7 +1167,13 @@ VALUES
 	(23,'mspannmacher@tap.de','Monika',NULL,'Spannmacher','bcrypt$2a$12$NiVECZ89O7qoouBOagqvoONdbICCayJ27/ZQ18BpCHCfrPz6HtrC2',NULL,NULL,'lead',0,NULL,'2012-09-12 07:58:46','2012-09-12 17:06:51',NULL,NULL,0,'212.77.186.119',0),
 	(24,'mgallei@de.pepperl-fuchs.com','Michael',NULL,'Gallei','bcrypt$2a$12$N0VhCJEqnoAqB4v7Z0eY5.WP5e/ZNmTsw8g.qnaY/.VCEq.1hUTLa',NULL,NULL,'lead',0,NULL,'2012-09-12 09:04:59','2012-09-12 16:04:59',NULL,NULL,0,'145.253.89.20',0),
 	(25,'guido.loebel@hegele.de','Guido',NULL,'Löbel','bcrypt$2a$12$FyYQL8LRQvpDJzHPzyEjFOC1zDIdvoSY7ekI6sJvZF7jrffP5ZC7K',NULL,NULL,'lead',0,NULL,'2012-09-13 02:51:08','2012-09-13 09:57:00',NULL,NULL,0,'194.25.130.138',0),
-	(26,'Jochen.Shmitt@innomea.com','Jochen',NULL,'Schmitt','bcrypt$2a$12$QVouC9ItEpqGcTv41YEjIeh.nkjgUcC3vTV.7slX.bx8WAYd0wVBe',NULL,NULL,'lead',0,NULL,'2012-09-13 09:19:38','2012-09-13 16:19:38',NULL,NULL,0,'212.211.201.40',0);
+	(26,'Jochen.Shmitt@innomea.com','Jochen',NULL,'Schmitt','bcrypt$2a$12$QVouC9ItEpqGcTv41YEjIeh.nkjgUcC3vTV.7slX.bx8WAYd0wVBe',NULL,NULL,'lead',0,NULL,'2012-09-13 09:19:38','2012-09-13 16:19:38',NULL,NULL,0,'212.211.201.40',0),
+	(27,'tsuter@bzag.com','Tomas',NULL,'Suter','bcrypt$2a$12$ErDpiNi4GzMALjrly3NGmec7vYclIp0wnv1ZZGG3I3onkl2ZMKrtG',NULL,NULL,'lead',0,NULL,'2012-09-19 03:21:56','2012-09-19 10:21:56',NULL,NULL,0,'109.164.213.219',0),
+	(28,'rudolf.rausch@stadt-altenburg.de','Rudolf',NULL,'Rausch','bcrypt$2a$12$bkfblBYs4Iw3a1W4l1m78.m0LzYm.Mk8UCfuryDjUd1oc65c17DsC',NULL,NULL,'lead',0,NULL,'2012-09-19 05:44:17','2012-09-19 12:44:17',NULL,NULL,0,'88.79.178.170',0),
+	(29,'bjoern.bock@puma.com','Bjoern',NULL,'Bock','bcrypt$2a$12$uZ9QxCxOY6QAvW9iB6BiYuM8yVWj5cA7q/Yzi0bbAswcWTHtof1pW',NULL,NULL,'lead',0,NULL,'2012-09-19 07:48:45','2012-09-19 14:49:25',NULL,NULL,0,'212.204.111.246',0),
+	(30,'keck@isc.fraunhofer.de','Katharina',NULL,'Keck','bcrypt$2a$12$uGenVJahAZ6ukqybmKmNeu8xjrwHC9E/oi21A0QL8vD3K4gWXRnDO',NULL,NULL,'lead',0,NULL,'2012-09-19 10:58:23','2012-09-19 17:58:23',NULL,NULL,0,'153.96.216.2',0),
+	(31,'holst@fripa.de','Reinhard',NULL,'Holst','bcrypt$2a$12$itxjNnjbSAAAM7QxbfFxf.YOnTtS8pWv2BmveLZhtP42afQBNcya.',NULL,NULL,'lead',0,NULL,'2012-09-20 05:42:18','2012-09-20 12:42:18',NULL,NULL,0,'79.212.131.167',0),
+	(32,'helmut.karber@landratsamt-paf.de','Karber',NULL,'Helmut','bcrypt$2a$12$nZQN747Hb0klLLh6CpTlauoZhfs9C79l.q4dXDA1VbAnYHxFYKOeC',NULL,NULL,'lead',0,NULL,'2012-09-20 07:06:24','2012-09-20 14:06:24',NULL,NULL,0,'62.159.188.141',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

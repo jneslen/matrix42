@@ -90,11 +90,15 @@ class Menu extends Model
 		return $menus_array;
 	}
 
-	public function replace_contents()
+	public function replace_contents($type = 'all')
 	{
 		foreach($this->contents as $content)
 		{
-			$this->_contents[] = \Komponent::factory()->replace($content);
+			if($content->type == $type OR $type == 'all')
+			{
+				$this->_contents[] = \Komponent::factory()->replace($content);
+			}
+
 		}
 
 		return $this->_contents;
