@@ -46,7 +46,6 @@ class Lead extends User
 		$note->note = $form->message->val();
 		$note->save();
 
-		echo \Debug::vars('Submitted');
 		// Start building the email
 		$header = \View::factory('email/_header')
 			->set('title', 'New Lead');
