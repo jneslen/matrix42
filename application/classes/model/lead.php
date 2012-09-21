@@ -107,6 +107,7 @@ class Lead extends User
 	{
 		$form = \Formo::form($name)
 			->add('campaign_id', 'hidden')
+			->add('download', 'hidden')
 			->add('name', array('label' => __('Full Name')))
 			->add('email', array('type' => 'email', 'label' => 'Email'))
 			->add('number', array('label' => __('Phone Number')))

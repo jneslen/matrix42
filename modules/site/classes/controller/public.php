@@ -126,8 +126,13 @@ class Controller_Public extends Controller_Site {
 			{
 				$this->_campaign = $lead_form->campaign_id->val();
 			}
+
 			$campaign = \Kacela::find_one('campaign', \Kacela::criteria()->equals('id', $this->_campaign));
-			$this->_lead_download = $campaign->download_link;
+
+			if($lead_form->download->val() == '1')
+			{
+				$this->_lead_download = $campaign->download_link;
+			}
 		}
 
 		return \View::factory('lead_form', array('language' => true))

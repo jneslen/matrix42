@@ -109,6 +109,7 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		$('#lead-campaign_id').val($(this).attr('data-campaign'));
+		$('#lead-download').val('1');
 		$('#lead-message').val($(this).attr('data-message'));
 
 		if($('#trial-instructions').is(":hidden")) {

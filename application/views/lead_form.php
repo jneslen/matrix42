@@ -42,6 +42,7 @@
 			<?php else: ?>
 				<?=$form->view()->open()?>
 				<?=$form->campaign_id->render()?>
+				<?=$form->download->render()?>
 				<div class="span4">
 					<div class="padded-content">
 						<?=$form->name->render()?>
