@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.25-cll)
 # Database: darth
-# Generation Time: 2012-09-21 19:51:31 +0000
+# Generation Time: 2012-09-21 20:03:20 +0000
 # ************************************************************
 
 
@@ -91,7 +91,7 @@ VALUES
 	(6,600,'addon','Add-on Sept. Promo',NULL),
 	(7,601,'addon-sale','Order place on add-on promotion',NULL),
 	(8,610,'addon-rc','Remote Control Free Trial Request',NULL),
-	(9,611,'addon-pm','Power Managment Free Trial Request','/assets/uploads/power_management_trial.zip'),
+	(9,611,'addon-pm','Power Management Free Trial Request','/assets/uploads/power_management_trial.zip'),
 	(10,612,'addon-pr','Package Robot Free Trial Request','http://www.matrix42.de/fileadmin/downloads/Package_Robot/MPR-Setup.exe'),
 	(11,613,'addon-ptm','Patch Management Free Trial Request',NULL);
 
