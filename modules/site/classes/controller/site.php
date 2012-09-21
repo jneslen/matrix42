@@ -251,8 +251,8 @@ class Controller_Site extends Controller_Template
 				$exclude_links_array = array
 				(
 					'solutions',
+					'addons',
 					'about',
-					'purchase',
 					'losungen',
 				);
 

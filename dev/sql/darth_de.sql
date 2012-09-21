@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.25-cll)
 # Database: darth_de
-# Generation Time: 2012-09-20 15:05:11 +0000
+# Generation Time: 2012-09-21 19:40:43 +0000
 # ************************************************************
 
 
@@ -197,7 +197,7 @@ VALUES
 	(2,'content','%%getstartedpage%%','Ein gut Get Started, dass ein Bildlauf nach leadform auf der gleichen Seite','<div class=\"well margin-right\">\n	<div class=\"left\">\n		<h3 class=\"no-margin\">Matrix42 befähigt Sie, Ihre IT-Anforderungen selbst zu kontrollieren.</h3>\n		<h4 class=\"no-margin\">Beginnen Sie jetzt mit der perfekten IT-Lösung!</h4>\n	</div>\n	<a href=\"/kaufen\" class=\"btn btn-info btn-large right margin-right\">Beginnen Sie noch heute!</a>\n	<div class=\"clearfix\"></div>\n</div><!-- well -->',NULL,NULL,NULL,NULL,NULL,NULL,1,0),
 	(3,'method','%%sidebarsupport%%','Das Support-und Kontaktinformationen auch für die Sidebar',NULL,NULL,NULL,'public','side_support',NULL,NULL,1,0),
 	(4,'method','%%awardslist%%','Preis Liste Tabelle',NULL,NULL,'public','press','awards',NULL,NULL,1,0),
-	(5,'method','%%sidebarleadform%%','Lead Capture Formular für Sidebar',NULL,NULL,NULL,'public','side_lead_form',NULL,NULL,1,0),
+	(5,'method','%%sidebarleadform%%','Lead Capture Formular für Sidebar',NULL,NULL,NULL,'public','side_lead_form',NULL,'sidelead',1,0),
 	(6,'view','%%sidebarsuccessstories%%','Sidebar Success Stories',NULL,NULL,NULL,NULL,NULL,'sidebar/success_stories',NULL,1,0),
 	(7,'method','%%resellerlist%%','Reseller Liste Tabelle',NULL,NULL,'public','partners','resellers',NULL,NULL,1,0);
 
@@ -617,7 +617,8 @@ VALUES
 	(29,'PUMA SE',9,0,'212.204.111.246','2012-09-19 14:49:25',NULL,0),
 	(30,'Fraunhofer ISC',8,0,'153.96.216.2','2012-09-19 17:58:23',NULL,0),
 	(31,'Fripa Papierfabrik Albert Friedrich KG',8,0,'79.212.131.167','2012-09-20 12:42:18',NULL,0),
-	(32,'Landratsamt Pfaffenhofen',7,0,'62.159.188.141','2012-09-20 14:06:24',NULL,0);
+	(32,'Landratsamt Pfaffenhofen',7,0,'62.159.188.141','2012-09-20 14:06:24',NULL,0),
+	(33,'AVS GmbH',8,0,'217.145.109.4','2012-09-21 07:39:12',NULL,0);
 
 /*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -740,7 +741,8 @@ VALUES
 	(23,28,28,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-19 05:44:17',0),
 	(24,29,29,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Power Management anfragen','2012-09-19 07:48:45',0),
 	(25,30,30,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-19 10:58:23',0),
-	(26,31,31,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-20 05:42:18',0);
+	(26,31,31,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-20 05:42:18',0),
+	(27,33,33,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-21 00:39:12',0);
 
 /*!40000 ALTER TABLE `notes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -888,7 +890,8 @@ VALUES
 	(25,'primary',29,'09132812121','europe',0),
 	(26,'primary',30,'09314100170','europe',0),
 	(27,'primary',31,'09371502596','europe',0),
-	(28,'primary',32,'0844127290','europe',0);
+	(28,'primary',32,'0844127290','europe',0),
+	(29,'primary',33,'0921802229','europe',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1173,7 +1176,8 @@ VALUES
 	(29,'bjoern.bock@puma.com','Bjoern',NULL,'Bock','bcrypt$2a$12$uZ9QxCxOY6QAvW9iB6BiYuM8yVWj5cA7q/Yzi0bbAswcWTHtof1pW',NULL,NULL,'lead',0,NULL,'2012-09-19 07:48:45','2012-09-19 14:49:25',NULL,NULL,0,'212.204.111.246',0),
 	(30,'keck@isc.fraunhofer.de','Katharina',NULL,'Keck','bcrypt$2a$12$uGenVJahAZ6ukqybmKmNeu8xjrwHC9E/oi21A0QL8vD3K4gWXRnDO',NULL,NULL,'lead',0,NULL,'2012-09-19 10:58:23','2012-09-19 17:58:23',NULL,NULL,0,'153.96.216.2',0),
 	(31,'holst@fripa.de','Reinhard',NULL,'Holst','bcrypt$2a$12$itxjNnjbSAAAM7QxbfFxf.YOnTtS8pWv2BmveLZhtP42afQBNcya.',NULL,NULL,'lead',0,NULL,'2012-09-20 05:42:18','2012-09-20 12:42:18',NULL,NULL,0,'79.212.131.167',0),
-	(32,'helmut.karber@landratsamt-paf.de','Karber',NULL,'Helmut','bcrypt$2a$12$nZQN747Hb0klLLh6CpTlauoZhfs9C79l.q4dXDA1VbAnYHxFYKOeC',NULL,NULL,'lead',0,NULL,'2012-09-20 07:06:24','2012-09-20 14:06:24',NULL,NULL,0,'62.159.188.141',0);
+	(32,'helmut.karber@landratsamt-paf.de','Karber',NULL,'Helmut','bcrypt$2a$12$nZQN747Hb0klLLh6CpTlauoZhfs9C79l.q4dXDA1VbAnYHxFYKOeC',NULL,NULL,'lead',0,NULL,'2012-09-20 07:06:24','2012-09-20 14:06:24',NULL,NULL,0,'62.159.188.141',0),
+	(33,'joerg.bleicher@avs.de','Joerg',NULL,'Bleicher','bcrypt$2a$12$wJzPIAHx46dHwItTqOcQO.sS/leB/etCBA.Iny37GQiDfm2R6YetK',NULL,NULL,'lead',0,NULL,'2012-09-21 00:39:12','2012-09-21 07:39:12',NULL,NULL,0,'217.145.109.4',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

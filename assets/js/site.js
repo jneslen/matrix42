@@ -111,9 +111,9 @@ $(document).ready(function() {
 		$('#lead-campaign_id').val($(this).attr('data-campaign'));
 		$('#lead-message').val($(this).attr('data-message'));
 
-		if($('#addon-lead-form').is(":hidden")) {
-			$('#addon-lead-form').slideDown().fadeIn();
-			$('#addon-lead-form').removeClass('hidden');
+		if($('#trial-instructions').is(":hidden")) {
+			$('#trial-instructions').slideDown().fadeIn();
+			$('#trial-instructions').removeClass('hidden');
 		}
 		$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
 	});
