@@ -47,25 +47,53 @@ class Controller_Public_Events extends Controller_Public {
 							return '<h4><a href="/events/detail/'.$o->id.'">'.$o->title.'</a></h4>'.$date.'<p>'.substr(strip_tags($o->description), 0, 255).'...<a href="/events/detail/'.$o->id.'">more <span class="carrot">&gt;&gt;</span></a></p>';
 						}
 					),
+				)
+			);
+
+		if($type == 'training')
+		{
+			$table->add(array
+				(
 					array
 					(
-						'header' => '',
-						'value' => function($o)
-						{
-							$location = '';
-							if($o->type == 'webinar' AND $o->link)
-							{
-								$location = '<h5>'.__('Webinar').':</h5><a href="'.$o->link.'" target="_blank" class="btn btn-primary btn-mini">'.__('Register').'</a>';
-							}
-							elseif($o->location)
-							{
-								$location = '<h5>'.$o->location.'</h5>';
-							}
-							return $location;
-						}
+						'header' => __('Price per seat'),
+						'value' => function($o) { return __('$').' '.money_format('%i', $o->fee); }
+					),
+					array
+					(
+						'header' => __('Remaining seats'),
+						'value' => function($o) { return $o->remaining_seats.' / '.$o->seats; }
 					),
 				)
 			);
+		}
+
+		$table->add(array
+			(
+				array
+				(
+					'header' => __('Location'),
+					'value' => function($o) { return $o->location; }
+				),
+				array
+				(
+					'header' => '',
+					'value' => function($o)
+					{
+						$button = '';
+						if(!$o->internal_registration AND $o->link)
+						{
+							$button = '<h5>Event:</h5><a href="'.$o->link.'" target="_blank" class="btn btn-primary btn-mini">'.__('Register').'</a>';
+						}
+						elseif($o->internal_registration AND $o->remaining_seats > 0)
+						{
+							$button = '<h5>Event:</h5><a href="/events/registration/'.$o->id.'" class="btn btn-primary btn-mini">'.__('Register').'</a>';
+						}
+						return $button;
+					}
+				),
+			)
+		);
 
 		$this->_content = View::factory('table')
 			->set('table', $table);
@@ -102,6 +130,48 @@ class Controller_Public_Events extends Controller_Public {
 	{
 		$this->_title = 'Matrix42 Partner Events';
 		$this->action_index('partner');
+	}
+
+	public function action_registration()
+	{
+		$complete = false;
+		$event_id = $this->request->param('id');
+
+		$event = \Kacela::find_one('event', \Kacela::criteria()->equals('id', $event_id));
+
+		$this->_page_title = 'Registration for <span class="emphasis">'.$event->title.'</span>';
+		$this->request->script('registration');
+
+		$registrant = new Darth\Model\Registrant();
+
+		$form = $registrant->get_registration_form();
+
+		$form->event_id->set('value', $event_id);
+
+		$form->address->remove(array('care_of'));
+		$form->address->rules('address1', array(array('not_empty')));
+		$form->address->rules('city', array(array('not_empty')));
+		$form->address->rules('country_id', array(array('not_empty')));
+		$form->address->rules('state_id', array(array('not_empty')));
+
+		$form->add('submit', 'submit', array('text' => __('Register')));
+
+		//include dynamic states
+		$countries = \Kacela::find_active('country');
+		$states_js = \View::factory('js/states.js')
+			->set('countries', $countries);
+
+		if ($form->load()->validate())
+		{
+			$complete = true;
+		}
+
+		$this->_content = \View::factory('events/registration')
+			->set('states_js', $states_js)
+			->set('event', $event)
+			->set('form', $form)
+			->set('complete', $complete);
+
 	}
 
 	public function action_schulungen()

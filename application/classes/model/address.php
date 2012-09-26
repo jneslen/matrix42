@@ -8,7 +8,7 @@ class Address extends Model
 	public function get_form($name = null)
 	{
 		$form = parent::get_form($name);
-		$countries = \Kacela::find_active('country', \Kacela::criteria()->sort('order', 'DESC'));
+		$countries = \Kacela::find_active('country', \Kacela::criteria()->sort('order', 'ASC'));
 
 		$countries_array = array();
 		$states = array();
@@ -29,7 +29,7 @@ class Address extends Model
 		$form->state_id->set('driver', 'select')
 			->set('label', 'State')
 			->set('options', $states);
-		$form->province->set('label', 'Province / Prefecture');
+		$form->province->set('label', 'Province / Prefecture / County');
 
 		if($this->country_id == 'US' OR $this->country_id == null)
 		{

@@ -61,6 +61,10 @@ class Helper
 		{
 			$base_url = 'http://www.matrix42.de';
 		}
+		elseif(\Kohana::$environment === 'DEV-EU')
+		{
+			$base_url = 'http://www.matrix42.eu';
+		}
 		else
 		{
 			$base_url = 'http://www.matrix42.com';
@@ -75,6 +79,9 @@ class Helper
 				break;
 			case 'uk':
 				$language = 'en-uk';
+				break;
+			case 'eu':
+				$language = 'en';
 				break;
 			case 'com':
 			default:

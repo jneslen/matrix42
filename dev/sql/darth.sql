@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.25-cll)
 # Database: darth
-# Generation Time: 2012-09-21 20:03:20 +0000
+# Generation Time: 2012-09-26 19:07:12 +0000
 # ************************************************************
 
 
@@ -559,7 +559,10 @@ CREATE TABLE `events` (
   `end_date` datetime DEFAULT NULL,
   `use_time` tinyint(1) NOT NULL DEFAULT '0',
   `time_zone` enum('','HADT','HAST','AKDT','AKST','PDT','PST','MDT','MST','CDT','CST','EDT','EST','ADT','AST','NDT','NST','GMT','WST','BST','IST','WEST','CET','CEST','EET','EEST','CXT','WST','CDT','CST','EDT','EST','NFT') DEFAULT NULL,
+  `internal_registration` tinyint(1) NOT NULL DEFAULT '0',
   `seats` int(10) unsigned DEFAULT NULL,
+  `remaining_seats` int(10) unsigned DEFAULT NULL,
+  `fee` decimal(10,2) DEFAULT NULL,
   `featured` tinyint(1) NOT NULL DEFAULT '0',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
@@ -568,9 +571,9 @@ CREATE TABLE `events` (
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
 
-INSERT INTO `events` (`id`, `type`, `title`, `subtitle`, `description`, `location`, `link`, `thumbnail`, `start_date`, `end_date`, `use_time`, `time_zone`, `seats`, `featured`, `disabled`)
+INSERT INTO `events` (`id`, `type`, `title`, `subtitle`, `description`, `location`, `link`, `thumbnail`, `start_date`, `end_date`, `use_time`, `time_zone`, `internal_registration`, `seats`, `remaining_seats`, `fee`, `featured`, `disabled`)
 VALUES
-	(1,'webinar','Bring Your Own Device: A Dive Into the Entire Asset Lifecycle','','<p>As IT Professionals plan for the next decade, we must accommodate the continually shifting landscape, particularly in the area of IT Asset Management. High-value employees tend to arrive with their own trusted devices, and the advancements in user interface and cloud technology make these devices very valuable in a modern IT environment.  Increasingly, these employees want to use these iOS, Android, and other devices for personal and corporate use.</p>\n<p>This new \"Bring Your Own Device\" or \"BYOD\" reality presents both opportunities and challenges for IT Asset Management across the entire asset lifecycle.  From the onboarding process, to software license management and data security, to concerns around the eventual departure of a BYOD employee from the organization - Fruition Partners and Matrix42 have addressed these challenges for our customers, particularly those using the ServiceNow platform.  In this free Webinar, you will learn about the trends affecting the BYOD model, and the methods to take advantage of this new landscape to the benefit of your people and your organization.</p>\n<p>Some topics we will cover include:</p>\n<ul class=\"list\">\n	<li>What you need to know about BYOD</li>\n	<li>Key Challenges presented by BYOD</li>\n	<li>BYOD in the real world - Use Cases</li>\n	<li>BYOD and the Asset Lifecycle</li>\n	<li>Matrix42 and ServiceNow = ITAM for BYOD</li>\n</ul>\n<p>Register today!</p>','Online','https://www1.gotomeeting.com/register/497704793','fruition-logo.png','2012-09-26 11:30:00','2012-09-26 12:30:00',1,'CDT',NULL,1,0);
+	(1,'webinar','Bring Your Own Device: A Dive Into the Entire Asset Lifecycle','','<p>As IT Professionals plan for the next decade, we must accommodate the continually shifting landscape, particularly in the area of IT Asset Management. High-value employees tend to arrive with their own trusted devices, and the advancements in user interface and cloud technology make these devices very valuable in a modern IT environment.  Increasingly, these employees want to use these iOS, Android, and other devices for personal and corporate use.</p>\n<p>This new \"Bring Your Own Device\" or \"BYOD\" reality presents both opportunities and challenges for IT Asset Management across the entire asset lifecycle.  From the onboarding process, to software license management and data security, to concerns around the eventual departure of a BYOD employee from the organization - Fruition Partners and Matrix42 have addressed these challenges for our customers, particularly those using the ServiceNow platform.  In this free Webinar, you will learn about the trends affecting the BYOD model, and the methods to take advantage of this new landscape to the benefit of your people and your organization.</p>\n<p>Some topics we will cover include:</p>\n<ul class=\"list\">\n	<li>What you need to know about BYOD</li>\n	<li>Key Challenges presented by BYOD</li>\n	<li>BYOD in the real world - Use Cases</li>\n	<li>BYOD and the Asset Lifecycle</li>\n	<li>Matrix42 and ServiceNow = ITAM for BYOD</li>\n</ul>\n<p>Register today!</p>','Online','https://www1.gotomeeting.com/register/497704793','fruition-logo.png','2012-09-26 11:30:00','2012-09-26 12:30:00',1,'CDT',0,NULL,NULL,NULL,1,0);
 
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -681,7 +684,7 @@ CREATE TABLE `notes` (
   `user_id` int(10) unsigned NOT NULL,
   `author_id` int(10) unsigned NOT NULL,
   `parent_id` int(10) unsigned DEFAULT NULL COMMENT 'Parent note_id',
-  `type` enum('general','sales','response','inquiry') NOT NULL DEFAULT 'general',
+  `type` enum('general','sales','response','inquiry','request') NOT NULL DEFAULT 'general',
   `note` text NOT NULL,
   `note_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
@@ -784,7 +787,8 @@ VALUES
 	(12,'reseller','Altimate UK','ALTIMATE UK (formerly Codework) is a specialist value added IT distributor providing a range of IT Management and Security solutions to the Industrial, Commercial and Enterprise marketplace.\nOur mission is to help partners develop and remain at the cutting edge by proposing a unique hardware and software portfolio and an offer of appropriate commercial and technical services. Thanks to their competence and expertise in the field of storage, data management, security and, more generally, IT infrastructures solutions, our teams accompany partners in the mastery of the most advanced technologies, defining the best solutions for their end customers, thereby contributing to their differentiation, development and, ultimately, their success. The ALTIMATE UK is a part of a leading European value added distributor. ALTIMATE Group operates in 8 countries: Belgium, France, Luxembourg, the Netherlands, Portugal, Spain, UK and Ireland, and has a network of more than 2500 value added resellers, integrators and ISV partners.','altimate-logo.png','www.altimate-group.co.uk','',0,NULL),
 	(14,'reseller','GreenPages Technology Solutions','<p>GreenPages is a leading virtualization and cloud management consulting and integration firm that helps clients fully virtualize their environments and transform their datacenter and IT operations to effectively leverage the power of cloud computing.</p>\n<p>The company’s deep technology expertise, broad engineering certifications, and vendor agnostic business model offer clients a strategic, cross-platform, proactive approach to designing, deploying, and supporting modern IT environments.</p>\n<p>GreenPages’ core practice areas include Virtualization & Cloud Computing; Application Development & Integration; Storage & Information Management; Network Infrastructure; Telephony & Unified Communications; and IT Management. Each practice area is comprised of a cross-certified engineering team and directed by a senior engineer.</p>\n<p>GreenPages has offices in Boston; Kittery, Maine; New York City; and Atlanta.</p>','greenpages-logo.png','www.greenpages.com','',1,NULL),
 	(15,'reseller','Asseco Spain','<p>Asseco Spain is an IT company which has different business areas: Outsourcing, IT Support, Datacenter, IT Engineering, Software Development, Renting and Human Resources Solutions (flexible spending plans and programs to provide Internet access and technology for employees), IT Commerce, Client Lifecycle Management, IT Service Management and License Management.</p>','asseco-spain-logo.png','www.asseco.es','',1,NULL),
-	(16,'reseller','ITR Technology','<p>ITR Technology Pty Ltd specializes in Infrastructure & Lifecycle Management Solutions. We offer a carefully selected set of tools which not only monitor\'s various components of the LAN or WAN, but also application and OS Deployment tools to keep the Desktop and Server Configurations operational.</p>','itr-technology-logo.png','www.itrtech.co.za/','',0,NULL);
+	(16,'reseller','ITR Technology','<p>ITR Technology Pty Ltd specializes in Infrastructure & Lifecycle Management Solutions. We offer a carefully selected set of tools which not only monitor\'s various components of the LAN or WAN, but also application and OS Deployment tools to keep the Desktop and Server Configurations operational.</p>','itr-technology-logo.png','www.itrtech.co.za/','',0,NULL),
+	(17,'technology','Fujitsu','<p>Fujitsu is a Japanese multinational information technology equipment and services company headquartered in Tokyo, Japan. It is the world\'s third-largest IT services provider measured by revenues</p>','fujitsu-logo.png','www.fujitsu.com',NULL,0,9);
 
 /*!40000 ALTER TABLE `partners` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -935,6 +939,27 @@ VALUES
 UNLOCK TABLES;
 
 
+# Dump of table registrants
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `registrants`;
+
+CREATE TABLE `registrants` (
+  `id` int(10) unsigned NOT NULL,
+  `event_id` int(10) unsigned NOT NULL,
+  `business_name` varchar(255) DEFAULT NULL,
+  `seats` int(10) unsigned NOT NULL,
+  `participants` text,
+  `price` decimal(10,2) DEFAULT NULL,
+  `registration_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk-event-registrants` (`event_id`),
+  CONSTRAINT `fk-event-registrants` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk-user-registrant` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 # Dump of table states
 # ------------------------------------------------------------
 
@@ -955,10 +980,12 @@ LOCK TABLES `states` WRITE;
 
 INSERT INTO `states` (`id`, `country_id`, `name`, `disabled`)
 VALUES
+	('AB','CA','Alberta',0),
 	('AK','US','Alaska',0),
 	('AL','US','Alabama',0),
 	('AR','US','Arkansas',0),
 	('AZ','US','Arizona',0),
+	('BC','CA','British Columbia',0),
 	('CA','US','California',0),
 	('CO','US','Colorado',0),
 	('CT','US','Connecticut',0),
@@ -975,6 +1002,7 @@ VALUES
 	('KY','US','Kentucky',0),
 	('LA','US','Louisiana',0),
 	('MA','US','Massachusetts',0),
+	('MB','CA','Manitoba',0),
 	('MD','US','Maryland',0),
 	('ME','US','Maine',0),
 	('MI','US','Michigan',0),
@@ -982,22 +1010,31 @@ VALUES
 	('MO','US','Missouri',0),
 	('MS','US','Mississippi',0),
 	('MT','US','Montana',0),
+	('NB','CA','New Brunswick',0),
 	('NC','US','North Carolina',0),
 	('ND','US','North Dakota',0),
 	('NE','US','Nebraska',0),
 	('NH','US','New Hampshire',0),
 	('NJ','US','New Jersey',0),
+	('NL','CA','Newfoundland and Labrador',0),
 	('NM','US','New Mexico',0),
+	('NS','CA','Nova Scotia',0),
+	('NT','CA','Northwest Territories',0),
+	('NU','CA','Nunavut',0),
 	('NV','US','Nevada',0),
 	('NY','US','New York',0),
 	('OH','US','Ohio',0),
 	('OK','US','Oklahoma',0),
+	('ON','CA','Ontario',0),
 	('OR','US','Oregon',0),
 	('OT','OT','Non State',1),
 	('PA','US','Pennsylvania',0),
+	('PE','CA','Prince Edward Island',0),
+	('QC','CA','Quebec',0),
 	('RI','US','Rhode Island',0),
 	('SC','US','South Carolina',0),
 	('SD','US','South Dakota',0),
+	('SK','CA','Saskatchewan',0),
 	('TN','US','Tennessee',0),
 	('TX','US','Texas',0),
 	('UT','US','Utah',0),
@@ -1007,7 +1044,8 @@ VALUES
 	('WA','US','Washington',0),
 	('WI','US','Wisconsin',0),
 	('WV','US','West Virginia',0),
-	('WY','US','Wyoming',0);
+	('WY','US','Wyoming',0),
+	('YT','CA','Yukon',0);
 
 /*!40000 ALTER TABLE `states` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1027,7 +1065,7 @@ CREATE TABLE `users` (
   `password` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
   `temp_password` char(10) CHARACTER SET latin1 DEFAULT NULL,
   `temp_password_date` datetime DEFAULT NULL,
-  `role` enum('lead','partner','client','employee','admin','jedi') CHARACTER SET latin1 NOT NULL DEFAULT 'lead',
+  `role` enum('lead','partner','client','employee','admin','jedi','registrant') CHARACTER SET latin1 NOT NULL DEFAULT 'lead',
   `logins` int(11) NOT NULL DEFAULT '0',
   `last_login` datetime DEFAULT NULL,
   `registration_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -1061,7 +1099,8 @@ VALUES
 	(13,'mckennad@ebsi.com','Dave',NULL,'McKenna','bcrypt$2a$12$TnMNrlmO5OFKSWiihdsqF.cofKxnrvasRlH2CSJS3v2aVXwiaAEg6',NULL,NULL,'lead',0,NULL,'2012-08-14 09:07:10','2012-08-14 08:07:10',NULL,NULL,0,'65.42.17.59',0),
 	(14,'esales@greenpages.com','Green',NULL,'Pages','bcrypt$2a$12$DELRoPoiZ3rPjPBeYi2gDOekLTeSc8ARr0MWOwLcJpBdYEwXneWSq',NULL,NULL,'partner',0,NULL,'2012-08-16 16:09:13',NULL,NULL,NULL,0,NULL,0),
 	(15,'info@asseco.es','Asseco',NULL,'Spain','bcrypt$2a$12$GMrIfjlNIWP3mjiuLkBf1eQtJt3gOrHY/TtaZHGMcW3xvJhVm6bXK',NULL,NULL,'partner',0,NULL,'2012-08-20 15:01:23',NULL,NULL,NULL,0,NULL,0),
-	(16,'sales@itrtech.co.za','Itr',NULL,'Technology','bcrypt$2a$12$l5EQGWGhkKCd25rrDy3Pp.Pk9QIwjoxfKVDyD5pr5ZyUYlhD6mdqK',NULL,NULL,'partner',0,NULL,'2012-08-20 16:44:33',NULL,NULL,NULL,0,NULL,0);
+	(16,'sales@itrtech.co.za','Itr',NULL,'Technology','bcrypt$2a$12$l5EQGWGhkKCd25rrDy3Pp.Pk9QIwjoxfKVDyD5pr5ZyUYlhD6mdqK',NULL,NULL,'partner',0,NULL,'2012-08-20 16:44:33',NULL,NULL,NULL,0,NULL,0),
+	(17,'alliance.program@ts.fujitsu.com','Fuji',NULL,'Tsu','bcrypt$2a$12$l5EQGWGhkKCd25rrDy3Pp.Pk9QIwjoxfKVDyD5pr5ZyUYlhD6mdqK',NULL,NULL,'partner',0,NULL,'2012-09-24 16:45:27',NULL,NULL,NULL,0,NULL,0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

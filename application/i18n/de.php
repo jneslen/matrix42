@@ -100,6 +100,7 @@ return array
 	'Devices' => 'Lizenzen',
 	'Your Estimated Cost' => 'Ungefährer Preis',
 	'Promotional Price' => 'Aktionspreis',
+	'Price per seat' => 'Preis (netto)',
 	'Products: Please choose' => 'Wählen Sie',
 	'Product' => 'Produkte',
 	'Total Add-on(s)' => 'Add-On(s) aus:',
@@ -112,4 +113,10 @@ return array
 	'$' => '€',
 	'device' => 'Lizenz',
 	'Source' => 'Quelle',
+	'Number of registrants' => 'Zu reservierende Plätze',
+	'Names of additional registrants' => 'Namen der weiteren Teilnehmer',
+	'Registant' => 'Registrant',
+	'Registration Date' => 'Registriert seit',
+	'Billing information' => 'Zahlungsinformationen',
+	'Remaining seats' => 'Freie Plätze',
 );
