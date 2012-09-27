@@ -23,6 +23,7 @@
 	<div id="solutions-foot" class="span3 offset2 border-right">
 		<h3>Solutions</h3>
 		<ul class="link-list">
+			<li><a href="/solutions/cloud_delivery">Cloud Delivery</a></li>
 			<li><a href="/solutions/mobile_device_management">Mobile Device Management</a></li>
 			<li><a href="/solutions/virtual_desktop_management">Desktop Virtualization</a></li>
 			<li><a href="/solutions/endpoint_management">Endpoint Management</a></li>

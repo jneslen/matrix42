@@ -24,6 +24,7 @@
 	<div id="solutions-foot" class="span3 offset2 border-right">
 		<h3>Lösungen</h3>
 		<ul class="link-list">
+			<li><a href="/losungen/cloud_delivery">Cloud Delivery</a></li>
 			<li><a href="/losungen/mobile_device_management">Mobile IT Sevice Management</a></li>
 			<li><a href="/losungen/virtual_desktop_management">Desktop Virtualization</a></li>
 			<li><a href="/losungen/endpoint_management">Endpoint Management</a></li>
