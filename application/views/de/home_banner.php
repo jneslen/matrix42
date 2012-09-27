@@ -1,6 +1,6 @@
 <div id="home-banner" class="carousel slide carousel-fade span16">
 	<div class="carousel-inner">
-		<div id="banner9" class="item">
+		<div id="banner9" class="active item">
 			<div class="item-container">
 				<div class="tag-content">
 					<h1 class="no-margin">management in der cloud</h1>
@@ -11,7 +11,7 @@
 				<img class="bg" src="/assets/img/banners/home-banner-009.jpg" alt="Transparent" />
 			</div>
 		</div><!-- banner9 -->
-		<div id="banner1" class="active item">
+		<div id="banner1" class="item">
 			<div class="item-container">
 				<div class="tag-content">
 					<h1 class="no-margin">workplace management</h1>
