@@ -51,7 +51,7 @@
 					<h1 class="no-margin">management in der cloud</h1>
 					<h3 class="no-margin">Keine Anschaffungskosten. In wenigen Minuten einsatzbereit.</h3><a href="/losungen/cloud_delivery/"><span class="icon play"></span></a>
 					<div class="clear"></div>
-					<a href="/solutions/cloud_delivery/" class="btn btn-primary btn-large">Starten Sie noch heute!</a>
+					<a href="/losungen/cloud_delivery/" class="btn btn-primary btn-large">Starten Sie noch heute!</a>
 				</div>
 				<img class="bg" src="/assets/img/banners/home-banner-009.jpg" alt="Transparent" />
 			</div>
