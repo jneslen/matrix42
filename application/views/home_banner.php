@@ -1,5 +1,16 @@
 <div id="home-banner" class="carousel slide carousel-fade span16">
 	<div class="carousel-inner">
+		<div id="banner9" class="item">
+			<div class="item-container">
+				<div class="tag-content">
+					<h1 class="no-margin">take your management to the cloud</h1>
+					<h3 class="no-margin">Eliminate up-front costs and deploy in a matter of minutes.</h3><a href="/solutions/cloud_delivery/"><span class="icon play"></span></a>
+					<div class="clear"></div>
+					<a href="/solutions/cloud_delivery/" class="btn btn-primary btn-large">Deploy Today!</a>
+				</div>
+				<img class="bg" src="/assets/img/banners/home-banner-009.jpg" alt="Transparent" />
+			</div>
+		</div><!-- banner9 -->
 		<div id="banner1" class="active item">
 			<div class="item-container">
 				<div class="tag-content">
@@ -45,17 +56,6 @@
 				<img class="bg" src="/assets/img/banners/home-banner-008.jpg" alt="Transparent" />
 			</div>
 		</div><!-- banner8 -->
-		<div id="banner9" class="item">
-			<div class="item-container">
-				<div class="tag-content">
-					<h1 class="no-margin">take your management to the cloud</h1>
-					<h3 class="no-margin">Eliminate up-front costs and deploy in a matter of minutes.</h3><a href="/solutions/cloud_delivery/"><span class="icon play"></span></a>
-					<div class="clear"></div>
-					<a href="/solutions/cloud_delivery/" class="btn btn-primary btn-large">Deploy Today!</a>
-				</div>
-				<img class="bg" src="/assets/img/banners/home-banner-009.jpg" alt="Transparent" />
-			</div>
-		</div><!-- banner9 -->
 	</div><!-- carousel-inner -->
 	<a class="carousel-control left" href="#home-banner" data-slide="prev">&lsaquo;</a>
 	<a class="carousel-control right" href="#home-banner" data-slide="next">&rsaquo;</a>
