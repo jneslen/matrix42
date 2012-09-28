@@ -30,6 +30,11 @@ class Controller_Admin_Events extends Controller_Admin {
 				),
 				array
 				(
+					'header' => 'Type',
+					'value' => function($o) { return ucfirst($o->type); }
+				),
+				array
+				(
 					'header' => 'Title',
 					'value' => function($o) { return $o->title; }
 				),

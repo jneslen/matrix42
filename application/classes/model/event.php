@@ -8,6 +8,7 @@ class Event extends Model
 		$form = parent::get_form($name);
 
 		$form->description->set('driver', 'textarea');
+		$form->location->set('driver', 'textarea');
 		$form->use_time->set('attr', array('class' => 'use-time'));
 
 		$form->order
