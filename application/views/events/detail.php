@@ -1,22 +1,20 @@
 <?php $date_format = $event->use_time ? 'human' : 'readable'; ?>
 <?php $timezone = ($event->use_time AND $event->time_zone) ? ' ('.$event->time_zone.')' : ''; ?>
 <div class="padded-content">
-	<div class="squeezed-title">
-		<h1 class="emphasis"><?=$event->title?></h1>
-	<?php if($event->location): ?>
-		<h3><?=$event->location?></h3>
-	<?php endif; ?>
-		<h4 class="italics"><?=\Format::date($event->start_date, $date_format)?><?=$event->end_date ? '&nbsp;-&nbsp;'.\Format::date($event->end_date, $date_format) : ''?><?=$timezone?></h4>
-	<?php if($event->seats): ?>
-		<h4>Remaining seats: <?=$event->remaining_seats?> / <?=$event->seats?></h4>
-	<?php endif; ?>
-	<?php if($event->fee): ?>
-		<h5 class="secondary"><?=__('Price per seat')?>: <?=__('$')?> <?=money_format('%i', $event->fee)?></h5>
-	<?php endif; ?>
-	<?php if($event->link): ?>
-		<h4>More info at: <a href="<?=$event->link?>" target="_blank"><?=$event->link?></a></h4>
-	<?php endif; ?>
-	</div>
+	<h1 class="emphasis"><?=$event->title?></h1>
+<?php if($event->location): ?>
+	<h3><?=$event->location?></h3>
+<?php endif; ?>
+	<h4 class="italics"><?=\Format::date($event->start_date, $date_format)?><?=$event->end_date ? '&nbsp;-&nbsp;'.\Format::date($event->end_date, $date_format) : ''?><?=$timezone?></h4>
+<?php if($event->seats): ?>
+	<h4>Remaining seats: <?=$event->remaining_seats?> / <?=$event->seats?></h4>
+<?php endif; ?>
+<?php if($event->fee): ?>
+	<h5 class="secondary"><?=__('Price per seat')?>: <?=__('$')?> <?=money_format('%i', $event->fee)?></h5>
+<?php endif; ?>
+<?php if($event->link): ?>
+	<h4>More info at: <a href="<?=$event->link?>" target="_blank"><?=$event->link?></a></h4>
+<?php endif; ?>
 <?php if($event->subtitle): ?>
 	<p class="italics"><?=$event->subtitle?></p>
 <?php endif; ?>
