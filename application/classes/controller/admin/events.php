@@ -46,7 +46,7 @@ class Controller_Admin_Events extends Controller_Admin {
 				array
 				(
 					'header' => 'Description',
-					'value' => function($o) { return substr($o->description,0,50).'...'; }
+					'value' => function($o) { return substr(strip_tags($o->description),0,50).'...'; }
 				),
 				array
 				(
