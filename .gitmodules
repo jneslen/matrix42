@@ -37,3 +37,6 @@
 [submodule "modules/komponent"]
 	path = modules/komponent
 	url = https://github.com/jneslen/kohana-komponent.git
+[submodule "modules/markdown"]
+	path = modules/markdown
+	url = https://github.com/aptgraph/kohana-markdown.git

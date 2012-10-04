@@ -3,7 +3,7 @@
 <div class="padded-content">
 	<h1 class="emphasis"><?=$event->title?></h1>
 <?php if($event->location): ?>
-	<h3><?=$event->location?></h3>
+	<?=$event->html_location?>
 <?php endif; ?>
 	<h4 class="italics"><?=\Format::date($event->start_date, $date_format)?><?=$event->end_date ? '&nbsp;-&nbsp;'.\Format::date($event->end_date, $date_format) : ''?><?=$timezone?></h4>
 <?php if($event->seats): ?>

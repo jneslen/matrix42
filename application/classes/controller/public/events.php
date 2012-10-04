@@ -33,7 +33,7 @@ class Controller_Public_Events extends Controller_Public {
 						'value' => function($o)
 						{
 							$thumbnail = $o->thumbnail ? $o->thumbnail : $o->type.'-event.png';
-							return '<span class="hidden">'.\Format::date($o->start_date, 'mysql').'</span><a href="/events/detail/'.$o->id.'" class="thumbnail"><img src="/assets/img/thumbnails/events/'.$thumbnail.'" alt="'.ucfirst($o->type).' Event Thumbnail" /></a>';
+							return '<span class="hidden">'.\Format::date($o->start_date, 'mysql').'</span><a href="/events/detail/'.$o->id.'" class="thumbnail" style="min-width:50px;min-height:50px;"><img src="/assets/img/thumbnails/events/'.$thumbnail.'" alt="Events Thumbnail" /></a>';
 						}
 					),
 					array
@@ -74,7 +74,7 @@ class Controller_Public_Events extends Controller_Public {
 				array
 				(
 					'header' => __('Location'),
-					'value' => function($o) { return $o->location; }
+					'value' => function($o) { return $o->html_location; }
 				),
 				array
 				(

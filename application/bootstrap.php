@@ -150,6 +150,7 @@ Kohana::modules(array
 		'cache' => MODPATH.'cache',
 		'boldchat' => MODPATH.'boldchat',
 		'email' => MODPATH.'email',
+		'markdown' => MODPATH.'markdown',
 	)
 );
 
