@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.27-cll)
 # Database: darth_de
-# Generation Time: 2012-10-04 22:44:04 +0000
+# Generation Time: 2012-10-05 18:30:04 +0000
 # ************************************************************
 
 
@@ -661,7 +661,9 @@ VALUES
 	(37,'primacom',8,0,'217.68.161.145','2012-09-26 13:56:10',NULL,0),
 	(38,'Landgard Service GmbH',8,0,'145.253.89.20','2012-09-26 14:44:53',NULL,0),
 	(39,'Fraunhofer MOEZ',8,0,'178.24.161.156','2012-09-26 23:45:26',NULL,0),
-	(40,'Joh. Heinr. Bornemann GmbH',8,0,'82.210.227.196','2012-10-02 09:42:44',NULL,0);
+	(40,'Joh. Heinr. Bornemann GmbH',8,0,'82.210.227.196','2012-10-02 09:42:44',NULL,0),
+	(41,'Fritz Winter',8,0,'212.82.241.218','2012-10-05 10:41:50',NULL,0),
+	(42,'K-West GmbH',8,0,'82.149.163.7','2012-10-05 16:06:45',NULL,0);
 
 /*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -713,12 +715,12 @@ VALUES
 	(1,NULL,NULL,'public','main','Lösungen','#','dropdown','','public','losungen','index','','','','sub-banner-woman.jpg','der ganzheitliche arbeitsplatz','Die Lösung für Ihre IT-Anforderungen',NULL,NULL,NULL,'',2,0,0),
 	(2,NULL,NULL,'public','main','Über Matrix42','/uber','dropdown',NULL,'public','uber','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,0,0),
 	(3,NULL,NULL,'public','main','Rückruf anfordern','/kaufen','','bold','public','kaufen','index','So kaufen Sie die Produkte und Services von Matrix42','So können Sie Matrix42 kontaktieren bzw. einen Reseller-Partner finden',NULL,'sub-banner-woman.jpg','fangen sie noch heute damit an!','So kaufen Sie Matrix42 Produkte und Lösungen',NULL,NULL,NULL,NULL,5,0,0),
-	(4,1,NULL,'public','submenu','Mobile Workplace Management','/losungen/mobile_device_management',NULL,NULL,'public','losungen','mobile_device_management','Flexibilität für Mitarbeiter, Sicherheit für IT','Flexibilität für Mitarbeiter, Sicherheit für IT - Description: „Bring Your Own Device&ldquo; minimiert Ressourcen und macht die Belegschaft effizienter.','byod, mobile workplace, personal device, mobile device, mobile workforce','sub-banner-byod.jpg','bring your own device?','Kein Problem, wenn Sie den gesamten Lebenszyklus der mobilen Endgeräte managen',60,35,600,NULL,2,0,0),
-	(5,1,NULL,'public','submenu','Virtual Workplace Management','/losungen/virtual_desktop_management',NULL,NULL,'public','losungen','virtual_desktop_management','Die unabdingbare Lösung für Citrix Desktop-Deployments ','Virtueller Desktop - einfach und erschwinglich Die unabdingbare Lösung für Citrix Desktop-Deployments',NULL,'sub-banner-virtualization.jpg','desktop-virtualisierung','Die unabdingbare Lösung für Citrix Desktop-Deployments',30,35,700,NULL,3,0,0),
-	(6,1,NULL,'public','submenu','Physical Workplace Management','/losungen/endpoint_management',NULL,NULL,'public','losungen','endpoint_management','(Empirum) Automatisierung aller IT-Management-Prozesse','Automatisierung vieler zeitaufwändiger Aufgaben, wie z.B. Software-Implementierung und gängige Helpdesk-Services. Bei gleichzeitiger Reduzierung der IT-Arbeitsbelastung und der Kosten.','empirum, workplace management, physical management','sub-banner-integration.jpg','vollständige integration','Automatisierung aller IT-Management-Prozesse',30,25,600,NULL,4,0,0),
-	(7,1,5,'public','submenu','Workplace Compliance','/losungen/compliance',NULL,NULL,'public','losungen','compliance','Kontrolle über alle IT-Assets, Lizenzen und Verträge Description','Kontrolle über alle IT-Assets, Lizenzen und Verträge Description: Die ideale Lösung, um die Interaktion zwischen Compliance und Sicherheit zu maximieren','compliance, software compliance','sub-banner-compliance.jpg','compliance','Volle Kontrolle über alle IT-Bestände, Lizenzen und Verträge',100,25,500,'#ffffff',5,0,0),
+	(4,1,NULL,'public','submenu','Mobile Workplace Management','/losungen/mobile_device_management',NULL,NULL,'public','losungen','mobile_device_management','Kein Problem, wenn Sie den gesamten Lebenszyklus der mobilen Endgeräte managen','Flexibilität für Mitarbeiter, Sicherheit für IT - Description: „Bring Your Own Device&ldquo; minimiert Ressourcen und macht die Belegschaft effizienter.','byod, mobile workplace, personal device, mobile device, mobile workforce','sub-banner-byod.jpg','byod zu ihren konditionen','Flexibilität für Mitarbeiter, Sicherheit für IT',60,35,600,NULL,2,0,0),
+	(5,1,NULL,'public','submenu','Virtual Workplace Management','/losungen/virtual_desktop_management',NULL,NULL,'public','losungen','virtual_desktop_management','Die unabdingbare Lösung für Citrix Desktop-Deployments ','Virtueller Desktop - einfach und erschwinglich Die unabdingbare Lösung für Citrix Desktop-Deployments',NULL,'sub-banner-virtualization.jpg','desktop-virtualisierung','Einfach und erschwinglich',30,35,700,NULL,3,0,0),
+	(6,1,NULL,'public','submenu','Physical Workplace Management','/losungen/endpoint_management',NULL,NULL,'public','losungen','endpoint_management','Automatisieren Sie zeitaufwändige Aufgaben','Automatisierung vieler zeitaufwändiger Aufgaben, wie z.B. Software-Implementierung und gängige Helpdesk-Services. Bei gleichzeitiger Reduzierung der IT-Arbeitsbelastung und der Kosten.','empirum, workplace management, physical management','sub-banner-integration.jpg','vollständige integration','Automatisierung aller IT-Management-Prozesse',30,25,600,NULL,4,0,0),
+	(7,1,5,'public','submenu','Workplace Compliance','/losungen/compliance',NULL,NULL,'public','losungen','workplace compliance','Kontrolle über alle IT-Assets, Lizenzen und Verträge','Kontrolle über alle IT-Assets, Lizenzen und Verträge Description: Die ideale Lösung, um die Interaktion zwischen Compliance und Sicherheit zu maximieren','compliance, software compliance','sub-banner-compliance.jpg','compliance','Volle Kontrolle über alle IT-Bestände, Lizenzen und Verträge',100,25,700,'#ffffff',5,0,0),
 	(8,1,3,'public','submenu','Windows 7/8 Migration','/losungen/windows_7_migration','','','public','losungen','windows_7_migration','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8.','window7 migration, windows8 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','migration zu windows 7/8','Schnelle und zuverlässige Migration zu Windows 7/8',60,45,700,'#ffffff',7,0,0),
-	(9,1,NULL,'public','submenu','Self-Service','/losungen/self_service',NULL,NULL,'public','losungen','self_service','Automatisierung und Self-Service','Automatisierung und Self-Service','automatisierung, self-service, itsm',NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0),
+	(9,1,NULL,'public','submenu','Self-Service','/losungen/self_service',NULL,NULL,'public','losungen','self_service','Die einzige Lösung die self-service mit mobilem, virtuellem und physikalischem Client Management verbindet','Automatisierung und Self-Service','automatisierung, self-service, itsm','sub-banner-woman.jpg','Erleichtert die IT Last','Automation und Self-Service reduzieren die Supportkosten um 70%',600,NULL,650,NULL,6,0,0),
 	(10,NULL,NULL,'public','footer','Services &amp; Support','/support',NULL,NULL,'public','support','index','Matrix42 Service and Support','At Matrix42, we are dedicated to customer satisfaction. That means not only providing the best products but also world-class customer support.',NULL,'sub-banner-abstract.jpg','support','Services and Support when you need it.',100,25,500,'#ffffff',NULL,0,0),
 	(11,NULL,NULL,'public','footer','Workplace Management for SCCM','/losungen/enterprise_manager',NULL,NULL,'public','losungen','enterprise_manager','Matrix42 Workplace Management Für SCCM','Microsoft SCCM add-on that helps you to reduce the costs and efforts of your desktop management.','microsoft sccm, enterprise manager, sccm console','sub-banner-windows7.jpg','workplace management for SCCM','Das führt unter Umständen zu Fehlern und falschen Konfigurationen.',60,35,700,'#ffffff',7,0,0),
 	(12,NULL,NULL,'public','main','English','http://www.matrix42.com',NULL,NULL,NULL,NULL,'index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0),
@@ -793,7 +795,9 @@ VALUES
 	(30,36,36,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-25 06:23:15',0),
 	(31,37,37,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-26 06:56:10',0),
 	(32,39,39,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-26 16:45:26',0),
-	(33,40,40,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-10-02 02:42:44',0);
+	(33,40,40,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-10-02 02:42:44',0),
+	(34,41,41,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-10-05 03:41:50',0),
+	(35,42,42,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen\nDie K-West GmbH ist Matrix42-Partner','2012-10-05 09:06:45',0);
 
 /*!40000 ALTER TABLE `notes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -951,7 +955,9 @@ VALUES
 	(32,'primary',37,'034160952470','europe',0),
 	(33,'primary',38,'02839591247','europe',0),
 	(34,'primary',39,'0341231039123','europe',0),
-	(35,'primary',40,'05724390268','europe',0);
+	(35,'primary',40,'05724390268','europe',0),
+	(36,'primary',41,'06656505461','europe',0),
+	(37,'primary',42,'054018808521','europe',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1265,7 +1271,9 @@ VALUES
 	(37,'andreas.hiller@primacom.de','Andreas',NULL,'Hiller','bcrypt$2a$12$udyAZTUE8juJ4W7OO4zVYe72AUiJmQ5WGKCGzowgg4lrqX3QEsyXC',NULL,NULL,'lead',0,NULL,'2012-09-26 06:56:10','2012-09-26 13:56:10',NULL,NULL,0,'217.68.161.145',0),
 	(38,'christopher.boss@landgard.de','Christopher',NULL,'Boss','bcrypt$2a$12$NYRJaL7uju9ZvKwpRYFldO72pPFUfr7ONSfKljgGiWBkKuu.t4yce',NULL,NULL,'lead',0,NULL,'2012-09-26 07:44:53','2012-09-26 14:44:53',NULL,NULL,0,'145.253.89.20',0),
 	(39,'kristian.voelpel@moez.fraunhofer.de','Kristian',NULL,'Völpel','bcrypt$2a$12$2EWXKjQ2T4hOnffiMp3lteddRmUXUXyry3oZDOeAvv0ZK2jjTFs72',NULL,NULL,'lead',0,NULL,'2012-09-26 16:45:26','2012-09-26 23:45:26',NULL,NULL,0,'178.24.161.156',0),
-	(40,'alexander.vonfersen@bornemann.com','Alexander',NULL,'fersen','bcrypt$2a$12$NNSCxNAW55oDsHJqwtwBh.OwDoeScAmTEVCcOzPZFRqyPd9kbIQVS',NULL,NULL,'lead',0,NULL,'2012-10-02 02:42:44','2012-10-02 09:42:44',NULL,NULL,0,'82.210.227.196',0);
+	(40,'alexander.vonfersen@bornemann.com','Alexander',NULL,'fersen','bcrypt$2a$12$NNSCxNAW55oDsHJqwtwBh.OwDoeScAmTEVCcOzPZFRqyPd9kbIQVS',NULL,NULL,'lead',0,NULL,'2012-10-02 02:42:44','2012-10-02 09:42:44',NULL,NULL,0,'82.210.227.196',0),
+	(41,'msh@dsp-eu.de','Christian',NULL,'Euker','bcrypt$2a$12$sEXn9999c5nhRVXSq7C4ZObKZ1hq7ErDNwsMGBZYPgKVw6K/Osm/O',NULL,NULL,'lead',0,NULL,'2012-10-05 03:41:50','2012-10-05 10:41:50',NULL,NULL,0,'212.82.241.218',0),
+	(42,'tobias.schumacher@k-west.de','Tobias',NULL,'Schumacher','bcrypt$2a$12$GFCKaMppvhhJPegaZkDBfO2MCQ.Gz2bx3rlIaTnudFGQjsn/vcc0a',NULL,NULL,'lead',0,NULL,'2012-10-05 09:06:45','2012-10-05 16:06:45',NULL,NULL,0,'82.149.163.7',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
