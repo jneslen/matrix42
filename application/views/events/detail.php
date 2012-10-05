@@ -3,7 +3,7 @@
 <div class="padded-content">
 	<h1 class="emphasis"><?=$event->title?></h1>
 <?php if($event->location): ?>
-	<?=$event->html_location?>
+	<?=$event->markdown('location')?>
 <?php endif; ?>
 	<h4 class="italics"><?=\Format::date($event->start_date, $date_format)?><?=$event->end_date ? '&nbsp;-&nbsp;'.\Format::date($event->end_date, $date_format) : ''?><?=$timezone?></h4>
 <?php if($event->seats): ?>
@@ -21,7 +21,7 @@
 <?php if($event->thumbnail): ?>
 	<div class="thumbnail left" style="margin: 0 10px 10px 0;"><img src="/assets/img/thumbnails/events/<?=$event->thumbnail?>" alt="<?=$event->title?>" /></div>
 <?php endif; ?>
-	<?=$event->description?>
+	<?=$event->markdown('description')?>
 <?php if($event->link): ?>
 	<a href="<?=$event->link?>" class="btn btn-large btn-primary" target="_blank">More info / Register</a>
 <?php endif; ?>

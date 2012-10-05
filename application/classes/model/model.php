@@ -72,6 +72,11 @@ class Model extends M\Model
 		return $this;
 	}
 
+	public function markdown($field)
+	{
+		return \Markdown::instance()->transform($this->{$field});
+	}
+
 	public function save($data = null)
 	{
 		if($data instanceof \Formo_Form)

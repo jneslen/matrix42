@@ -30,14 +30,4 @@ class Event extends Model
 
 		return $form;
 	}
-
-	protected function _get_html_description()
-	{
-		return \Markdown::instance()->transform($this->description);
-	}
-
-	protected function _get_html_location()
-	{
-		return \Markdown::instance()->transform($this->location);
-	}
 }

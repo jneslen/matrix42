@@ -97,7 +97,7 @@ class Controller_Public extends Controller_Site {
 		$sidebar = $menu->get_content('sidebar');
 		if($sidebar->content != null)
 		{
-			$this->_sidebar = $sidebar->content;
+			$this->_sidebar = $sidebar->markdown('content');
 		}
 
 		$this->_description = $menu->subtitle != null ? $menu->subtitle : $this->_description;

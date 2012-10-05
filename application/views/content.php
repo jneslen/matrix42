@@ -1,5 +1,5 @@
 <?php foreach($page_contents as $content): ?>
 <?php if($content->type == "main"): ?>
-<?=$content->content?>
+<?=$content->markdown('content')?>
 <?php endif; ?>
 <?php endforeach; ?>
