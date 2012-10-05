@@ -16,7 +16,7 @@
 				<div class="tag-content">
 					<h1 class="no-margin">workplace management</h1>
 					<h4 class="no-margin">Empowering the <span class="emphasis">Dynamic Workplace</span></h4>
-					<h3 class="no-margin">Industry&#39;s only solution to seamlessly manage mobile, virtual and physical environments.</h3><a href="/"><span class="icon play"></span></a>
+					<h3 class="no-margin">Industry&#39;s only solution to seamlessly manage mobile, virtual and physical environments.</h3>
 					<a href="/workplace_management" class="btn btn-large btn-primary">Learn More!</a>
 				</div>
 				<img class="bg" src="/assets/img/banners/home-banner-001.jpg" alt="Dynamic" />
