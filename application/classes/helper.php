@@ -69,6 +69,7 @@ class Helper
 		{
 			$base_url = 'http://www.matrix42.com';
 		}
+		exit(\Debug::vars($base_url));
 
 		preg_match("/.([a-z]{2,3})\/?$/", $base_url, $country_code);
 
