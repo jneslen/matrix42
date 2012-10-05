@@ -69,9 +69,14 @@ class Helper
 		{
 			$base_url = 'http://www.matrix42.com';
 		}
-		exit(\Debug::vars($base_url));
 
 		preg_match("/.([a-z]{2,3})\/?$/", $base_url, $country_code);
+
+		//set a default to country code if country_code is empty... this is a catch all in case we have an IP as a host
+		if(empty($country_code))
+		{
+			$country_code[1] = 'com';
+		}
 
 		switch(strtolower($country_code[1]))
 		{
