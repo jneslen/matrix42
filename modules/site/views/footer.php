@@ -23,23 +23,17 @@
 	<div id="solutions-foot" class="span3 offset2 border-right">
 		<h3>Solutions</h3>
 		<ul class="link-list">
-			<li><a href="/solutions/cloud_delivery">Cloud Delivery</a></li>
-			<li><a href="/solutions/mobile_device_management">Mobile Device Management</a></li>
-			<li><a href="/solutions/virtual_desktop_management">Desktop Virtualization</a></li>
-			<li><a href="/solutions/endpoint_management">Endpoint Management</a></li>
-			<li><a href="/solutions/compliance">Software Asset Management</a></li>
-			<li><a href="/solutions/self_service">Self-Service</a></li>
-			<li><a href="/solutions/enterprise_manager">Workplace Management for SCCM</a></li>
-			<li><a href="/solutions/windows_7_migration">Windows 7/8 Migration</a></li>
+		<?php foreach($solution_links as $solution): ?>
+			<li><a href="<?=$solution->url?>"><?=$solution->title?></a></li>
+		<?php endforeach; ?>
 		</ul>
 	</div><!-- solutions-foot -->
 	<div id="addons-foot" class="span3 border-right">
 		<h3>Add-Ons</h3>
 		<ul class="link-list">
-			<li><a href="/addons/power_management">Power Management</a></li>
-			<li><a href="/addons/remote_control">Remote Control</a></li>
-			<li><a href="/addons/patch_management">Patch Management</a></li>
-			<li><a href="/addons/package_robot">Package Robot</a></li>
+		<?php foreach($addon_links as $addon): ?>
+			<li><a href="<?=$addon->url?>"><?=$addon->title?></a></li>
+		<?php endforeach; ?>
 		</ul>
 	</div><!-- addons-foot -->
 	<div id="about-foot" class="span3 border-right">

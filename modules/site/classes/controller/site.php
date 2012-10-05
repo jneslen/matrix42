@@ -138,7 +138,13 @@ class Controller_Site extends Controller_Template
 
 		$this->template->header = View::factory('header');
 		$this->template->breadcrumb = View::factory('breadcrumb/breadcrumb');
-		$this->template->footer = View::factory('footer', array('language' => true));
+
+		$solution_links = \Kacela::find_active('menu', \Kacela::criteria()->equals('parent_id', '1')->sort('order')); //hard coded for now
+		$addon_links = \Kacela::find_active('menu', \Kacela::criteria()->equals('parent_id', '13')->sort('order'));
+
+		$this->template->footer = View::factory('footer', array('language' => true))
+			->set('solution_links', $solution_links)
+			->set('addon_links', $addon_links);
 
 		if ($this->request->is_ajax())
 		{
