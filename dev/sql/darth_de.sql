@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.27-cll)
 # Database: darth_de
-# Generation Time: 2012-10-05 21:32:00 +0000
+# Generation Time: 2012-10-08 18:46:58 +0000
 # ************************************************************
 
 
@@ -664,7 +664,9 @@ VALUES
 	(39,'Fraunhofer MOEZ',8,0,'178.24.161.156','2012-09-26 23:45:26',NULL,0),
 	(40,'Joh. Heinr. Bornemann GmbH',8,0,'82.210.227.196','2012-10-02 09:42:44',NULL,0),
 	(41,'Fritz Winter',8,0,'212.82.241.218','2012-10-05 10:41:50',NULL,0),
-	(42,'K-West GmbH',8,0,'82.149.163.7','2012-10-05 16:06:45',NULL,0);
+	(42,'K-West GmbH',8,0,'82.149.163.7','2012-10-05 16:06:45',NULL,0),
+	(43,'Amt Nortorfer Land',10,0,'141.91.129.5','2012-10-08 14:24:36',NULL,0),
+	(44,'neo42 GmbH',8,0,'91.67.47.73','2012-10-08 17:46:24',NULL,0);
 
 /*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -798,7 +800,9 @@ VALUES
 	(32,39,39,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-09-26 16:45:26',0),
 	(33,40,40,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-10-02 02:42:44',0),
 	(34,41,41,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-10-05 03:41:50',0),
-	(35,42,42,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen\nDie K-West GmbH ist Matrix42-Partner','2012-10-05 09:06:45',0);
+	(35,42,42,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen\nDie K-West GmbH ist Matrix42-Partner','2012-10-05 09:06:45',0),
+	(36,43,43,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Package Robot anfragen','2012-10-08 07:21:04',0),
+	(37,44,44,NULL,'inquiry','Kostenlose 30-Tage Demo-Version von Remote Control anfragen','2012-10-08 10:46:24',0);
 
 /*!40000 ALTER TABLE `notes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -958,7 +962,9 @@ VALUES
 	(34,'primary',39,'0341231039123','europe',0),
 	(35,'primary',40,'05724390268','europe',0),
 	(36,'primary',41,'06656505461','europe',0),
-	(37,'primary',42,'054018808521','europe',0);
+	(37,'primary',42,'054018808521','europe',0),
+	(38,'primary',43,'04392401215','europe',0),
+	(39,'primary',44,'01715825564','europe',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1274,7 +1280,9 @@ VALUES
 	(39,'kristian.voelpel@moez.fraunhofer.de','Kristian',NULL,'Völpel','bcrypt$2a$12$2EWXKjQ2T4hOnffiMp3lteddRmUXUXyry3oZDOeAvv0ZK2jjTFs72',NULL,NULL,'lead',0,NULL,'2012-09-26 16:45:26','2012-09-26 23:45:26',NULL,NULL,0,'178.24.161.156',0),
 	(40,'alexander.vonfersen@bornemann.com','Alexander',NULL,'fersen','bcrypt$2a$12$NNSCxNAW55oDsHJqwtwBh.OwDoeScAmTEVCcOzPZFRqyPd9kbIQVS',NULL,NULL,'lead',0,NULL,'2012-10-02 02:42:44','2012-10-02 09:42:44',NULL,NULL,0,'82.210.227.196',0),
 	(41,'msh@dsp-eu.de','Christian',NULL,'Euker','bcrypt$2a$12$sEXn9999c5nhRVXSq7C4ZObKZ1hq7ErDNwsMGBZYPgKVw6K/Osm/O',NULL,NULL,'lead',0,NULL,'2012-10-05 03:41:50','2012-10-05 10:41:50',NULL,NULL,0,'212.82.241.218',0),
-	(42,'tobias.schumacher@k-west.de','Tobias',NULL,'Schumacher','bcrypt$2a$12$GFCKaMppvhhJPegaZkDBfO2MCQ.Gz2bx3rlIaTnudFGQjsn/vcc0a',NULL,NULL,'lead',0,NULL,'2012-10-05 09:06:45','2012-10-05 16:06:45',NULL,NULL,0,'82.149.163.7',0);
+	(42,'tobias.schumacher@k-west.de','Tobias',NULL,'Schumacher','bcrypt$2a$12$GFCKaMppvhhJPegaZkDBfO2MCQ.Gz2bx3rlIaTnudFGQjsn/vcc0a',NULL,NULL,'lead',0,NULL,'2012-10-05 09:06:45','2012-10-05 16:06:45',NULL,NULL,0,'82.149.163.7',0),
+	(43,'riegels@amt-nortorfer-land.de','Alexander',NULL,'Riegels','bcrypt$2a$12$XgM5msyVO3w0pJ8RAFDPNOlk7XN2tAmmBlymlt4fZ9vfVu8eJRrau',NULL,NULL,'lead',0,NULL,'2012-10-08 07:21:04','2012-10-08 14:24:36',NULL,NULL,0,'141.91.129.5',0),
+	(44,'armin.steiner@neo42.de','Armin',NULL,'Steiner','bcrypt$2a$12$83ZPSeH277NdttysiUSepujA6zOM8y4pVDCalRUm.MjWq04CcETnm',NULL,NULL,'lead',0,NULL,'2012-10-08 10:46:24','2012-10-08 17:46:24',NULL,NULL,0,'91.67.47.73',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
