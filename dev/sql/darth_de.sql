@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 127.0.0.1 (MySQL 5.5.21)
+# Host: 127.0.0.1 (MySQL 5.5.27-cll)
 # Database: darth_de
-# Generation Time: 2012-10-09 17:34:55 +0000
+# Generation Time: 2012-10-09 20:26:42 +0000
 # ************************************************************
 
 

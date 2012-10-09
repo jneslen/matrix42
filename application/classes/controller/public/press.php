@@ -92,7 +92,7 @@ class Controller_Public_Press extends Controller_Public {
 
 		$this->_title = $release->title;
 
-		$this->_content = View::factory('press/press_release')
+		$this->_content = View::factory('press/press_release', array('language' => true))
 			->set('release', $release)
 			->set('lead_form', parent::lead_form());
 

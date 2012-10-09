@@ -41,8 +41,8 @@
 </div><!-- padded-content -->
 <div class="well padded">
 	<div class="left">
-		<h3 class="no-margin">Matrix42 befähigt Sie, Ihre IT-Anforderungen selbst zu kontrollieren.</h3>
-		<h4 class="no-margin">Beginnen Sie jetzt mit der perfekten IT-Lösung!</h4>
+		<h3 class="no-margin">Lassen Sie Matrix42 befähigen, die Kontrolle über Ihre IT-Bedürfnisse zu sein.</h3>
+		<h4 class="no-margin">Die perfekte IT-Lösung durch Anfrage unter Erste Schritte:</h4>
 	</div>
 	<div class="clearfix"></div>
 </div><!-- well -->

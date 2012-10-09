@@ -7,7 +7,7 @@
 <?php if($release->subtitle): ?>
 <p class="italics"><?=$release->subtitle?></p>
 <?php endif; ?>
-<?=$release->content?>
+<?=$release->markdown('content')?>
 <?php if($release->link): ?>
 <a href="<?=$release->link?>" class="btn btn-mini" target="_blank"><?=__('read more')?></a>
 <?php endif; ?>
