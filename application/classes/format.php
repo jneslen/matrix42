@@ -339,6 +339,7 @@ class Format extends Kohana_Text
 		switch($format)
 		{
 			case 'world':
+			case 'europe':
 				$pieces[0] = substr($number,0,2);
 				$pieces[1] = substr($number,2,1);
 				$pieces[2] = substr($number,3,2);

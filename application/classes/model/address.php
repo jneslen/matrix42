@@ -97,4 +97,16 @@ class Address extends Model
 
 		return $address;
 	}
+
+	protected function _get_related_phone()
+	{
+		$phone = \Kacela::find_one('phone', \Kacela::criteria()->equals('address_id', $this->id));
+
+		if(!$phone->id)
+		{
+			$phone = \Kacela::find_one('phone', \Kacela::criteria()->equals('user_id', $this->user_id));
+		}
+
+		return $phone->formatted_phone;
+	}
 }

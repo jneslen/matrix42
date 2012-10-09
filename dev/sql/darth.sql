@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.27-cll)
 # Database: darth
-# Generation Time: 2012-10-05 21:19:20 +0000
+# Generation Time: 2012-10-09 14:45:49 +0000
 # ************************************************************
 
 
@@ -268,7 +268,8 @@ VALUES
 	(23,15,'main','<div class=\"padded\">\n	<p>With a more distributed workforce than ever before, it is not possible to have an IT manager available at all locations across the enterprise. With remote administration, administrators can access and remotely control all the computers on the network as if they were actually there. This provides a huge cost savings for IT departments and keeps end users operating more efficiently.</p>\n	<p>Matrix42 Remote Control is integrated with the Matrix42 Workplace Management solutions so the remote administration client is automatically pushed to every computer on the network, whether it is a server in the data center or a laptop being used by an employee in the field. When an administrator needs to remotely access a computer to troubleshoot it, perform maintenance or transfer and synchronize files, they can do so in a matter of seconds, even if the end user is not present.</p>\n	<p>Using Matrix42 Remote Control, IT administrators can accomplish most tasks no matter where they are located, and end users are happier and more productive with quicker response from IT and substantially less down time.</p>\n	%%getstartedpage%%\n	<a href=\"/assets/uploads/remote-control.pdf\" class=\"btn btn-icon margin-right left\"><span class=\"icon pdf\"></span>Data Sheet</a><a href=\"#lead-form-anchor\" class=\"btn btn-primary btn-icon left scroll main-lead\" data-campaign=\"8\" data-message=\"Remote Control Free Trial Request\"><span class=\"icon download\"></span>Free Trial</a>\n<div class=\"clear\"></div>\n<div class=\"padded-bottom\"></div>\n</div>\n<div id=\"addon-lead-form\">\n	<h3 id=\"trial-instructions\" class=\"secondary padded hidden\">Fill out the form below to get started with your Matrix42 Remote Control free trial.</h3>\n	%%leadform%%\n</div>',NULL),
 	(24,18,'main','<div class=\"padded\">\n	<h4 class=\"emphasis\">Up and Running in Minutes</h4>\n	<p>Businesses today need solutions that are flexible, reliable and cost-effective to help them be more competitive and maintain business continuity. To accomplish this, many are deploying cloud-based applications. Matrix42 is the first company to release a comprehensive cloud-based client management solution for mobile, virtual and physical devices. This provides customers with more flexibility and cost savings while keeping them equipped with the newest features and benefits. It also greatly simplifies the process of deploying the solution. With cloud-based services, Matrix42 customers can be proactively managing their mobile, virtual and physical assets with just a couple of keystrokes.</p>\n	<p>According to a recent study by IDG Enterprise, six out of 10 U.S. companies have at least one application in the cloud, and 71 percent expect to increase spending on cloud services in the next 12 months. More than 25 percent of those surveyed plan to move the majority of their IT operations to the cloud over the next five years.</p>\n	%%getstartedpage%%\n	<a href=\"/assets/uploads/cloud-business.pdf\" class=\"btn btn-icon margin-right left\"><span class=\"icon pdf\"></span>White Paper</a>\n	<div class=\"clear\"></div>\n	<div class=\"padded-bottom\"></div>\n	<div id=\"product-tab-container\" class=\"well margin-right\">\n		<ul id=\"product-tab\" class=\"nav nav-tabs\" data-tabs=\"product-tab\">\n			<li class=\"active\"><a href=\"#benefits\" data-toggle=\"tab\">Features &amp; Benefits</a></li>\n		</ul><!-- product-tab -->\n		<div class=\"tab-container\">\n			<div class=\"tab-content\">\n				<div class=\"tab-pane active padded-content\" id=\"benefits\">\n					<h3 class=\"emphasis\">The main benefits of cloud-based management include:</h3>\n					<ul class=\"list\">\n						<li><span class=\"bold emphasis\">Cost savings</span> up-front savings from elimination of capital expenditure and reduction in energy, hardware, real estate, maintenance and other infrastructure costs.</li>\n						<li><span class=\"bold emphasis\">Business continuity</span> using cloud-based redundant servers for backup and disaster recovery.</li>\n						<li><span class=\"bold emphasis\">Business agility</span> reacting to market conditions with greater deployment speed and flexibility.</li>\n						<li><span class=\"bold emphasis\">Scalability</span> meeting corporate demands with a &quot;pay-as-you-grow&quot; model.</li>\n						<li><span class=\"bold emphasis\">Expertise</span> letting the cloud provider take care of the technology.</li>\n						<li><span class=\"bold emphasis\">Globalization</span> making applications available to a global workforce, anywhere and anytime.</li>\n						<li><span class=\"bold emphasis\">Up-to-date</span> ongoing access to the latest features of the software.</li>\n					</ul>\n					<p>With Matrix42, companies have the flexibility to choose between a premise-based or cloud-based deployment depending on their needs and environment. For more information on cloud-based workplace management, please <a href=\"/assets/uploads/cloud-business.pdf\">download our white paper</a>.</p>\n				</div><!-- benefits -->\n			</div><!-- tab-content -->\n		</div><!-- tab-content -->\n	</div><!-- product-tab-container -->\n</div><!-- padded -->',NULL),
 	(25,18,'sidebar','%%sidebarleadform%%\n%%sidebarsuccessstories%%\n%%sidebarsupport%%',NULL),
-	(26,19,'main','<div class=\"padded\">\n	<p>Matrix42 provides the industry’s most forward-thinking and comprehensive Workplace Management solution and is the only global provider of secure and interconnected management of every mobile, physical and virtual device with a comprehensive self-service and compliance solutions. In today’s workplace, where workers are connected from multiple places using multiple devices and types of system, the complexity of managing and securing a exponentially growing volume of data and assets can be overwhelming for a company.</p>\n	<div class=\"center\">\n		<img src=\"/assets/img/corporate-story.jpg\" alt=\"Matrix42 Corporate Story\" />\n	</div>\n	<p>With Matrix42, IT administrators can ensure access, security and compliance from a single platform. Users can access data and services from anywhere at anytime, and they can add devices and order services within company policies. Most importantly, Matrix42 improves employee productivity, IT efficiencies, cost savings and user satisfaction that all contribute to the profitability of the organization.</p>\n%%getstartedpage%%\n	<p>All of our solutions can be delivered through-cloud based services. This provides customers with more flexibility and cost savings while keeping them equipped with the newest features and benefits. It also greatly simplifies the process of deploying the solution. It used to take a couple of weeks, and currently we can set up a customer in a couple of days. With cloud-based services, we are able to do it with a couple of keystrokes.</p>\n	<p>Matrix42 software manages more than 2.5 million clients for more than 2,500 customers worldwide.</p>\n</div>',NULL);
+	(26,19,'main','<div class=\"padded\">\n	<p>Matrix42 provides the industry’s most forward-thinking and comprehensive Workplace Management solution and is the only global provider of secure and interconnected management of every mobile, physical and virtual device with a comprehensive self-service and compliance solutions. In today’s workplace, where workers are connected from multiple places using multiple devices and types of system, the complexity of managing and securing a exponentially growing volume of data and assets can be overwhelming for a company.</p>\n	<div class=\"center\">\n		<img src=\"/assets/img/corporate-story.jpg\" alt=\"Matrix42 Corporate Story\" />\n	</div>\n	<p>With Matrix42, IT administrators can ensure access, security and compliance from a single platform. Users can access data and services from anywhere at anytime, and they can add devices and order services within company policies. Most importantly, Matrix42 improves employee productivity, IT efficiencies, cost savings and user satisfaction that all contribute to the profitability of the organization.</p>\n%%getstartedpage%%\n	<p>All of our solutions can be delivered through-cloud based services. This provides customers with more flexibility and cost savings while keeping them equipped with the newest features and benefits. It also greatly simplifies the process of deploying the solution. It used to take a couple of weeks, and currently we can set up a customer in a couple of days. With cloud-based services, we are able to do it with a couple of keystrokes.</p>\n	<p>Matrix42 software manages more than 2.5 million clients for more than 2,500 customers worldwide.</p>\n</div>',NULL),
+	(27,19,'sidebar','%%sidebarleadform%%\n%%sidebarsuccessstories%%\n%%sidebarsupport%%',NULL);
 
 /*!40000 ALTER TABLE `contents` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -672,7 +673,7 @@ VALUES
 	(15,13,NULL,'public','submenu','Remote Control','/addons/remote_control',NULL,NULL,'public','addons','remote_control',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,0),
 	(16,13,NULL,'public','submenu','Patch Management','/addons/patch_management',NULL,NULL,'public','addons','patch_management',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,0,0),
 	(17,13,NULL,'public','submenu','Package Robot','/addons/package_robot',NULL,NULL,'public','addons','package_robot',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,0,0),
-	(18,1,NULL,'public','submenu','Cloud Delivery','/solutions/cloud_delivery',NULL,NULL,'public','solutions','cloud_delivery','Industry&#39;s only cloud-based workplace management solution','Eliminate up-front costs and deploy in a matter of minutes','cloud management, cloud delivery, cloud solutions, cloud based management, cloud services','sub-banner-cloud.jpg','take your management to the cloud','eliminate up-front costs and deploy in a matter of minutes',50,25,700,NULL,1,0,0),
+	(18,1,NULL,'public','submenu','Matrix42 Cloud','/solutions/cloud_delivery',NULL,NULL,'public','solutions','cloud_delivery','Industry&#39;s only cloud-based workplace management solution','Eliminate up-front costs and deploy in a matter of minutes','cloud management, cloud delivery, cloud solutions, cloud based management, cloud services','sub-banner-cloud.jpg','take your management to the cloud','eliminate up-front costs and deploy in a matter of minutes',50,25,700,NULL,1,0,0),
 	(19,NULL,NULL,'public','main','Workplace Management','workplace_management',NULL,NULL,'public','workplace_management','index','Empowering the Dynamic Workplace',NULL,NULL,'sub-banner-woman.jpg','workplace management','Industry&#39;s only solution to seamlessly manage mobile, virtual and physical environments.',500,NULL,700,NULL,1,0,0);
 
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
@@ -808,6 +809,7 @@ CREATE TABLE `phones` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `type` enum('primary','alternate','mobile') DEFAULT NULL,
   `user_id` int(10) unsigned DEFAULT NULL,
+  `address_id` int(10) unsigned DEFAULT NULL,
   `number` varchar(20) NOT NULL DEFAULT '',
   `format` enum('north_america','europe','world','england','spain') NOT NULL DEFAULT 'north_america',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
@@ -819,16 +821,16 @@ CREATE TABLE `phones` (
 LOCK TABLES `phones` WRITE;
 /*!40000 ALTER TABLE `phones` DISABLE KEYS */;
 
-INSERT INTO `phones` (`id`, `type`, `user_id`, `number`, `format`, `disabled`)
+INSERT INTO `phones` (`id`, `type`, `user_id`, `address_id`, `number`, `format`, `disabled`)
 VALUES
-	(1,'primary',23,'9528541663','north_america',0),
-	(2,'primary',6,'9528541663','north_america',0),
-	(3,'primary',11,'8006273533','north_america',0),
-	(4,'primary',12,'4401614740444','england',0),
-	(5,'primary',13,'5173274687','north_america',0),
-	(6,'primary',14,'8009892989','north_america',0),
-	(7,'primary',15,'3491375000','spain',0),
-	(8,'primary',16,'270113147533','world',0);
+	(1,'primary',23,NULL,'9528541663','north_america',0),
+	(2,'primary',6,NULL,'9528541663','north_america',0),
+	(3,'primary',11,NULL,'8006273533','north_america',0),
+	(4,'primary',12,NULL,'4401614740444','england',0),
+	(5,'primary',13,NULL,'5173274687','north_america',0),
+	(6,'primary',14,NULL,'8009892989','north_america',0),
+	(7,'primary',15,NULL,'3491375000','spain',0),
+	(8,'primary',16,NULL,'270113147533','world',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -43299,6 +43301,44 @@ VALUES
 UNLOCK TABLES;
 
 
+
+--
+-- Dumping routines (PROCEDURE) for database 'darth'
+--
+DELIMITER ;;
+
+# Dump of PROCEDURE sp_belongs_to
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+		FROM INFORMATION_SCHEMA.key_column_usage
+		WHERE TABLE_SCHEMA = schemaName
+		AND TABLE_NAME = tableName
+		AND REFERENCED_TABLE_NAME IS NOT NULL
+		GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+# Dump of PROCEDURE sp_has_many
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+	  FROM INFORMATION_SCHEMA.key_column_usage
+	  WHERE TABLE_SCHEMA = schemaName
+	  AND REFERENCED_TABLE_NAME = tableName
+	  GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
