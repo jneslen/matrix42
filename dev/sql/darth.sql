@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.27-cll)
 # Database: darth
-# Generation Time: 2012-10-09 21:35:20 +0000
+# Generation Time: 2012-10-10 17:49:36 +0000
 # ************************************************************
 
 
@@ -58,7 +58,11 @@ VALUES
 	(7,'business',12,NULL,'85 Buxton Road',NULL,NULL,'OT','Stockport','SK2 6','GB',0),
 	(8,'business',14,'','33 Badgers Island West','','Kittery','ME','','03904','US',0),
 	(9,'business',15,NULL,'C/Julián Camarillo 29','building D2','Madrid','OT','','28037','ES',0),
-	(10,'business',16,NULL,'Postnet Suite 446','Private Bag x 121','Halfway House','OT','South Africa','1685','ZA',0);
+	(10,'business',16,NULL,'Postnet Suite 446','Private Bag x 121','Halfway House','OT','South Africa','1685','ZA',0),
+	(11,'business',20,'','168 N. Clinton','6th Floor','Chicago','IL','','60661','US',0),
+	(12,'business',20,NULL,'405 Lexington Avenue','Chrysler Building 25th and 26th Floor','New York City','NY','','10174','US',0),
+	(13,'business',20,NULL,'4535 Fanuel Street',NULL,'San Diego','CA','','92109','US',0),
+	(14,'business',20,NULL,'1170 Peachtree Street NE','Ste 1200','Atlanta','GA','','30309','US',0);
 
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -781,20 +785,22 @@ LOCK TABLES `partners` WRITE;
 INSERT INTO `partners` (`id`, `type`, `company_name`, `description`, `logo`, `website`, `link`, `certified`, `order`)
 VALUES
 	(2,'technology','Microsoft','Founded in 1975, Microsoft is the worldwide leader in software, services and solutions that help people and businesses realize their full potential.','microsoft-logo.png','www.microsoft.com','/solutions/enterprise_manager',0,2),
-	(3,'technology','Citrix','Today, Citrix is the global leader and most trusted name in on-demand access. More than 180,000 organizations around the world use the Citrix Access Platform to provide the best access experience to any application for any user.','citrix-logo.png','www.citrix.com','/solutions/virtual_desktop_management',0,3),
-	(4,'technology','Gartner','Gartner evaluated vendors based on completeness of vision and ability to execute in the IT systems management market, and Matrix42 was recognized as a visionary based on Gartner\'s evaluation of \"completeness of vision\" and \"ability to execute.\"','gartner-magicq-logo.png','www.gartner.com','/press/release/2',0,4),
+	(3,'technology','Citrix','Today, Citrix is the global leader and most trusted name in on-demand access. More than 180,000 organizations around the world use the Citrix Access Platform to provide the best access experience to any application for any user.','citrix-logo.png','www.citrix.com','/solutions/virtual_desktop_management',0,4),
+	(4,'technology','Gartner','Gartner evaluated vendors based on completeness of vision and ability to execute in the IT systems management market, and Matrix42 was recognized as a visionary based on Gartner\'s evaluation of \"completeness of vision\" and \"ability to execute.\"','gartner-magicq-logo.png','www.gartner.com','/press/release/2',0,5),
 	(5,'technology','ServiceNow','Matrix42 has joined forces with ServiceNow to provide user self-provisioning capabilities for Mobile Workplace, Virtual Workplace and Physical Workplace Management to assist IT in managing the end users’ needs now and in the future.','servicenow-logo.png','www.service-now.com','http://servicenow.matrix42.com',0,1),
 	(6,'reseller','Intuitive Technology Group','Intuitive Technology Group is a professional corporation serving large and small organizations nationwide as well as local, state and federal government agencies under the SBA Small Business program.','intuitive-logo.jpg','www.be-intuitive.com','',0,NULL),
-	(7,'technology','WinRobots','Delphin Software is the developer of &quot;WinRobots&quot;, an automation and packaging system., which has been enhanced over the years to include new functionality for a multitude o applications. WinRobots allows users to automate all operations in Windows environments. From the new version onward, the Matrix42 Package Robot is seamlessly integrated with the Package Wizard.','winrobots-logo.png','www.winrobots.com',NULL,0,8),
-	(8,'technology','Novell','Novell offers enterprise class infrastructure software and services in a flexible combination of open source and proprietary technologies. This software helps customers manage, simplify, secure and integrate their heterogeneous IT environments at low cost. As a result, customers can reduce cost and complexity while increasing the return on their IT investment. Unlike others, we also help customers migrate from proprietary to open source at a pace that suits them. When it suits them.','novell-logo.png','www.novell.com',NULL,0,5),
-	(9,'technology','Netviewer AG','Netviewer AG is the leading European manufacturer and provider of Web conferencing solutions. Netviewer gives Internet users a live view of a partner\'s screen so documents can be jointly discussed and edited or support cases can be solved. Visual real-time communication over the Internet significantly reduces the time and expense of travel while increasing productivity. As a basis for Matrix42 remote control Netviewer enables secure remote maintenance of clients and efficient server management. ','netviewer-logo.png','www.netviewer.com',NULL,0,7),
-	(10,'technology','Intel','Intel, the world leader in silicon innovation, develops technologies, products and initiatives to continually advance how people work and live.','intel-logo.png','www.intel.com',NULL,0,6),
+	(7,'technology','WinRobots','Delphin Software is the developer of &quot;WinRobots&quot;, an automation and packaging system., which has been enhanced over the years to include new functionality for a multitude o applications. WinRobots allows users to automate all operations in Windows environments. From the new version onward, the Matrix42 Package Robot is seamlessly integrated with the Package Wizard.','winrobots-logo.png','www.winrobots.com',NULL,0,9),
+	(8,'technology','Novell','Novell offers enterprise class infrastructure software and services in a flexible combination of open source and proprietary technologies. This software helps customers manage, simplify, secure and integrate their heterogeneous IT environments at low cost. As a result, customers can reduce cost and complexity while increasing the return on their IT investment. Unlike others, we also help customers migrate from proprietary to open source at a pace that suits them. When it suits them.','novell-logo.png','www.novell.com',NULL,0,6),
+	(9,'technology','Netviewer AG','Netviewer AG is the leading European manufacturer and provider of Web conferencing solutions. Netviewer gives Internet users a live view of a partner\'s screen so documents can be jointly discussed and edited or support cases can be solved. Visual real-time communication over the Internet significantly reduces the time and expense of travel while increasing productivity. As a basis for Matrix42 remote control Netviewer enables secure remote maintenance of clients and efficient server management. ','netviewer-logo.png','www.netviewer.com',NULL,0,8),
+	(10,'technology','Intel','Intel, the world leader in silicon innovation, develops technologies, products and initiatives to continually advance how people work and live.','intel-logo.png','www.intel.com',NULL,0,7),
 	(11,'reseller','Matrix Resources, Inc.','Matrix Resources provides professional services and project management for advanced infrastructure solution, server virtualization and other IT areas. Matrix Resources is a Microsoft Gold Certified Partner and GSA approved vendor with many locations across the United States.','matrix-resources-logo.png','www.matrixresources.com','',0,NULL),
 	(12,'reseller','Altimate UK','ALTIMATE UK (formerly Codework) is a specialist value added IT distributor providing a range of IT Management and Security solutions to the Industrial, Commercial and Enterprise marketplace.\nOur mission is to help partners develop and remain at the cutting edge by proposing a unique hardware and software portfolio and an offer of appropriate commercial and technical services. Thanks to their competence and expertise in the field of storage, data management, security and, more generally, IT infrastructures solutions, our teams accompany partners in the mastery of the most advanced technologies, defining the best solutions for their end customers, thereby contributing to their differentiation, development and, ultimately, their success. The ALTIMATE UK is a part of a leading European value added distributor. ALTIMATE Group operates in 8 countries: Belgium, France, Luxembourg, the Netherlands, Portugal, Spain, UK and Ireland, and has a network of more than 2500 value added resellers, integrators and ISV partners.','altimate-logo.png','www.altimate-group.co.uk','',0,NULL),
 	(14,'reseller','GreenPages Technology Solutions','<p>GreenPages is a leading virtualization and cloud management consulting and integration firm that helps clients fully virtualize their environments and transform their datacenter and IT operations to effectively leverage the power of cloud computing.</p>\n<p>The company’s deep technology expertise, broad engineering certifications, and vendor agnostic business model offer clients a strategic, cross-platform, proactive approach to designing, deploying, and supporting modern IT environments.</p>\n<p>GreenPages’ core practice areas include Virtualization & Cloud Computing; Application Development & Integration; Storage & Information Management; Network Infrastructure; Telephony & Unified Communications; and IT Management. Each practice area is comprised of a cross-certified engineering team and directed by a senior engineer.</p>\n<p>GreenPages has offices in Boston; Kittery, Maine; New York City; and Atlanta.</p>','greenpages-logo.png','www.greenpages.com','',1,NULL),
 	(15,'reseller','Asseco Spain','<p>Asseco Spain is an IT company which has different business areas: Outsourcing, IT Support, Datacenter, IT Engineering, Software Development, Renting and Human Resources Solutions (flexible spending plans and programs to provide Internet access and technology for employees), IT Commerce, Client Lifecycle Management, IT Service Management and License Management.</p>','asseco-spain-logo.png','www.asseco.es','',1,NULL),
-	(16,'reseller','ITR Technology','<p>ITR Technology Pty Ltd specializes in Infrastructure & Lifecycle Management Solutions. We offer a carefully selected set of tools which not only monitor\'s various components of the LAN or WAN, but also application and OS Deployment tools to keep the Desktop and Server Configurations operational.</p>','itr-technology-logo.png','www.itrtech.co.za/','',0,NULL),
-	(17,'technology','Fujitsu','<p>Fujitsu is a Japanese multinational information technology equipment and services company headquartered in Tokyo, Japan. It is the world\'s third-largest IT services provider measured by revenues</p>','fujitsu-logo.png','www.fujitsu.com',NULL,0,9);
+	(16,'reseller','ITR Technology','<p>ITR Technology Pty Ltd specializes in Infrastructure & Lifecycle Management Solutions. We offer a carefully selected set of tools which not only monitor\'s various components of the LAN or WAN, but also application and OS Deployment tools to keep the Desktop and Server Configurations operational.</p>','itr-technology-logo.png','www.itrtech.co.za','',0,NULL),
+	(17,'technology','Fujitsu','<p>Fujitsu is a Japanese multinational information technology equipment and services company headquartered in Tokyo, Japan. It is the world\'s third-largest IT services provider measured by revenues</p>','fujitsu-logo.png','www.fujitsu.com',NULL,0,10),
+	(19,'technology','Fruition','Fruition Partners is an elite cloud service management firm with a proven history of helping customers attain sustainable success throughout the entire ITSM process.','fruition-logo.png','www.fruitionpartners.com','',1,3),
+	(20,'reseller','Fruition Partners','Fruition Partners is an elite cloud service management firm with a proven history of helping customers attain sustainable success throughout the entire ITSM process.','fruition-logo.png','www.fruitionpartners.com',NULL,0,NULL);
 
 /*!40000 ALTER TABLE `partners` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -830,7 +836,12 @@ VALUES
 	(5,'primary',13,NULL,'5173274687','north_america',0),
 	(6,'primary',14,NULL,'8009892989','north_america',0),
 	(7,'primary',15,NULL,'3491375000','spain',0),
-	(8,'primary',16,NULL,'270113147533','world',0);
+	(8,'primary',16,NULL,'270113147533','world',0),
+	(9,'primary',19,NULL,'8886040055','north_america',0),
+	(10,'primary',20,11,'3124486777','north_america',0),
+	(11,'primary',20,12,'7182102138','north_america',0),
+	(12,'primary',20,13,'6197646500','north_america',0),
+	(13,'primary',20,14,'4047200787','north_america',0);
 
 /*!40000 ALTER TABLE `phones` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1109,7 +1120,9 @@ VALUES
 	(15,'info@asseco.es','Asseco',NULL,'Spain','bcrypt$2a$12$GMrIfjlNIWP3mjiuLkBf1eQtJt3gOrHY/TtaZHGMcW3xvJhVm6bXK',NULL,NULL,'partner',0,NULL,'2012-08-20 15:01:23',NULL,NULL,NULL,0,NULL,0),
 	(16,'sales@itrtech.co.za','Itr',NULL,'Technology','bcrypt$2a$12$l5EQGWGhkKCd25rrDy3Pp.Pk9QIwjoxfKVDyD5pr5ZyUYlhD6mdqK',NULL,NULL,'partner',0,NULL,'2012-08-20 16:44:33',NULL,NULL,NULL,0,NULL,0),
 	(17,'alliance.program@ts.fujitsu.com','Fuji',NULL,'Tsu','bcrypt$2a$12$l5EQGWGhkKCd25rrDy3Pp.Pk9QIwjoxfKVDyD5pr5ZyUYlhD6mdqK',NULL,NULL,'partner',0,NULL,'2012-09-24 16:45:27',NULL,NULL,NULL,0,NULL,0),
-	(18,'gil.cattelain@matrix42.com','Gil',NULL,'Cattelain','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'admin',0,NULL,'2012-10-04 16:07:16',NULL,NULL,NULL,1,NULL,0);
+	(18,'gil.cattelain@matrix42.com','Gil',NULL,'Cattelain','257d65817a867489210bd292c83bc63dfa061147e960f925c7',NULL,NULL,'admin',0,NULL,'2012-10-04 16:07:16',NULL,NULL,NULL,1,NULL,0),
+	(19,'contact@fruitionpartners.com','Fruition',NULL,'Partners','bcrypt$2a$12$YzANZElXZzVGXCWT7hiszO/cnAgQp5.uGKYHnQKRqia3xUvDkNPMO',NULL,NULL,'partner',0,NULL,'2012-10-10 12:34:08',NULL,NULL,NULL,0,NULL,0),
+	(20,'info@fruitionpartners.com','Fruition',NULL,'Partners','bcrypt$2a$12$YzANZElXZzVGXCWT7hiszO/cnAgQp5.uGKYHnQKRqia3xUvDkNPMO',NULL,NULL,'partner',0,NULL,'2012-10-10 12:39:45',NULL,NULL,NULL,0,NULL,0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
