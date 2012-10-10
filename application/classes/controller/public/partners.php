@@ -29,7 +29,7 @@ class Controller_Public_Partners extends Controller_Public {
 						'header' => '',
 						'value' => function($o)
 						{
-							return '<span class="hidden">'.$o->id.'</span><a href="/partners/detail/'.$o->id.'"><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" style="width:70px;" /></a>';
+							return '<span class="hidden">'.$o->id.'</span><a href="/partners/detail/'.$o->id.'" class="block"><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" style="width:70px;" /></a>';
 						}
 					),
 					array
@@ -127,7 +127,7 @@ class Controller_Public_Partners extends Controller_Public {
 					'header' => '',
 					'value' => function($o)
 					{
-						return '<span class="hidden">'.$o->id.'</span><a href="/partners/detail/'.$o->id.'"><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" style="width:100px;" /></a>';
+						return '<span class="hidden">'.$o->id.'</span><a href="/partners/detail/'.$o->id.'" class="block"><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" style="width:100px;" /></a>';
 					}
 				),
 				array
@@ -135,7 +135,7 @@ class Controller_Public_Partners extends Controller_Public {
 					'header' => '',
 					'value' => function($o)
 					{
-						return '<h4 class="emphasis">'.$o->company_name.'</h4><h5 class="italics">'.$o->description.'</h5>';
+						return '<h4 class="emphasis"><a href="/partners/detail/'.$o->id.'">'.$o->company_name.'</a></h4><h5 class="italics">'.$o->description.'</h5>';
 					}
 				),
 			)
