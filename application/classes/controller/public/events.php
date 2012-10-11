@@ -74,7 +74,7 @@ class Controller_Public_Events extends Controller_Public {
 				array
 				(
 					'header' => __('Location'),
-					'value' => function($o) { return $o->html_location; }
+					'value' => function($o) { return $o->markdown('location'); }
 				),
 				array
 				(
