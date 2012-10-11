@@ -1,6 +1,9 @@
 # Turn on URL rewriting
 RewriteEngine On
 
+RewriteCond %{HTTP_HOST} ^matrix42\.(com|de|eu)$ [NC]
+RewriteRule ^(.*)$ http://www.matrix42\.(com|de|eu)/$1 [R=301,L]
+
 # Installation directory
 RewriteBase /
 
@@ -19,3 +22,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # Rewrite all other URLs to index.php/URL
 RewriteRule .* index.php/$0 [PT]
+
+
+# Former landing page top level redirects
+RewriteRule ^produkte  http://www.matrix42.de [R=301,L]
+RewriteRule ^produkte-loesungen/initiatives/mobile-device-management/ueberblick/ /losungen/mobile_device_management [R=301,L]
