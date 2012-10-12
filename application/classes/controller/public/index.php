@@ -22,7 +22,7 @@ class Controller_Public_Index extends Controller_Public {
 
 		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4)->equals('type', 'technology')->sort('order'));
 
-		$this->_titlebar = View::factory('home_middle')
+		$this->_titlebar = View::factory('home_middle', array('language' => true))
 			->set('customers', $customers)
 			->set('partners', $partners);
 
