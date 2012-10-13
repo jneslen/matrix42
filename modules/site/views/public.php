@@ -27,6 +27,9 @@ defined('SYSPATH') OR die('No direct access allowed.');
 		<?=Request::$current->scripts()?>
 		<link href="/assets/css/bootstrap.css" rel="stylesheet" />
 		<?=Request::$current->styles()?>
+		<!--[if lte IE 8]>
+		<link href="/assets/css/stylesie.css" rel="stylesheet" type="text/css" />
+		<![endif]-->
 		<?=$head_analytics->render()?>
 	</head>
 <body>

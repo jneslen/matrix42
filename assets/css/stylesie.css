@@ -1,0 +1,141 @@
+#home-banner h1 {
+	font-size: 60px;
+	line-height: 60px;
+	letter-spacing: -5px;
+	text-transform: uppercase;
+}
+#home-banner h2 {
+	font-size: 24px;
+	letter-spacing: -1px;
+}
+#home-banner h3 {
+	float: left;
+	font-size: 18px;
+	letter-spacing: -1px;
+}
+#home-banner h4 {
+	font-size: 16px;
+	letter-spacing: -1px;
+}
+
+.item#banner1 .tag-content {
+	top: 60px;
+	left: 650px;
+	width: 500px;
+}
+
+.item#banner1 .tag-content h1 {
+	margin-bottom: 20px;
+	line-height: 60px;
+	color: #000000;
+}
+.item#banner1 .tag-content h4 {
+	text-transform: uppercase;
+}
+.item#banner2 .tag-content {
+	text-align: center;
+	top: 130px;
+	left: 400px;
+	width: 450px;
+}
+
+.item#banner2 .tag-content h1, h2, h3, h4 {
+	text-align: center;
+	color: #ffffff;
+}
+
+.item#banner3 .tag-content {
+	top: 60px;
+	left: 80px;
+	width: 600px;
+}
+
+.item#banner3 .tag-content h1, h3 {
+	color: #000000;
+}
+
+.item#banner3 .tag-contenth1 {
+	font-size: 60px;
+	line-height: 60px;
+}
+
+.item#banner4 .tag-content, .item#banner5 .tag-content {
+	top: 60px;
+	left: 80px;
+	width: 650px;
+}
+
+.item#banner4 h1, h3 {
+	color: #ffffff;
+}
+
+.item#banner4 h1 {
+	font-size: 70px;
+	line-height: 70px;
+}
+
+.item#banner6 .tag-content {
+	top: 100px;
+	left: 120px;
+	width: 650px;
+}
+.item#banner6 h1, .item#banner6 h3 {
+	color: #ffffff;
+}
+.item#banner6 h1 {
+	font-size: 48px;
+	line-height: 48px;
+}
+
+.item#banner8 .tag-content {
+	padding: 20px;
+	background: transparent url(/assets/img/transparent-bg-dark.png) repeat 0 0;
+	top: 60px;
+	left: 80px;
+	width: 560px;
+}
+
+.item#banner8 h1, .item#banner8 h3 {
+	color: #ffffff;
+}
+
+.item#banner8 h1 {
+	font-size: 48px;
+	line-height: 48px;
+}
+
+.item#banner9 .tag-content {
+	top: 20px;
+	left: 80px;
+	width: 800px;
+}
+.item#banner9 h1, .item#banner9 h3 {
+	color: #333333;
+}
+
+.item#banner9 h1 {
+	font-size: 60px;
+	line-height: 60px;
+}
+
+.carousel-control {
+	top: 50%;
+	width: 40px;
+	height: 40px;
+	font-size: 40px;
+	line-height: 40px;
+}
+
+#home-middle h3 {
+	text-align: left;
+	color: #333333 !important;
+}
+
+.tab-content {
+	background-color: #ffffff !important;
+}
+
+.listed .thumbnail {
+	width: 50px;
+	height: 50px;
+}
