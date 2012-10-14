@@ -141,7 +141,12 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 				$template->content = \View::factory('error/'.$view_file, array('language' => true));
 				$template->lead_form = null;
 				$template->modal = null;
-				$template->footer = \View::factory('footer', array('language' => true));
+				$solution_links = \Kacela::find_active('menu', \Kacela::criteria()->equals('parent_id', '1')->sort('order')); //hard coded for now
+				$addon_links = \Kacela::find_active('menu', \Kacela::criteria()->equals('parent_id', '13')->sort('order'));
+
+				$template->footer = View::factory('footer', array('language' => true))
+					->set('solution_links', $solution_links)
+					->set('addon_links', $addon_links);
 
 				$template->header = \View::factory('header')
 					->set('menu', \Menu::factory('public')->set_current(null))
@@ -152,24 +157,15 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 				if ($code != 404)
 				{
-					$email_content = '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
+					$message = '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
 						. '<pre>'.'$_POST:'.print_r($_POST,1)."</pre>\n"
 						. self::$_output;
 
-					$header = \View::factory('email/error_header')
-						->set('title', 'Matrix42 Kohana Error');
-					$footer = \View::factory('email/error_footer');
-
-					$message = \View::factory('email/_template')
-						->bind('header', $header)
-						->bind('footer', $footer)
-						->bind('content', $email_content);
-
 					// Send email alert to dev
-					$email = \Email::factory('Matrix42 Kohana Error')
+					\Email::factory('Matrix42 Kohana Error')
 						->to('jeff.neslen@matrix42.com')
 						->from('webmaster@matrix42.com')
-						->message($message->render(), 'text/html')
+						->message($message, 'text/html')
 						->send();
 				}
 			}
