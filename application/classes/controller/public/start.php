@@ -30,6 +30,11 @@ class Controller_Public_Start extends Controller_Public {
 			->send();
 	}
 
+	public function action_test_error()
+	{
+		echo $ghjlj;
+	}
+
 	public function action_insert_partners()
 	{
 		$temp_partners = \Kacela::find_all('temp_partner');

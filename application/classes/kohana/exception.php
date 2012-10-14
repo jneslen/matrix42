@@ -152,9 +152,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 				if ($code != 404)
 				{
-					$message = 'USER_ID: '.Session::instance()->get('user_id')."<br />"
-						. 'HIJACKER_ID: '.Session::instance()->get('hijacker_id')
-						. '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
+					$message = '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
 						. '<pre>'.'$_POST:'.print_r($_POST,1)."</pre>\n"
 						. self::$_output;
 
