@@ -152,17 +152,24 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 				if ($code != 404)
 				{
-					$message = '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
+					$email_content = '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
 						. '<pre>'.'$_POST:'.print_r($_POST,1)."</pre>\n"
 						. self::$_output;
 
+					$header = \View::factory('email/error_header')
+						->set('title', 'Matrix42 Kohana Error');
+					$footer = \View::factory('email/error_footer');
+
+					$message = \View::factory('email/_template')
+						->bind('header', $header)
+						->bind('footer', $footer)
+						->bind('content', $email_content);
+
 					// Send email alert to dev
 					$email = \Email::factory('Matrix42 Kohana Error')
-						->to(array(
-						'jeff.neslen@matrix42.com',
-					))
+						->to('jeff.neslen@matrix42.com')
 						->from('webmaster@matrix42.com')
-						->message($message, 'text/html')
+						->message($message->render(), 'text/html')
 						->send();
 				}
 			}
