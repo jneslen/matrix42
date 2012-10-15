@@ -111,7 +111,17 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 			// Stash the output
 			//self::$_output = ob_get_clean();
-			self::$_output = \View::factory('email/custom_error')
+
+			if(\Kohana::$environment !== 'LIVE')
+			{
+				$kohana_error_view = \Kohana_Exception::$error_view; //This file is the system file for errors
+			}
+			else
+			{
+				$kohana_error_view = 'email/custom_error'; //This is an override view file for email
+			}
+
+			self::$_output = \View::factory($kohana_error_view)
 				->set('type', $type)
 				->set('code', $code)
 				->set('message', $message)
