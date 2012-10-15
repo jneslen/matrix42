@@ -18,12 +18,13 @@ class Controller_Public_Index extends Controller_Public {
 
 		$this->_sidebar = false;
 
-		$customers = \Kacela::find_active('case_study', \Kacela::criteria()->equals('featured', '1')->limit(0,4)->sort('rand()'));
+		//$customers = \Kacela::find_active('case_study', \Kacela::criteria()->equals('featured', '1')->limit(0,4)->sort('rand()'));
+		$analysts = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,3)->equals('type', 'analyst')->sort('order'));
 
-		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4)->equals('type', 'technology')->sort('order'));
+		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,3)->equals('type', 'technology')->sort('order'));
 
 		$this->_titlebar = View::factory('home_middle', array('language' => true))
-			->set('customers', $customers)
+			->set('analysts', $analysts)
 			->set('partners', $partners);
 
 		$this->_banner = View::factory('home_banner', array('language' => true));
