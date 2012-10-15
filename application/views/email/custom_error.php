@@ -26,27 +26,6 @@ $error_id = uniqid('error');
 	#kohana_error ol.trace li { margin: 0; padding: 0; }
 	.js .collapsed { display: none; }
 </style>
-<script type="text/javascript">
-	document.documentElement.className = document.documentElement.className + ' js';
-	function koggle(elem)
-	{
-		elem = document.getElementById(elem);
-
-		if (elem.style && elem.style['display'])
-		// Only works with the "style" attr
-			var disp = elem.style['display'];
-		else if (elem.currentStyle)
-		// For MSIE, naturally
-			var disp = elem.currentStyle['display'];
-		else if (window.getComputedStyle)
-		// For most other browsers
-			var disp = document.defaultView.getComputedStyle(elem, null).getPropertyValue('display');
-
-		// Toggle the state of the "display" style
-		elem.style.display = disp == 'block' ? 'none' : 'block';
-		return false;
-	}
-</script>
 <div id="kohana_error">
 	<h1><span class="type"><?php echo $type ?> [ <?php echo $code ?> ]:</span> <span class="message"><?php echo html::chars($message) ?></span></h1>
 	<div id="<?php echo $error_id ?>" class="content">
@@ -64,20 +43,8 @@ $error_id = uniqid('error');
 						<?php endif ?>
 					</span>
 					&raquo;
-					<?php echo $step['function'] ?>(<?php if ($step['args']): $args_id = $error_id.'args'.$i; ?><a href="#<?php echo $args_id ?>" onclick="return koggle('<?php echo $args_id ?>')"><?php echo __('arguments') ?></a><?php endif ?>)
+					<?php echo $step['function'] ?>
 				</p>
-				<?php if (isset($args_id)): ?>
-				<div id="<?php echo $args_id ?>" class="collapsed">
-					<table cellspacing="0">
-						<?php foreach ($step['args'] as $name => $arg): ?>
-						<tr>
-							<td><code><?php echo $name ?></code></td>
-							<td><pre><?php echo Debug::dump($arg) ?></pre></td>
-						</tr>
-						<?php endforeach ?>
-					</table>
-				</div>
-				<?php endif ?>
 				<?php if (isset($source_id)): ?>
 				<pre id="<?php echo $source_id ?>" class="source collapsed"><code><?php echo $step['source'] ?></code></pre>
 				<?php endif ?>
