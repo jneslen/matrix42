@@ -168,10 +168,10 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 						->message($message, 'text/html')
 						->send();
 				}
+				exit($template->render());
 			}
 
-			exit($template->render());
-			//exit(1);
+			exit(1);
 		}
 		catch (Exception $e)
 		{

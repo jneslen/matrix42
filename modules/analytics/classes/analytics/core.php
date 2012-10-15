@@ -33,7 +33,7 @@ class Analytics_Core
 		}
 
 		//need the current page to determine if the view are to be included in the current page
-		$current = \Request::current()->uri();
+		$current = \Request::$current->uri();
 
 		$views = array();
 		foreach($view_array as $view => $uri)
