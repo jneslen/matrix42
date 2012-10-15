@@ -93,16 +93,13 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 				exit(1);
 			}
 
-			ob_flush();
-			flush();
-			ob_end_flush();
 			// Start an output buffer
-			ob_start();
+			//ob_start();
 
 			// Include the exception HTML
 			if ($view_file = \Kohana::find_file('views', \Kohana_Exception::$error_view))
 			{
-				include $view_file;
+				//include $view_file;
 			}
 			else
 			{
@@ -113,7 +110,16 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 
 			// Stash the output
-			self::$_output = ob_get_clean();
+			//self::$_output = ob_get_clean();
+			self::$_output = \View::factory(\Kohana_Exception::$error_view)
+				->set('type', $type)
+				->set('code', $code)
+				->set('message', $message)
+				->set('file', $file)
+				->set('line', $line)
+				->set('trace', $trace);
+
+			//ob_end_clean();
 
 			if (\Kohana::$environment !== 'LIVE')
 			{
@@ -159,12 +165,13 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 				if ($code != 404)
 				{
 
-					$message = '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
+					$email_message = '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
 						. '<pre>'.'$_POST:'.print_r($_POST,1)."</pre>\n"
-						. self::$_output;
+						. self::$_output->render();
+
 
 					$error_view = \View::factory('email/error')
-						->set('error', $message);
+						->set('error', $email_message);
 
 					exit($error_view);
 					// Send email alert to dev
