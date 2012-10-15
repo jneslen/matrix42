@@ -93,6 +93,9 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 				exit(1);
 			}
 
+			ob_flush();
+			flush();
+			ob_end_flush();
 			// Start an output buffer
 			ob_start();
 
@@ -110,11 +113,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 
 			// Stash the output
-			self::$_output = ob_get_contents();
-
-			$output = ob_get_contents();
-
-			ob_end_clean();
+			self::$_output = ob_get_clean();
 
 			if (\Kohana::$environment !== 'LIVE')
 			{
@@ -162,11 +161,12 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 					$message = '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
 						. '<pre>'.'$_POST:'.print_r($_POST,1)."</pre>\n"
-						. $output;
+						. self::$_output;
 
 					$error_view = \View::factory('email/error')
 						->set('error', $message);
 
+					exit($error_view);
 					// Send email alert to dev
 					\Email::factory('Matrix42 Kohana Error')
 						->to('jeff.neslen@matrix42.com')
