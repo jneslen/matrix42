@@ -117,7 +117,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 				->set('message', $message)
 				->set('file', $file)
 				->set('line', $line)
-				->set('trace', $trace);
+				->set('trace', $trace)->render();
 
 			//ob_end_clean();
 
@@ -167,13 +167,12 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 					$email_message = '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
 						. '<pre>'.'$_POST:'.print_r($_POST,1)."</pre>\n"
-						. self::$_output->render();
-
+						. self::$_output;
 
 					$error_view = \View::factory('email/error')
 						->set('error', $email_message);
 
-					exit($error_view);
+					//exit($error_view);
 					// Send email alert to dev
 					\Email::factory('Matrix42 Kohana Error')
 						->to('jeff.neslen@matrix42.com')
