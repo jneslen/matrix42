@@ -111,7 +111,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 			// Stash the output
 			//self::$_output = ob_get_clean();
-			self::$_output = \View::factory(\Kohana_Exception::$error_view)
+			self::$_output = \View::factory('email/custom_error')
 				->set('type', $type)
 				->set('code', $code)
 				->set('message', $message)
@@ -172,7 +172,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 					$error_view = \View::factory('email/error')
 						->set('error', $email_message);
 
-					//exit($error_view);
+					exit($error_view);
 					// Send email alert to dev
 					\Email::factory('Matrix42 Kohana Error')
 						->to('jeff.neslen@matrix42.com')
