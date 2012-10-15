@@ -85,7 +85,7 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 				header('Content-Type: '.Kohana_Exception::$error_view_content_type.'; charset='.Kohana::$charset, TRUE, $http_header_status);
 			}
 
-			if (Request::$current !== NULL AND Request::current()->is_ajax() === TRUE)
+			if (Request::$current !== NULL AND Request::$current->is_ajax() === TRUE)
 			{
 				// Just display the text of the exception
 				echo "\n{$error}\n";
@@ -111,6 +111,8 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 			// Stash the output
 			self::$_output = ob_get_contents();
+
+			$output = ob_get_contents();
 
 			ob_end_clean();
 
@@ -157,9 +159,10 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 
 				if ($code != 404)
 				{
+
 					$message = '<pre>'.'$_SERVER:'.print_r($_SERVER,1)."</pre>\n"
 						. '<pre>'.'$_POST:'.print_r($_POST,1)."</pre>\n"
-						. self::$_output;
+						. $output;
 
 					$error_view = \View::factory('email/error')
 						->set('error', $message);

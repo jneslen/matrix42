@@ -1,1 +1,6 @@
+<!DOCTYPE html>
+<html>
+<body>
 <?=$error?>
+</body>
+</html>
