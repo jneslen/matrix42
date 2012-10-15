@@ -161,11 +161,14 @@ class Kohana_Exception extends Kohana_Kohana_Exception {
 						. '<pre>'.'$_POST:'.print_r($_POST,1)."</pre>\n"
 						. self::$_output;
 
+					$error_view = \View::factory('email/error')
+						->set('error', $message);
+
 					// Send email alert to dev
 					\Email::factory('Matrix42 Kohana Error')
 						->to('jeff.neslen@matrix42.com')
 						->from('webmaster@matrix42.com')
-						->message($message, 'text/html')
+						->message($error_view->render(), 'text/html')
 						->send();
 				}
 				exit($template->render());
