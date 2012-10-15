@@ -2,7 +2,7 @@
 <?php if(isset($banner_content)): ?>
 	<?=$banner_content?>
 <?php else: ?>
-	<div class="tag-content" style="top: <?=$top?>px; left: <?=$left?>px; width: <?=$title_width?>px;">
+	<div class="tag-content<?=$welled ? ' welled' : ''?>" style="top: <?=$top?>px; left: <?=$left?>px; width: <?=$title_width?>px;">
 	<?php if(isset($title)): ?>
 		<h1 style="color: <?=$title_color?>;"><?=mb_strtolower($title)?></h1>
 	<?php endif; ?>

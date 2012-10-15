@@ -184,6 +184,9 @@ ul.list {
 		z-index: 1;
 	}
 	.tag-content {
+		h1, h3 {
+			color: #ffffff;
+		}
 		.abs;
 		z-index: 2;
 		h1, h2, h3, h4 {
@@ -192,6 +195,14 @@ ul.list {
 		h1, h4 {
 			font-family: 'Helvetica Neue', 'Helvetica', 'Arial';
 			font-weight: bold;
+		}
+	}
+	.welled {
+		.rounded_corners();
+		padding: 20px;
+		background: transparent url(@{img_path}transparent-bg-dark.png) repeat 0 0;
+		h1 {
+			color: #ffffff !important;
 		}
 	}
 }
@@ -418,7 +429,6 @@ ul.link-list {
 			.hidden;
 			font-size: 6px;
 			line-height: 5px;
-			letter-spacing: -1px;
 		}
 	}
 }
@@ -453,7 +463,6 @@ ul.link-list {
 		h4 {
 			font-size: 11px;
 			line-height: 10px;
-			letter-spacing: -1px;
 		}
 	}
 }
@@ -476,7 +485,6 @@ ul.link-list {
 		}
 		h4 {
 			font-size: 14px;
-			letter-spacing: -1px;
 		}
 	}
 }
@@ -504,7 +512,6 @@ ul.link-list {
 		}
 		h4 {
 			font-size: 16px;
-			letter-spacing: -1px;
 		}
 	}
 }

@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.27-cll)
 # Database: darth_de
-# Generation Time: 2012-10-15 22:07:13 +0000
+# Generation Time: 2012-10-15 22:23:15 +0000
 # ************************************************************
 
 
@@ -828,6 +828,7 @@ CREATE TABLE `menus` (
   `banner_y` mediumint(4) DEFAULT NULL,
   `title_width` mediumint(4) DEFAULT NULL,
   `title_color` varchar(7) DEFAULT NULL COMMENT '#hexidecimal',
+  `welled` tinyint(1) NOT NULL DEFAULT '0',
   `order` int(2) DEFAULT NULL,
   `default_lead_form` tinyint(1) NOT NULL DEFAULT '0',
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
@@ -841,27 +842,27 @@ CREATE TABLE `menus` (
 LOCK TABLES `menus` WRITE;
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 
-INSERT INTO `menus` (`id`, `parent_id`, `campaign_id`, `role`, `type`, `title`, `url`, `classes`, `a_classes`, `section`, `controller`, `method`, `pagetitle`, `subtitle`, `keywords`, `banner`, `banner_title`, `banner_subtitle`, `banner_x`, `banner_y`, `title_width`, `title_color`, `order`, `default_lead_form`, `disabled`)
+INSERT INTO `menus` (`id`, `parent_id`, `campaign_id`, `role`, `type`, `title`, `url`, `classes`, `a_classes`, `section`, `controller`, `method`, `pagetitle`, `subtitle`, `keywords`, `banner`, `banner_title`, `banner_subtitle`, `banner_x`, `banner_y`, `title_width`, `title_color`, `welled`, `order`, `default_lead_form`, `disabled`)
 VALUES
-	(1,NULL,NULL,'public','main','Lösungen','#','dropdown',NULL,'public','losungen','index',NULL,NULL,NULL,'sub-banner-woman.jpg','Der ganzheitliche arbeitsplatz','Die Lösung für Ihre IT-Anforderungen',NULL,NULL,NULL,'',2,0,0),
-	(2,NULL,NULL,'public','main','Über Matrix42','/uber',NULL,NULL,'public','uber','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,0,0),
-	(3,NULL,NULL,'public','main','Rückruf anfordern','/kaufen',NULL,'bold','public','kaufen','index','So kaufen Sie die Produkte und Services von Matrix42','So können Sie Matrix42 kontaktieren bzw. einen Reseller-Partner finden',NULL,'sub-banner-woman.jpg','fangen sie noch heute damit an!','So kaufen Sie Matrix42 Produkte und Lösungen',NULL,NULL,NULL,NULL,5,0,0),
-	(4,1,NULL,'public','submenu','Mobile Workplace Management','/losungen/mobile_device_management',NULL,NULL,'public','losungen','mobile_device_management','Kein Problem, wenn Sie den gesamten Lebenszyklus der mobilen Endgeräte managen','Flexibilität für Mitarbeiter, Sicherheit für IT - Description: „Bring Your Own Device&ldquo; minimiert Ressourcen und macht die Belegschaft effizienter.','byod, mobile workplace, personal device, mobile device, mobile workforce','sub-banner-byod.jpg','byod zu ihren konditionen','Flexibilität für Mitarbeiter, Sicherheit für IT',40,35,700,NULL,2,0,0),
-	(5,1,NULL,'public','submenu','Virtual Workplace Management','/losungen/virtual_desktop_management',NULL,NULL,'public','losungen','virtual_desktop_management','Die unabdingbare Lösung für Citrix Desktop-Deployments ','Virtueller Desktop - einfach und erschwinglich Die unabdingbare Lösung für Citrix Desktop-Deployments',NULL,'sub-banner-virtualization.jpg','desktop-virtualisierung','Einfach und erschwinglich',30,35,700,NULL,3,0,0),
-	(6,1,NULL,'public','submenu','Physical Workplace Management','/losungen/endpoint_management',NULL,NULL,'public','losungen','endpoint_management','Automatisieren Sie zeitaufwändige Aufgaben','Automatisierung vieler zeitaufwändiger Aufgaben, wie z.B. Software-Implementierung und gängige Helpdesk-Services. Bei gleichzeitiger Reduzierung der IT-Arbeitsbelastung und der Kosten.','empirum, workplace management, physical management','sub-banner-integration.jpg','vollständige integration','Automatisierung aller IT-Management-Prozesse',30,25,600,NULL,4,0,0),
-	(7,1,5,'public','submenu','Workplace Compliance','/losungen/compliance',NULL,NULL,'public','losungen','compliance','Kontrolle über alle IT-Assets, Lizenzen und Verträge','Kontrolle über alle IT-Assets, Lizenzen und Verträge Description: Die ideale Lösung, um die Interaktion zwischen Compliance und Sicherheit zu maximieren','compliance, software compliance','sub-banner-compliance.jpg','Workplace Compliance','Volle Kontrolle über alle IT-Bestände, Lizenzen und Verträge',100,25,700,'#ffffff',5,0,0),
-	(8,1,3,'public','submenu','Windows 7/8 Migration','/losungen/windows_7_migration',NULL,NULL,'public','losungen','windows_7_migration','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8.','window7 migration, windows8 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','migration zu windows 7/8','Schnelle und zuverlässige Migration zu Windows 7/8',60,45,700,'#ffffff',7,0,0),
-	(9,1,NULL,'public','submenu','Self-Service','/losungen/self_service',NULL,NULL,'public','losungen','self_service','Die einzige Lösung die self-service mit mobilem, virtuellem und physikalischem Client Management verbindet','Automatisierung und Self-Service','automatisierung, self-service, itsm','sub-banner-woman.jpg','Erleichtert die IT Last','Automation und Self-Service reduzieren die Supportkosten um 70%',600,NULL,650,NULL,6,0,0),
-	(10,NULL,NULL,'public','footer','Services &amp; Support','/support',NULL,NULL,'public','support','index','Matrix42 Service and Support','At Matrix42, we are dedicated to customer satisfaction. That means not only providing the best products but also world-class customer support.',NULL,'sub-banner-abstract.jpg','support','Services and Support when you need it.',100,25,500,'#ffffff',NULL,0,0),
-	(11,NULL,NULL,'public','footer','Workplace Management for SCCM','/losungen/enterprise_manager',NULL,NULL,'public','losungen','enterprise_manager','Matrix42 Workplace Management Für SCCM','Microsoft SCCM add-on that helps you to reduce the costs and efforts of your desktop management.','microsoft sccm, enterprise manager, sccm console','sub-banner-windows7.jpg','workplace management for SCCM','Das führt unter Umständen zu Fehlern und falschen Konfigurationen.',60,35,700,'#ffffff',7,0,0),
-	(12,NULL,NULL,'public','main','English','http://www.matrix42.com',NULL,NULL,NULL,NULL,'index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0),
-	(13,NULL,NULL,'public','main','Add-Ons','#','dropdown',NULL,'public','addons','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,0,0),
-	(14,13,NULL,'public','submenu','Power Management','/addons/power_management',NULL,NULL,'public','addons','power_management',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0),
-	(15,13,NULL,'public','submenu','Remote Control','/addons/remote_control',NULL,NULL,'public','addons','remote_control',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,0),
-	(16,13,NULL,'public','submenu','Patch Management','/addons/patch_management',NULL,NULL,'public','addons','patch_management',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,0,0),
-	(17,13,NULL,'public','submenu','Package Robot','/addons/package_robot',NULL,NULL,'public','addons','package_robot',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,0,0),
-	(18,1,NULL,'public','submenu','Matrix42 Cloud','/losungen/cloud_delivery',NULL,NULL,'public','losungen','cloud_delivery','Die einzige Cloud-basierte Workplace Management-Lösung der Branche','Keine Anschaffungskosten. In wenigen Minuten einsatzbereit.','cloud management, cloud delivery, cloud solutions, cloud based management, cloud services','sub-banner-cloud.jpg','management in der cloud','Keine Anschaffungskosten. In wenigen Minuten einsatzbereit.',50,25,700,NULL,1,0,0),
-	(19,NULL,NULL,'public','main','Workplace Management','workplace_management',NULL,NULL,'public','workplace_management','index',NULL,NULL,NULL,'sub-banner-woman.jpg','workplace management','empowering the dynamic workplace',500,NULL,700,NULL,1,0,0);
+	(1,NULL,NULL,'public','main','Lösungen','#','dropdown',NULL,'public','losungen','index',NULL,NULL,NULL,'sub-banner-woman.jpg','Der ganzheitliche arbeitsplatz','Die Lösung für Ihre IT-Anforderungen',NULL,NULL,NULL,'',0,2,0,0),
+	(2,NULL,NULL,'public','main','Über Matrix42','/uber',NULL,NULL,'public','uber','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0),
+	(3,NULL,NULL,'public','main','Rückruf anfordern','/kaufen',NULL,'bold','public','kaufen','index','So kaufen Sie die Produkte und Services von Matrix42','So können Sie Matrix42 kontaktieren bzw. einen Reseller-Partner finden',NULL,'sub-banner-woman.jpg','fangen sie noch heute damit an!','So kaufen Sie Matrix42 Produkte und Lösungen',NULL,NULL,NULL,NULL,0,5,0,0),
+	(4,1,NULL,'public','submenu','Mobile Workplace Management','/losungen/mobile_device_management',NULL,NULL,'public','losungen','mobile_device_management','Kein Problem, wenn Sie den gesamten Lebenszyklus der mobilen Endgeräte managen','Flexibilität für Mitarbeiter, Sicherheit für IT - Description: „Bring Your Own Device&ldquo; minimiert Ressourcen und macht die Belegschaft effizienter.','byod, mobile workplace, personal device, mobile device, mobile workforce','sub-banner-byod.jpg','byod zu ihren konditionen','Flexibilität für Mitarbeiter, Sicherheit für IT',40,35,700,NULL,0,2,0,0),
+	(5,1,NULL,'public','submenu','Virtual Workplace Management','/losungen/virtual_desktop_management',NULL,NULL,'public','losungen','virtual_desktop_management','Die unabdingbare Lösung für Citrix Desktop-Deployments ','Virtueller Desktop - einfach und erschwinglich Die unabdingbare Lösung für Citrix Desktop-Deployments',NULL,'sub-banner-virtualization.jpg','desktop-virtualisierung','Einfach und erschwinglich',30,35,700,NULL,0,3,0,0),
+	(6,1,NULL,'public','submenu','Physical Workplace Management','/losungen/endpoint_management',NULL,NULL,'public','losungen','endpoint_management','Automatisieren Sie zeitaufwändige Aufgaben','Automatisierung vieler zeitaufwändiger Aufgaben, wie z.B. Software-Implementierung und gängige Helpdesk-Services. Bei gleichzeitiger Reduzierung der IT-Arbeitsbelastung und der Kosten.','empirum, workplace management, physical management','sub-banner-integration.jpg','vollständige integration','Automatisierung aller IT-Management-Prozesse',30,25,600,NULL,0,4,0,0),
+	(7,1,5,'public','submenu','Workplace Compliance','/losungen/compliance',NULL,NULL,'public','losungen','compliance','Kontrolle über alle IT-Assets, Lizenzen und Verträge','Kontrolle über alle IT-Assets, Lizenzen und Verträge Description: Die ideale Lösung, um die Interaktion zwischen Compliance und Sicherheit zu maximieren','compliance, software compliance','sub-banner-compliance.jpg','Workplace Compliance','Volle Kontrolle über alle IT-Bestände, Lizenzen und Verträge',100,25,700,'#ffffff',0,5,0,0),
+	(8,1,3,'public','submenu','Windows 7/8 Migration','/losungen/windows_7_migration',NULL,NULL,'public','losungen','windows_7_migration','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8.','window7 migration, windows8 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','migration zu windows 7/8','Schnelle und zuverlässige Migration zu Windows 7/8',60,45,700,'#ffffff',0,7,0,0),
+	(9,1,NULL,'public','submenu','Self-Service','/losungen/self_service',NULL,NULL,'public','losungen','self_service','Die einzige Lösung die self-service mit mobilem, virtuellem und physikalischem Client Management verbindet','Automatisierung und Self-Service','automatisierung, self-service, itsm','sub-banner-woman.jpg','Erleichtert die IT Last','Automation und Self-Service reduzieren die Supportkosten um 70%',600,NULL,650,NULL,0,6,0,0),
+	(10,NULL,NULL,'public','footer','Services &amp; Support','/support',NULL,NULL,'public','support','index','Matrix42 Service and Support','At Matrix42, we are dedicated to customer satisfaction. That means not only providing the best products but also world-class customer support.',NULL,'sub-banner-abstract.jpg','support','Services and Support when you need it.',100,25,500,'#ffffff',0,NULL,0,0),
+	(11,NULL,NULL,'public','footer','Workplace Management for SCCM','/losungen/enterprise_manager',NULL,NULL,'public','losungen','enterprise_manager','Matrix42 Workplace Management Für SCCM','Microsoft SCCM add-on that helps you to reduce the costs and efforts of your desktop management.','microsoft sccm, enterprise manager, sccm console','sub-banner-windows7.jpg','workplace management for SCCM','Das führt unter Umständen zu Fehlern und falschen Konfigurationen.',60,35,700,'#ffffff',0,7,0,0),
+	(12,NULL,NULL,'public','main','English','http://www.matrix42.com',NULL,NULL,NULL,NULL,'index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,6,0,0),
+	(13,NULL,NULL,'public','main','Add-Ons','#','dropdown',NULL,'public','addons','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,3,0,0),
+	(14,13,NULL,'public','submenu','Power Management','/addons/power_management',NULL,NULL,'public','addons','power_management',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0),
+	(15,13,NULL,'public','submenu','Remote Control','/addons/remote_control',NULL,NULL,'public','addons','remote_control',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0),
+	(16,13,NULL,'public','submenu','Patch Management','/addons/patch_management',NULL,NULL,'public','addons','patch_management',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,3,0,0),
+	(17,13,NULL,'public','submenu','Package Robot','/addons/package_robot',NULL,NULL,'public','addons','package_robot',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0),
+	(18,1,NULL,'public','submenu','Matrix42 Cloud','/losungen/cloud_delivery',NULL,NULL,'public','losungen','cloud_delivery','Die einzige Cloud-basierte Workplace Management-Lösung der Branche','Keine Anschaffungskosten. In wenigen Minuten einsatzbereit.','cloud management, cloud delivery, cloud solutions, cloud based management, cloud services','sub-banner-cloud.jpg','management in der cloud','Keine Anschaffungskosten. In wenigen Minuten einsatzbereit.',50,25,700,NULL,0,1,0,0),
+	(19,NULL,NULL,'public','main','Workplace Management','workplace_management',NULL,NULL,'public','workplace_management','index',NULL,NULL,NULL,'sub-banner-woman.jpg','workplace management','empowering the dynamic workplace',500,NULL,700,NULL,0,1,0,0);
 
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1700,6 +1701,44 @@ VALUES
 UNLOCK TABLES;
 
 
+
+--
+-- Dumping routines (PROCEDURE) for database 'darth_de'
+--
+DELIMITER ;;
+
+# Dump of PROCEDURE sp_belongs_to
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+		FROM INFORMATION_SCHEMA.key_column_usage
+		WHERE TABLE_SCHEMA = schemaName
+		AND TABLE_NAME = tableName
+		AND REFERENCED_TABLE_NAME IS NOT NULL
+		GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+# Dump of PROCEDURE sp_has_many
+# ------------------------------------------------------------
+
+/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
+/*!50003 SET SESSION SQL_MODE=""*/;;
+/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
+BEGIN
+	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
+	  FROM INFORMATION_SCHEMA.key_column_usage
+	  WHERE TABLE_SCHEMA = schemaName
+	  AND REFERENCED_TABLE_NAME = tableName
+	  GROUP BY constraintName;
+	END */;;
+
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
+DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

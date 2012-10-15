@@ -21,6 +21,7 @@ class Controller_Public extends Controller_Site {
 		$this->_banner->left = 700;
 		$this->_banner->title_width = 500;
 		$this->_banner->title_color = '#333333';
+		$this->_banner->welled = false;
 
 		//$this->_lead_form = $this->lead_form(true);
 
@@ -92,6 +93,7 @@ class Controller_Public extends Controller_Site {
 			$this->_banner->left = $menu->banner_x != null ? $menu->banner_x : $this->_banner->left;
 			$this->_banner->title_width = $menu->title_width != null ? $menu->title_width : $this->_banner->title_width;
 			$this->_banner->title_color = $menu->title_color != null ? $menu->title_color : $this->_banner->title_color;
+			$this->_banner->welled = $menu->welled;
 		}
 
 		$sidebar = $menu->get_content('sidebar');
