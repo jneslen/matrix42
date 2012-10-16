@@ -19,12 +19,21 @@ class Controller_Public_Index extends Controller_Public {
 		$this->_sidebar = false;
 
 		$customers = \Kacela::find_active('case_study', \Kacela::criteria()->equals('featured', '1')->limit(0,4)->sort('rand()'));
-		$analysts = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4)->equals('type', 'analyst')->sort('order'));
 
-		$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4)->equals('type', 'technology')->sort('order'));
+		$this->_titlebar = View::factory('home_middle', array('language' => true));
 
-		$this->_titlebar = View::factory('home_middle', array('language' => true))
-			->set('analysts', $analysts)
+		if(\Helper::language() === 'de')
+		{
+			$analysts = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,4)->equals('type', 'analyst')->sort('order'));
+			$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,3)->equals('type', 'technology')->sort('order'));
+			$this->_titlebar->set('analysts', $analysts);
+		}
+		else
+		{
+			$partners = \Kacela::find_active('partner', \Kacela::criteria()->limit(0,5)->equals('type', 'technology')->sort('order'));
+		}
+
+		$this->_titlebar
 			->set('customers', $customers)
 			->set('partners', $partners);
 
