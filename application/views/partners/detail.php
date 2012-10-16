@@ -16,6 +16,7 @@
 	<div class="clear"></div>
 	<?=$partner->markdown('description')?>
 	<div class="clear"></div>
+<?php if($partner->get_address()->id): ?>
 	<h3 class="secondary">Locations:</h3>
 	<div class="row">
 		<?php $count = 0; ?>
@@ -38,6 +39,7 @@
 		<?php $count++; ?>
 		<?php endforeach; ?>
 	</div><!-- row -->
+<?php endif; ?>
 </div><!-- padded-content -->
 <div class="well padded">
 	<div class="left">

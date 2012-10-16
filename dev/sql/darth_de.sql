@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.27-cll)
 # Database: darth_de
-# Generation Time: 2012-10-15 22:23:15 +0000
+# Generation Time: 2012-10-16 15:46:23 +0000
 # ************************************************************
 
 
@@ -848,9 +848,9 @@ VALUES
 	(2,NULL,NULL,'public','main','Über Matrix42','/uber',NULL,NULL,'public','uber','index',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0),
 	(3,NULL,NULL,'public','main','Rückruf anfordern','/kaufen',NULL,'bold','public','kaufen','index','So kaufen Sie die Produkte und Services von Matrix42','So können Sie Matrix42 kontaktieren bzw. einen Reseller-Partner finden',NULL,'sub-banner-woman.jpg','fangen sie noch heute damit an!','So kaufen Sie Matrix42 Produkte und Lösungen',NULL,NULL,NULL,NULL,0,5,0,0),
 	(4,1,NULL,'public','submenu','Mobile Workplace Management','/losungen/mobile_device_management',NULL,NULL,'public','losungen','mobile_device_management','Kein Problem, wenn Sie den gesamten Lebenszyklus der mobilen Endgeräte managen','Flexibilität für Mitarbeiter, Sicherheit für IT - Description: „Bring Your Own Device&ldquo; minimiert Ressourcen und macht die Belegschaft effizienter.','byod, mobile workplace, personal device, mobile device, mobile workforce','sub-banner-byod.jpg','byod zu ihren konditionen','Flexibilität für Mitarbeiter, Sicherheit für IT',40,35,700,NULL,0,2,0,0),
-	(5,1,NULL,'public','submenu','Virtual Workplace Management','/losungen/virtual_desktop_management',NULL,NULL,'public','losungen','virtual_desktop_management','Die unabdingbare Lösung für Citrix Desktop-Deployments ','Virtueller Desktop - einfach und erschwinglich Die unabdingbare Lösung für Citrix Desktop-Deployments',NULL,'sub-banner-virtualization.jpg','desktop-virtualisierung','Einfach und erschwinglich',30,35,700,NULL,0,3,0,0),
-	(6,1,NULL,'public','submenu','Physical Workplace Management','/losungen/endpoint_management',NULL,NULL,'public','losungen','endpoint_management','Automatisieren Sie zeitaufwändige Aufgaben','Automatisierung vieler zeitaufwändiger Aufgaben, wie z.B. Software-Implementierung und gängige Helpdesk-Services. Bei gleichzeitiger Reduzierung der IT-Arbeitsbelastung und der Kosten.','empirum, workplace management, physical management','sub-banner-integration.jpg','vollständige integration','Automatisierung aller IT-Management-Prozesse',30,25,600,NULL,0,4,0,0),
-	(7,1,5,'public','submenu','Workplace Compliance','/losungen/compliance',NULL,NULL,'public','losungen','compliance','Kontrolle über alle IT-Assets, Lizenzen und Verträge','Kontrolle über alle IT-Assets, Lizenzen und Verträge Description: Die ideale Lösung, um die Interaktion zwischen Compliance und Sicherheit zu maximieren','compliance, software compliance','sub-banner-compliance.jpg','Workplace Compliance','Volle Kontrolle über alle IT-Bestände, Lizenzen und Verträge',100,25,700,'#ffffff',0,5,0,0),
+	(5,1,NULL,'public','submenu','Virtual Workplace Management','/losungen/virtual_desktop_management',NULL,NULL,'public','losungen','virtual_desktop_management','Die unabdingbare Lösung für Citrix Desktop-Deployments ','Virtueller Desktop - einfach und erschwinglich Die unabdingbare Lösung für Citrix Desktop-Deployments',NULL,'sub-banner-virtualization.jpg','desktop-virtualisierung','Einfach und erschwinglich',30,35,640,NULL,1,3,0,0),
+	(6,1,NULL,'public','submenu','Physical Workplace Management','/losungen/endpoint_management',NULL,NULL,'public','losungen','endpoint_management','Automatisieren Sie zeitaufwändige Aufgaben','Automatisierung vieler zeitaufwändiger Aufgaben, wie z.B. Software-Implementierung und gängige Helpdesk-Services. Bei gleichzeitiger Reduzierung der IT-Arbeitsbelastung und der Kosten.','empirum, workplace management, physical management','sub-banner-integration.jpg','vollständige integration','Automatisierung aller IT-Management-Prozesse',20,25,620,NULL,1,4,0,0),
+	(7,1,5,'public','submenu','Workplace Compliance','/losungen/compliance',NULL,NULL,'public','losungen','compliance','Kontrolle über alle IT-Assets, Lizenzen und Verträge','Kontrolle über alle IT-Assets, Lizenzen und Verträge Description: Die ideale Lösung, um die Interaktion zwischen Compliance und Sicherheit zu maximieren','compliance, software compliance','sub-banner-compliance.jpg','Workplace Compliance','Volle Kontrolle über alle IT-Bestände, Lizenzen und Verträge',100,25,700,NULL,1,5,0,0),
 	(8,1,3,'public','submenu','Windows 7/8 Migration','/losungen/windows_7_migration',NULL,NULL,'public','losungen','windows_7_migration','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8','Matrix42 Workplace Management für eine einfache, kostengünstige und sichere Migration zu Windows 7/8.','window7 migration, windows8 migration, windows upgrade, windows xp business','sub-banner-windows7.jpg','migration zu windows 7/8','Schnelle und zuverlässige Migration zu Windows 7/8',60,45,700,'#ffffff',0,7,0,0),
 	(9,1,NULL,'public','submenu','Self-Service','/losungen/self_service',NULL,NULL,'public','losungen','self_service','Die einzige Lösung die self-service mit mobilem, virtuellem und physikalischem Client Management verbindet','Automatisierung und Self-Service','automatisierung, self-service, itsm','sub-banner-woman.jpg','Erleichtert die IT Last','Automation und Self-Service reduzieren die Supportkosten um 70%',600,NULL,650,NULL,0,6,0,0),
 	(10,NULL,NULL,'public','footer','Services &amp; Support','/support',NULL,NULL,'public','support','index','Matrix42 Service and Support','At Matrix42, we are dedicated to customer satisfaction. That means not only providing the best products but also world-class customer support.',NULL,'sub-banner-abstract.jpg','support','Services and Support when you need it.',100,25,500,'#ffffff',0,NULL,0,0),
@@ -861,7 +861,7 @@ VALUES
 	(15,13,NULL,'public','submenu','Remote Control','/addons/remote_control',NULL,NULL,'public','addons','remote_control',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0),
 	(16,13,NULL,'public','submenu','Patch Management','/addons/patch_management',NULL,NULL,'public','addons','patch_management',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,3,0,0),
 	(17,13,NULL,'public','submenu','Package Robot','/addons/package_robot',NULL,NULL,'public','addons','package_robot',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0),
-	(18,1,NULL,'public','submenu','Matrix42 Cloud','/losungen/cloud_delivery',NULL,NULL,'public','losungen','cloud_delivery','Die einzige Cloud-basierte Workplace Management-Lösung der Branche','Keine Anschaffungskosten. In wenigen Minuten einsatzbereit.','cloud management, cloud delivery, cloud solutions, cloud based management, cloud services','sub-banner-cloud.jpg','management in der cloud','Keine Anschaffungskosten. In wenigen Minuten einsatzbereit.',50,25,700,NULL,0,1,0,0),
+	(18,1,NULL,'public','submenu','Matrix42 Cloud','/losungen/cloud_delivery',NULL,NULL,'public','losungen','cloud_delivery','Die einzige Cloud-basierte Workplace Management-Lösung der Branche','Keine Anschaffungskosten. In wenigen Minuten einsatzbereit.','cloud management, cloud delivery, cloud solutions, cloud based management, cloud services','sub-banner-cloud.jpg','management in der cloud','Keine Anschaffungskosten. In wenigen Minuten einsatzbereit.',35,25,640,NULL,1,1,0,0),
 	(19,NULL,NULL,'public','main','Workplace Management','workplace_management',NULL,NULL,'public','workplace_management','index',NULL,NULL,NULL,'sub-banner-woman.jpg','workplace management','empowering the dynamic workplace',500,NULL,700,NULL,0,1,0,0);
 
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
@@ -1078,7 +1078,7 @@ VALUES
 	(91,'reseller','Synthesis Relations + Systems GmbH','Die synthesis wurde 1994 als Software- und Beratungshaus gegründet. Als Kompetenter Partner für den Mittelstand aber auch für Großunternehmen stellen wir Kunden und Interessenten unser Know-how zur Verfügung. Wir sind mehr als nur ein IT-Dienstleister. Anspruchsvolle Anforderungen unserer Kunden sind der Ausgangspunkt unserer Arbeit. Unser Ziel ist es, diese Anforderungen in höchster Qualität, schnell und kostengünstig umzusetzen: mit optimalem Nutzen für Sie, Ihre Kunden und Partner. Dazu bauen wir auf unsere langjährige Projekterfahrung, den Willen und die Fähigkeit zur Innovation und die Einbeziehung namhafter Partner. Zusammen bilden sie die Grundlage für erfolgreiche Projekte und langfristige und stabile Kundenbeziehungen. \n\n<br /><br />Ihre Vorteile als Kunde:\n<ul><li>Bewährte Branchen-/Lösungskompetenz und moderne Technologie stehen für die Zukunftsfähigkeit unserer Lösungen. </li><li>Besonders gut ausgebildete und erfahrene Mitarbeiterinnen und Mitarbeiter sorgen für hochwertige Ergebnisse. </li><li>Das umfangreiche Leistungsspektrum managen wir kostengünstig in projektbezogenen und flexiblen Profit Center. </li><li>Kontinuierliche Kommunikation zwischen den Unternehmen gewährleistet geringe Reibungsverluste bei gemeinsamen Projekten. </li></ul>\nZu unseren Kernkompetenzen gehören:\n<ul><li>IT - und Organisationsberatung</li><li>Objektorientierte Softwareentwicklung</li><li>System- / Business Integration</li><li>Netz-/ System-Management</li><li>IT-Lifecycle-Management</li><li>IT-Sicherheit</li></ul>','synthesis-logo.jpg','www.synthesis.de',NULL,1,NULL),
 	(92,'reseller','PTSGroup - ProTIP Unternehmensberatung GmbH','Die PTSGroup ist ein moderner IT-Service Dienstleister. Unser Portfolio deckt alle Standards moderner IT-Landschaften ab und repräsentiert den ‚State of the Art’. Doch das ist uns nicht genug! Wir richten den Blick weiter in die Zukunft, um für unsere Kunden stets einen Schritt voraus zu sein. Wir haben bereits heute eine klare Vorstellung davon, wie morgen Ihre IT-Landschaft aussehen könnte. \nIn Bremen und Frankfurt betreiben wir jeweils eigene Rechenzentren. Als SAP Hosting Partner sind unsere Rechenzentren und Leistungen durch die SAP AG zertifiziert. Dies qualifiziert uns bereits zu einem Partner, der die Sicherheit und Verfügbarkeit Ihrer Daten jederzeit gewährleistet. Unsere Zertifizierung nach ISO 27001 dokumentiert darüber hinaus, dass wir zudem mehr als die Standardanforderungen erfüllen - wir stehen für optimale Leistungsfähigkeit bei maximaler Sicherheit. \nWir bieten Ihnen von der Realisierung von Teilprojekten bis hin zur Komplettlösung alle relevanten IT-Leistungen aus einer Hand.','ptsgroup-logo.gif','www.ptsgroup.de',NULL,1,NULL),
 	(93,'reseller','Raxon Informática','Asseco Spain is an IT company which has different bussiness lines: Raxon, Seisdosmil, Raxon IT Services and  Renting 2006. Each one focuses on specifics areas, such as Outsourcing, IT Support, Datacenter, Networks and Security Engeniering, Software Development, Renting and Human Resources solutions  (flexible spending plans and programs to provide Internet access and technology for employees).','asseco-spain-logo.jpg','www.asseco.es',NULL,0,NULL),
-	(94,'analyst','Forrester','<h3 class=\"emphasis\">The &quot;Only Citrix management solution in the Wave&quot;</h3>\r\rThe 2012 Forrester Wave for Enterprise Client Management Suites noted that among the many changes happening in the business environment, the use of Windows PCs as the only personal computing tool for workers has come to an end. With the explosion of the Bring Your Own Device (BYOD) phenomenon and new application delivery models, businesses need to provide workers with access to company resources across a mix of Windows PCs, Macs, tablets, phones, virtual desktops and applications. This change is forcing companies and IT teams to quickly adapt to these new tools without compromising productivity or security. \r\rMatrix42 was included in the study as one of the strongest performers for helping businesses meet this demand and change. Forrester recognized Matrix42 in its report as a player in large, distributed environments. The report also mentioned that &quot;Matrix42&#39;s most noteworthy capability is management of Citrix XenApp and XenDesktop hybrid physical and virtual desktop infrastructures. It&#39;s the only Citrix management solution in the Wave.”&quot; \r\rFor the Forrester Wave, the research firm evaluates vendors and their products against criteria established based on research and user need assessments. Forrester then gathers details of product qualifications through a combination of lab evaluations, questionnaires, demos, and/or discussions with client references. \r','forrester-logo.png','www.forrester.com','/partners/detail/94',0,2);
+	(94,'analyst','Forrester','<h3 class=\"emphasis\">Matrix 42 als &quot;einzige Citrix Managementlösung in den Forrester Wave Report aufgenommen&quot;</h3>\r\rWie im Forrester Wave Report 2012 für Enterprise Client Management Suites zu lesen steht, ist unter den vielen Veränderungen im Unternehmensumfeld auch insbesondere anzuführen, dass der Einsatz von Windows PCs als einzigem Tool der Mitarbeiter für das Personal Computing ausgedient hat. Mit der explosionsartigen Zunahme von Bring Your Own Device (BYOD), also der Nutzung privater Endgeräte am Arbeitsplatz, und im Rahmen neuer Modelle für die Applikationsbereitstellung sind Unternehmen gefordert, ihren Mitarbeitern auf allen möglichen Endgeräten – von Windows PCs und Macs über Tablets und Telefone bis hin zu virtuellen Desktops – Zugriff auf alle möglichen Anwendungen zu gewährleisten. Unternehmen und IT-Abteilungen stellt dieser Wandel vor die Herausforderung, eine schnelle Anpassung an diese neuen Tools vorzunehmen, ohne dadurch die Produktivität oder die Sicherheit aufs Spiel zu setzen. \r\rMatrix42 wurde als einer der stärksten Anbieter mit Lösungen zur Adressierung dieser Anforderungen und Veränderungen in die Studie aufgenommen. Forrester würdigte in seinem Report Matrix42 als Anbieter für große, verteilte Umgebungen und hob vor allem die Möglichkeit der Matrix42 Lösungen hervor, hybride physische und virtuelle Desktop-Infrastrukturen auf Basis von Citrix XenApp und XenDesktop zu verwalten: „Matrix42 wurde als einzige Citrix Managementlösung in den Forrester Wave Report aufgenommen.” \r\rFür den Forrester Wave Report evaluiert Forrester Anbieter und ihre Produkte auf Basis von Kriterien, die aus entsprechenden Marktforschungsaktivitäten und Anwenderbedarfen abgeleitet werden. Dann werden anhand von Laborauswertungen, Fragebögen, Demos und/oder Gesprächen mit Referenzkunden detaillierte Informationen zur Produktqualifikation erarbeitet. \r','forrester-logo.png','www.forrester.com','/partners/detail/94',0,2);
 
 /*!40000 ALTER TABLE `partners` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1701,44 +1701,6 @@ VALUES
 UNLOCK TABLES;
 
 
-
---
--- Dumping routines (PROCEDURE) for database 'darth_de'
---
-DELIMITER ;;
-
-# Dump of PROCEDURE sp_belongs_to
-# ------------------------------------------------------------
-
-/*!50003 DROP PROCEDURE IF EXISTS `sp_belongs_to` */;;
-/*!50003 SET SESSION SQL_MODE=""*/;;
-/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_belongs_to`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
-BEGIN
-		SELECT TABLE_NAME AS keyTable, GROUP_CONCAT(COLUMN_NAME) AS keyColumns, REFERENCED_TABLE_NAME AS refTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
-		FROM INFORMATION_SCHEMA.key_column_usage
-		WHERE TABLE_SCHEMA = schemaName
-		AND TABLE_NAME = tableName
-		AND REFERENCED_TABLE_NAME IS NOT NULL
-		GROUP BY constraintName;
-	END */;;
-
-/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
-# Dump of PROCEDURE sp_has_many
-# ------------------------------------------------------------
-
-/*!50003 DROP PROCEDURE IF EXISTS `sp_has_many` */;;
-/*!50003 SET SESSION SQL_MODE=""*/;;
-/*!50003 CREATE*/ /*!50020 DEFINER=`root`@`localhost`*/ /*!50003 PROCEDURE `sp_has_many`(IN schemaName VARCHAR(100), IN tableName VARCHAR(100))
-BEGIN
-	  SELECT REFERENCED_TABLE_NAME AS keyTable, GROUP_CONCAT(REFERENCED_COLUMN_NAME) AS keyColumns, TABLE_NAME AS refTable, GROUP_CONCAT(COLUMN_NAME) AS refColumns, CONSTRAINT_NAME AS constraintName
-	  FROM INFORMATION_SCHEMA.key_column_usage
-	  WHERE TABLE_SCHEMA = schemaName
-	  AND REFERENCED_TABLE_NAME = tableName
-	  GROUP BY constraintName;
-	END */;;
-
-/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;;
-DELIMITER ;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
