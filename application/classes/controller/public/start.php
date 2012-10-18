@@ -4,7 +4,33 @@ class Controller_Public_Start extends Controller_Public {
 
 	public function action_index()
 	{
+		$visitor = new \Darth\Model\Analytic();
+		$visitor->campaign_id = \Arr::get($_GET, 'campaignid', '1');
+		$visitor->sub_id = \Arr::get($_GET, 'subid');
+		$visitor->landing_url = \Arr::get($_GET, 'landing', '/'); //required
+		$visitor->medium = \Arr::get($_GET, 'medium'); // (marketing medium: oragnic, cpc, banner, email) // maps to utm_medium
+		$visitor->source = \Arr::get($_GET, 'source'); // (referrer: google, citysearch, newsletter4) // maps to utm_source
+		$visitor->ad_campaign = \Arr::get($_GET, 'campaign'); // (product, promo code, or slogan) // maps to utm_campaign
+		$visitor->content = \Arr::get($_GET, 'content'); // (use to differentiate ads) // maps to utm_content
+		$visitor->term = \Arr::get($_GET, 'term'); // (identify the paid keywords) // maps to utm_term
+		$visitor->adgroup =\Arr::get($_GET, 'adgroup');
+		$visitor->referrer = $this->request->referrer();
+		$visitor->agent = \Request::$user_agent;
+		$visitor->ip_address = \Request::$client_ip;
 
+		$visitor->save();
+
+		\Cookie::set('ibid', $visitor->id);
+		\Cookie::set('medium', $visitor->medium);
+		\Cookie::set('source', $visitor->source);
+		\Cookie::set('campaign', $visitor->ad_campaign);
+		\Cookie::set('campaignid', $visitor->campaign_id);
+		\Cookie::set('subid', $visitor->sub_id);
+		\Cookie::set('adgroup', $visitor->adgroup);
+		\Cookie::set('content', $visitor->content);
+		\Cookie::set('term', $visitor->term);
+
+		$this->request->redirect($visitor->landing_url);
 	}
 
 	public function action_test_email()
