@@ -42,12 +42,12 @@ class Analytics_Core
 			{
 				if(in_array($current, $uri))
 				{
-					$views[] = View::factory($view);
+					$views[] = \View::factory($view);
 				}
 			}
 			elseif($uri == 'all')
 			{
-				$views[] = View::factory($view);
+				$views[] = \View::factory($view);
 			}
 		}
 

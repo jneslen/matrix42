@@ -25,3 +25,6 @@
 	<?php endif; ?>
 	</div><!-- support-container -->
 </div><!-- support -->
+<?php if($complete): ?>
+<?=\Analytics::factory(array('google_adwords' => 'all'))->render()?>
+<?php endif; ?>

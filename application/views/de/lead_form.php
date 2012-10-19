@@ -63,3 +63,6 @@
 		<div class="clear"></div>
 	</div><!-- lead-form -->
 </div><!-- row -->
+<?php if($complete): ?>
+	<?=\Analytics::factory(array('google_adwords_de' => 'all'))->render()?>
+<?php endif; ?>
