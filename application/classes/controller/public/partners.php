@@ -27,6 +27,7 @@ class Controller_Public_Partners extends Controller_Public {
 					array
 					(
 						'header' => '',
+						'attr' => array('class' => 'logo-cell'),
 						'value' => function($o)
 						{
 							return '<span class="hidden">'.$o->id.'</span><a href="/partners/detail/'.$o->id.'" class="block"><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" style="width:70px;" /></a>';
@@ -125,6 +126,7 @@ class Controller_Public_Partners extends Controller_Public {
 				array
 				(
 					'header' => '',
+					'attr' => array('class' => 'logo-cell'),
 					'value' => function($o)
 					{
 						return '<span class="hidden">'.$o->id.'</span><a href="/partners/detail/'.$o->id.'" class="block"><img src="/assets/img/partners/'.$o->logo.'" alt="'.$o->company_name.'" style="width:100px;" /></a>';
@@ -135,7 +137,7 @@ class Controller_Public_Partners extends Controller_Public {
 					'header' => '',
 					'value' => function($o)
 					{
-						return '<h4 class="emphasis"><a href="/partners/detail/'.$o->id.'">'.$o->company_name.'</a></h4><h5 class="italics">'.$o->description.'</h5>';
+						return '<h4 class="emphasis"><a href="/partners/detail/'.$o->id.'">'.$o->company_name.'</a></h4><h5 class="italics">'.substr(strip_tags($o->description), 0, 255).'</h5>';
 					}
 				),
 			)

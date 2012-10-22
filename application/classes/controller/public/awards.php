@@ -23,6 +23,7 @@ class Controller_Public_Awards extends Controller_Public {
 				array
 				(
 					'header' => '',
+					'attr' => array('class' => 'logo-cell'),
 					'value' => function($o)
 					{
 						$thumbnail = $o->thumbnail ? $o->thumbnail : 'award.png';
