@@ -11,8 +11,8 @@ class Controller_Public_Start extends Controller_Public {
 		$visitor->medium = \Arr::get($_GET, 'medium'); // (marketing medium: oragnic, cpc, banner, email) // maps to utm_medium
 		$visitor->source = \Arr::get($_GET, 'source'); // (referrer: google, citysearch, newsletter4) // maps to utm_source
 		$visitor->ad_campaign = \Arr::get($_GET, 'campaign'); // (product, promo code, or slogan) // maps to utm_campaign
-		$visitor->content = \Arr::get($_GET, 'content'); // (use to differentiate ads) // maps to utm_content
-		$visitor->term = \Arr::get($_GET, 'term'); // (identify the paid keywords) // maps to utm_term
+		$visitor->content = \Arr::get($_GET, 'content'); // (use to differentiate ads) // maps to utm_content -> {creative}
+		$visitor->term = \Arr::get($_GET, 'term'); // (identify the paid keywords) // maps to utm_term -> {keyword}
 		$visitor->adgroup =\Arr::get($_GET, 'adgroup');
 		$visitor->referrer = $this->request->referrer();
 		$visitor->agent = \Request::$user_agent;
@@ -30,7 +30,9 @@ class Controller_Public_Start extends Controller_Public {
 		\Cookie::set('content', $visitor->content);
 		\Cookie::set('term', $visitor->term);
 
-		$this->request->redirect($visitor->landing_url);
+		$redirect = $visitor->landing_url.'?gclid='.\Arr::get($_GET, 'gclid');
+
+		$this->request->redirect($redirect);
 	}
 
 	public function action_test_email()
