@@ -23,7 +23,7 @@ RewriteRule ^produkte-loesungen/client-management /losungen/endpoint_management 
 RewriteRule ^paketierung /addons/package_robot [R=301,L]
 RewriteRule ^lizenzmanagement /losungen/compliance [R=301,L]
 RewriteRule ^kontakt /uber [R=301,L]
-RewriteRule ^events/webinar /events/webinars [R=301,L]
+RewriteRule ^events/webinar$ /events/webinars [R=301,L]
 RewriteRule ^events/partnerevents /events/partners [R=301,L]
 RewriteRule ^schulungen /events/schulungen [R=301,L]
 RewriteRule ^presse-mitteilungen /press [R=301,L]
