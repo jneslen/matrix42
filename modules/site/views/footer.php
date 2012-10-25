@@ -39,7 +39,6 @@
 	<div id="about-foot" class="span3 border-right">
 		<h3>About</h3>
 		<ul class="link-list">
-			<li><a href="/about">Contact Us</a></li>
 			<li><a href="/press">Press</a></li>
 			<li><a href="/press/awards">Awards</a></li>
 			<li><a href="/press/publications">Publications</a></li>
@@ -56,6 +55,9 @@
 		<?php if(\Helper::has_event('training')): ?>
 			<li><a href="/events/trainings">Trainings</a></li>
 		<?php endif;?>
+		<?php if(\Helper::has_event('partner')): ?>
+			<li><a href="/events/partners">Trainings</a></li>
+		<?php endif;?>
 		</ul>
 	</div><!-- about-foot -->
 	<div id="navigate" class="span3">
@@ -66,6 +68,7 @@
 			<li><a href="/partners/technology">Technology Partners</a></li>
 			<li><a href="/partners">Resellers</a></li>
 			<li><a href="/support">Services &amp; Support</a></li>
+			<li><a href="/about">Contact Us</a></li>
 		</ul>
 	</div><!-- navigate -->
 </div><!-- footer-links -->

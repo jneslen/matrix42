@@ -40,24 +40,26 @@
 	<div id="about-foot" class="span3 border-right">
 		<h3>Über Matrix42</h3>
 		<ul class="link-list">
-			<li><a href="/uber">Kontakt</a></li>
 			<li><a href="/partners/technology">Technologiepartner</a></li>
 			<li><a href="/press">Presse</a></li>
 			<li><a href="/press/awards">Auszeichnungen</a></li>
 			<li><a href="/press/publications">Veröffentlichungen</a></li>
 			<li><a href="/customers">Referenzen</a></li>
-			<?php if(\Helper::has_event()): ?>
+		<?php if(\Helper::has_event()): ?>
 			<li><a href="/events">Events</a></li>
-			<?php endif;?>
-			<?php if(\Helper::has_event('webinar')): ?>
+		<?php endif;?>
+		<?php if(\Helper::has_event('webinar')): ?>
 			<li><a href="/events/webinars">Webinars</a></li>
-			<?php endif;?>
-			<?php if(\Helper::has_event('conference')): ?>
+		<?php endif;?>
+		<?php if(\Helper::has_event('conference')): ?>
 			<li><a href="/events/foren">Messen &amp; Foren</a></li>
-			<?php endif;?>
-			<?php if(\Helper::has_event('training')): ?>
+		<?php endif;?>
+		<?php if(\Helper::has_event('training')): ?>
 			<li><a href="/events/schulungen">Schulungen</a></li>
-			<?php endif;?>
+		<?php endif;?>
+		<?php if(\Helper::has_event('partner')): ?>
+			<li><a href="/events/partners">Partner Events</a></li>
+		<?php endif;?>
 		</ul>
 	</div><!-- about-foot -->
 	<div id="navigate" class="span3">
@@ -67,6 +69,7 @@
 			<li><a href="http://blog.matrix42.com/" target="_blank">Marix42 Blog</a></li>
 			<li><a href="/partners">Wiederverkäufer</a></li>
 			<li><a href="/support">Services &amp; Support</a></li>
+			<li><a href="/uber">Kontakt</a></li>
 		</ul>
 	</div><!-- navigate -->
 </div><!-- footer-links -->
