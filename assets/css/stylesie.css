@@ -148,3 +148,7 @@
 #nav {
 	float: right;
 }
+
+#main-row {
+	margin-left: 0 !important;
+}
