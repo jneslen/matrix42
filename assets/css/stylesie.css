@@ -149,6 +149,6 @@
 	float: right;
 }
 
-#main-row {
-	margin-left: 0 !important;
+.logo-container, #making-waves, #our-customers {
+	width: 100%;
 }
