@@ -9,6 +9,7 @@
 					<?=$analyst->link ? '<a href="'.$analyst->link.'">' : ''?><img class="analyst-<?=\Format::alpha_number($count, 0, null)?>" src="/assets/img/partners/<?=$analyst->logo?>" border="0" alt="<?=$analyst->company_name?>" /><?=$analyst->link ? '</a>' : ''?>
 				<?php $count++; ?>
 				<?php endforeach; ?>
+					<div class="clear"></div>
 				</div><!-- logo-container -->
 			</div><!-- our-customers -->
 		</div><!-- span7 -->
@@ -21,6 +22,7 @@
 					<?=$partner->link ? '<a href="'.$partner->link.'">' : ''?><img class="partner-<?=\Format::alpha_number($count, 0, null)?>" src="/assets/img/partners/<?=$partner->logo?>" border="0" alt="<?=$partner->company_name?>" /><?=$partner->link ? '</a>' : ''?>
 				<?php $count++; ?>
 				<?php endforeach; ?>
+					<div class="clear"></div>
 				</div><!-- logo-container -->
 			</div><!-- making-waves -->
 		</div><!-- span7 -->

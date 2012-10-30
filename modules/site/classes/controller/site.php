@@ -52,6 +52,8 @@ class Controller_Site extends Controller_Template
 	public $chat_url;
 	public $chat_id;
 
+	public $user_country;
+
 	protected function _authenticate()
 	{
 		return true;
@@ -111,6 +113,8 @@ class Controller_Site extends Controller_Template
 		View::bind_global('user', $this->_user);
 
 		$this->_campaign = \Cookie::get('campaign_id', '1');
+
+		$this->user_country = \Helper::user_country();
 	}
 
 	public function after()

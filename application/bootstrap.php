@@ -64,6 +64,7 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
 if(\Helper::language() == 'de')
 {
 	date_default_timezone_set('Europe/Berlin');
+
 }
 else
 {

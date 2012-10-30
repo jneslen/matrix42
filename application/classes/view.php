@@ -4,9 +4,21 @@ class View extends Kohana_View
 {
 	public static function factory($file = NULL, array $data = NULL)
 	{
-		if($data['language'] AND \Helper::language() === 'de')
+		if($data['language'])
 		{
-			$file = 'de/'.$file;
+			if(\Helper::user_country() == 'gb')
+			{
+				$language = 'gb';
+			}
+			else
+			{
+				$language = \Helper::language();
+			}
+
+			if(\Kohana::find_file('views/'.$language, $file))
+			{
+				$file = $language.'/'.$file;
+			}
 		}
 
 		return new View($file, $data);

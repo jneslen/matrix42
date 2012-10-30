@@ -57,6 +57,6 @@
 			</div>
 		</div><!-- banner8 -->
 	</div><!-- carousel-inner -->
-	<a class="carousel-control left" href="#home-banner" data-slide="prev">&lsaquo;</a>
-	<a class="carousel-control right" href="#home-banner" data-slide="next">&rsaquo;</a>
+	<a class="carousel-control left" href="#home-banner" data-slide="prev"><span>&lsaquo;</span></a>
+	<a class="carousel-control right" href="#home-banner" data-slide="next"><span>&rsaquo;</span></a>
 </div><!-- home-banner -->

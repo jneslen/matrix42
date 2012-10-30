@@ -84,7 +84,7 @@ class Helper
 				$language = 'de';
 				break;
 			case 'uk':
-				$language = 'en-uk';
+				$language = 'gb';
 				break;
 			case 'eu':
 				$language = 'en';
@@ -124,5 +124,12 @@ class Helper
 			return true;
 		}
 		return false;
+	}
+
+	static public function user_country()
+	{
+		$geoio = json_decode(\Request::factory(\Kohana::$config->load('geoio')->api)->execute()->body());
+		$geoio = array_pop($geoio);
+		return strtolower($geoio[6]);
 	}
 }
