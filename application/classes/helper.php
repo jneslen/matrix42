@@ -129,7 +129,12 @@ class Helper
 	static public function user_country()
 	{
 		$geoio = json_decode(\Request::factory(\Kohana::$config->load('geoio')->api)->execute()->body());
-		$geoio = array_pop($geoio);
+
+		if(is_array($geoio))
+		{
+			$geoio = array_pop($geoio);
+		}
+
 		return strtolower($geoio[6]);
 	}
 }
