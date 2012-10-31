@@ -458,4 +458,14 @@ class User extends Model {
 
 		$this->last = end($names);
 	}
+
+	protected function _set_password($value)
+	{
+		$bonafide = \Bonafide::instance();
+
+		$this->_set('password', $bonafide->hash($value));
+
+		$this->temp_password = null;
+		$this->temp_password_date = null;
+	}
 }

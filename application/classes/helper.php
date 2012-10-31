@@ -128,12 +128,21 @@ class Helper
 
 	static public function user_country()
 	{
+		//return the cookie value if set
+		if(\Cookie::get('user_country'))
+		{
+			return \Cookie::get('user_country');
+		}
+
 		$geoio = json_decode(\Request::factory(\Kohana::$config->load('geoio')->api)->execute()->body());
 
 		if(is_array($geoio))
 		{
 			$geoio = array_pop($geoio);
 		}
+
+		//Set a cookie so that we don't have to keep querying the api
+		\Cookie::set('user_country', strtolower($geoio[6]));
 
 		return strtolower($geoio[6]);
 	}
