@@ -28,9 +28,6 @@
 [submodule "modules/formo"]
 	path = modules/formo
 	url = https://github.com/bmidget/kohana-formo.git
-[submodule "system"]
-	path = system
-	url = https://github.com/kohana/core.git
 [submodule "modules/cache"]
 	path = modules/cache
 	url = https://github.com/jneslen/kohana-cache.git
@@ -40,3 +37,6 @@
 [submodule "modules/markdown"]
 	path = modules/markdown
 	url = https://github.com/aptgraph/kohana-markdown.git
+[submodule "system"]
+	path = system
+	url = git://github.com/kohana/core.git

@@ -1,5 +1,6 @@
 @img_path: '/assets/img/';
 @bold_chat: 'https://cbi.boldchat.com/aid/371406089847921814/bc.cbi?cbdid=7894149461079162794';
+@pie: 'http://beta.matrix42.de/PIE.htc';
 
 //Widths
 @site_width: 1260px;
@@ -67,7 +68,7 @@
 	-moz-border-radius: @radius;
 	-webkit-border-radius: @radius;
 	/*behavior: url(/assets/js/PIE.htc);*/
-	behavior: url(rc.matrix42.com/assets/js/PIE.htc);
+	behavior: url(@{pie});
 }
 
 .rounded_top(@radius: 5px) {
@@ -77,7 +78,7 @@
 	-webkit-border-top-left-radius: @radius;
 	-webkit-border-top-right-radius: @radius;
 	/*behavior: url(/assets/js/PIE.htc);*/
-	behavior: url(rc.matrix42.com/assets/js/PIE.htc);
+	behavior: url(@{pie});
 }
 
 .rounded_bottom(@radius: 5px) {
@@ -87,7 +88,7 @@
 	-webkit-border-bottom-left-radius: @radius;
 	-webkit-border-bottom-right-radius: @radius;
 	/*behavior: url(/assets/js/PIE.htc);*/
-	behavior: url(rc.matrix42.com/assets/js/PIE.htc);
+	behavior: url(@{pie});
 }
 
 .rounded_top_left(@radius: 5px) {
@@ -96,7 +97,7 @@
 	-moz-border-radius-topLeft: @radius;
 	-webkit-border-top-left-radius: @radius;
 	/*behavior: url(/assets/js/PIE.htc);*/
-	behavior: url(rc.matrix42.com/assets/js/PIE.htc);
+	behavior: url(@{pie});
 }
 
 .rounded_top_right(@radius: 5px) {
@@ -104,7 +105,7 @@
 	-moz-border-radius-topRight: @radius;
 	-webkit-border-top-right-radius: @radius;
 	/*behavior: url(/assets/js/PIE.htc);*/
-	behavior: url(rc.matrix42.com/assets/js/PIE.htc);
+	behavior: url(@{pie});
 }
 
 .rounded_bottom_right(@radius: 5px) {
@@ -112,7 +113,7 @@
 	-moz-border-radius-bottomRight: @radius;
 	-webkit-border-bottom-right-radius: @radius;
 	/*behavior: url(/assets/js/PIE.htc);*/
-	behavior: url(rc.matrix42.com/assets/js/PIE.htc);
+	behavior: url(@{pie});
 }
 
 .rounded_bottom_left(@radius: 5px) {
@@ -120,13 +121,13 @@
 	-moz-border-radius-bottomLeft: @radius;
 	-webkit-border-bottom-left-radius: @radius;
 	/*behavior: url(/assets/js/PIE.htc);*/
-	behavior: url(rc.matrix42.com/assets/js/PIE.htc);
+	behavior: url(@{pie});
 }
 
 .opacity(@a: 0.7) {
 	opacity: @a;
 	filter: alpha(opacity = (@a * 100));
-	behavior: url(/assets/js/PIE.htc);
+	behavior: url(@{pie});
 }
 
 .space {
@@ -298,7 +299,7 @@
 	background: -webkit-gradient(linear, left top, left bottom, from(@start), to(@stop));
 	background: -moz-linear-gradient(center top, @start 0%, @stop 100%);
 	background: -moz-gradient(center top, @start 0%, @stop 100%);
-	behavior: url(/assets/js/PIE.htc);
+	behavior: url(@{pie});
 }
 
 .shadow(@color: #666666, @h: 1px, @v: 1px, @b: 0) {
@@ -309,7 +310,7 @@
 	box-shadow: 0 0 @distance rgba(0, 0, 0, @alpha);
 	-moz-box-shadow: 0 0 @distance rgba(0, 0, 0, @alpha);
 	-webkit-box-shadow: 0 0 @distance rgba(0, 0, 0, @alpha);
-	behavior: url(/assets/js/PIE.htc);
+	behavior: url(@{pie});
 }
 
 .noshadowbox {

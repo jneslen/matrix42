@@ -140,6 +140,14 @@
 	background-color: #ffffff !important;
 }
 
+.tag-content h1 {
+	font-size: 50px;
+}
+
+.tag-content h4 {
+	font-size: 16px;
+}
+
 .listed .thumbnail {
 	width: 50px;
 	height: 50px;
@@ -150,5 +158,5 @@
 }
 
 .logo-container, #making-waves, #our-customers {
-	width: 542px;
+	width: 600px;
 }
