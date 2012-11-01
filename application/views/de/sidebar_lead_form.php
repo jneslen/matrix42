@@ -13,7 +13,7 @@
 		<?=$form->view()->open()?>
 		<?=$form->campaign_id->render()?>
 		<div class="padded-content">
-			<h2 class="emphasis"><span class="icon phone"></span>Fordern Sie einen Anruf an!</h2>
+			<h2 class="emphasis"><span class="icon phone"></span>Wir rufen Sie gerne an!</h2>
 			<h6>Füllen Sie bitte folgende Felder aus, wenn Sie beraten werden möchten, wie Matrix42 Ihnen bei der Erfüllung Ihrer IT-Anforderungen helfen kann.</h6>
 			<?=$form->name->render()?>
 			<?=$form->email->render()?>

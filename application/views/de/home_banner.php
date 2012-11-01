@@ -28,7 +28,7 @@
 					<h1 class="no-margin">der virtuelle arbeitsplatz</h1>
 					<h3 class="no-margin">Die unverzichtbare Lösung für Citrix Desktop-Bereitstellungen</h3><a href="/losungen/virtual_desktop_management"><span class="icon play"></span></a>
 					<div class="clear"></div>
-					<a href="/losungen/virtual_desktop_management" class="btn btn-primary btn-large">Der Virtual Desktop Solution!</a>
+					<a href="/losungen/virtual_desktop_management" class="btn btn-primary btn-large">Die Virtual Desktop Solution!</a>
 					<img src="/assets/img/partners/citrix-ready-logo.png" alt="Citrix Ready" />
 				</div>
 				<img class="bg" src="/assets/img/banners/home-banner-003.jpg" alt="Transparent" />
