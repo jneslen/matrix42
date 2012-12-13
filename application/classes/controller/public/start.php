@@ -2,7 +2,7 @@
 
 class Controller_Public_Start extends Controller_Public {
 
-	public function action_index()
+	public function action_index($base_url = null)
 	{
 		$visitor = new \Darth\Model\Analytic();
 		$visitor->campaign_id = \Arr::get($_GET, 'campaignid', '1');
@@ -32,7 +32,26 @@ class Controller_Public_Start extends Controller_Public {
 
 		$redirect = $visitor->landing_url.'?gclid='.\Arr::get($_GET, 'gclid');
 
+		if($base_url != null)
+		{
+			$redirect = $base_url.$redirect;
+		}
+
 		$this->request->redirect($redirect);
+	}
+
+	public function action_legacy()
+	{
+		if(\Helper::language() == 'de')
+		{
+			$base_url = 'http://www.matrix42.de';
+		}
+		else
+		{
+			$base_url = 'http://www.matrix42.com';
+		}
+
+		$this->action_index($base_url);
 	}
 
 	public function action_test_email()
